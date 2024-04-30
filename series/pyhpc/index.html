@@ -1,387 +1,328 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>PyHPC Conference Summary | PythonDeadlin.es</title>
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
-    <meta name="generator" content="Jekyll v4.3.3" />
-    <meta property="og:title" content="PyHPC Conference Summary" />
-    <meta name="author" content="Jesper Dramsch" />
-    <meta property="og:locale" content="en" />
-    <meta
-      name="description"
-      content="Summary of the conference and its instances throughout the years."
-    />
-    <meta
-      property="og:description"
-      content="Summary of the conference and its instances throughout the years."
-    />
-    <link rel="canonical" href="https://pythondeadlin.es/series/pyhpc/" />
-    <meta property="og:url" content="https://pythondeadlin.es/series/pyhpc/" />
-    <meta property="og:site_name" content="Python Conference Deadlines" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="PyHPC Conference Summary" />
-    <meta name="twitter:site" content="@jesperdramsch" />
-    <meta name="twitter:creator" content="@jesperdramsch" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "author": {
-          "@type": "Person",
-          "name": "Jesper Dramsch",
-          "url": "https://dramsch.net"
-        },
-        "description": "Summary of the conference and its instances throughout the years.",
-        "headline": "PyHPC Conference Summary",
-        "url": "https://pythondeadlin.es/series/pyhpc/"
-      }
-    </script>
-    <!-- End Jekyll SEO tag -->
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="RSS Feed for Pythondeadlin.es"
-      href="/feed.xml"
-    />
 
-    <link rel="alternate" hreflang="en" href="/series/pyhpc/" title="" />
 
-    <link
-      rel="alternate"
-      title="PyHPC Conference Summary in Spanish"
-      hreflang="es"
-      href="/es/series/pyhpc/"
-    />
 
-    <link
-      rel="alternate"
-      title="PyHPC Conference Summary in German"
-      hreflang="de"
-      href="/de/series/pyhpc/"
-    />
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/static/css/js-year-calendar.min.css?t=1714432797"
-      media="screen,projection"
-    />
+<title>PyHPC Conference Summary | PythonDeadlin.es</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="PyHPC Conference Summary" />
+<meta name="author" content="Jesper Dramsch" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Summary of the conference and its instances throughout the years." />
+<meta property="og:description" content="Summary of the conference and its instances throughout the years." />
+<link rel="canonical" href="https://pythondeadlin.es/series/pyhpc/" />
+<meta property="og:url" content="https://pythondeadlin.es/series/pyhpc/" />
+<meta property="og:site_name" content="Python Conference Deadlines" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="PyHPC Conference Summary" />
+<meta name="twitter:site" content="@jesperdramsch" />
+<meta name="twitter:creator" content="@jesperdramsch" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Jesper Dramsch","url":"https://dramsch.net"},"description":"Summary of the conference and its instances throughout the years.","headline":"PyHPC Conference Summary","url":"https://pythondeadlin.es/series/pyhpc/"}</script>
+<!-- End Jekyll SEO tag -->
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/static/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/static/css/deadlines.css?t=1714432797"
-      media="screen,projection"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/static/css/calendar.css?t=1714432797"
-      media="screen,projection"
-    />
 
-    <link rel="shortcut icon" href="/static/img/favicon.png" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed for Pythondeadlin.es" href="/feed.xml" />
 
-    <style>
-      .PY-tag {
-        color: #4b8bbe;
-      }
-      .PY-select {
-        color: #4b8bbe;
-        background: white;
-      }
-      .PY-select.active {
-        color: white;
-        background: #4b8bbe;
-      }
+<link rel="alternate" hreflang="en" href="/series/pyhpc/" title="">
 
-      .SCIPY-tag {
-        color: #70163c;
-      }
-      .SCIPY-select {
-        color: #70163c;
-        background: white;
-      }
-      .SCIPY-select.active {
-        color: white;
-        background: #70163c;
-      }
 
-      .DATA-tag {
-        color: #849324;
-      }
-      .DATA-select {
-        color: #849324;
-        background: white;
-      }
-      .DATA-select.active {
-        color: white;
-        background: #849324;
-      }
+<link rel="alternate"  title="PyHPC Conference Summary in Spanish" hreflang="es" href="/es/series/pyhpc/">
 
-      .WEB-tag {
-        color: #0d0a0b;
-      }
-      .WEB-select {
-        color: #0d0a0b;
-        background: white;
-      }
-      .WEB-select.active {
-        color: white;
-        background: #0d0a0b;
-      }
 
-      .BIZ-tag {
-        color: #a8b9cc;
-      }
-      .BIZ-select {
-        color: #a8b9cc;
-        background: white;
-      }
-      .BIZ-select.active {
-        color: white;
-        background: #a8b9cc;
-      }
+<link rel="alternate"  title="PyHPC Conference Summary in German" hreflang="de" href="/de/series/pyhpc/">
 
-      .GEO-tag {
-        color: #310c0c;
-      }
-      .GEO-select {
-        color: #310c0c;
-        background: white;
-      }
-      .GEO-select.active {
-        color: white;
-        background: #310c0c;
-      }
 
-      .CAMP-tag {
-        color: #303030;
-      }
-      .CAMP-select {
-        color: #303030;
-        background: white;
-      }
-      .CAMP-select.active {
-        color: white;
-        background: #303030;
-      }
-    </style>
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1714456630" media="screen,projection">
 
-    <script
-      defer
-      data-domain="pythondeadlin.es"
-      src="https://info.pythondeadlin.es/js/script.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="/static/js/js-year-calendar.js"
-    ></script>
-    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/static/js/popper.min.js"></script>
-    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
-    <script
-      type="text/javascript"
-      src="/static/js/jquery.countdown.min.js"
-    ></script>
-    <script type="text/javascript" src="/static/js/luxon.js"></script>
-    <script type="text/javascript" src="/static/js/store.min.js"></script>
-    <script type="text/javascript" src="/static/js/ouical.min.js"></script>
-    <script
-      type="text/javascript"
-      src="/static/js/bootstrap-multiselect.min.js"
-    ></script>
-  </head>
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1714456630" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1714456630" media="screen,projection">
 
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <div style="vertical-align: middle; padding-top: 8px">
-          <div>
-            <a
-              class="navbar-brand"
-              href="/"
-              style="border-bottom: none; line-height: 0.1em"
-            >
-              Python Deadlines<br /><br />
-            </a>
-          </div>
-          <div style="color: white; font-size: x-small">
-            <a href="https://dramsch.net" class="pwc-link">
-              by Jesper Dramsch
-            </a>
-          </div>
-        </div>
+<link rel="shortcut icon" href="/static/img/favicon.png">
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbar-toggler"
-          aria-controls="navbars-toggler"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar-toggler">
-          <ul class="navbar-nav mr-auto">
-            <li>
-              <a href="/" class="nav-link" style="border-bottom: none"
-                >Countdowns</a
-              >
-            </li>
-            <li>
-              <a href="/calendar/" class="nav-link" style="border-bottom: none"
-                >Calendar</a
-              >
-            </li>
-            <li>
-              <a href="/map/" class="nav-link" style="border-bottom: none"
-                >Map</a
-              >
-            </li>
-            <li>
-              <a href="/series/" class="nav-link" style="border-bottom: none"
-                >Series</a
-              >
-            </li>
-            <li>
-              <a href="/resources/" class="nav-link" style="border-bottom: none"
-                >Resources</a
-              >
-            </li>
-          </ul>
-          <ul class="navbar-nav ml-auto my-2 my-lg-0">
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdownMenuLink"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                en
-              </a>
-              <div
-                class="dropdown-menu dropdown-menu-right"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <h6 class="dropdown-header">Choose Language</h6>
+<style>
 
-                <a class="dropdown-item active" href="/series/pyhpc/"
-                  >English</a
-                >
+.PY-tag {
+  color: #4B8BBE;
+}
+.PY-select {
+  color: #4B8BBE;
+  background: white;
+}
+.PY-select.active {
+    color: white;
+    background: #4B8BBE;
+}
 
-                <a class="dropdown-item" href="/es/series/pyhpc/">Español</a>
 
-                <a class="dropdown-item" href="/de/series/pyhpc/">Deutsch</a>
-              </div>
-            </li>
-          </ul>
+.SCIPY-tag {
+  color: #70163C;
+}
+.SCIPY-select {
+  color: #70163C;
+  background: white;
+}
+.SCIPY-select.active {
+    color: white;
+    background: #70163C;
+}
+
+
+.DATA-tag {
+  color: #849324;
+}
+.DATA-select {
+  color: #849324;
+  background: white;
+}
+.DATA-select.active {
+    color: white;
+    background: #849324;
+}
+
+
+.WEB-tag {
+  color: #0D0A0B;
+}
+.WEB-select {
+  color: #0D0A0B;
+  background: white;
+}
+.WEB-select.active {
+    color: white;
+    background: #0D0A0B;
+}
+
+
+.BIZ-tag {
+  color: #A8B9CC;
+}
+.BIZ-select {
+  color: #A8B9CC;
+  background: white;
+}
+.BIZ-select.active {
+    color: white;
+    background: #A8B9CC;
+}
+
+
+.GEO-tag {
+  color: #310c0c;
+}
+.GEO-select {
+  color: #310c0c;
+  background: white;
+}
+.GEO-select.active {
+    color: white;
+    background: #310c0c;
+}
+
+
+.CAMP-tag {
+  color: #303030;
+}
+.CAMP-select {
+  color: #303030;
+  background: white;
+}
+.CAMP-select.active {
+    color: white;
+    background: #303030;
+}
+
+
+  </style>
+
+<script defer data-domain="pythondeadlin.es" src="https://info.pythondeadlin.es/js/script.js"></script>
+<script type="text/javascript" src="/static/js/js-year-calendar.js"></script>
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/popper.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.countdown.min.js"></script>
+<script type="text/javascript" src="/static/js/luxon.js"></script>
+<script type="text/javascript" src="/static/js/store.min.js"></script>
+<script type="text/javascript" src="/static/js/ouical.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap-multiselect.min.js"></script>
+
+  
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<div class="container">
+		<div style="vertical-align: middle; padding-top: 8px">
+			<div>
+				<a class="navbar-brand" href="/" style="border-bottom: none; line-height: 0.1em">
+					Python Deadlines<br /><br />
+				</a>
+			</div>
+			<div style="color: white; font-size: x-small">
+				<a href="https://dramsch.net" class="pwc-link"> by Jesper Dramsch </a>
+			</div>
+		</div>
+
+		<button
+			class="navbar-toggler"
+			type="button"
+			data-toggle="collapse"
+			data-target="#navbar-toggler"
+			aria-controls="navbars-toggler"
+			aria-expanded="false"
+			aria-label="Toggle navigation"
+		>
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbar-toggler">
+			<ul class="navbar-nav mr-auto">
+				<li>
+					<a href="/" class="nav-link" style="border-bottom: none"
+						>Countdowns</a
+					>
+				</li>
+				<li>
+					<a href="/calendar/" class="nav-link" style="border-bottom: none">Calendar</a>
+				</li>
+				<li>
+					<a href="/map/" class="nav-link" style="border-bottom: none">Map</a>
+				</li>
+				<li>
+					<a href="/series/" class="nav-link" style="border-bottom: none">Series</a>
+				</li>
+				<li>
+					<a href="/resources/" class="nav-link" style="border-bottom: none"
+						>Resources</a
+					>
+				</li>
+			</ul>
+			<ul class="navbar-nav ml-auto my-2 my-lg-0">
+				<li class="nav-item dropdown">
+					<a
+						class="nav-link dropdown-toggle"
+						href="#"
+						id="navbarDropdownMenuLink"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						en
+					</a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+						<h6 class="dropdown-header">Choose Language</h6>
+						
+						<a
+							class="dropdown-item active"
+							href="/series/pyhpc/"
+							>English</a
+						>
+						 
+						<a
+							class="dropdown-item"
+							href="/es/series/pyhpc/"
+							>Español</a
+						>
+						 
+						<a
+							class="dropdown-item"
+							href="/de/series/pyhpc/"
+							>Deutsch</a
+						>
+						
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+  
+  <div class="container">
+    <div class="page-header" id="conf-title">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="breadcrumbs">
+
+<a href="">Home</a>
+
+  
+    / <a href="/series/">Series</a>
+  
+
+  
+    / <a href="#">PyHPC Conference Summary</a>
+  
+
+</div>
+
+          <h1>
+            <span id="conf-title-href" href="/summary/pyhpc/">PyHPC Conference Summary</span>
+            <span id="twitter-box"><a href="https://twitter.com/share" class="twitter-share-button"
+                data-text="Conference instances for the #PyHPC conference!" data-show-count="false"
+                style="font-size:13px;">Tweet</a>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </span>
+          </h1>
         </div>
       </div>
-    </nav>
-
-    <div class="container">
-      <div class="page-header" id="conf-title">
-        <div class="row">
-          <div class="col-sm-12">
-            <div id="breadcrumbs">
-              <a href="">Home</a>
-
-              / <a href="/series/">Series</a>
-
-              / <a href="#">PyHPC Conference Summary</a>
-            </div>
-
-            <h1>
-              <span id="conf-title-href" href="/summary/pyhpc/"
-                >PyHPC Conference Summary</span
-              >
-              <span id="twitter-box"
-                ><a
-                  href="https://twitter.com/share"
-                  class="twitter-share-button"
-                  data-text="Conference instances for the #PyHPC conference!"
-                  data-show-count="false"
-                  style="font-size: 13px"
-                  >Tweet</a
-                >
-                <script
-                  async
-                  src="https://platform.twitter.com/widgets.js"
-                  charset="utf-8"
-                ></script>
-              </span>
-            </h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12" id="conf-subs">
-            <span id="conf-subs" title="Conference subjects"> </span>
-          </div>
+      <div class="row">
+        <div class="col-sm-12" id="conf-subs">
+          <span id="conf-subs" title="Conference subjects">
+            
+            
+          </span>
         </div>
       </div>
-      <div id="page-content">
+    </div>
+    <div id="page-content">
         <div id="conf-key-facts" class="row">
           <div class="col-12 col-md-6">
             <div>
-              <img
-                src="/static/img/203-earth.svg"
-                class="badge-link"
-                alt="Earth Icon"
-                width="16"
-                height="16"
-              />
-              <a id="conf-website" target="_blank" href="https://www.pyhpc.io/"
-                >https://www.pyhpc.io/</a
-              >
+              <img src="/static/img/203-earth.svg" class="badge-link" alt="Earth Icon" width="16" height="16" />
+              <a id="conf-website" target="_blank" href="https://www.pyhpc.io/">https://www.pyhpc.io/</a>
             </div>
+            
+            
+            </div>
+            <div class="col-12 col-md-6">
+            
           </div>
-          <div class="col-12 col-md-6"></div>
         </div>
         <hr />
-        <div id="all_confs">
-          <div id="pyhpc-2020" class="ConfItem">
+      <div id="all_confs">
+        
+          
+          <div id="pyhpc-2020"
+            class="ConfItem ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
-                  <a title="Deadline Details" href="/conference/pyhpc-2020/"
-                    >PyHPC 2020</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2020/">PyHPC 2020</a>
                 </span>
                 <span class="conf-title-small">
-                  <a title="Deadline Details" href="/conference/pyhpc-2020/"
-                    >PyHPC '20</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2020/">PyHPC '20</a>
                 </span>
                 <span class="conf-title-icon">
-                  <a
-                    title="Conference Website"
-                    href="https://www.pyhpc.io/"
-                    target="_blank"
-                    ><img
-                      src="/static/img/203-earth.svg"
-                      class="badge-link"
-                      alt="Link to Conference Website"
-                      width="16"
-                      height="16"
-                  /></a>
+                  <a title="Conference Website" href="https://www.pyhpc.io/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
                   &ZeroWidthSpace;
                 </span>
+                
+                
+                
+                
               </div>
               <div class="col-6">
                 <span class="timer"></span>
@@ -391,57 +332,60 @@
             <div class="row">
               <div class="col-12 col-sm-6">
                 <div class="meta">
+
                   <span class="conf-date">November 15 – 16, 2020.</span>
                   <span class="conf-place">
-                    <a href="#">Online</a>
+                    
+                      <a href="#">Online</a>
+                    
                   </span>
                 </div>
+                
+
               </div>
               <div class="col-12 col-sm-6">
                 <div class="deadline">
-                  <div>
-                    Deadline:
+                  <div>Deadline:
                     <span class="deadline-time">Friday, 11 September 2020</span>
                   </div>
                 </div>
+
               </div>
             </div>
             <div class="row">
-              <div class="col-6"></div>
+              <div class="col-6">
+                
+                
+              </div>
               <div class="col-6">
                 <div class="calendar"></div>
               </div>
             </div>
-            <hr />
+            <hr>
           </div>
-
-          <div id="pyhpc-2018" class="ConfItem">
+        
+          
+          <div id="pyhpc-2018"
+            class="ConfItem ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
-                  <a title="Deadline Details" href="/conference/pyhpc-2018/"
-                    >PyHPC 2018</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2018/">PyHPC 2018</a>
                 </span>
                 <span class="conf-title-small">
-                  <a title="Deadline Details" href="/conference/pyhpc-2018/"
-                    >PyHPC '18</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2018/">PyHPC '18</a>
                 </span>
                 <span class="conf-title-icon">
-                  <a
-                    title="Conference Website"
-                    href="https://web.archive.org/web/20201023081255/https://www.dlr.de/sc/desktopdefault.aspx/tabid-12954/22625_read-52397/"
-                    target="_blank"
-                    ><img
-                      src="/static/img/203-earth.svg"
-                      class="badge-link"
-                      alt="Link to Conference Website"
-                      width="16"
-                      height="16"
-                  /></a>
+                  <a title="Conference Website" href="https://web.archive.org/web/20201023081255/https://www.dlr.de/sc/desktopdefault.aspx/tabid-12954/22625_read-52397/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
                   &ZeroWidthSpace;
                 </span>
+                
+                
+                
+                
               </div>
               <div class="col-6">
                 <span class="timer"></span>
@@ -451,59 +395,61 @@
             <div class="row">
               <div class="col-12 col-sm-6">
                 <div class="meta">
+
                   <span class="conf-date">November 12, 2018.</span>
                   <span class="conf-place">
-                    <a href="http://maps.google.com/?q=Dallas, USA"
-                      >Dallas, USA</a
-                    >
+                    
+                      <a href="http://maps.google.com/?q=Dallas, USA">Dallas, USA</a>
+                      
+                    
                   </span>
                 </div>
+                
+
               </div>
               <div class="col-12 col-sm-6">
                 <div class="deadline">
-                  <div>
-                    Deadline:
-                    <span class="deadline-time">Sunday, 9 September 2018</span>
+                  <div>Deadline:
+                    <span class="deadline-time">Sunday,  9 September 2018</span>
                   </div>
                 </div>
+
               </div>
             </div>
             <div class="row">
-              <div class="col-6"></div>
+              <div class="col-6">
+                
+                
+              </div>
               <div class="col-6">
                 <div class="calendar"></div>
               </div>
             </div>
-            <hr />
+            <hr>
           </div>
-
-          <div id="pyhpc-2017" class="ConfItem">
+        
+          
+          <div id="pyhpc-2017"
+            class="ConfItem ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
-                  <a title="Deadline Details" href="/conference/pyhpc-2017/"
-                    >PyHPC 2017</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2017/">PyHPC 2017</a>
                 </span>
                 <span class="conf-title-small">
-                  <a title="Deadline Details" href="/conference/pyhpc-2017/"
-                    >PyHPC '17</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2017/">PyHPC '17</a>
                 </span>
                 <span class="conf-title-icon">
-                  <a
-                    title="Conference Website"
-                    href="https://web.archive.org/web/20171116191554/http://www.dlr.de/sc/desktopdefault.aspx/tabid-11992/21071_read-48990"
-                    target="_blank"
-                    ><img
-                      src="/static/img/203-earth.svg"
-                      class="badge-link"
-                      alt="Link to Conference Website"
-                      width="16"
-                      height="16"
-                  /></a>
+                  <a title="Conference Website" href="https://web.archive.org/web/20171116191554/http://www.dlr.de/sc/desktopdefault.aspx/tabid-11992/21071_read-48990" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
                   &ZeroWidthSpace;
                 </span>
+                
+                
+                
+                
               </div>
               <div class="col-6">
                 <span class="timer"></span>
@@ -513,59 +459,61 @@
             <div class="row">
               <div class="col-12 col-sm-6">
                 <div class="meta">
+
                   <span class="conf-date">November 12 – 13, 2017.</span>
                   <span class="conf-place">
-                    <a href="http://maps.google.com/?q=Denver, USA"
-                      >Denver, USA</a
-                    >
+                    
+                      <a href="http://maps.google.com/?q=Denver, USA">Denver, USA</a>
+                      
+                    
                   </span>
                 </div>
+                
+
               </div>
               <div class="col-12 col-sm-6">
                 <div class="deadline">
-                  <div>
-                    Deadline:
-                    <span class="deadline-time">Friday, 1 September 2017</span>
+                  <div>Deadline:
+                    <span class="deadline-time">Friday,  1 September 2017</span>
                   </div>
                 </div>
+
               </div>
             </div>
             <div class="row">
-              <div class="col-6"></div>
+              <div class="col-6">
+                
+                
+              </div>
               <div class="col-6">
                 <div class="calendar"></div>
               </div>
             </div>
-            <hr />
+            <hr>
           </div>
-
-          <div id="pyhpc-2016" class="ConfItem">
+        
+          
+          <div id="pyhpc-2016"
+            class="ConfItem ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
-                  <a title="Deadline Details" href="/conference/pyhpc-2016/"
-                    >PyHPC 2016</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2016/">PyHPC 2016</a>
                 </span>
                 <span class="conf-title-small">
-                  <a title="Deadline Details" href="/conference/pyhpc-2016/"
-                    >PyHPC '16</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2016/">PyHPC '16</a>
                 </span>
                 <span class="conf-title-icon">
-                  <a
-                    title="Conference Website"
-                    href="https://web.archive.org/web/20161109035636/http://www.dlr.de/sc/desktopdefault.aspx/tabid-11229/19729_read-46082/"
-                    target="_blank"
-                    ><img
-                      src="/static/img/203-earth.svg"
-                      class="badge-link"
-                      alt="Link to Conference Website"
-                      width="16"
-                      height="16"
-                  /></a>
+                  <a title="Conference Website" href="https://web.archive.org/web/20161109035636/http://www.dlr.de/sc/desktopdefault.aspx/tabid-11229/19729_read-46082/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
                   &ZeroWidthSpace;
                 </span>
+                
+                
+                
+                
               </div>
               <div class="col-6">
                 <span class="timer"></span>
@@ -575,59 +523,61 @@
             <div class="row">
               <div class="col-12 col-sm-6">
                 <div class="meta">
+
                   <span class="conf-date">November 14, 2016.</span>
                   <span class="conf-place">
-                    <a href="http://maps.google.com/?q=Salt Lake City, USA"
-                      >Salt Lake City, USA</a
-                    >
+                    
+                      <a href="http://maps.google.com/?q=Salt Lake City, USA">Salt Lake City, USA</a>
+                      
+                    
                   </span>
                 </div>
+                
+
               </div>
               <div class="col-12 col-sm-6">
                 <div class="deadline">
-                  <div>
-                    Deadline:
-                    <span class="deadline-time">Friday, 5 September 2014</span>
+                  <div>Deadline:
+                    <span class="deadline-time">Friday,  5 September 2014</span>
                   </div>
                 </div>
+
               </div>
             </div>
             <div class="row">
-              <div class="col-6"></div>
+              <div class="col-6">
+                
+                
+              </div>
               <div class="col-6">
                 <div class="calendar"></div>
               </div>
             </div>
-            <hr />
+            <hr>
           </div>
-
-          <div id="pyhpc-2015" class="ConfItem">
+        
+          
+          <div id="pyhpc-2015"
+            class="ConfItem ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
-                  <a title="Deadline Details" href="/conference/pyhpc-2015/"
-                    >PyHPC 2015</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2015/">PyHPC 2015</a>
                 </span>
                 <span class="conf-title-small">
-                  <a title="Deadline Details" href="/conference/pyhpc-2015/"
-                    >PyHPC '15</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2015/">PyHPC '15</a>
                 </span>
                 <span class="conf-title-icon">
-                  <a
-                    title="Conference Website"
-                    href="https://web.archive.org/web/20150829112426/http://www.dlr.de/sc/desktopdefault.aspx/tabid-10388/17849_read-42322"
-                    target="_blank"
-                    ><img
-                      src="/static/img/203-earth.svg"
-                      class="badge-link"
-                      alt="Link to Conference Website"
-                      width="16"
-                      height="16"
-                  /></a>
+                  <a title="Conference Website" href="https://web.archive.org/web/20150829112426/http://www.dlr.de/sc/desktopdefault.aspx/tabid-10388/17849_read-42322" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
                   &ZeroWidthSpace;
                 </span>
+                
+                
+                
+                
               </div>
               <div class="col-6">
                 <span class="timer"></span>
@@ -637,59 +587,61 @@
             <div class="row">
               <div class="col-12 col-sm-6">
                 <div class="meta">
+
                   <span class="conf-date">November 15, 2015.</span>
                   <span class="conf-place">
-                    <a href="http://maps.google.com/?q=Austin, USA"
-                      >Austin, USA</a
-                    >
+                    
+                      <a href="http://maps.google.com/?q=Austin, USA">Austin, USA</a>
+                      
+                    
                   </span>
                 </div>
+                
+
               </div>
               <div class="col-12 col-sm-6">
                 <div class="deadline">
-                  <div>
-                    Deadline:
-                    <span class="deadline-time">Friday, 4 September 2015</span>
+                  <div>Deadline:
+                    <span class="deadline-time">Friday,  4 September 2015</span>
                   </div>
                 </div>
+
               </div>
             </div>
             <div class="row">
-              <div class="col-6"></div>
+              <div class="col-6">
+                
+                
+              </div>
               <div class="col-6">
                 <div class="calendar"></div>
               </div>
             </div>
-            <hr />
+            <hr>
           </div>
-
-          <div id="pyhpc-2014" class="ConfItem">
+        
+          
+          <div id="pyhpc-2014"
+            class="ConfItem ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
-                  <a title="Deadline Details" href="/conference/pyhpc-2014/"
-                    >PyHPC 2014</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2014/">PyHPC 2014</a>
                 </span>
                 <span class="conf-title-small">
-                  <a title="Deadline Details" href="/conference/pyhpc-2014/"
-                    >PyHPC '14</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2014/">PyHPC '14</a>
                 </span>
                 <span class="conf-title-icon">
-                  <a
-                    title="Conference Website"
-                    href="https://web.archive.org/web/20141117032857/http://www.dlr.de/sc/desktopdefault.aspx/tabid-9506/16384_read-40102"
-                    target="_blank"
-                    ><img
-                      src="/static/img/203-earth.svg"
-                      class="badge-link"
-                      alt="Link to Conference Website"
-                      width="16"
-                      height="16"
-                  /></a>
+                  <a title="Conference Website" href="https://web.archive.org/web/20141117032857/http://www.dlr.de/sc/desktopdefault.aspx/tabid-9506/16384_read-40102" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
                   &ZeroWidthSpace;
                 </span>
+                
+                
+                
+                
               </div>
               <div class="col-6">
                 <span class="timer"></span>
@@ -699,59 +651,61 @@
             <div class="row">
               <div class="col-12 col-sm-6">
                 <div class="meta">
+
                   <span class="conf-date">November 17 – 18, 2014.</span>
                   <span class="conf-place">
-                    <a href="http://maps.google.com/?q=New Orleans, USA"
-                      >New Orleans, USA</a
-                    >
+                    
+                      <a href="http://maps.google.com/?q=New Orleans, USA">New Orleans, USA</a>
+                      
+                    
                   </span>
                 </div>
+                
+
               </div>
               <div class="col-12 col-sm-6">
                 <div class="deadline">
-                  <div>
-                    Deadline:
-                    <span class="deadline-time">Friday, 5 September 2014</span>
+                  <div>Deadline:
+                    <span class="deadline-time">Friday,  5 September 2014</span>
                   </div>
                 </div>
+
               </div>
             </div>
             <div class="row">
-              <div class="col-6"></div>
+              <div class="col-6">
+                
+                
+              </div>
               <div class="col-6">
                 <div class="calendar"></div>
               </div>
             </div>
-            <hr />
+            <hr>
           </div>
-
-          <div id="pyhpc-2013" class="ConfItem">
+        
+          
+          <div id="pyhpc-2013"
+            class="ConfItem ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
-                  <a title="Deadline Details" href="/conference/pyhpc-2013/"
-                    >PyHPC 2013</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2013/">PyHPC 2013</a>
                 </span>
                 <span class="conf-title-small">
-                  <a title="Deadline Details" href="/conference/pyhpc-2013/"
-                    >PyHPC '13</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2013/">PyHPC '13</a>
                 </span>
                 <span class="conf-title-icon">
-                  <a
-                    title="Conference Website"
-                    href="https://web.archive.org/web/20131118193245/http://www.dlr.de/sc/desktopdefault.aspx/tabid-8685/14943_read-37157/"
-                    target="_blank"
-                    ><img
-                      src="/static/img/203-earth.svg"
-                      class="badge-link"
-                      alt="Link to Conference Website"
-                      width="16"
-                      height="16"
-                  /></a>
+                  <a title="Conference Website" href="https://web.archive.org/web/20131118193245/http://www.dlr.de/sc/desktopdefault.aspx/tabid-8685/14943_read-37157/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
                   &ZeroWidthSpace;
                 </span>
+                
+                
+                
+                
               </div>
               <div class="col-6">
                 <span class="timer"></span>
@@ -761,59 +715,61 @@
             <div class="row">
               <div class="col-12 col-sm-6">
                 <div class="meta">
+
                   <span class="conf-date">November 18, 2013.</span>
                   <span class="conf-place">
-                    <a href="http://maps.google.com/?q=Denver, USA"
-                      >Denver, USA</a
-                    >
+                    
+                      <a href="http://maps.google.com/?q=Denver, USA">Denver, USA</a>
+                      
+                    
                   </span>
                 </div>
+                
+
               </div>
               <div class="col-12 col-sm-6">
                 <div class="deadline">
-                  <div>
-                    Deadline:
+                  <div>Deadline:
                     <span class="deadline-time">Friday, 20 September 2013</span>
                   </div>
                 </div>
+
               </div>
             </div>
             <div class="row">
-              <div class="col-6"></div>
+              <div class="col-6">
+                
+                
+              </div>
               <div class="col-6">
                 <div class="calendar"></div>
               </div>
             </div>
-            <hr />
+            <hr>
           </div>
-
-          <div id="pyhpc-2012" class="ConfItem">
+        
+          
+          <div id="pyhpc-2012"
+            class="ConfItem ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
-                  <a title="Deadline Details" href="/conference/pyhpc-2012/"
-                    >PyHPC 2012</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2012/">PyHPC 2012</a>
                 </span>
                 <span class="conf-title-small">
-                  <a title="Deadline Details" href="/conference/pyhpc-2012/"
-                    >PyHPC '12</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2012/">PyHPC '12</a>
                 </span>
                 <span class="conf-title-icon">
-                  <a
-                    title="Conference Website"
-                    href="https://web.archive.org/web/20121115022259/http://www.dlr.de/sc/desktopdefault.aspx/tabid-8028/13765_read-34936/"
-                    target="_blank"
-                    ><img
-                      src="/static/img/203-earth.svg"
-                      class="badge-link"
-                      alt="Link to Conference Website"
-                      width="16"
-                      height="16"
-                  /></a>
+                  <a title="Conference Website" href="https://web.archive.org/web/20121115022259/http://www.dlr.de/sc/desktopdefault.aspx/tabid-8028/13765_read-34936/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
                   &ZeroWidthSpace;
                 </span>
+                
+                
+                
+                
               </div>
               <div class="col-6">
                 <span class="timer"></span>
@@ -823,59 +779,61 @@
             <div class="row">
               <div class="col-12 col-sm-6">
                 <div class="meta">
+
                   <span class="conf-date">November 16, 2012.</span>
                   <span class="conf-place">
-                    <a href="http://maps.google.com/?q=Salt Lake City, USA"
-                      >Salt Lake City, USA</a
-                    >
+                    
+                      <a href="http://maps.google.com/?q=Salt Lake City, USA">Salt Lake City, USA</a>
+                      
+                    
                   </span>
                 </div>
+                
+
               </div>
               <div class="col-12 col-sm-6">
                 <div class="deadline">
-                  <div>
-                    Deadline:
+                  <div>Deadline:
                     <span class="deadline-time">Friday, 14 September 2012</span>
                   </div>
                 </div>
+
               </div>
             </div>
             <div class="row">
-              <div class="col-6"></div>
+              <div class="col-6">
+                
+                
+              </div>
               <div class="col-6">
                 <div class="calendar"></div>
               </div>
             </div>
-            <hr />
+            <hr>
           </div>
-
-          <div id="pyhpc-2011" class="ConfItem">
+        
+          
+          <div id="pyhpc-2011"
+            class="ConfItem ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
-                  <a title="Deadline Details" href="/conference/pyhpc-2011/"
-                    >PyHPC 2011</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2011/">PyHPC 2011</a>
                 </span>
                 <span class="conf-title-small">
-                  <a title="Deadline Details" href="/conference/pyhpc-2011/"
-                    >PyHPC '11</a
-                  >
+                  <a title="Deadline Details"
+                    href="/conference/pyhpc-2011/">PyHPC '11</a>
                 </span>
                 <span class="conf-title-icon">
-                  <a
-                    title="Conference Website"
-                    href="https://web.archive.org/web/20130923035222/http://www.dlr.de/sc/desktopdefault.aspx/tabid-7632/12996_read-32676/"
-                    target="_blank"
-                    ><img
-                      src="/static/img/203-earth.svg"
-                      class="badge-link"
-                      alt="Link to Conference Website"
-                      width="16"
-                      height="16"
-                  /></a>
+                  <a title="Conference Website" href="https://web.archive.org/web/20130923035222/http://www.dlr.de/sc/desktopdefault.aspx/tabid-7632/12996_read-32676/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
                   &ZeroWidthSpace;
                 </span>
+                
+                
+                
+                
               </div>
               <div class="col-6">
                 <span class="timer"></span>
@@ -885,841 +843,839 @@
             <div class="row">
               <div class="col-12 col-sm-6">
                 <div class="meta">
+
                   <span class="conf-date">November 18, 2011.</span>
                   <span class="conf-place">
-                    <a href="http://maps.google.com/?q=Seattle, USA"
-                      >Seattle, USA</a
-                    >
+                    
+                      <a href="http://maps.google.com/?q=Seattle, USA">Seattle, USA</a>
+                      
+                    
                   </span>
                 </div>
+                
+
               </div>
               <div class="col-12 col-sm-6">
                 <div class="deadline">
-                  <div>
-                    Deadline:
+                  <div>Deadline:
                     <span class="deadline-time">Monday, 19 September 2011</span>
                   </div>
                 </div>
+
               </div>
             </div>
             <div class="row">
-              <div class="col-6"></div>
+              <div class="col-6">
+                
+                
+              </div>
               <div class="col-6">
                 <div class="calendar"></div>
               </div>
             </div>
-            <hr />
+            <hr>
           </div>
-        </div>
-      </div>
-      <footer>
-        <hr />
-        <div class="row">
-          <div class="col-12 col-sm-12">
-            <p>
-              <a href="">pythondeadlin.es</a> is maintained by
-              <a href="https://dramsch.net/">Jesper Dramsch</a> since 2022.
-              <br />It was inspired (and originally coded) by the fantastic
-              <a href="https://aideadlin.es">aideadlin.es</a>. No guarantee for
-              correctness, please correct mistakes by
-              <a href="https://github.com/JesperDramsch/python-deadlines/"
-                >submitting a pull request</a
-              >.
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12 col-sm-12">
-            <div class="footer-links">
-              <p>
-                <a href="/legal/terms-conditions/">Terms</a> &amp;
-                <a href="/legal/privacy-policy/">Privacy Policy</a>
-                from <a href="https://dramsch.net">Jesper Dramsch,</a> creator
-                of <a href="https://ml.recipes">ML.recipes</a>,
-                <a href="https://data-science-gui.de">data-science-gui.de</a>,
-                <a href="https://late.email">Late to the Party 🎉</a> and the
-                <a href="https://latent.club">Latent Space Community</a>.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2158291969836277"
-          crossorigin="anonymous"
-        ></script>
-      </footer>
-      <br /><br />
+        
     </div>
-    <script type="text/javascript" charset="utf-8">
-          $(function () {
-
-            var DateTime = luxon.DateTime;
-            var today = DateTime.now();
-
-            // Make sure this is >= no. of subs
-            // Currently not used
-            var colors = ['#341f97', '#ee5253', '#2e86de',
-              '#ff9f43', '#10ac84', '#222f3e']
-
-
-
-      var subs = [];
-      var _all_subs = [];
-      // Get all subs
-      var conf_type_data = [{"name":"General Python","sub":"PY","color":"#4B8BBE"},{"name":"Scientific Python","sub":"SCIPY","color":"#70163C"},{"name":"Python for Data","sub":"DATA","color":"#849324"},{"name":"Python for Web","sub":"WEB","color":"#0D0A0B"},{"name":"Python for Business","sub":"BIZ","color":"#A8B9CC"},{"name":"Python for Earth","sub":"GEO","color":"#310c0c"},{"name":"Python Camps","sub":"CAMP","color":"#303030"}];
-      var sub2name = {}; var name2sub = {};
-      for (var i = 0; i < conf_type_data.length; i++) {
-          _all_subs[i] = conf_type_data[i]['sub'];
-          sub2name[conf_type_data[i]['sub']] = conf_type_data[i]['name'];
-          name2sub[conf_type_data[i]['name']] = conf_type_data[i]['sub'];
-      }
-      const all_subs = _all_subs;
-
-
-            function update_filtering(data) {
-      	var page_url = window.location.pathname;
-      	store.set('pythondeadlin.es-subs', { subs: data.subs, timestamp: new Date().getTime() });
-
-      	$('.confItem').hide();
-
-      	// Loop through selected values in data.subs
-      	for (const s of data.subs) {
-      		// Show elements with class .s-conf (where s is the selected value)
-      		$('.' + s + '-conf').show();
-      	}
-
-      	if (data.subs.length === 0 || data.subs.length == data.all_subs.length) {
-      		window.history.pushState('', '', page_url);
-      	} else {
-      		// Join the selected values into a query parameter
-      		window.history.pushState('', '', page_url + '?sub=' + data.subs.join());
-      	}
-      }
-
-      function isDataExpired(data) {
-      	const EXPIRATION_PERIOD = 1 * 17 * 60 * 60 * 1000; // 1 day in milliseconds
-      	const now = new Date().getTime();
-      	if (data.timestamp && now - data.timestamp > EXPIRATION_PERIOD) {
-      		return true;
-      	}
-      	return false;
-      }
-
-      function createCalendarFromObject(data) {
-      	return createCalendar({
-      		options: {
-      			class: 'calendar-obj',
-
-      			// You can pass an ID. If you don't, one will be generated for you
-      			id: data.id,
-      		},
-      		data: {
-      			// Event title
-      			title: data.title,
-
-      			// Event start date
-      			start: data.start_date,
-
-      			// Event duration (minutes)
-      			duration: 60,
-
-      			// You can also choose to set an end time
-      			// If an end time is set, this will take precedence over duration
-      			end: data.end_date,
-
-      			// Event Address
-      			address: data.place,
-
-      			// Event Description
-      			description: '<a href=' + data.link + '>' + data.title + '</a>',
-      		},
-      	});
-      }
-
-            // Multi-select handler
-      $('#subject-select').multiselect({
-      	includeSelectAllOption: true,
-      	numberDisplayed: 5,
-      	onChange: function (option, checked, select) {
-      		var csub = $(option).val();
-      		if (checked == true) {
-      			if (subs.indexOf(csub) < 0) subs.push(csub);
-      		} else {
-      			var idx = subs.indexOf(csub);
-      			if (idx >= 0) subs.splice(idx, 1);
-      			// In case a conf with multiple types (including this type) is wrongly hid, show all confs with at least one checked type.
-      			for (var i = 0; i < subs.length; i++) {
-      				// $('.' + subs[i] + '-conf').show();
-      			}
-      		}
-      		update_filtering({ subs: subs, all_subs: all_subs });
-      	},
-      	onSelectAll: function (options) {
-      		subs = all_subs;
-      		update_filtering({ subs: subs, all_subs: all_subs });
-      	},
-      	onDeselectAll: function (options) {
-      		subs = [];
-      		update_filtering({ subs: subs, all_subs: all_subs });
-      	},
-      	buttonText: function (options, select) {
-      		if (options.length === 0) {
-      			return 'No Conference Selected';
-      		} else if (options.length === select.children('option').length) {
-      			return 'All Conferences Selected';
-      		} else {
-      			var labels = [];
-      			options.each(function () {
-      				if ($(this).attr('value') !== undefined) {
-      					labels.push($(this).attr('value').slice(0, 3));
-      				} else {
-      					labels.push($(this).html());
-      				}
-      			});
-      			return labels.join(', ') + '';
-      		}
-      	},
-      	buttonTitle: function (options, select) {
-      		return '';
-      	},
-      	optionClass: function (element) {
-      		return $(element).val() + '-select';
-      	},
-      });
-
-
-            // Set time zone to local timezone on web copy
-            $('.local-timezone').text(today.toFormat('z'));
-
-
-
-
-
-
-
-                // Use specified timezone for deadlines if available else use AoE timezone
-
-                  var cfpDate = DateTime.fromSQL("2020-09-11 23:59:00", { zone: "UTC-12" });
-                  var confDate = DateTime.fromSQL("2020-11-15", { zone: "UTC-12" });
-
-
-                // check if timezone is valid otherwise replace by system timezone
-                if (cfpDate.invalid || confDate.invalid) {
-                  var cfpDate = DateTime.fromSQL("2020-09-11 23:59:00");
-                  var confDate = DateTime.fromSQL("2020-11-15");
-                  console.log("Invalid timezone in pyhpc-2020. Using system timezone instead.");
-                }
-
-                // render countdown timer
-                $('#pyhpc-2020 .timer').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
-                });
-
-                // render countdown timer small
-                $('#pyhpc-2020 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%Dd %H:%M:%S'));
-                });
-
-                // deadline in local timezone
-                $('#pyhpc-2020 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
-
-                // add calendar button
-                try {
-                  var myCalendar = createCalendarFromObject({
-                    id: 'pyhpc-2020',
-                    title: 'PyHPC 2020 deadline',
-                    start_date: cfpDate.toJSDate(),
-                    duration: 60,
-                    place: 'Online',
-                    link: 'https://www.pyhpc.io/'
-                  });
-                  document.querySelector('#pyhpc-2020 .calendar').appendChild(myCalendar);
-                } catch (err) {
-                  document.querySelector('#pyhpc-2020 .calendar').appendChild("<p>Calendar not available.</p>");
-                  console.log("Error in cfp date.");
-                }
-
-                // check if date has passed, add 'past' class to it
-                cfpDiff = cfpDate.diffNow("seconds");
-                confDiff = confDate.diffNow("seconds");
+    
+  </div>
+    <footer>
+      <hr>
+<div class="row">
+  <div class="col-12 col-sm-12">
+    <p><a href="">pythondeadlin.es</a> is maintained by <a href="https://dramsch.net/">Jesper Dramsch</a> since 2022. <br />It was inspired (and originally coded) by the fantastic <a href="https://aideadlin.es">aideadlin.es</a>. No guarantee for correctness, please correct mistakes by <a href="https://github.com/JesperDramsch/python-deadlines/">submitting a pull request</a>.</p>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-12 col-sm-12">
+    <div class="footer-links">
+      <p><a href="/legal/terms-conditions/">Terms</a> &amp;
+<a href="/legal/privacy-policy/">Privacy Policy</a>
+from <a href="https://dramsch.net">Jesper Dramsch,</a> creator of <a href="https://ml.recipes">ML.recipes</a>, <a href="https://data-science-gui.de">data-science-gui.de</a>, <a href="https://late.email">Late to the Party 🎉</a> and the <a href="https://latent.club">Latent Space Community</a>.</p>
+
+    </div>
+  </div>
+</div>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2158291969836277" crossorigin="anonymous"></script>
+
+
+
+
+    </footer>
+    <br><br>
+  </div>
+  <script type="text/javascript" charset="utf-8">
+    $(function () {
+
+      var DateTime = luxon.DateTime;
+      var today = DateTime.now();
+
+      // Make sure this is >= no. of subs
+      // Currently not used
+      var colors = ['#341f97', '#ee5253', '#2e86de',
+        '#ff9f43', '#10ac84', '#222f3e']
+
+
+      
+var subs = [];
+var _all_subs = [];
+// Get all subs
+var conf_type_data = [{"name":"General Python","sub":"PY","color":"#4B8BBE"},{"name":"Scientific Python","sub":"SCIPY","color":"#70163C"},{"name":"Python for Data","sub":"DATA","color":"#849324"},{"name":"Python for Web","sub":"WEB","color":"#0D0A0B"},{"name":"Python for Business","sub":"BIZ","color":"#A8B9CC"},{"name":"Python for Earth","sub":"GEO","color":"#310c0c"},{"name":"Python Camps","sub":"CAMP","color":"#303030"}];
+var sub2name = {}; var name2sub = {};
+for (var i = 0; i < conf_type_data.length; i++) {
+    _all_subs[i] = conf_type_data[i]['sub'];
+    sub2name[conf_type_data[i]['sub']] = conf_type_data[i]['name'];
+    name2sub[conf_type_data[i]['name']] = conf_type_data[i]['sub'];
+}
+const all_subs = _all_subs;
+
+
+      function update_filtering(data) {
+	var page_url = window.location.pathname;
+	store.set('pythondeadlin.es-subs', { subs: data.subs, timestamp: new Date().getTime() });
+
+	$('.confItem').hide();
+
+	// Loop through selected values in data.subs
+	for (const s of data.subs) {
+		// Show elements with class .s-conf (where s is the selected value)
+		$('.' + s + '-conf').show();
+	}
+
+	if (data.subs.length === 0 || data.subs.length == data.all_subs.length) {
+		window.history.pushState('', '', page_url);
+	} else {
+		// Join the selected values into a query parameter
+		window.history.pushState('', '', page_url + '?sub=' + data.subs.join());
+	}
+}
+
+function isDataExpired(data) {
+	const EXPIRATION_PERIOD = 1 * 17 * 60 * 60 * 1000; // 1 day in milliseconds
+	const now = new Date().getTime();
+	if (data.timestamp && now - data.timestamp > EXPIRATION_PERIOD) {
+		return true;
+	}
+	return false;
+}
+
+function createCalendarFromObject(data) {
+	return createCalendar({
+		options: {
+			class: 'calendar-obj',
+
+			// You can pass an ID. If you don't, one will be generated for you
+			id: data.id,
+		},
+		data: {
+			// Event title
+			title: data.title,
+
+			// Event start date
+			start: data.start_date,
+
+			// Event duration (minutes)
+			duration: 60,
+
+			// You can also choose to set an end time
+			// If an end time is set, this will take precedence over duration
+			end: data.end_date,
+
+			// Event Address
+			address: data.place,
+
+			// Event Description
+			description: '<a href=' + data.link + '>' + data.title + '</a>',
+		},
+	});
+}
+
+      // Multi-select handler
+$('#subject-select').multiselect({
+	includeSelectAllOption: true,
+	numberDisplayed: 5,
+	onChange: function (option, checked, select) {
+		var csub = $(option).val();
+		if (checked == true) {
+			if (subs.indexOf(csub) < 0) subs.push(csub);
+		} else {
+			var idx = subs.indexOf(csub);
+			if (idx >= 0) subs.splice(idx, 1);
+			// In case a conf with multiple types (including this type) is wrongly hid, show all confs with at least one checked type.
+			for (var i = 0; i < subs.length; i++) {
+				// $('.' + subs[i] + '-conf').show();
+			}
+		}
+		update_filtering({ subs: subs, all_subs: all_subs });
+	},
+	onSelectAll: function (options) {
+		subs = all_subs;
+		update_filtering({ subs: subs, all_subs: all_subs });
+	},
+	onDeselectAll: function (options) {
+		subs = [];
+		update_filtering({ subs: subs, all_subs: all_subs });
+	},
+	buttonText: function (options, select) {
+		if (options.length === 0) {
+			return 'No Conference Selected';
+		} else if (options.length === select.children('option').length) {
+			return 'All Conferences Selected';
+		} else {
+			var labels = [];
+			options.each(function () {
+				if ($(this).attr('value') !== undefined) {
+					labels.push($(this).attr('value').slice(0, 3));
+				} else {
+					labels.push($(this).html());
+				}
+			});
+			return labels.join(', ') + '';
+		}
+	},
+	buttonTitle: function (options, select) {
+		return '';
+	},
+	optionClass: function (element) {
+		return $(element).val() + '-select';
+	},
+});
+
+
+      // Set time zone to local timezone on web copy
+      $('.local-timezone').text(today.toFormat('z'));
+
+      
+        
+        
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2020-09-11 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2020-11-15", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2020-09-11 23:59:00");
+            var confDate = DateTime.fromSQL("2020-11-15");
+            console.log("Invalid timezone in pyhpc-2020. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pyhpc-2020 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pyhpc-2020 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pyhpc-2020 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pyhpc-2020',
+              title: 'PyHPC 2020 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Online',
+              link: 'https://www.pyhpc.io/'
+            });
+            document.querySelector('#pyhpc-2020 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pyhpc-2020 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pyhpc-2020').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pyhpc-2020').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pyhpc-2020').addClass('pastcfp');
+            $('#pyhpc-2020 .timer').replaceWith($('#pyhpc-2020 .deadline'));
+            $('#pyhpc-2020 .timer-small').replaceWith($('#pyhpc-2020 .deadline'));
+            $('#pyhpc-2020 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pyhpc-2020').addClass('pastconf');
+            $('#pyhpc-2020 .timer').replaceWith($('#pyhpc-2020 .deadline'));
+            $('#pyhpc-2020 .timer-small').replaceWith($('#pyhpc-2020 .deadline'));
+            $('#pyhpc-2020 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2018-09-09 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2018-11-12", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2018-09-09 23:59:00");
+            var confDate = DateTime.fromSQL("2018-11-12");
+            console.log("Invalid timezone in pyhpc-2018. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pyhpc-2018 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pyhpc-2018 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pyhpc-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pyhpc-2018',
+              title: 'PyHPC 2018 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Dallas, USA',
+              link: 'https://web.archive.org/web/20201023081255/https://www.dlr.de/sc/desktopdefault.aspx/tabid-12954/22625_read-52397/'
+            });
+            document.querySelector('#pyhpc-2018 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pyhpc-2018 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pyhpc-2018').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pyhpc-2018').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pyhpc-2018').addClass('pastcfp');
+            $('#pyhpc-2018 .timer').replaceWith($('#pyhpc-2018 .deadline'));
+            $('#pyhpc-2018 .timer-small').replaceWith($('#pyhpc-2018 .deadline'));
+            $('#pyhpc-2018 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pyhpc-2018').addClass('pastconf');
+            $('#pyhpc-2018 .timer').replaceWith($('#pyhpc-2018 .deadline'));
+            $('#pyhpc-2018 .timer-small').replaceWith($('#pyhpc-2018 .deadline'));
+            $('#pyhpc-2018 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2017-09-01 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2017-11-12", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2017-09-01 23:59:00");
+            var confDate = DateTime.fromSQL("2017-11-12");
+            console.log("Invalid timezone in pyhpc-2017. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pyhpc-2017 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pyhpc-2017 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pyhpc-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pyhpc-2017',
+              title: 'PyHPC 2017 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Denver, USA',
+              link: 'https://web.archive.org/web/20171116191554/http://www.dlr.de/sc/desktopdefault.aspx/tabid-11992/21071_read-48990'
+            });
+            document.querySelector('#pyhpc-2017 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pyhpc-2017 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pyhpc-2017').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pyhpc-2017').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pyhpc-2017').addClass('pastcfp');
+            $('#pyhpc-2017 .timer').replaceWith($('#pyhpc-2017 .deadline'));
+            $('#pyhpc-2017 .timer-small').replaceWith($('#pyhpc-2017 .deadline'));
+            $('#pyhpc-2017 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pyhpc-2017').addClass('pastconf');
+            $('#pyhpc-2017 .timer').replaceWith($('#pyhpc-2017 .deadline'));
+            $('#pyhpc-2017 .timer-small').replaceWith($('#pyhpc-2017 .deadline'));
+            $('#pyhpc-2017 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2014-09-12 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2016-11-14", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2014-09-12 23:59:00");
+            var confDate = DateTime.fromSQL("2016-11-14");
+            console.log("Invalid timezone in pyhpc-2016. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pyhpc-2016 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pyhpc-2016 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pyhpc-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pyhpc-2016',
+              title: 'PyHPC 2016 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Salt Lake City, USA',
+              link: 'https://web.archive.org/web/20161109035636/http://www.dlr.de/sc/desktopdefault.aspx/tabid-11229/19729_read-46082/'
+            });
+            document.querySelector('#pyhpc-2016 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pyhpc-2016 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pyhpc-2016').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pyhpc-2016').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pyhpc-2016').addClass('pastcfp');
+            $('#pyhpc-2016 .timer').replaceWith($('#pyhpc-2016 .deadline'));
+            $('#pyhpc-2016 .timer-small').replaceWith($('#pyhpc-2016 .deadline'));
+            $('#pyhpc-2016 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pyhpc-2016').addClass('pastconf');
+            $('#pyhpc-2016 .timer').replaceWith($('#pyhpc-2016 .deadline'));
+            $('#pyhpc-2016 .timer-small').replaceWith($('#pyhpc-2016 .deadline'));
+            $('#pyhpc-2016 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2015-09-04 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2015-11-15", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2015-09-04 23:59:00");
+            var confDate = DateTime.fromSQL("2015-11-15");
+            console.log("Invalid timezone in pyhpc-2015. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pyhpc-2015 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pyhpc-2015 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pyhpc-2015 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pyhpc-2015',
+              title: 'PyHPC 2015 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Austin, USA',
+              link: 'https://web.archive.org/web/20150829112426/http://www.dlr.de/sc/desktopdefault.aspx/tabid-10388/17849_read-42322'
+            });
+            document.querySelector('#pyhpc-2015 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pyhpc-2015 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pyhpc-2015').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pyhpc-2015').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pyhpc-2015').addClass('pastcfp');
+            $('#pyhpc-2015 .timer').replaceWith($('#pyhpc-2015 .deadline'));
+            $('#pyhpc-2015 .timer-small').replaceWith($('#pyhpc-2015 .deadline'));
+            $('#pyhpc-2015 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pyhpc-2015').addClass('pastconf');
+            $('#pyhpc-2015 .timer').replaceWith($('#pyhpc-2015 .deadline'));
+            $('#pyhpc-2015 .timer-small').replaceWith($('#pyhpc-2015 .deadline'));
+            $('#pyhpc-2015 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2014-09-12 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2014-11-17", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2014-09-12 23:59:00");
+            var confDate = DateTime.fromSQL("2014-11-17");
+            console.log("Invalid timezone in pyhpc-2014. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pyhpc-2014 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pyhpc-2014 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pyhpc-2014 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pyhpc-2014',
+              title: 'PyHPC 2014 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'New Orleans, USA',
+              link: 'https://web.archive.org/web/20141117032857/http://www.dlr.de/sc/desktopdefault.aspx/tabid-9506/16384_read-40102'
+            });
+            document.querySelector('#pyhpc-2014 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pyhpc-2014 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pyhpc-2014').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pyhpc-2014').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pyhpc-2014').addClass('pastcfp');
+            $('#pyhpc-2014 .timer').replaceWith($('#pyhpc-2014 .deadline'));
+            $('#pyhpc-2014 .timer-small').replaceWith($('#pyhpc-2014 .deadline'));
+            $('#pyhpc-2014 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pyhpc-2014').addClass('pastconf');
+            $('#pyhpc-2014 .timer').replaceWith($('#pyhpc-2014 .deadline'));
+            $('#pyhpc-2014 .timer-small').replaceWith($('#pyhpc-2014 .deadline'));
+            $('#pyhpc-2014 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2013-09-20 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2013-11-18", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2013-09-20 23:59:00");
+            var confDate = DateTime.fromSQL("2013-11-18");
+            console.log("Invalid timezone in pyhpc-2013. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pyhpc-2013 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pyhpc-2013 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pyhpc-2013 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pyhpc-2013',
+              title: 'PyHPC 2013 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Denver, USA',
+              link: 'https://web.archive.org/web/20131118193245/http://www.dlr.de/sc/desktopdefault.aspx/tabid-8685/14943_read-37157/'
+            });
+            document.querySelector('#pyhpc-2013 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pyhpc-2013 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pyhpc-2013').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pyhpc-2013').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pyhpc-2013').addClass('pastcfp');
+            $('#pyhpc-2013 .timer').replaceWith($('#pyhpc-2013 .deadline'));
+            $('#pyhpc-2013 .timer-small').replaceWith($('#pyhpc-2013 .deadline'));
+            $('#pyhpc-2013 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pyhpc-2013').addClass('pastconf');
+            $('#pyhpc-2013 .timer').replaceWith($('#pyhpc-2013 .deadline'));
+            $('#pyhpc-2013 .timer-small').replaceWith($('#pyhpc-2013 .deadline'));
+            $('#pyhpc-2013 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2012-09-14 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2012-11-16", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2012-09-14 23:59:00");
+            var confDate = DateTime.fromSQL("2012-11-16");
+            console.log("Invalid timezone in pyhpc-2012. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pyhpc-2012 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pyhpc-2012 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pyhpc-2012 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pyhpc-2012',
+              title: 'PyHPC 2012 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Salt Lake City, USA',
+              link: 'https://web.archive.org/web/20121115022259/http://www.dlr.de/sc/desktopdefault.aspx/tabid-8028/13765_read-34936/'
+            });
+            document.querySelector('#pyhpc-2012 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pyhpc-2012 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pyhpc-2012').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pyhpc-2012').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pyhpc-2012').addClass('pastcfp');
+            $('#pyhpc-2012 .timer').replaceWith($('#pyhpc-2012 .deadline'));
+            $('#pyhpc-2012 .timer-small').replaceWith($('#pyhpc-2012 .deadline'));
+            $('#pyhpc-2012 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pyhpc-2012').addClass('pastconf');
+            $('#pyhpc-2012 .timer').replaceWith($('#pyhpc-2012 .deadline'));
+            $('#pyhpc-2012 .timer-small').replaceWith($('#pyhpc-2012 .deadline'));
+            $('#pyhpc-2012 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2011-09-19 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2011-11-18", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2011-09-19 23:59:00");
+            var confDate = DateTime.fromSQL("2011-11-18");
+            console.log("Invalid timezone in pyhpc-2011. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pyhpc-2011 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pyhpc-2011 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pyhpc-2011 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pyhpc-2011',
+              title: 'PyHPC 2011 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Seattle, USA',
+              link: 'https://web.archive.org/web/20130923035222/http://www.dlr.de/sc/desktopdefault.aspx/tabid-7632/12996_read-32676/'
+            });
+            document.querySelector('#pyhpc-2011 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pyhpc-2011 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pyhpc-2011').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pyhpc-2011').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pyhpc-2011').addClass('pastcfp');
+            $('#pyhpc-2011 .timer').replaceWith($('#pyhpc-2011 .deadline'));
+            $('#pyhpc-2011 .timer-small').replaceWith($('#pyhpc-2011 .deadline'));
+            $('#pyhpc-2011 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pyhpc-2011').addClass('pastconf');
+            $('#pyhpc-2011 .timer').replaceWith($('#pyhpc-2011 .deadline'));
+            $('#pyhpc-2011 .timer-small').replaceWith($('#pyhpc-2011 .deadline'));
+            $('#pyhpc-2011 .calendar').remove();
+          }
+        
+      
+
+      // Sort coming_confs and past_confs
+      $("#all_confs .ConfItem").sort(function (a, b) {
+        return $(a).attr('cfpDiff') - $(b).attr('cfpDiff');
+      }).appendTo($("#coming_confs"));
+
+  </script>
+</body>
 
-                $('#pyhpc-2020').attr("cfpDiff", cfpDiff.toMillis());
-                $('#pyhpc-2020').attr("confDiff", confDiff.toMillis());
-
-                if (cfpDiff < 0) {
-                  $('#pyhpc-2020').addClass('pastcfp');
-                  $('#pyhpc-2020 .timer').replaceWith($('#pyhpc-2020 .deadline'));
-                  $('#pyhpc-2020 .timer-small').replaceWith($('#pyhpc-2020 .deadline'));
-                  $('#pyhpc-2020 .calendar').remove();
-                }
-
-                if (confDiff < 0) {
-                  $('#pyhpc-2020').addClass('pastconf');
-                  $('#pyhpc-2020 .timer').replaceWith($('#pyhpc-2020 .deadline'));
-                  $('#pyhpc-2020 .timer-small').replaceWith($('#pyhpc-2020 .deadline'));
-                  $('#pyhpc-2020 .calendar').remove();
-                }
-
-
-
-
-
-
-
-                // Use specified timezone for deadlines if available else use AoE timezone
-
-                  var cfpDate = DateTime.fromSQL("2018-09-09 23:59:00", { zone: "UTC-12" });
-                  var confDate = DateTime.fromSQL("2018-11-12", { zone: "UTC-12" });
-
-
-                // check if timezone is valid otherwise replace by system timezone
-                if (cfpDate.invalid || confDate.invalid) {
-                  var cfpDate = DateTime.fromSQL("2018-09-09 23:59:00");
-                  var confDate = DateTime.fromSQL("2018-11-12");
-                  console.log("Invalid timezone in pyhpc-2018. Using system timezone instead.");
-                }
-
-                // render countdown timer
-                $('#pyhpc-2018 .timer').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
-                });
-
-                // render countdown timer small
-                $('#pyhpc-2018 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%Dd %H:%M:%S'));
-                });
-
-                // deadline in local timezone
-                $('#pyhpc-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
-
-                // add calendar button
-                try {
-                  var myCalendar = createCalendarFromObject({
-                    id: 'pyhpc-2018',
-                    title: 'PyHPC 2018 deadline',
-                    start_date: cfpDate.toJSDate(),
-                    duration: 60,
-                    place: 'Dallas, USA',
-                    link: 'https://web.archive.org/web/20201023081255/https://www.dlr.de/sc/desktopdefault.aspx/tabid-12954/22625_read-52397/'
-                  });
-                  document.querySelector('#pyhpc-2018 .calendar').appendChild(myCalendar);
-                } catch (err) {
-                  document.querySelector('#pyhpc-2018 .calendar').appendChild("<p>Calendar not available.</p>");
-                  console.log("Error in cfp date.");
-                }
-
-                // check if date has passed, add 'past' class to it
-                cfpDiff = cfpDate.diffNow("seconds");
-                confDiff = confDate.diffNow("seconds");
-
-                $('#pyhpc-2018').attr("cfpDiff", cfpDiff.toMillis());
-                $('#pyhpc-2018').attr("confDiff", confDiff.toMillis());
-
-                if (cfpDiff < 0) {
-                  $('#pyhpc-2018').addClass('pastcfp');
-                  $('#pyhpc-2018 .timer').replaceWith($('#pyhpc-2018 .deadline'));
-                  $('#pyhpc-2018 .timer-small').replaceWith($('#pyhpc-2018 .deadline'));
-                  $('#pyhpc-2018 .calendar').remove();
-                }
-
-                if (confDiff < 0) {
-                  $('#pyhpc-2018').addClass('pastconf');
-                  $('#pyhpc-2018 .timer').replaceWith($('#pyhpc-2018 .deadline'));
-                  $('#pyhpc-2018 .timer-small').replaceWith($('#pyhpc-2018 .deadline'));
-                  $('#pyhpc-2018 .calendar').remove();
-                }
-
-
-
-
-
-
-
-                // Use specified timezone for deadlines if available else use AoE timezone
-
-                  var cfpDate = DateTime.fromSQL("2017-09-01 23:59:00", { zone: "UTC-12" });
-                  var confDate = DateTime.fromSQL("2017-11-12", { zone: "UTC-12" });
-
-
-                // check if timezone is valid otherwise replace by system timezone
-                if (cfpDate.invalid || confDate.invalid) {
-                  var cfpDate = DateTime.fromSQL("2017-09-01 23:59:00");
-                  var confDate = DateTime.fromSQL("2017-11-12");
-                  console.log("Invalid timezone in pyhpc-2017. Using system timezone instead.");
-                }
-
-                // render countdown timer
-                $('#pyhpc-2017 .timer').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
-                });
-
-                // render countdown timer small
-                $('#pyhpc-2017 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%Dd %H:%M:%S'));
-                });
-
-                // deadline in local timezone
-                $('#pyhpc-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
-
-                // add calendar button
-                try {
-                  var myCalendar = createCalendarFromObject({
-                    id: 'pyhpc-2017',
-                    title: 'PyHPC 2017 deadline',
-                    start_date: cfpDate.toJSDate(),
-                    duration: 60,
-                    place: 'Denver, USA',
-                    link: 'https://web.archive.org/web/20171116191554/http://www.dlr.de/sc/desktopdefault.aspx/tabid-11992/21071_read-48990'
-                  });
-                  document.querySelector('#pyhpc-2017 .calendar').appendChild(myCalendar);
-                } catch (err) {
-                  document.querySelector('#pyhpc-2017 .calendar').appendChild("<p>Calendar not available.</p>");
-                  console.log("Error in cfp date.");
-                }
-
-                // check if date has passed, add 'past' class to it
-                cfpDiff = cfpDate.diffNow("seconds");
-                confDiff = confDate.diffNow("seconds");
-
-                $('#pyhpc-2017').attr("cfpDiff", cfpDiff.toMillis());
-                $('#pyhpc-2017').attr("confDiff", confDiff.toMillis());
-
-                if (cfpDiff < 0) {
-                  $('#pyhpc-2017').addClass('pastcfp');
-                  $('#pyhpc-2017 .timer').replaceWith($('#pyhpc-2017 .deadline'));
-                  $('#pyhpc-2017 .timer-small').replaceWith($('#pyhpc-2017 .deadline'));
-                  $('#pyhpc-2017 .calendar').remove();
-                }
-
-                if (confDiff < 0) {
-                  $('#pyhpc-2017').addClass('pastconf');
-                  $('#pyhpc-2017 .timer').replaceWith($('#pyhpc-2017 .deadline'));
-                  $('#pyhpc-2017 .timer-small').replaceWith($('#pyhpc-2017 .deadline'));
-                  $('#pyhpc-2017 .calendar').remove();
-                }
-
-
-
-
-
-
-
-                // Use specified timezone for deadlines if available else use AoE timezone
-
-                  var cfpDate = DateTime.fromSQL("2014-09-12 23:59:00", { zone: "UTC-12" });
-                  var confDate = DateTime.fromSQL("2016-11-14", { zone: "UTC-12" });
-
-
-                // check if timezone is valid otherwise replace by system timezone
-                if (cfpDate.invalid || confDate.invalid) {
-                  var cfpDate = DateTime.fromSQL("2014-09-12 23:59:00");
-                  var confDate = DateTime.fromSQL("2016-11-14");
-                  console.log("Invalid timezone in pyhpc-2016. Using system timezone instead.");
-                }
-
-                // render countdown timer
-                $('#pyhpc-2016 .timer').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
-                });
-
-                // render countdown timer small
-                $('#pyhpc-2016 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%Dd %H:%M:%S'));
-                });
-
-                // deadline in local timezone
-                $('#pyhpc-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
-
-                // add calendar button
-                try {
-                  var myCalendar = createCalendarFromObject({
-                    id: 'pyhpc-2016',
-                    title: 'PyHPC 2016 deadline',
-                    start_date: cfpDate.toJSDate(),
-                    duration: 60,
-                    place: 'Salt Lake City, USA',
-                    link: 'https://web.archive.org/web/20161109035636/http://www.dlr.de/sc/desktopdefault.aspx/tabid-11229/19729_read-46082/'
-                  });
-                  document.querySelector('#pyhpc-2016 .calendar').appendChild(myCalendar);
-                } catch (err) {
-                  document.querySelector('#pyhpc-2016 .calendar').appendChild("<p>Calendar not available.</p>");
-                  console.log("Error in cfp date.");
-                }
-
-                // check if date has passed, add 'past' class to it
-                cfpDiff = cfpDate.diffNow("seconds");
-                confDiff = confDate.diffNow("seconds");
-
-                $('#pyhpc-2016').attr("cfpDiff", cfpDiff.toMillis());
-                $('#pyhpc-2016').attr("confDiff", confDiff.toMillis());
-
-                if (cfpDiff < 0) {
-                  $('#pyhpc-2016').addClass('pastcfp');
-                  $('#pyhpc-2016 .timer').replaceWith($('#pyhpc-2016 .deadline'));
-                  $('#pyhpc-2016 .timer-small').replaceWith($('#pyhpc-2016 .deadline'));
-                  $('#pyhpc-2016 .calendar').remove();
-                }
-
-                if (confDiff < 0) {
-                  $('#pyhpc-2016').addClass('pastconf');
-                  $('#pyhpc-2016 .timer').replaceWith($('#pyhpc-2016 .deadline'));
-                  $('#pyhpc-2016 .timer-small').replaceWith($('#pyhpc-2016 .deadline'));
-                  $('#pyhpc-2016 .calendar').remove();
-                }
-
-
-
-
-
-
-
-                // Use specified timezone for deadlines if available else use AoE timezone
-
-                  var cfpDate = DateTime.fromSQL("2015-09-04 23:59:00", { zone: "UTC-12" });
-                  var confDate = DateTime.fromSQL("2015-11-15", { zone: "UTC-12" });
-
-
-                // check if timezone is valid otherwise replace by system timezone
-                if (cfpDate.invalid || confDate.invalid) {
-                  var cfpDate = DateTime.fromSQL("2015-09-04 23:59:00");
-                  var confDate = DateTime.fromSQL("2015-11-15");
-                  console.log("Invalid timezone in pyhpc-2015. Using system timezone instead.");
-                }
-
-                // render countdown timer
-                $('#pyhpc-2015 .timer').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
-                });
-
-                // render countdown timer small
-                $('#pyhpc-2015 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%Dd %H:%M:%S'));
-                });
-
-                // deadline in local timezone
-                $('#pyhpc-2015 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
-
-                // add calendar button
-                try {
-                  var myCalendar = createCalendarFromObject({
-                    id: 'pyhpc-2015',
-                    title: 'PyHPC 2015 deadline',
-                    start_date: cfpDate.toJSDate(),
-                    duration: 60,
-                    place: 'Austin, USA',
-                    link: 'https://web.archive.org/web/20150829112426/http://www.dlr.de/sc/desktopdefault.aspx/tabid-10388/17849_read-42322'
-                  });
-                  document.querySelector('#pyhpc-2015 .calendar').appendChild(myCalendar);
-                } catch (err) {
-                  document.querySelector('#pyhpc-2015 .calendar').appendChild("<p>Calendar not available.</p>");
-                  console.log("Error in cfp date.");
-                }
-
-                // check if date has passed, add 'past' class to it
-                cfpDiff = cfpDate.diffNow("seconds");
-                confDiff = confDate.diffNow("seconds");
-
-                $('#pyhpc-2015').attr("cfpDiff", cfpDiff.toMillis());
-                $('#pyhpc-2015').attr("confDiff", confDiff.toMillis());
-
-                if (cfpDiff < 0) {
-                  $('#pyhpc-2015').addClass('pastcfp');
-                  $('#pyhpc-2015 .timer').replaceWith($('#pyhpc-2015 .deadline'));
-                  $('#pyhpc-2015 .timer-small').replaceWith($('#pyhpc-2015 .deadline'));
-                  $('#pyhpc-2015 .calendar').remove();
-                }
-
-                if (confDiff < 0) {
-                  $('#pyhpc-2015').addClass('pastconf');
-                  $('#pyhpc-2015 .timer').replaceWith($('#pyhpc-2015 .deadline'));
-                  $('#pyhpc-2015 .timer-small').replaceWith($('#pyhpc-2015 .deadline'));
-                  $('#pyhpc-2015 .calendar').remove();
-                }
-
-
-
-
-
-
-
-                // Use specified timezone for deadlines if available else use AoE timezone
-
-                  var cfpDate = DateTime.fromSQL("2014-09-12 23:59:00", { zone: "UTC-12" });
-                  var confDate = DateTime.fromSQL("2014-11-17", { zone: "UTC-12" });
-
-
-                // check if timezone is valid otherwise replace by system timezone
-                if (cfpDate.invalid || confDate.invalid) {
-                  var cfpDate = DateTime.fromSQL("2014-09-12 23:59:00");
-                  var confDate = DateTime.fromSQL("2014-11-17");
-                  console.log("Invalid timezone in pyhpc-2014. Using system timezone instead.");
-                }
-
-                // render countdown timer
-                $('#pyhpc-2014 .timer').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
-                });
-
-                // render countdown timer small
-                $('#pyhpc-2014 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%Dd %H:%M:%S'));
-                });
-
-                // deadline in local timezone
-                $('#pyhpc-2014 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
-
-                // add calendar button
-                try {
-                  var myCalendar = createCalendarFromObject({
-                    id: 'pyhpc-2014',
-                    title: 'PyHPC 2014 deadline',
-                    start_date: cfpDate.toJSDate(),
-                    duration: 60,
-                    place: 'New Orleans, USA',
-                    link: 'https://web.archive.org/web/20141117032857/http://www.dlr.de/sc/desktopdefault.aspx/tabid-9506/16384_read-40102'
-                  });
-                  document.querySelector('#pyhpc-2014 .calendar').appendChild(myCalendar);
-                } catch (err) {
-                  document.querySelector('#pyhpc-2014 .calendar').appendChild("<p>Calendar not available.</p>");
-                  console.log("Error in cfp date.");
-                }
-
-                // check if date has passed, add 'past' class to it
-                cfpDiff = cfpDate.diffNow("seconds");
-                confDiff = confDate.diffNow("seconds");
-
-                $('#pyhpc-2014').attr("cfpDiff", cfpDiff.toMillis());
-                $('#pyhpc-2014').attr("confDiff", confDiff.toMillis());
-
-                if (cfpDiff < 0) {
-                  $('#pyhpc-2014').addClass('pastcfp');
-                  $('#pyhpc-2014 .timer').replaceWith($('#pyhpc-2014 .deadline'));
-                  $('#pyhpc-2014 .timer-small').replaceWith($('#pyhpc-2014 .deadline'));
-                  $('#pyhpc-2014 .calendar').remove();
-                }
-
-                if (confDiff < 0) {
-                  $('#pyhpc-2014').addClass('pastconf');
-                  $('#pyhpc-2014 .timer').replaceWith($('#pyhpc-2014 .deadline'));
-                  $('#pyhpc-2014 .timer-small').replaceWith($('#pyhpc-2014 .deadline'));
-                  $('#pyhpc-2014 .calendar').remove();
-                }
-
-
-
-
-
-
-
-                // Use specified timezone for deadlines if available else use AoE timezone
-
-                  var cfpDate = DateTime.fromSQL("2013-09-20 23:59:00", { zone: "UTC-12" });
-                  var confDate = DateTime.fromSQL("2013-11-18", { zone: "UTC-12" });
-
-
-                // check if timezone is valid otherwise replace by system timezone
-                if (cfpDate.invalid || confDate.invalid) {
-                  var cfpDate = DateTime.fromSQL("2013-09-20 23:59:00");
-                  var confDate = DateTime.fromSQL("2013-11-18");
-                  console.log("Invalid timezone in pyhpc-2013. Using system timezone instead.");
-                }
-
-                // render countdown timer
-                $('#pyhpc-2013 .timer').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
-                });
-
-                // render countdown timer small
-                $('#pyhpc-2013 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%Dd %H:%M:%S'));
-                });
-
-                // deadline in local timezone
-                $('#pyhpc-2013 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
-
-                // add calendar button
-                try {
-                  var myCalendar = createCalendarFromObject({
-                    id: 'pyhpc-2013',
-                    title: 'PyHPC 2013 deadline',
-                    start_date: cfpDate.toJSDate(),
-                    duration: 60,
-                    place: 'Denver, USA',
-                    link: 'https://web.archive.org/web/20131118193245/http://www.dlr.de/sc/desktopdefault.aspx/tabid-8685/14943_read-37157/'
-                  });
-                  document.querySelector('#pyhpc-2013 .calendar').appendChild(myCalendar);
-                } catch (err) {
-                  document.querySelector('#pyhpc-2013 .calendar').appendChild("<p>Calendar not available.</p>");
-                  console.log("Error in cfp date.");
-                }
-
-                // check if date has passed, add 'past' class to it
-                cfpDiff = cfpDate.diffNow("seconds");
-                confDiff = confDate.diffNow("seconds");
-
-                $('#pyhpc-2013').attr("cfpDiff", cfpDiff.toMillis());
-                $('#pyhpc-2013').attr("confDiff", confDiff.toMillis());
-
-                if (cfpDiff < 0) {
-                  $('#pyhpc-2013').addClass('pastcfp');
-                  $('#pyhpc-2013 .timer').replaceWith($('#pyhpc-2013 .deadline'));
-                  $('#pyhpc-2013 .timer-small').replaceWith($('#pyhpc-2013 .deadline'));
-                  $('#pyhpc-2013 .calendar').remove();
-                }
-
-                if (confDiff < 0) {
-                  $('#pyhpc-2013').addClass('pastconf');
-                  $('#pyhpc-2013 .timer').replaceWith($('#pyhpc-2013 .deadline'));
-                  $('#pyhpc-2013 .timer-small').replaceWith($('#pyhpc-2013 .deadline'));
-                  $('#pyhpc-2013 .calendar').remove();
-                }
-
-
-
-
-
-
-
-                // Use specified timezone for deadlines if available else use AoE timezone
-
-                  var cfpDate = DateTime.fromSQL("2012-09-14 23:59:00", { zone: "UTC-12" });
-                  var confDate = DateTime.fromSQL("2012-11-16", { zone: "UTC-12" });
-
-
-                // check if timezone is valid otherwise replace by system timezone
-                if (cfpDate.invalid || confDate.invalid) {
-                  var cfpDate = DateTime.fromSQL("2012-09-14 23:59:00");
-                  var confDate = DateTime.fromSQL("2012-11-16");
-                  console.log("Invalid timezone in pyhpc-2012. Using system timezone instead.");
-                }
-
-                // render countdown timer
-                $('#pyhpc-2012 .timer').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
-                });
-
-                // render countdown timer small
-                $('#pyhpc-2012 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%Dd %H:%M:%S'));
-                });
-
-                // deadline in local timezone
-                $('#pyhpc-2012 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
-
-                // add calendar button
-                try {
-                  var myCalendar = createCalendarFromObject({
-                    id: 'pyhpc-2012',
-                    title: 'PyHPC 2012 deadline',
-                    start_date: cfpDate.toJSDate(),
-                    duration: 60,
-                    place: 'Salt Lake City, USA',
-                    link: 'https://web.archive.org/web/20121115022259/http://www.dlr.de/sc/desktopdefault.aspx/tabid-8028/13765_read-34936/'
-                  });
-                  document.querySelector('#pyhpc-2012 .calendar').appendChild(myCalendar);
-                } catch (err) {
-                  document.querySelector('#pyhpc-2012 .calendar').appendChild("<p>Calendar not available.</p>");
-                  console.log("Error in cfp date.");
-                }
-
-                // check if date has passed, add 'past' class to it
-                cfpDiff = cfpDate.diffNow("seconds");
-                confDiff = confDate.diffNow("seconds");
-
-                $('#pyhpc-2012').attr("cfpDiff", cfpDiff.toMillis());
-                $('#pyhpc-2012').attr("confDiff", confDiff.toMillis());
-
-                if (cfpDiff < 0) {
-                  $('#pyhpc-2012').addClass('pastcfp');
-                  $('#pyhpc-2012 .timer').replaceWith($('#pyhpc-2012 .deadline'));
-                  $('#pyhpc-2012 .timer-small').replaceWith($('#pyhpc-2012 .deadline'));
-                  $('#pyhpc-2012 .calendar').remove();
-                }
-
-                if (confDiff < 0) {
-                  $('#pyhpc-2012').addClass('pastconf');
-                  $('#pyhpc-2012 .timer').replaceWith($('#pyhpc-2012 .deadline'));
-                  $('#pyhpc-2012 .timer-small').replaceWith($('#pyhpc-2012 .deadline'));
-                  $('#pyhpc-2012 .calendar').remove();
-                }
-
-
-
-
-
-
-
-                // Use specified timezone for deadlines if available else use AoE timezone
-
-                  var cfpDate = DateTime.fromSQL("2011-09-19 23:59:00", { zone: "UTC-12" });
-                  var confDate = DateTime.fromSQL("2011-11-18", { zone: "UTC-12" });
-
-
-                // check if timezone is valid otherwise replace by system timezone
-                if (cfpDate.invalid || confDate.invalid) {
-                  var cfpDate = DateTime.fromSQL("2011-09-19 23:59:00");
-                  var confDate = DateTime.fromSQL("2011-11-18");
-                  console.log("Invalid timezone in pyhpc-2011. Using system timezone instead.");
-                }
-
-                // render countdown timer
-                $('#pyhpc-2011 .timer').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
-                });
-
-                // render countdown timer small
-                $('#pyhpc-2011 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
-                  $(this).html(event.strftime('%Dd %H:%M:%S'));
-                });
-
-                // deadline in local timezone
-                $('#pyhpc-2011 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
-
-                // add calendar button
-                try {
-                  var myCalendar = createCalendarFromObject({
-                    id: 'pyhpc-2011',
-                    title: 'PyHPC 2011 deadline',
-                    start_date: cfpDate.toJSDate(),
-                    duration: 60,
-                    place: 'Seattle, USA',
-                    link: 'https://web.archive.org/web/20130923035222/http://www.dlr.de/sc/desktopdefault.aspx/tabid-7632/12996_read-32676/'
-                  });
-                  document.querySelector('#pyhpc-2011 .calendar').appendChild(myCalendar);
-                } catch (err) {
-                  document.querySelector('#pyhpc-2011 .calendar').appendChild("<p>Calendar not available.</p>");
-                  console.log("Error in cfp date.");
-                }
-
-                // check if date has passed, add 'past' class to it
-                cfpDiff = cfpDate.diffNow("seconds");
-                confDiff = confDate.diffNow("seconds");
-
-                $('#pyhpc-2011').attr("cfpDiff", cfpDiff.toMillis());
-                $('#pyhpc-2011').attr("confDiff", confDiff.toMillis());
-
-                if (cfpDiff < 0) {
-                  $('#pyhpc-2011').addClass('pastcfp');
-                  $('#pyhpc-2011 .timer').replaceWith($('#pyhpc-2011 .deadline'));
-                  $('#pyhpc-2011 .timer-small').replaceWith($('#pyhpc-2011 .deadline'));
-                  $('#pyhpc-2011 .calendar').remove();
-                }
-
-                if (confDiff < 0) {
-                  $('#pyhpc-2011').addClass('pastconf');
-                  $('#pyhpc-2011 .timer').replaceWith($('#pyhpc-2011 .deadline'));
-                  $('#pyhpc-2011 .timer-small').replaceWith($('#pyhpc-2011 .deadline'));
-                  $('#pyhpc-2011 .calendar').remove();
-                }
-
-
-
-            // Sort coming_confs and past_confs
-            $("#all_confs .ConfItem").sort(function (a, b) {
-              return $(a).attr('cfpDiff') - $(b).attr('cfpDiff');
-            }).appendTo($("#coming_confs"));
-    </script>
-  </body>
 </html>
