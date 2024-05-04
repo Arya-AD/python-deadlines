@@ -5,6 +5,7 @@ import pandas as pd
 from thefuzz import process
 
 sys.path.append(".")
+from tidy_conf.deduplicate import deduplicate
 from tidy_conf.utils import get_schema, query_yes_no
 from tidy_conf.yaml import load_title_mappings, update_title_mappings
 
@@ -27,6 +28,9 @@ def fuzzy_match(df_yml, df_remote):
     new_rejections = defaultdict(list)
 
     # Make Title the index
+    df_remote = df_remote.set_index("conference", drop=False)
+    df_remote.index.rename("title_match", inplace=True)
+    df_remote = deduplicate(df_remote)
     df_remote = df_remote.set_index("conference", drop=False)
     df_remote.index.rename("title_match", inplace=True)
 
@@ -66,6 +70,7 @@ def fuzzy_match(df_yml, df_remote):
     update_title_mappings(new_rejections, path="utils/tidy_conf/data/.tmp/rejections.yml")
 
     df.set_index("title_match", inplace=True)
+
     # Update missing data in existing records
     df_new = df.combine_first(df_remote)
 

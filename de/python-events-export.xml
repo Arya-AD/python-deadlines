@@ -9,7 +9,16 @@
 		<title>Newsfeed for Python Events Calendar from Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Tue, 30 Apr 2024 06:01:51 +0000</lastBuildDate>
+		<lastBuildDate>Sat, 04 May 2024 10:03:36 +0000</lastBuildDate>
+		
+			<item>
+				<title>Xtreme Python 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: Xtreme Python 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Online<br/>* dates/times/recurrence (incl. time zone): 19. November 2024<br/>* HTML link : <a href="https://xtremepython.dev/2024/">Xtreme Python 2024</a>]]></description>
+				<pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/xtreme-python-2024/</link>
+				<guid isPermaLink="false">xtreme-python-2024</guid>
+				<category>PY</category>
+			</item>
 		
 			<item>
 				<title>PyCon South Africa 2024 Conference Deadline</title>
@@ -26,6 +35,24 @@
 				<pubDate>Thu, 29 Aug 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-poland-2024/</link>
 				<guid isPermaLink="false">pycon-poland-2024</guid>
+				<category>PY</category>
+			</item>
+		
+			<item>
+				<title>PyCon Asia Pacific 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: PyCon Asia Pacific 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Yogyakarta, Indonesia<br/>* dates/times/recurrence (incl. time zone): 25. – 27. Oktober 2024<br/>* HTML link : <a href="https://pycon.id/">PyCon Asia Pacific 2024</a>]]></description>
+				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-asia-pacific-2024/</link>
+				<guid isPermaLink="false">pycon-asia-pacific-2024</guid>
+				<category>PY</category>
+			</item>
+		
+			<item>
+				<title>PyCon France 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: PyCon France 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Strasbourg, France<br/>* dates/times/recurrence (incl. time zone): 31. – 3. Oktober 2024<br/>* HTML link : <a href="https://pycon.fr/2024/">PyCon France 2024</a>]]></description>
+				<pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-france-2024/</link>
+				<guid isPermaLink="false">pycon-france-2024</guid>
 				<category>PY</category>
 			</item>
 		
@@ -71,6 +98,24 @@
 				<pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/piter-py-2024/</link>
 				<guid isPermaLink="false">piter-py-2024</guid>
+				<category>PY</category>
+			</item>
+		
+			<item>
+				<title>PyCon Israel 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: PyCon Israel 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Gelilot, Israel<br/>* dates/times/recurrence (incl. time zone): 16. September 2024<br/>* HTML link : <a href="https://pycon.org.il/2024/">PyCon Israel 2024</a>]]></description>
+				<pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-israel-2024/</link>
+				<guid isPermaLink="false">pycon-israel-2024</guid>
+				<category>PY</category>
+			</item>
+		
+			<item>
+				<title>PyCon Japan 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: PyCon Japan 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Tokyo, Japan<br/>* dates/times/recurrence (incl. time zone): 27. – 29. September 2024<br/>* HTML link : <a href="https://2024.pycon.jp/">PyCon Japan 2024</a>]]></description>
+				<pubDate>Fri, 27 Sep 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-japan-2024/</link>
+				<guid isPermaLink="false">pycon-japan-2024</guid>
 				<category>PY</category>
 			</item>
 		
@@ -148,7 +193,7 @@
 		
 			<item>
 				<title>PyData Eindhoven 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyData Eindhoven 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Eindhoven, Netherlands<br/>* dates/times/recurrence (incl. time zone): 11. Juli 2024<br/>* HTML link : <a href="https://pydata.org/eindhoven2024/">PyData Eindhoven 2024</a>]]></description>
+				<description><![CDATA[* name of the event: PyData Eindhoven 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Eindhoven, Netherlands<br/>* dates/times/recurrence (incl. time zone): 11. Juli 2024<br/>* HTML link : <a href="https://pydata.org/eindhoven2024/call-for-proposals">PyData Eindhoven 2024</a>]]></description>
 				<pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pydata-eindhoven-2024/</link>
 				<guid isPermaLink="false">pydata-eindhoven-2024</guid>
@@ -165,56 +210,11 @@
 			</item>
 		
 			<item>
-				<title>PyCon Portugal 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyCon Portugal 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Braga, Portugal<br/>* dates/times/recurrence (incl. time zone): 17. – 19. Oktober 2024<br/>* HTML link : <a href="https://2024.pycon.pt/">PyCon Portugal 2024</a>]]></description>
-				<pubDate>Thu, 17 Oct 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-portugal-2024/</link>
-				<guid isPermaLink="false">pycon-portugal-2024</guid>
-				<category>PY</category>
-			</item>
-		
-			<item>
-				<title>PyData Vermont 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyData Vermont 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Burlington, Canada<br/>* dates/times/recurrence (incl. time zone): 29. – 30. Juli 2024<br/>* HTML link : <a href="https://pydata.org/vermont2024/">PyData Vermont 2024</a>]]></description>
-				<pubDate>Mon, 29 Jul 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pydata-vermont-2024/</link>
-				<guid isPermaLink="false">pydata-vermont-2024</guid>
-				<category>DATA</category>
-			</item>
-		
-			<item>
-				<title>DjangoCon US 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: DjangoCon US 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Durham, USA<br/>* dates/times/recurrence (incl. time zone): 22. – 27. September 2024<br/>* HTML link : <a href="https://2024.djangocon.us/">DjangoCon US 2024</a>]]></description>
-				<pubDate>Sun, 22 Sep 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/djangocon-us-2024/</link>
-				<guid isPermaLink="false">djangocon-us-2024</guid>
-				<category>WEB</category>
-			</item>
-		
-			<item>
-				<title>Wagtail Space US 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: Wagtail Space US 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Philadelphia, USA<br/>* dates/times/recurrence (incl. time zone): 20. – 22. Juni 2024<br/>* HTML link : <a href="https://us.wagtail.space/">Wagtail Space US 2024</a>]]></description>
-				<pubDate>Thu, 20 Jun 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/wagtail-space-us-2024/</link>
-				<guid isPermaLink="false">wagtail-space-us-2024</guid>
-				<category>WEB</category>
-			</item>
-		
-			<item>
-				<title>Flask Con 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: Flask Con 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Pittsburgh, USA<br/>* dates/times/recurrence (incl. time zone): 17. Mai 2024<br/>* HTML link : <a href="https://flaskcon.com/2024/">Flask Con 2024</a>]]></description>
-				<pubDate>Fri, 17 May 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/flask-con-2024/</link>
-				<guid isPermaLink="false">flask-con-2024</guid>
-				<category>WEB</category>
-			</item>
-		
-			<item>
-				<title>PyCon Estonia 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyCon Estonia 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Tallinn, Estonia<br/>* dates/times/recurrence (incl. time zone): 5. – 6. September 2024<br/>* HTML link : <a href="https://pycon.ee/">PyCon Estonia 2024</a>]]></description>
-				<pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-estonia-2024/</link>
-				<guid isPermaLink="false">pycon-estonia-2024</guid>
+				<title>PyCon Uganda 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: PyCon Uganda 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Kampala, Uganda<br/>* dates/times/recurrence (incl. time zone): 9. – 13. Oktober 2024<br/>* HTML link : <a href="https://ug.pycon.org/2024">PyCon Uganda 2024</a>]]></description>
+				<pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-uganda-2024/</link>
+				<guid isPermaLink="false">pycon-uganda-2024</guid>
 				<category>PY</category>
 			</item>
 		

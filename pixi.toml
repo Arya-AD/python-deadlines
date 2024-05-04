@@ -1,0 +1,24 @@
+[project]
+name = "python-deadlines"
+version = "0.1.0"
+description = "Python deadlines is a Python package to parse and manage deadlines from various sources."
+authors = ["Jesper Dramsch <jesper@dramsch.net>"]
+channels = ["conda-forge"]
+platforms = ["win-64"]
+
+[tasks]
+sort = 'python .\utils\sort_yaml.py'
+merge = 'python .\utils\main.py'
+serve = "bundler exec jekyll serve"
+
+[dependencies]
+python = ">=3.12.3,<3.13"
+thefuzz = ">=0.22.1,<0.23"
+pandas = ">=2.2.2,<2.3"
+iso3166 = ">=2.1.1,<2.2"
+icalendar = ">=5.0.12,<5.1"
+yaml = ">=0.2.5,<0.3"
+pyyaml = ">=6.0.1,<6.1"
+tqdm = ">=4.66.2,<4.67"
+requests = ">=2.31.0,<2.32"
+pre-commit = ">=3.7.0,<3.8"
