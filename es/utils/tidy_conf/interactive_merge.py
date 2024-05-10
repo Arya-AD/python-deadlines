@@ -5,9 +5,13 @@ import pandas as pd
 from thefuzz import process
 
 sys.path.append(".")
+import contextlib
+
 from tidy_conf.deduplicate import deduplicate
-from tidy_conf.utils import get_schema, query_yes_no
-from tidy_conf.yaml import load_title_mappings, update_title_mappings
+from tidy_conf.utils import get_schema
+from tidy_conf.utils import query_yes_no
+from tidy_conf.yaml import load_title_mappings
+from tidy_conf.yaml import update_title_mappings
 
 
 def fuzzy_match(df_yml, df_remote):
@@ -16,9 +20,9 @@ def fuzzy_match(df_yml, df_remote):
     Loads known mappings from a YAML file and uses them to harmonise conference titles.
     Updates those when we find a Fuzzy match.
 
-    Keeps temporary track of rejections to avoid asking the same question multiple times.
+    Keeps temporary track of rejections to avoid asking the same question multiple
+    times.
     """
-
     # Load known title mappings
     _, known_mappings = load_title_mappings(reverse=True)
     _, known_rejections = load_title_mappings(reverse=True, path="utils/tidy_conf/data/.tmp/rejections.yml")
@@ -38,7 +42,7 @@ def fuzzy_match(df_yml, df_remote):
 
     # Get closest match for titles
     df["title_match"] = df["conference"].apply(
-        lambda x: process.extract(x, df_remote["conference"].replace(known_mappings), limit=1)
+        lambda x: process.extract(x, df_remote["conference"].replace(known_mappings), limit=1),
     )
 
     # Get first match if it's over 90
@@ -51,9 +55,9 @@ def fuzzy_match(df_yml, df_remote):
         if prob == 100:
             title = title
         elif prob >= 70:
-            if title in known_rejections and known_rejections[title] == i:
-                title = i
-            elif i in known_rejections and known_rejections[i] == title:
+            if (title in known_rejections and known_rejections[title] == i) or (
+                i in known_rejections and known_rejections[i] == title
+            ):
                 title = i
             else:
                 if not query_yes_no(f"Do '{row['conference']}' and '{title}' match? (y/n): "):
@@ -81,18 +85,13 @@ def fuzzy_match(df_yml, df_remote):
 
 def merge_conferences(df_yml, df_remote):
     """Merge two dataframes on title and interactively resolve conflicts."""
-
     df_new = get_schema()
     columns = df_new.columns.tolist()
 
-    try:
+    with contextlib.suppress(KeyError):
         df_yml = df_yml.drop(["conference"], axis=1)
-    except KeyError:
-        pass
-    try:
+    with contextlib.suppress(KeyError):
         df_remote = df_remote.drop(["conference"], axis=1)
-    except KeyError:
-        pass
 
     replacements = {
         "United States of America": "USA",
@@ -114,9 +113,8 @@ def merge_conferences(df_yml, df_remote):
                     if isinstance(ry, str):
                         ry = ry.replace(orig, replacement)
                 # Prefer my sponsor info if exists
-                if column == "sponsor":
-                    if not pd.isnull(rx):
-                        ry = rx
+                if column == "sponsor" and not pd.isnull(rx):
+                    ry = rx
                 # Some text processing
                 if isinstance(rx, str) and isinstance(ry, str):
                     # Remove whitespaces
@@ -182,20 +180,23 @@ def merge_conferences(df_yml, df_remote):
                             df_new.loc[i, "cfp"] = ry + cfp_time_y
                             df_new.loc[i, "cfp_ext"] = rx + cfp_time_x
                             continue
-                        elif ry + cfp_time_y == row["cfp_ext"]:
+                        if ry + cfp_time_y == row["cfp_ext"]:
                             df_new.loc[i, "cfp"] = rx + cfp_time_x
                             df_new.loc[i, "cfp_ext"] = ry + cfp_time_y
                             continue
                         # Give a choice
                         if query_yes_no(
-                            f"For {i} in column '{column}' would you prefer '{ry+cfp_time_y}' or keep '{rx+ cfp_time_x}'?"
+                            (
+                                f"For {i} in column '{column}' would you prefer "
+                                f"'{ry + cfp_time_y}' or keep '{rx + cfp_time_x}'?"
+                            ),
                         ):
                             df_new.loc[i, column] = ry + cfp_time_y
                         else:
                             # Check if it's an extension of the deadline and update both
                             if query_yes_no("Is this an extension?"):
                                 rrx, rry = int(rx.replace("-", "").split(" ")[0]), int(
-                                    ry.replace("-", "").split(" ")[0]
+                                    ry.replace("-", "").split(" ")[0],
                                 )
                                 if rrx < rry:
                                     df_new.loc[i, "cfp"] = rx + cfp_time_x
@@ -211,9 +212,7 @@ def merge_conferences(df_yml, df_remote):
                     ryy = ", ".join((ry.split(",")[0].strip(), ry.split(",")[-1].strip())) if "," in ry else ry
 
                     # Chill on the TBA
-                    if rxx == ryy:
-                        df_new.loc[i, column] = ryy
-                    elif rxx in ["TBD", "TBA", "None"]:
+                    if rxx == ryy or rxx in ["TBD", "TBA", "None"]:
                         df_new.loc[i, column] = ryy
                     elif ryy in ["TBD", "TBA", "None"]:
                         df_new.loc[i, column] = rxx

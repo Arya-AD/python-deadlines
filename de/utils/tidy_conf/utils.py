@@ -1,12 +1,14 @@
-import yaml
-import pandas as pd
 import sys
+from pathlib import Path
+
+import pandas as pd
+import yaml
 
 try:
     from yaml import CDumper as Dumper
     from yaml import CLoader as Loader
 except ImportError:
-    from yaml import Loader, Dumper
+    from yaml import Dumper, Loader
 
 from yaml.representer import SafeRepresenter
 
@@ -27,8 +29,8 @@ Loader.add_constructor(_mapping_tag, dict_constructor)
 Dumper.add_representer(str, SafeRepresenter.represent_str)
 
 
-def ordered_dump(data, stream=None, Dumper=yaml.Dumper, **kwds):
-    class OrderedDumper(Dumper):
+def ordered_dump(data, stream=None, dumper=yaml.Dumper, **kwds):
+    class OrderedDumper(dumper):
         pass
 
     def _dict_representer(dumper, data):
@@ -38,8 +40,8 @@ def ordered_dump(data, stream=None, Dumper=yaml.Dumper, **kwds):
     return yaml.dump(data, stream, OrderedDumper, **kwds)
 
 
-def pretty_print(header, conf, tba=None, expired=None):
-    """Print order of conferences
+def pretty_print(header, conf, tba=None, expired=None) -> None:
+    """Print order of conferences.
 
     Args:
         header (_type_): Header for print
@@ -51,9 +53,9 @@ def pretty_print(header, conf, tba=None, expired=None):
     for data in [conf, tba, expired]:
         if data is not None:
             for q in data:
-                try:
+                if "cfp" in q and "conference" in q:
                     print(q["cfp"], " - ", q["conference"])
-                except KeyError:
+                else:
                     print(q)
             print("\n")
 
@@ -63,8 +65,8 @@ def get_schema():
 
     This is used to determine the order of and accepted keys in a conference item.
     """
-    with open("utils/schema.yml", "r") as file:
-        data = yaml.load(file, Loader=yaml.FullLoader)
+    with Path("utils", "schema.yml").open() as file:
+        data = yaml.safe_load(file)
 
     # Convert the YAML data to a Pandas DataFrame
     return pd.DataFrame.from_dict(data).drop(index=0)
@@ -74,32 +76,29 @@ def get_schema():
 def query_yes_no(question, default="no"):
     """Ask a yes/no question via input() and return their answer.
 
-    "question" is a string that is presented to the user.
-    "default" is the presumed answer if the user just hits <Enter>.
-        It must be "yes" (the default), "no" or None (meaning
-        an answer is required of the user).
+    "question" is a string that is presented to the user. "default" is the presumed
+    answer if the user just hits <Enter>.     It must be "yes" (the default), "no" or
+    None (meaning     an answer is required of the user).
 
     The "answer" return value is True for "yes" or False for "no".
     """
     valid = {"yes": True, "y": True, "ye": True, "no": False, "n": False}
-    if default is None:
-        prompt = " [y/n] "
-    elif default == "yes":
-        prompt = " [Y/n] "
-    elif default == "no":
-        prompt = " [y/N] "
-    else:
-        raise ValueError("invalid default answer: '%s'" % default)
+    match default:
+        case "yes":
+            prompt = " [Y/n] "
+        case "no":
+            prompt = " [y/N] "
+        case _:
+            prompt = " [y/n] "
 
     while True:
         sys.stdout.write(question + prompt)
         choice = input().lower()
         if default is not None and choice == "":
             return valid[default]
-        elif choice in valid:
+        if choice in valid:
             return valid[choice]
-        else:
-            sys.stdout.write("Please respond with 'yes' or 'no' " "(or 'y' or 'n').\n")
+        sys.stdout.write("Please respond with 'yes' or 'no' (or 'y' or 'n').\n")
 
 
 def fill_missing_required(df):
@@ -118,7 +117,7 @@ def fill_missing_required(df):
         for keyword in required:
             if pd.isna(row[keyword]):
                 user_input = input(
-                    f"What's the value of '{keyword}' for conference '{row['conference']}' check {row['link']} ?: "
+                    f"What's the value of '{keyword}' for conference '{row['conference']}' check {row['link']} ?: ",
                 )
                 if user_input != "":
                     df.loc[i, keyword] = user_input

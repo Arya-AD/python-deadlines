@@ -7,7 +7,6 @@ from tqdm import tqdm
 
 def add_latlon(data):
     """Add latitude and longitude to the data."""
-
     # Cache for locations
     cache = {}
     # Copy of data for unlocated conferences
@@ -18,7 +17,7 @@ def add_latlon(data):
         if ("place" not in q) or ("online" in q["place"].lower()):
             # Ignore online conferences
             continue
-        elif "location" in q:
+        if "location" in q:
             # If location is already present, add it to the cache
             cache[q["place"]] = q["location"][0]
             # continue
@@ -48,13 +47,13 @@ def add_latlon(data):
                         "title": f'{q["conference"]} {q["year"]}',
                         "latitude": cache[place]["latitude"],
                         "longitude": cache[place]["longitude"],
-                    }
+                    },
                 ]
 
             else:
                 # Get the location from Openstreetmaps
                 url = "https://nominatim.openstreetmap.org/search" + "?format=json&q=" + urllib.parse.quote(place)
-                response = requests.get(url)
+                response = requests.get(url, timeout=10)
 
                 if response:
                     try:
@@ -64,7 +63,7 @@ def add_latlon(data):
                                 "title": f'{q["conference"]} {q["year"]}',
                                 "latitude": float(response[0]["lat"]),
                                 "longitude": float(response[0]["lon"]),
-                            }
+                            },
                         ]
                         cache[place] = new_location[-1]
                     except IndexError:

@@ -10,11 +10,14 @@ def clean_dates(data):
     This function makes sure `start` and `end` dates are in the correct format.
     Then we go through the deadlines and make sure they contain a time signature.
     """
-
     # Clean Up Dates
     for dates in ["start", "end"]:
         if isinstance(data[dates], str):
-            data[dates] = datetime.datetime.strptime(data[dates], dateformat.split(" ")[0]).date()
+            data[dates] = (
+                datetime.datetime.strptime(data[dates], dateformat.split(" ")[0])
+                .replace(tzinfo=datetime.timezone.utc)
+                .date()
+            )
 
     # Make deadlines
     for datetimes in ["cfp", "workshop_deadline", "tutorial_deadline"]:
@@ -29,7 +32,9 @@ def clean_dates(data):
             data[datetimes] = data[datetimes].strftime(dateformat.split(" ")[0])
         if data[datetimes].lower() not in tba_words:
             try:
-                tmp_time = datetime.datetime.strptime(data[datetimes], dateformat.split(" ")[0])
+                tmp_time = datetime.datetime.strptime(data[datetimes], dateformat.split(" ")[0]).replace(
+                    tzinfo=datetime.timezone.utc,
+                )
                 if tmp_time.hour == 0 and tmp_time.minute == 0:
                     tmp_time += datetime.timedelta(hours=23, minutes=59)
                 data[datetimes] = tmp_time.strftime(dateformat)
@@ -50,8 +55,10 @@ def create_nice_date(data):
     This overwrites the written `date` field with a more human-readable preferred date.
     """
     try:
-        start = datetime.datetime.strptime(data["start"], dateformat.split(" ")[0])
-        end = datetime.datetime.strptime(data["end"], dateformat.split(" ")[0])
+        start = datetime.datetime.strptime(data["start"], dateformat.split(" ")[0]).replace(
+            tzinfo=datetime.timezone.utc,
+        )
+        end = datetime.datetime.strptime(data["end"], dateformat.split(" ")[0]).replace(tzinfo=datetime.timezone.utc)
     except TypeError:
         start = data["start"]
         end = data["end"]

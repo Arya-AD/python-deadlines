@@ -3,17 +3,16 @@ import sys
 import yaml
 
 sys.path.append(".")
+import contextlib
 from pathlib import Path
-from typing import Union
 
 import pandas as pd
-
 from tidy_conf.utils import get_schema
 
 from .utils import ordered_dump
 
 
-def write_conference_yaml(data: Union[list[dict], pd.DataFrame], url: str) -> None:
+def write_conference_yaml(data: list[dict] | pd.DataFrame, url: str) -> None:
     """Write a list of dictionaries to a YAML file.
 
     Parameters
@@ -25,10 +24,12 @@ def write_conference_yaml(data: Union[list[dict], pd.DataFrame], url: str) -> No
     """
     if isinstance(data, pd.DataFrame):
         data = [{k: v for k, v in record.items() if pd.notnull(v)} for record in data.to_dict(orient="records")]
-    with open(url, "w", encoding="utf-8") as outfile:
+    with Path(url).open(
+        "w",
+    ) as outfile:
         for line in ordered_dump(
             data,
-            Dumper=yaml.SafeDumper,
+            dumper=yaml.SafeDumper,
             default_flow_style=False,
             explicit_start=True,
             allow_unicode=True,
@@ -45,16 +46,17 @@ def load_conferences() -> pd.DataFrame:
     pd.DataFrame
         DataFrame conforming with schema.yaml from conferences in _data.
     """
-
     schema = get_schema()
 
+    data = Path("_data")
+
     # Load the YAML file
-    with open("_data/conferences.yml", "r", encoding="utf-8") as file:
-        data = yaml.load(file, Loader=yaml.FullLoader)
-    with open("_data/archive.yml", "r", encoding="utf-8") as file:
-        archive = yaml.load(file, Loader=yaml.FullLoader)
-    with open("_data/legacy.yml", "r", encoding="utf-8") as file:
-        legacy = yaml.load(file, Loader=yaml.FullLoader)
+    with Path(data, "conferences.yml").open() as file:
+        data = yaml.safe_load(file)
+    with Path(data, "archive.yml").open() as file:
+        archive = yaml.safe_load(file)
+    with Path(data, "legacy.yml").open() as file:
+        legacy = yaml.safe_load(file)
 
     # Convert the YAML data to a Pandas DataFrame
     return pd.concat(
@@ -72,12 +74,12 @@ def load_title_mappings(reverse=False, path="utils/tidy_conf/data/titles.yml"):
 
         # Check if the file exists, and create it if it doesn't
         if not path.is_file():
-            with open(path, "w", encoding="utf-8") as file:
+            with path.open("w") as file:
                 yaml.dump({"spelling": [], "alt_name": {}}, file, default_flow_style=False, allow_unicode=True)
         return [], {}
 
-    with open(path, "r", encoding="utf-8") as file:
-        data = yaml.load(file, Loader=yaml.FullLoader)
+    with path.open() as file:
+        data = yaml.safe_load(file)
     spellings = data["spelling"]
 
     alt_names = data["alt_name"]
@@ -94,22 +96,24 @@ def update_title_mappings(data, path="utils/tidy_conf/data/titles.yml"):
     path = Path(path)
     if not path.exists():
         path.parent.mkdir(parents=True, exist_ok=True)
-        with open(path, "w", encoding="utf-8") as file:
+        with path.open(
+            "w",
+        ) as file:
             yaml.dump({"spelling": [], "alt_name": data}, file, default_flow_style=False, allow_unicode=True)
     else:
-        with open(path, "r", encoding="utf-8") as file:
-            title_data = yaml.load(file, Loader=yaml.FullLoader)
+        with path.open() as file:
+            title_data = yaml.safe_load(file)
         title_data["alt_name"].update(data)
-        with open(path, "w", encoding="utf-8") as file:
+        with path.open(
+            "w",
+        ) as file:
             yaml.dump(title_data, file, default_flow_style=False, allow_unicode=True)
 
 
 def write_df_yaml(df, out_url):
     """Write a conference DataFrame to a YAML file with the right types."""
-    try:
+    with contextlib.suppress(KeyError):
         df = df.drop(["Country", "Venue"], axis=1)
-    except KeyError:
-        pass
     df["end"] = pd.to_datetime(df["end"]).dt.date
     df["start"] = pd.to_datetime(df["start"]).dt.date
     df["year"] = df["year"].astype(int)

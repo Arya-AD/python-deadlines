@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-# coding: utf-8
 
 # Sort and Clean conference data.
-
+import contextlib
 import datetime
 import sys
 import time
+from datetime import timezone
 from pathlib import Path
 
 import pytz
@@ -13,12 +13,17 @@ import yaml
 from tqdm import tqdm
 
 sys.path.append(".")
-from tidy_conf import auto_add_sub, write_conference_yaml
-from tidy_conf.date import clean_dates, create_nice_date
+import operator
+
+from tidy_conf import auto_add_sub
+from tidy_conf import write_conference_yaml
+from tidy_conf.date import clean_dates
 from tidy_conf.latlon import add_latlon
 from tidy_conf.links import check_link_availability
 from tidy_conf.titles import tidy_titles
-from tidy_conf.utils import Loader, get_schema, query_yes_no
+from tidy_conf.utils import Loader
+from tidy_conf.utils import get_schema
+from tidy_conf.utils import query_yes_no
 
 dateformat = "%Y-%m-%d %H:%M:%S"
 tba_words = ["tba", "tbd", "cancelled", "none", "na", "n/a", "nan", "n.a."]
@@ -38,9 +43,9 @@ def sort_by_cfp(data):
                 data.get("timezone", "AoE")
                 .replace("AoE", "Etc/GMT+12")
                 .replace("UTC+", "Etc/GMT-")
-                .replace("UTC-", "Etc/GMT+")
-            )
-        )
+                .replace("UTC-", "Etc/GMT+"),
+            ),
+        ),
     ).strftime(dateformat)
 
 
@@ -53,13 +58,13 @@ def sort_by_date(data):
 
 def sort_by_date_passed(data):
     """Sort data by date passed."""
-    right_now = datetime.datetime.utcnow().replace(microsecond=0).strftime(dateformat)
+    right_now = datetime.datetime.now(tz=timezone.utc).replace(microsecond=0).strftime(dateformat)
     return sort_by_cfp(data) < right_now
 
 
 def sort_by_name(data):
     """Sort by name."""
-    return f'{data["conference"]} {str(data["year"])}'.lower()
+    return f'{data["conference"]} {data["year"]!s}'.lower()
 
 
 def order_keywords(data):
@@ -112,9 +117,9 @@ def split_data(data):
             q["cfp"] += " 23:59:00"
         if "cfp_ext" in q and " " not in q["cfp_ext"]:
             q["cfp_ext"] += " 23:59:00"
-        if q.get("end", datetime.datetime.utcnow().replace(microsecond=0).date()) < datetime.datetime.utcnow().replace(
-            microsecond=0
-        ).date() - datetime.timedelta(days=37):
+        if q.get("end", datetime.datetime.now(tz=timezone.utc).replace(microsecond=0).date()) < datetime.datetime.now(
+            tz=timezone.utc,
+        ).replace(microsecond=0).date() - datetime.timedelta(days=37):
             if q["cfp"].lower() == "tba":
                 legacy.append(q)
             else:
@@ -127,13 +132,13 @@ def split_data(data):
             else:
                 conf.append(q)
         except KeyError:
-            print(data["cfp"].lower(), tba_words)
+            pass
     return conf, tba, expired, legacy
 
 
 def check_links(data):
     """Check the links in the data iteratively."""
-    for i, q in tqdm(enumerate(sorted(data, key=lambda x: x["year"], reverse=True)), total=len(data)):
+    for i, q in tqdm(enumerate(sorted(data, key=operator.itemgetter("year"), reverse=True)), total=len(data)):
         for key in ("link", "cfp_link", "sponsor", "finaid"):
             if key in q:
                 new_link = check_link_availability(q[key], q["start"])
@@ -146,9 +151,8 @@ def check_links(data):
 
 
 # Sort:
-def sort_data(base="", prefix=""):
+def sort_data(base="", prefix="", skip_links=False):
     """Sort and clean the conference data."""
-
     # Load different data files
     current = Path(base, "_data", "conferences.yml")
     out_current = Path(base, "_data", f"{prefix}conferences.yml")
@@ -160,46 +164,36 @@ def sort_data(base="", prefix=""):
     data = []
 
     for url in (current, archive, legacy):
-        with open(url, "r", encoding="utf-8") as stream:
-            try:
-                data += yaml.load(stream, Loader=Loader)
-            except yaml.YAMLError as exc:
-                print(exc)
+        with url.open() as stream, contextlib.suppress(yaml.YAMLError):
+            if stream:
+                data += yaml.load(stream, Loader=Loader)  # nosec B506 # noqa: S506
 
-    print("Sorting Keywords:")
     for i, q in enumerate(data.copy()):
         data[i] = order_keywords(q)
 
     # Clean Dates
-    print("Cleaning Dates")
     data = tidy_dates(data)
 
     # Clean Titles
-    print("Cleaning Titles")
     data = tidy_titles(data)
 
     # Add Sub
-    print("Adding Sub")
     data = auto_add_sub(data)
 
     # Geocode Data
-    print("Adding Lat Lon from Place")
     data = add_latlon(data)
 
     # Merge duplicates
-    print("Merging duplicates")
     data = merge_duplicates(data)
 
     # Check Links
-    if query_yes_no("Check Links?"):
+    if not skip_links and query_yes_no("Check Links?"):
         data = check_links(data)
 
-    print("Sorting Keywords:")
     for i, q in enumerate(data.copy()):
         data[i] = order_keywords(q)
 
     # Split data by cfp
-    print("Splitting conferences, tba, and archive")
     conf, tba, expired, legacy = split_data(data)
 
     # just sort:
@@ -224,4 +218,4 @@ def sort_data(base="", prefix=""):
 
 
 if __name__ == "__main__":
-    sort_data()
+    sort_data(skip_links=True)

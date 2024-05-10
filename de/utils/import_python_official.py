@@ -1,24 +1,26 @@
 import re
-import sys
-from datetime import datetime, timedelta
+from datetime import datetime
+from datetime import timedelta
+from datetime import timezone
 from pathlib import Path
 from urllib import request
 
 import pandas as pd
 from icalendar import Calendar
-
-sys.path.append(".")
-from tidy_conf import fuzzy_match, load_conferences, merge_conferences
+from tidy_conf import fuzzy_match
+from tidy_conf import load_conferences
+from tidy_conf import merge_conferences
 from tidy_conf.date import create_nice_date
 from tidy_conf.utils import fill_missing_required
-from tidy_conf.yaml import load_title_mappings, write_df_yaml
+from tidy_conf.yaml import load_title_mappings
+from tidy_conf.yaml import write_df_yaml
 
 
 def ics_to_dataframe():
     """Parse an .ics file and return a DataFrame with the event data."""
     # Open the .ics file and parse it into a Calendar object
     with request.urlopen(
-        "https://www.google.com/calendar/ical/j7gov1cmnqr9tvg14k621j7t5c@group.calendar.google.com/public/basic.ics"
+        "https://www.google.com/calendar/ical/j7gov1cmnqr9tvg14k621j7t5c@group.calendar.google.com/public/basic.ics",
     ) as file:
         calendar = Calendar.from_ical(file.read())
 
@@ -54,7 +56,7 @@ def ics_to_dataframe():
                     .replace("&apos;", "'")
                     .replace("&lt;", "<")
                     .replace("&gt;", ">")
-                    .split("<a ")[1:]
+                    .split("<a ")[1:],
                 ),
             )
 
@@ -63,8 +65,6 @@ def ics_to_dataframe():
                 link = m.group(1).strip()
                 conference2 = m.group(2).strip()
             except AttributeError:
-                print(m)
-                print("." + description + " | " + re.escape(str(component.get("description"))) + ".")
                 continue
 
             if conference2 != "":
@@ -84,18 +84,18 @@ def main(year=None, base=""):
     """Import Python conferences from a Google Calendar .ics file."""
     # If no year is provided, use the current year
     if year is None:
-        year = datetime.now().year
+        year = datetime.now(tz=timezone.utc).year
 
     target_file = Path(base, "_data", "conferences.yml")
 
     # Load the existing conference data
     df_yml = load_conferences()
-    df_yml = df_yml.loc[pd.to_datetime(df_yml["start"]) > pd.Timestamp(datetime.now())]
+    df_yml = df_yml.loc[pd.to_datetime(df_yml["start"]) > pd.Timestamp(datetime.now(tz=timezone.utc))]
     df_new = pd.DataFrame(columns=df_yml.columns)
 
     # Parse your .ics file and only use future events in the current year
     df = ics_to_dataframe()
-    df = df.loc[pd.to_datetime(df["start"]) > pd.Timestamp(datetime.now())]
+    df = df.loc[pd.to_datetime(df["start"]) > pd.Timestamp(datetime.now(tz=timezone.utc))]
     # df = df.loc[df["year"] == year]
 
     _, reverse_titles = load_title_mappings(reverse=False)
@@ -105,25 +105,26 @@ def main(year=None, base=""):
         df_merged, df_remote = fuzzy_match(df_yml[df_yml["year"] == y], df.loc[df["year"] == y])
         df_merged["year"] = year
         diff_idx = df_merged.index.difference(df_remote.index)
-        print(df_merged.index, df_remote.index, diff_idx)
         df_missing = df_merged.loc[diff_idx, :].sort_values("start")
         df_merged = df_merged.drop(["conference"], axis=1)
         df_merged = merge_conferences(df_merged, df_remote)
 
         # Concatenate the new data with the existing data
         df_new = pd.concat([df_new, df_merged], ignore_index=True)
-        for index, row in df_missing.iterrows():
+        for _index, row in df_missing.iterrows():
             reverse_title = f"""{reverse_titles.get(row["conference"], [row["conference"]])[0]} {row["year"]}"""
+            dates = f'{create_nice_date(row)["date"]} ({row["timezone"] if isinstance(row["timezone"], str) else "UTC"}'
+            link = f'<a href="{row["link"]}">{row["conference"]}</a>'
             out = f""" * name of the event: {reverse_title}
  * type of event: conference
  * focus on Python: yes
  * approximate number of attendees: Unknown
  * location (incl. country): {row["place"]}
- * dates/times/recurrence (incl. time zone): {create_nice_date(row)["date"]} ({row["timezone"] if isinstance(row["timezone"],str) else "UTC"})
- * HTML link using the format <a href="http://url/">name of the event</a>: <a href="{row["link"]}">{row["conference"]}</a>"""
-            with open("missing_conferences.txt", "a") as f:
+ * dates/times/recurrence (incl. time zone): {dates})
+ * HTML link using the format <a href="http://url/">name of the event</a>: {link}"""
+            with Path("missing_conferences.txt").open("a") as f:
                 f.write(out + "\n\n")
-            with open(f""".tmp/{reverse_title}.ics""".lower().replace(" ", "-"), "w") as f:
+            with Path(".tmp", f"{reverse_title}.ics".lower().replace(" ", "-")).open("w") as f:
                 f.write(
                     f"""BEGIN:VCALENDAR
 VERSION:2.0
@@ -134,7 +135,7 @@ DTEND;VALUE=DATE:{row["end"].strftime("%Y%m%d")}
 DESCRIPTION:<a href="{row.link}">{ reverse_title }</a>
 LOCATION:{ row.place }
 END:VEVENT
-END:VCALENDAR"""
+END:VCALENDAR""",
                 )
 
     # Fill in missing required fields

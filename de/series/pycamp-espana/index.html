@@ -42,11 +42,11 @@
 <link rel="alternate"  title="PyCamp España Conference Summary in German" hreflang="de" href="/de/series/pycamp-espana/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1714817016" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1715350658" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1714817016" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1714817016" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1715350658" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1715350658" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -280,10 +280,8 @@
           <span id="conf-subs" title="Conference subjects">
             
             
-            <span class="PY-tag badge badge-light conf-sub conf-PY">
+            <span class="CAMP-tag badge badge-light conf-sub conf-CAMP">
               
-                
-                  General Python
                 
               
                 
@@ -296,6 +294,8 @@
               
                 
               
+                
+                  Python Camps
                 
               
             </span>
@@ -323,7 +323,7 @@
         
           
           <div id="pycamp-espana-2024"
-            class="ConfItem  PY-conf ">
+            class="ConfItem  CAMP-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
@@ -360,7 +360,8 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">29. – 1. März 2024.</span>
+                  <span class="conf-date">29. – 1. März 2024
+.</span>
                   <span class="conf-place">
                     
                       <a href="http://maps.google.com/?q=Lleida, Spain">Lleida, Spain</a>
@@ -384,8 +385,8 @@
               <div class="col-6">
                 
                 
-                  <span title="Click to only show PY conferences" data-sub="PY"
-                    class="badge badge-light conf-sub PY-tag"></span>
+                  <span title="Click to only show CAMP conferences" data-sub="CAMP"
+                    class="badge badge-light conf-sub CAMP-tag"></span>
                 
               </div>
               <div class="col-6">
@@ -397,7 +398,7 @@
         
           
           <div id="pycamp-espana-2022"
-            class="ConfItem  PY-conf ">
+            class="ConfItem  CAMP-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
@@ -427,7 +428,8 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">15. – 19. April 2022.</span>
+                  <span class="conf-date">15. – 19. April 2022
+.</span>
                   <span class="conf-place">
                     
                       <a href="http://maps.google.com/?q=Girona, Spain">Girona, Spain</a>
@@ -451,8 +453,8 @@
               <div class="col-6">
                 
                 
-                  <span title="Click to only show PY conferences" data-sub="PY"
-                    class="badge badge-light conf-sub PY-tag"></span>
+                  <span title="Click to only show CAMP conferences" data-sub="CAMP"
+                    class="badge badge-light conf-sub CAMP-tag"></span>
                 
               </div>
               <div class="col-6">
@@ -489,6 +491,7 @@ von <a href="https://dramsch.net">Jesper Dramsch,</a> Ersteller von <a href="htt
 
 
 
+
     </footer>
     <br><br>
   </div>
@@ -516,7 +519,6 @@ for (var i = 0; i < conf_type_data.length; i++) {
     name2sub[conf_type_data[i]['name']] = conf_type_data[i]['sub'];
 }
 const all_subs = _all_subs;
-
 
       function update_filtering(data) {
 	var page_url = window.location.pathname;
@@ -637,7 +639,7 @@ $('#subject-select').multiselect({
         
         
         
-          $('#pycamp-espana-2024 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+          $('#pycamp-espana-2024 .CAMP-tag').html("Python Camps".toLocaleLowerCase("de"));
         
         
 
@@ -708,7 +710,7 @@ $('#subject-select').multiselect({
         
         
         
-          $('#pycamp-espana-2022 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+          $('#pycamp-espana-2022 .CAMP-tag').html("Python Camps".toLocaleLowerCase("de"));
         
         
 

@@ -40,11 +40,11 @@
 <link rel="alternate"  title="PyCon Ukraine 2017 Conference Deadlines in German" hreflang="de" href="/de/conference/pycon-ukraine-2017/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1714816968" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1715350608" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1714816968" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1714816968" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1715350608" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1715350608" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -467,14 +467,15 @@ if (typeof Object.assign !== 'function') {
     </div>
     <div id="page-content">
       <div id="conf-deadline-timer" class="row">
-        <div id="cfp-timer" class="col-12 conf-timer">TBA
+        <div id="cfp-timer" class="col-12 conf-timer">
         </div>
       </div>
       <div id="conf-key-facts" class="row">
         <div class="col-12 col-md-6">
           <div>
             <img src="/static/img/084-calendar.svg" class="badge-link" alt="Calendar icon" width="16" height="16" />
-            <span id="conf-date">8 – 10 de abril de 2017</span>
+            <span id="conf-date">8 – 9 de abril de 2017
+</span>
           </div>
           <div>
             <img src="/static/img/072-location.svg" class="badge-link" alt="Location icon" width="16" height="16" />
@@ -487,8 +488,20 @@ if (typeof Object.assign !== 'function') {
           </div>
           
           <div>
+            <img src="/static/img/035-file-text.svg" class="badge-link" alt="Document Icon for CfP link" width="16"
+              height="16" />
+            <a id="conf-cfp_link" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSe9bXTjHlxV6pMcJZikeJPM7E5c2hVJvSORMKJJx1raoxchow/closedform">Llamada por participación</a>
+          </div>
+          
+          <div>
             <img src="/static/img/002-home2.svg" class="badge-link" alt="Conference Series" width="16" height="16" />
             <a id="conf-series" href="/es/series/pycon-ukraine">Todas conferencias de  PyCon Ukraine</a>
+          </div>
+          
+          <div>
+            <img src="/static/img/066-lifebuoy.svg" class="badge-link" alt="Life Buoy for Financial Aid" width="16"
+              height="16" />
+            <a id="conf-finaid" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeCcOQ9XBtd9-Y1_lt-KeQyDeR9OxryB4Ak0UJpwQLAF_n3KQ/viewform">Ayuda financiera</a>
           </div>
           
           
@@ -510,7 +523,7 @@ if (typeof Object.assign !== 'function') {
             Fecha límite en la zona horaria de la conferencia:
           </div>
           <div class="meta">
-            <span class="deadline-time">TBA</span>
+            <span class="deadline-time">Friday, 10 March 2017</span>
           </div>
           <div class="meta">
             Fecha límite en sua zona horaria <span class='local-timezone'></span>:
@@ -549,10 +562,10 @@ if (typeof Object.assign !== 'function') {
         </div>
       <div class="row">
         
-        <div id='bd04c4a0-8122-4279-be5c-766b193c08be' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='21d62633-3493-44b9-80b4-37dfbd125fbf' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'bd04c4a0-8122-4279-be5c-766b193c08be',
+    '21d62633-3493-44b9-80b4-37dfbd125fbf',
     [{"latitude":49.84823555,"longitude":24.010960304611388,"title":"PyCon Ukraine 2017","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -585,6 +598,7 @@ de <a href="https://dramsch.net">Jesper Dramsch,</a> creador de <a href="https:/
 
 
 
+
     </footer>
   </div>
   <script type="text/javascript" charset="utf-8">
@@ -609,7 +623,6 @@ for (var i = 0; i < conf_type_data.length; i++) {
     name2sub[conf_type_data[i]['name']] = conf_type_data[i]['sub'];
 }
 const all_subs = _all_subs;
-
 
       function update_filtering(data) {
 	var page_url = window.location.pathname;
@@ -676,9 +689,54 @@ function createCalendarFromObject(data) {
 
       // other
       
-      $('#cfp-timer').html("TBA");
-      $('.deadline-time').html("TBA");
-      $('.deadline-local-time').html("TBA");
+
+      // Use specified timezone for deadlines if available else use AoE timezone
+      
+      var confDeadline = DateTime.fromSQL("2017-03-10 00:00:00", { zone: "Europe/Kiev" });
+      
+
+      // check if timezone is valid otherwise replace by system timezone
+      if (confDeadline.invalid) {
+        var confDeadline = DateTime.fromSQL("2017-03-10 00:00:00");
+        console.log("Invalid timezone. Using system timezone instead.");
+      }
+
+      // add calendar
+
+      var conferenceDeadlineCalendar = createCalendarFromObject({
+        id: 'pycon-ukraine-2017',
+        title: 'PyCon Ukraine 2017 deadline',
+        start_date: confDeadline.toJSDate(),
+        duration: 60,
+        place: 'Lviv City, Ukraine',
+        link: 'https://web.archive.org/web/20170607211814/https://ua.pycon.org/',
+      });
+      document.querySelector('#conference-deadline').appendChild(conferenceDeadlineCalendar);
+
+
+      var conferenceCalendar = createCalendarFromObject({
+        id: 'pycon-ukraine-2017',
+        title: 'PyCon Ukraine 2017',
+        start_date: DateTime.fromSQL("2017-04-08").toJSDate(),
+        end_date: DateTime.fromSQL("2017-04-09").toJSDate(),
+        place: 'Lviv City, Ukraine',
+        link: 'https://web.archive.org/web/20170607211814/https://ua.pycon.org/',
+      });
+      document.querySelector('#conference-calendar').appendChild(conferenceCalendar);
+
+      // render countdown timer
+      $('#cfp-timer').countdown(confDeadline.toJSDate(), function (event) {
+        $(this).html(event.strftime('%D dias %Hh %Mm %Ss'));
+      });
+
+      // render deadline conference time
+      
+      $('.deadline-time').html(confDeadline.setZone("Europe/Kiev").toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+      
+
+      // render deadline in local timezone
+      $('.deadline-local-time').html(confDeadline.setZone('system').toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+
       
 
     });

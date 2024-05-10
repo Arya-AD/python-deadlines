@@ -1,20 +1,22 @@
-from datetime import datetime
-import pandas as pd
-import iso3166
-import urllib
 import sys
+import urllib
+from datetime import datetime
+from datetime import timezone
 from pathlib import Path
 
+import iso3166
+import pandas as pd
 
 sys.path.append(".")
-from tidy_conf.yaml import write_df_yaml
+from tidy_conf import fuzzy_match
+from tidy_conf import load_conferences
+from tidy_conf import merge_conferences
 from tidy_conf.utils import fill_missing_required
-from tidy_conf import load_conferences, fuzzy_match, merge_conferences
+from tidy_conf.yaml import write_df_yaml
 
 
 def load_remote(year):
-    template = "https://raw.githubusercontent.com/python-organizers/conferences/main/{year}.csv"
-    url = template.format(year=year)
+    url = f"https://raw.githubusercontent.com/python-organizers/conferences/main/{year}.csv"
 
     # Read data and rename columns
     df = pd.read_csv(url)
@@ -51,7 +53,7 @@ def write_csv(df, year, csv_location):
     df["cfp"] = df["cfp"].str.slice(stop=10).str.replace("TBA", "")
     df["tutorial_deadline"] = df["tutorial_deadline"].str.slice(stop=10).str.replace("TBA", "")
     df = map_columns(df, reverse=True)
-    for y in range(year, datetime.now().year + 10):
+    for y in range(year, datetime.now(tz=timezone.utc).year + 10):
         if y in df["year"].unique():
             df.loc[
                 df["year"] == y,
@@ -73,14 +75,13 @@ def write_csv(df, year, csv_location):
 
 def main(year=None, base=""):
     """Import Python conferences from a csv file Github."""
-
     # Load current conferences
     target_file = Path(base, "_data", "conferences.yml")
     csv_location = Path(base, "utils", "conferences")
 
     # If no year is provided, use the current year
     if year is None:
-        year = datetime.now().year
+        year = datetime.now(tz=timezone.utc).year
 
     # Load the existing conference data
     df_yml = load_conferences()
@@ -88,7 +89,7 @@ def main(year=None, base=""):
     df_csv = pd.DataFrame(columns=df_yml.columns)
 
     # Parse your csv file and iterate through year by year
-    for y in range(year, datetime.now().year + 10):
+    for y in range(year, datetime.now(tz=timezone.utc).year + 10):
         try:
             df = load_remote(year=y)
         except urllib.error.HTTPError:
