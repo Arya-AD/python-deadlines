@@ -42,11 +42,11 @@
 <link rel="alternate"  title="PyCon South Korea Conference Summary in German" hreflang="de" href="/de/series/pycon-south-korea/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1715350658" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1715364489" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1715350658" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1715350658" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1715364489" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1715364489" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -683,6 +683,74 @@
           </div>
         
           
+          <div id="pycon-asia-pacific-2016"
+            class="ConfItem  PY-conf ">
+            <div class="row conf-row">
+              <div class="col-6">
+                <span class="conf-title">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-asia-pacific-2016/">PyCon Asia Pacific 2016</a>
+                </span>
+                <span class="conf-title-small">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-asia-pacific-2016/">PyCon Asia Pacific '16</a>
+                </span>
+                <span class="conf-title-icon">
+                  <a title="Conference Website" href="https://web.archive.org/web/20160702105007/https://www.pycon.kr/2016apac/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+                  &ZeroWidthSpace;
+                </span>
+                
+                
+                
+                
+              </div>
+              <div class="col-6">
+                <span class="timer"></span>
+                <span class="timer-small"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="meta">
+
+                  <span class="conf-date">13. – 16. August 2016
+.</span>
+                  <span class="conf-place">
+                    
+                      <a href="http://maps.google.com/?q=Seoul, South Korea">Seoul, South Korea</a>
+                      
+                    
+                  </span>
+                </div>
+                
+
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="deadline">
+                  <div>Deadline:
+                    <span class="deadline-time">Tuesday, 31 May 2016</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
+              </div>
+              <div class="col-6">
+                <div class="calendar"></div>
+              </div>
+            </div>
+            <hr>
+          </div>
+        
+          
           <div id="pycon-south-korea-2015"
             class="ConfItem  PY-conf ">
             <div class="row conf-row">
@@ -1163,6 +1231,77 @@ $('#subject-select').multiselect({
           $('#pycon-south-korea-2018 .timer').html("TBA");
           $('#pycon-south-korea-2018 .deadline-time').html("TBA");
           $('#pycon-south-korea-2018').attr("cfpDiff", Infinity);
+        
+      
+        
+        
+        
+          $('#pycon-asia-pacific-2016 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2016-05-31 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2016-08-13", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2016-05-31 23:59:00");
+            var confDate = DateTime.fromSQL("2016-08-13");
+            console.log("Invalid timezone in pycon-asia-pacific-2016. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-asia-pacific-2016 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-asia-pacific-2016 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-asia-pacific-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-asia-pacific-2016',
+              title: 'PyCon Asia Pacific 2016 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Seoul, South Korea',
+              link: 'https://web.archive.org/web/20160702105007/https://www.pycon.kr/2016apac/'
+            });
+            document.querySelector('#pycon-asia-pacific-2016 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-asia-pacific-2016 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-asia-pacific-2016').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-asia-pacific-2016').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-asia-pacific-2016').addClass('pastcfp');
+            $('#pycon-asia-pacific-2016 .timer').replaceWith($('#pycon-asia-pacific-2016 .deadline'));
+            $('#pycon-asia-pacific-2016 .timer-small').replaceWith($('#pycon-asia-pacific-2016 .deadline'));
+            $('#pycon-asia-pacific-2016 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-asia-pacific-2016').addClass('pastconf');
+            $('#pycon-asia-pacific-2016 .timer').replaceWith($('#pycon-asia-pacific-2016 .deadline'));
+            $('#pycon-asia-pacific-2016 .timer-small').replaceWith($('#pycon-asia-pacific-2016 .deadline'));
+            $('#pycon-asia-pacific-2016 .calendar').remove();
+          }
         
       
         

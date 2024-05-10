@@ -40,11 +40,11 @@
 <link rel="alternate"  title="PyCon Asia Pacific 2017 Conference Deadlines in German" hreflang="de" href="/de/conference/pycon-asia-pacific-2017/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1715350608" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1715364440" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1715350608" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1715350608" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1715364440" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1715364440" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -432,7 +432,7 @@ if (typeof Object.assign !== 'function') {
             <span id="conf-title-href" href="/conference/pycon-asia-pacific-2017/">PyCon Asia Pacific 2017</span>
           </h1>
           
-          <h3 id="conf-subtitle">a.k.a. PyCon APAC 2017</h3>
+          <h3 id="conf-subtitle">a.k.a. PyCon Malaysia 2017</h3>
           
         </div>
       </div>
@@ -467,14 +467,14 @@ if (typeof Object.assign !== 'function') {
     </div>
     <div id="page-content">
       <div id="conf-deadline-timer" class="row">
-        <div id="cfp-timer" class="col-12 conf-timer">TBA
+        <div id="cfp-timer" class="col-12 conf-timer">
         </div>
       </div>
       <div id="conf-key-facts" class="row">
         <div class="col-12 col-md-6">
           <div>
             <img src="/static/img/084-calendar.svg" class="badge-link" alt="Calendar icon" width="16" height="16" />
-            <span id="conf-date">26 – 28 de agosto de 2017
+            <span id="conf-date">26 – 27 de agosto de 2017
 </span>
           </div>
           <div>
@@ -511,7 +511,7 @@ if (typeof Object.assign !== 'function') {
             Fecha límite en la zona horaria de la conferencia:
           </div>
           <div class="meta">
-            <span class="deadline-time">TBA</span>
+            <span class="deadline-time">Tuesday, 31 May 2016</span>
           </div>
           <div class="meta">
             Fecha límite en sua zona horaria <span class='local-timezone'></span>:
@@ -550,10 +550,10 @@ if (typeof Object.assign !== 'function') {
         </div>
       <div class="row">
         
-        <div id='428d1ad0-f956-4144-aeff-d9cd84842a7b' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='0e8ef894-cd6e-4f87-a20a-4f2a66141329' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '428d1ad0-f956-4144-aeff-d9cd84842a7b',
+    '0e8ef894-cd6e-4f87-a20a-4f2a66141329',
     [{"latitude":4.5693754,"longitude":102.2656823,"title":"PyCon Asia Pacific 2017","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -677,9 +677,54 @@ function createCalendarFromObject(data) {
 
       // other
       
-      $('#cfp-timer').html("TBA");
-      $('.deadline-time').html("TBA");
-      $('.deadline-local-time').html("TBA");
+
+      // Use specified timezone for deadlines if available else use AoE timezone
+      
+      var confDeadline = DateTime.fromSQL("2016-05-31 23:59:00", { zone: "UTC-12" });
+      
+
+      // check if timezone is valid otherwise replace by system timezone
+      if (confDeadline.invalid) {
+        var confDeadline = DateTime.fromSQL("2016-05-31 23:59:00");
+        console.log("Invalid timezone. Using system timezone instead.");
+      }
+
+      // add calendar
+
+      var conferenceDeadlineCalendar = createCalendarFromObject({
+        id: 'pycon-asia-pacific-2017',
+        title: 'PyCon Asia Pacific 2017 deadline',
+        start_date: confDeadline.toJSDate(),
+        duration: 60,
+        place: 'Kuala Lumpur, Malaysia',
+        link: 'https://web.archive.org/web/20170822040840/https://pycon.my/',
+      });
+      document.querySelector('#conference-deadline').appendChild(conferenceDeadlineCalendar);
+
+
+      var conferenceCalendar = createCalendarFromObject({
+        id: 'pycon-asia-pacific-2017',
+        title: 'PyCon Asia Pacific 2017',
+        start_date: DateTime.fromSQL("2017-08-26").toJSDate(),
+        end_date: DateTime.fromSQL("2017-08-27").toJSDate(),
+        place: 'Kuala Lumpur, Malaysia',
+        link: 'https://web.archive.org/web/20170822040840/https://pycon.my/',
+      });
+      document.querySelector('#conference-calendar').appendChild(conferenceCalendar);
+
+      // render countdown timer
+      $('#cfp-timer').countdown(confDeadline.toJSDate(), function (event) {
+        $(this).html(event.strftime('%D dias %Hh %Mm %Ss'));
+      });
+
+      // render deadline conference time
+      
+      $('.deadline-time').html(confDeadline.setZone("UTC-12").toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+      
+
+      // render deadline in local timezone
+      $('.deadline-local-time').html(confDeadline.setZone('system').toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+
       
 
     });
