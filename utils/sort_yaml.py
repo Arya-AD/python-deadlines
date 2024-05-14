@@ -218,4 +218,10 @@ def sort_data(base="", prefix="", skip_links=False):
 
 
 if __name__ == "__main__":
-    sort_data(skip_links=True)
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Sort and clean conference data.")
+    parser.add_argument("--skip_links", action="store_true", help="Skip checking links", default=False)
+    args = parser.parse_args()
+
+    sort_data(skip_links=args.skip_links)

@@ -42,11 +42,11 @@
 <link rel="alternate"  title="PyCon Pune Conference Summary in German" hreflang="de" href="/de/series/pycon-pune/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1715364489" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1715726535" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1715364489" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1715364489" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1715726535" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1715726535" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -519,7 +519,7 @@ if (typeof Object.assign !== 'function') {
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">8. – 12. Februar 2018
+                  <span class="conf-date">8. – 11. Februar 2018
 .</span>
                   <span class="conf-place">
                     
@@ -534,7 +534,7 @@ if (typeof Object.assign !== 'function') {
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Cancelled</span>
                   </div>
                 </div>
 
@@ -587,7 +587,7 @@ if (typeof Object.assign !== 'function') {
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">16. – 20. Februar 2017
+                  <span class="conf-date">16. – 19. Februar 2017
 .</span>
                   <span class="conf-place">
                     
@@ -602,7 +602,7 @@ if (typeof Object.assign !== 'function') {
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Thursday, 30 November 2017</span>
                   </div>
                 </div>
 
@@ -626,10 +626,10 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='bcdc7602-3fec-487e-a8ec-3bb8c3729a57' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='762634b3-e914-478e-812c-607cffefa346' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'bcdc7602-3fec-487e-a8ec-3bb8c3729a57',
+    '762634b3-e914-478e-812c-607cffefa346',
     [{"latitude":18.52930005,"longitude":73.85682537025511,"title":"PyCon Pune 2018","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":18.52930005,"longitude":73.85682537025511,"title":"PyCon Pune 2017","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -813,8 +813,8 @@ $('#subject-select').multiselect({
           $('#pycon-pune-2018 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
         
         
-          $('#pycon-pune-2018 .timer').html("TBA");
-          $('#pycon-pune-2018 .deadline-time').html("TBA");
+          $('#pycon-pune-2018 .timer').html("Cancelled");
+          $('#pycon-pune-2018 .deadline-time').html("Cancelled");
           $('#pycon-pune-2018').attr("cfpDiff", Infinity);
         
       
@@ -824,9 +824,69 @@ $('#subject-select').multiselect({
           $('#pycon-pune-2017 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
         
         
-          $('#pycon-pune-2017 .timer').html("TBA");
-          $('#pycon-pune-2017 .deadline-time').html("TBA");
-          $('#pycon-pune-2017').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2017-11-30 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2017-02-16", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2017-11-30 23:59:00");
+            var confDate = DateTime.fromSQL("2017-02-16");
+            console.log("Invalid timezone in pycon-pune-2017. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-pune-2017 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-pune-2017 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-pune-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-pune-2017',
+              title: 'PyCon Pune 2017 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Pune, India',
+              link: 'https://web.archive.org/web/20170207210807/http://pune.pycon.org/'
+            });
+            document.querySelector('#pycon-pune-2017 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-pune-2017 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-pune-2017').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-pune-2017').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-pune-2017').addClass('pastcfp');
+            $('#pycon-pune-2017 .timer').replaceWith($('#pycon-pune-2017 .deadline'));
+            $('#pycon-pune-2017 .timer-small').replaceWith($('#pycon-pune-2017 .deadline'));
+            $('#pycon-pune-2017 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-pune-2017').addClass('pastconf');
+            $('#pycon-pune-2017 .timer').replaceWith($('#pycon-pune-2017 .deadline'));
+            $('#pycon-pune-2017 .timer-small').replaceWith($('#pycon-pune-2017 .deadline'));
+            $('#pycon-pune-2017 .calendar').remove();
+          }
         
       
 

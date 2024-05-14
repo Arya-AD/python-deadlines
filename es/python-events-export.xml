@@ -9,7 +9,7 @@
 		<title>Newsfeed for Python Events Calendar from Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Fri, 10 May 2024 18:07:20 +0000</lastBuildDate>
+		<lastBuildDate>Tue, 14 May 2024 22:41:25 +0000</lastBuildDate>
 		
 			<item>
 				<title>Xtreme Python 2024 Conference Deadline</title>
@@ -64,7 +64,7 @@
 			<item>
 				<title>PyCon Hong Kong 2024 Conference Deadline</title>
 				<description><![CDATA[* name of the event: PyCon Hong Kong 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Hong Kong, Hong Kong<br/>* dates/times/recurrence (incl. time zone): 16 de noviembre de 2024
-<br/>* HTML link : <a href="https://pycon.hk/2024/">PyCon Hong Kong 2024</a>]]></description>
+<br/>* HTML link : <a href="https://web.archive.org/web/20240415181502/https://pycon.hk/2024/">PyCon Hong Kong 2024</a>]]></description>
 				<pubDate>Sat, 16 Nov 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-hong-kong-2024/</link>
 				<guid isPermaLink="false">pycon-hong-kong-2024</guid>

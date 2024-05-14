@@ -40,11 +40,11 @@
 <link rel="alternate"  title="PyCon Philippines 2017 Conference Deadlines in German" hreflang="de" href="/de/conference/pycon-philippines-2017/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1715364390" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1715726433" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1715364390" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1715364390" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1715726433" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1715726433" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -467,14 +467,14 @@ if (typeof Object.assign !== 'function') {
     </div>
     <div id="page-content">
       <div id="conf-deadline-timer" class="row">
-        <div id="cfp-timer" class="col-12 conf-timer">TBA
+        <div id="cfp-timer" class="col-12 conf-timer">
         </div>
       </div>
       <div id="conf-key-facts" class="row">
         <div class="col-12 col-md-6">
           <div>
             <img src="/static/img/084-calendar.svg" class="badge-link" alt="Calendar icon" width="16" height="16" />
-            <span id="conf-date">February 25 – 27, 2017
+            <span id="conf-date">February 25 – 26, 2017
 </span>
           </div>
           <div>
@@ -511,7 +511,7 @@ if (typeof Object.assign !== 'function') {
             Deadline in timezone from conference website:
           </div>
           <div class="meta">
-            <span class="deadline-time">TBA</span>
+            <span class="deadline-time">Wednesday, 30 November 2016</span>
           </div>
           <div class="meta">
             Deadline in your local <span class='local-timezone'></span> timezone:
@@ -550,10 +550,10 @@ if (typeof Object.assign !== 'function') {
         </div>
       <div class="row">
         
-        <div id='f29d2e68-b370-4c55-82b6-7c81c7077c00' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='d89f2e96-6f24-47d8-b584-e01d7abc176b' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'f29d2e68-b370-4c55-82b6-7c81c7077c00',
+    'd89f2e96-6f24-47d8-b584-e01d7abc176b',
     [{"latitude":8.4756417,"longitude":124.6421532,"title":"PyCon Philippines 2017","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -677,9 +677,54 @@ function createCalendarFromObject(data) {
 
       // other
       
-      $('#cfp-timer').html("TBA");
-      $('.deadline-time').html("TBA");
-      $('.deadline-local-time').html("TBA");
+
+      // Use specified timezone for deadlines if available else use AoE timezone
+      
+      var confDeadline = DateTime.fromSQL("2016-11-30 23:59:00", { zone: "UTC-12" });
+      
+
+      // check if timezone is valid otherwise replace by system timezone
+      if (confDeadline.invalid) {
+        var confDeadline = DateTime.fromSQL("2016-11-30 23:59:00");
+        console.log("Invalid timezone. Using system timezone instead.");
+      }
+
+      // add calendar
+
+      var conferenceDeadlineCalendar = createCalendarFromObject({
+        id: 'pycon-philippines-2017',
+        title: 'PyCon Philippines 2017 deadline',
+        start_date: confDeadline.toJSDate(),
+        duration: 60,
+        place: 'Cagayan de Oro City, Philippines',
+        link: 'https://web.archive.org/web/20171019052320/https://pycon.python.ph/',
+      });
+      document.querySelector('#conference-deadline').appendChild(conferenceDeadlineCalendar);
+
+
+      var conferenceCalendar = createCalendarFromObject({
+        id: 'pycon-philippines-2017',
+        title: 'PyCon Philippines 2017',
+        start_date: DateTime.fromSQL("2017-02-25").toJSDate(),
+        end_date: DateTime.fromSQL("2017-02-26").toJSDate(),
+        place: 'Cagayan de Oro City, Philippines',
+        link: 'https://web.archive.org/web/20171019052320/https://pycon.python.ph/',
+      });
+      document.querySelector('#conference-calendar').appendChild(conferenceCalendar);
+
+      // render countdown timer
+      $('#cfp-timer').countdown(confDeadline.toJSDate(), function (event) {
+        $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+      });
+
+      // render deadline conference time
+      
+      $('.deadline-time').html(confDeadline.setZone("UTC-12").toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+      
+
+      // render deadline in local timezone
+      $('.deadline-local-time').html(confDeadline.setZone('system').toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+
       
 
     });
