@@ -48,14 +48,14 @@ def load_conferences() -> pd.DataFrame:
     """
     schema = get_schema()
 
-    data = Path("_data")
+    data_path = Path("_data")
 
     # Load the YAML file
-    with Path(data, "conferences.yml").open() as file:
+    with Path(data_path, "conferences.yml").open() as file:
         data = yaml.safe_load(file)
-    with Path(data, "archive.yml").open() as file:
+    with Path(data_path, "archive.yml").open() as file:
         archive = yaml.safe_load(file)
-    with Path(data, "legacy.yml").open() as file:
+    with Path(data_path, "legacy.yml").open() as file:
         legacy = yaml.safe_load(file)
 
     # Convert the YAML data to a Pandas DataFrame

@@ -42,11 +42,11 @@
 <link rel="alternate"  title="SciPy US Conference Summary in German" hreflang="de" href="/de/series/scipy-us/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1715726535" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1716900896" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1715726535" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1715726535" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1716900896" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1716900896" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -4714,13 +4714,13 @@ $('#subject-select').multiselect({
 
           // Use specified timezone for deadlines if available else use AoE timezone
           
-            var cfpDate = DateTime.fromSQL("2024-05-26 23:59:59", { zone: "Europe/Warsaw" });
+            var cfpDate = DateTime.fromSQL("2024-06-02 23:59:59", { zone: "Europe/Warsaw" });
             var confDate = DateTime.fromSQL("2024-08-26", { zone: "Europe/Warsaw" });
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
-            var cfpDate = DateTime.fromSQL("2024-05-26 23:59:59");
+            var cfpDate = DateTime.fromSQL("2024-06-02 23:59:59");
             var confDate = DateTime.fromSQL("2024-08-26");
             console.log("Invalid timezone in euroscipy-2024. Using system timezone instead.");
           }

@@ -82,7 +82,7 @@ def merge_duplicates(data):
     filtered = []
     filtered_reduced = []
     for q in tqdm(data):
-        q_reduced = f'{q["conference"]} {q["year"]} {q["place"]}'
+        q_reduced = f'{q.get("conference", None)} {q.get("year", None)} {q.get("place", None)}'
         if q_reduced not in filtered_reduced:
             filtered.append(q)
             filtered_reduced.append(q_reduced)

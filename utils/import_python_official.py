@@ -90,12 +90,12 @@ def main(year=None, base=""):
 
     # Load the existing conference data
     df_yml = load_conferences()
-    df_yml = df_yml.loc[pd.to_datetime(df_yml["start"]) > pd.Timestamp(datetime.now(tz=timezone.utc))]
+    df_yml = df_yml.loc[pd.to_datetime(df_yml["start"]).dt.date > datetime.now(tz=timezone.utc).date()]
     df_new = pd.DataFrame(columns=df_yml.columns)
 
     # Parse your .ics file and only use future events in the current year
     df = ics_to_dataframe()
-    df = df.loc[pd.to_datetime(df["start"]) > pd.Timestamp(datetime.now(tz=timezone.utc))]
+    df = df.loc[pd.to_datetime(df["start"]).dt.date > datetime.now(tz=timezone.utc).date()]
     # df = df.loc[df["year"] == year]
 
     _, reverse_titles = load_title_mappings(reverse=False)
@@ -124,6 +124,7 @@ def main(year=None, base=""):
  * HTML link using the format <a href="http://url/">name of the event</a>: {link}"""
             with Path("missing_conferences.txt").open("a") as f:
                 f.write(out + "\n\n")
+            Path(".tmp").mkdir(exist_ok=True, parents=True)
             with Path(".tmp", f"{reverse_title}.ics".lower().replace(" ", "-")).open("w") as f:
                 f.write(
                     f"""BEGIN:VCALENDAR
