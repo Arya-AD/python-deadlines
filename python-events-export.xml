@@ -9,7 +9,7 @@
 		<title>Newsfeed for Python Events Calendar from Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Tue, 28 May 2024 12:53:03 +0000</lastBuildDate>
+		<lastBuildDate>Fri, 31 May 2024 09:28:47 +0000</lastBuildDate>
 		
 			<item>
 				<title>PyTexas 2025 Conference Deadline</title>
@@ -69,6 +69,16 @@
 				<link>https://pythondeadlin.es/conference/pybay-2024/</link>
 				<guid isPermaLink="false">pybay-2024</guid>
 				<category></category>
+			</item>
+		
+			<item>
+				<title>PyCon Niger 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: PyCon Niger 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Niamey, Niger<br/>* dates/times/recurrence (incl. time zone): September 28 – 29, 2024
+<br/>* HTML link : <a href="https://ne.pycon.org/">PyCon Niger 2024</a>]]></description>
+				<pubDate>Sat, 28 Sep 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-niger-2024/</link>
+				<guid isPermaLink="false">pycon-niger-2024</guid>
+				<category>PY</category>
 			</item>
 		
 			<item>
@@ -229,16 +239,6 @@
 				<link>https://pythondeadlin.es/conference/euroscipy-2024/</link>
 				<guid isPermaLink="false">euroscipy-2024</guid>
 				<category>SCIPY</category>
-			</item>
-		
-			<item>
-				<title>PyDay Copiapó 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyDay Copiapó 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Copiapó, Chile<br/>* dates/times/recurrence (incl. time zone): June 12, 2024
-<br/>* HTML link : <a href="https://www.pyday.cl/copiapo.html">PyDay Copiapó 2024</a>]]></description>
-				<pubDate>Wed, 12 Jun 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pyday-copiapo-2024/</link>
-				<guid isPermaLink="false">pyday-copiapo-2024</guid>
-				<category>PY</category>
 			</item>
 		
 	</channel>

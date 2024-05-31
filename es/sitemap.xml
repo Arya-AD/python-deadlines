@@ -46,6 +46,9 @@
 <loc>https://pythondeadlin.es/conference/pybay-2024/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/conference/pycon-niger-2024/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/conference/pycon-zimbabwe-2024/</loc>
 </url>
 <url>
@@ -184,9 +187,6 @@
 <loc>https://pythondeadlin.es/conference/geopython-2024/</loc>
 </url>
 <url>
-<loc>https://pythondeadlin.es/conference/pytexas-2024/</loc>
-</url>
-<url>
 <loc>https://pythondeadlin.es/conference/pycon-italia-2024/</loc>
 </url>
 <url>
@@ -218,6 +218,9 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/python-brasil-2024/</loc>
+</url>
+<url>
+<loc>https://pythondeadlin.es/conference/pycon-netherlands-2024/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/python-niger-2024/</loc>
@@ -341,6 +344,9 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/pycon-pakistan-2024/</loc>
+</url>
+<url>
+<loc>https://pythondeadlin.es/conference/pytexas-2024/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/pycon-lithuania-2024/</loc>
@@ -3232,6 +3238,9 @@
 <loc>https://pythondeadlin.es/series/pycon-pakistan/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/series/pytexas/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/series/pycon-lithuania/</loc>
 </url>
 <url>
@@ -4993,6 +5002,9 @@
 <loc>https://pythondeadlin.es/series/pybay/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/series/pycon-niger/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/series/pycon-zimbabwe/</loc>
 </url>
 <url>
@@ -5131,9 +5143,6 @@
 <loc>https://pythondeadlin.es/series/geopython/</loc>
 </url>
 <url>
-<loc>https://pythondeadlin.es/series/pytexas/</loc>
-</url>
-<url>
 <loc>https://pythondeadlin.es/series/pycon-italia/</loc>
 </url>
 <url>
@@ -5165,6 +5174,9 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/python-brasil/</loc>
+</url>
+<url>
+<loc>https://pythondeadlin.es/series/pycon-netherlands/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/python-niger/</loc>

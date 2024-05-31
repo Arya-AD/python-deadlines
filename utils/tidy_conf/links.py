@@ -1,6 +1,4 @@
-from datetime import datetime
-from datetime import timedelta
-from datetime import timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -33,9 +31,9 @@ def check_link_availability(url, start):
     cache_file_archived.touch()
 
     # Read the cache file
-    with cache_file.open() as f:
+    with cache_file.open(encoding="utf-8") as f:
         cache = f.read().split("\n")[:-1]
-    with cache_file_archived.open() as f:
+    with cache_file_archived.open(encoding="utf-8") as f:
         cache_archived = f.read().split("\n")[:-1]
 
     # Check if the URL is in the cache
@@ -106,7 +104,7 @@ def attempt_archive_url(url, cache_file):
     # Read the cache file
     cache_file = Path(cache_file)
 
-    with cache_file.open() as f:
+    with cache_file.open(encoding="utf-8") as f:
         cache = f.read().split("\n")[:-1]
 
     # Check if the URL is in the cache

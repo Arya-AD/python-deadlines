@@ -20,6 +20,6 @@ def auto_add_sub(data):
 
 
 def load_subs():
-    with Path("utils", "tidy_conf", "data", "subs.yml").open() as file:
+    with Path("utils", "tidy_conf", "data", "subs.yml").open(encoding="utf-8") as file:
         data = yaml.safe_load(file)
     return data

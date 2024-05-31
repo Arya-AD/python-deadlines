@@ -4,12 +4,12 @@ version = "0.1.0"
 description = "Python deadlines is a Python package to parse and manage deadlines from various sources."
 authors = ["Jesper Dramsch <jesper@dramsch.net>"]
 channels = ["conda-forge"]
-platforms = ["win-64"]
+platforms = ["win-64", "osx-arm64", "linux-64"]
 
 [tasks]
-sort = 'python .\utils\sort_yaml.py --skip_links'
-links = 'python .\utils\sort_yaml.py'
-merge = 'python .\utils\main.py'
+sort = 'python ./utils/sort_yaml.py --skip_links'
+links = 'python ./utils/sort_yaml.py'
+merge = 'python ./utils/main.py'
 serve = "bundler exec jekyll serve"
 
 [dependencies]

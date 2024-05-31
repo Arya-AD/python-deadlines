@@ -7,6 +7,7 @@ import contextlib
 from pathlib import Path
 
 import pandas as pd
+
 from tidy_conf.utils import get_schema
 
 from .utils import ordered_dump
@@ -25,7 +26,7 @@ def write_conference_yaml(data: list[dict] | pd.DataFrame, url: str) -> None:
     if isinstance(data, pd.DataFrame):
         data = [{k: v for k, v in record.items() if pd.notnull(v)} for record in data.to_dict(orient="records")]
     with Path(url).open(
-        "w",
+        "w", encoding="utf-8",
     ) as outfile:
         for line in ordered_dump(
             data,
@@ -51,11 +52,11 @@ def load_conferences() -> pd.DataFrame:
     data_path = Path("_data")
 
     # Load the YAML file
-    with Path(data_path, "conferences.yml").open() as file:
+    with Path(data_path, "conferences.yml").open(encoding="utf-8") as file:
         data = yaml.safe_load(file)
-    with Path(data_path, "archive.yml").open() as file:
+    with Path(data_path, "archive.yml").open(encoding="utf-8") as file:
         archive = yaml.safe_load(file)
-    with Path(data_path, "legacy.yml").open() as file:
+    with Path(data_path, "legacy.yml").open(encoding="utf-8") as file:
         legacy = yaml.safe_load(file)
 
     # Convert the YAML data to a Pandas DataFrame
@@ -78,7 +79,7 @@ def load_title_mappings(reverse=False, path="utils/tidy_conf/data/titles.yml"):
                 yaml.dump({"spelling": [], "alt_name": {}}, file, default_flow_style=False, allow_unicode=True)
         return [], {}
 
-    with path.open() as file:
+    with path.open(encoding="utf-8") as file:
         data = yaml.safe_load(file)
     spellings = data["spelling"]
 
@@ -97,15 +98,15 @@ def update_title_mappings(data, path="utils/tidy_conf/data/titles.yml"):
     if not path.exists():
         path.parent.mkdir(parents=True, exist_ok=True)
         with path.open(
-            "w",
+            "w",encoding="utf-8",
         ) as file:
             yaml.dump({"spelling": [], "alt_name": data}, file, default_flow_style=False, allow_unicode=True)
     else:
-        with path.open() as file:
+        with path.open(encoding="utf-8") as file:
             title_data = yaml.safe_load(file)
         title_data["alt_name"].update(data)
         with path.open(
-            "w",
+            "w",encoding="utf-8",
         ) as file:
             yaml.dump(title_data, file, default_flow_style=False, allow_unicode=True)
 

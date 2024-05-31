@@ -40,11 +40,11 @@
 <link rel="alternate"  title="Calendar Overview of Python Conference Deadlines and Dates in German" hreflang="de" href="/de/kalender/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1716900783" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1717147727" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1716900783" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1716900783" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1717147727" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1717147727" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -1043,6 +1043,58 @@ function load_conference_list() {
         subject: "",
         startDate: Date.parse("2024-09-21"),
         endDate: Date.parse("2024-09-21"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
+      id: "pycon-niger-2024-deadline",
+      abbreviation: "pycon-niger-2024",
+      name: "PyCon Niger 2024 CfP (extended)",
+      color: "red",
+      location: "Niamey, Niger",
+      date: "September 28 – 29, 2024
+",
+      subject: "PY",
+      startDate: Date.parse("2024-07-30 23:59:00"),
+      endDate: Date.parse("2024-07-30 23:59:00"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+                    color = "#4B8BBE";
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+      conf_list_all.push({
+        id: "pycon-niger-2024-conference",
+        abbreviation: "pycon-niger-2024",
+        name: "PyCon Niger 2024",
+        color: color,
+        location: "Niamey, Niger",
+        date: "September 28 – 29, 2024",
+        subject: "PY",
+        startDate: Date.parse("2024-09-28"),
+        endDate: Date.parse("2024-09-29"),
       });
     
   
@@ -3526,58 +3578,6 @@ function load_conference_list() {
     
     // add deadlines in red
     conf_list_all.push({
-      id: "pytexas-2024-deadline",
-      abbreviation: "pytexas-2024",
-      name: "PyTexas 2024 CfP (extended)",
-      color: "red",
-      location: "Austin, USA",
-      date: "April 19 – 21, 2024
-",
-      subject: "PY",
-      startDate: Date.parse("2024-01-14 23:59:00"),
-      endDate: Date.parse("2024-01-14 23:59:00"),
-    });
-    
-    
-
-    // add Conferences in chosen color
-    
-      var color = "black";
-       // use first sub to choose color
-      
-            
-                    color = "#4B8BBE";
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-      conf_list_all.push({
-        id: "pytexas-2024-conference",
-        abbreviation: "pytexas-2024",
-        name: "PyTexas 2024",
-        color: color,
-        location: "Austin, USA",
-        date: "April 19 – 21, 2024",
-        subject: "PY",
-        startDate: Date.parse("2024-04-19"),
-        endDate: Date.parse("2024-04-21"),
-      });
-    
-  
-    
-    
-    // add deadlines in red
-    conf_list_all.push({
       id: "pycon-italia-2024-deadline",
       abbreviation: "pycon-italia-2024",
       name: "PyCon Italia 2024 CfP (extended)",
@@ -4148,11 +4148,63 @@ function load_conference_list() {
     
     // add deadlines in red
     conf_list_all.push({
+      id: "pycon-netherlands-2024-deadline",
+      abbreviation: "pycon-netherlands-2024",
+      name: "PyCon Netherlands 2024 CfP (extended)",
+      color: "red",
+      location: "Utrecht, Netherlands",
+      date: "October 10, 2024
+",
+      subject: "PY",
+      startDate: Date.parse("TBA"),
+      endDate: Date.parse("TBA"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+                    color = "#4B8BBE";
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+      conf_list_all.push({
+        id: "pycon-netherlands-2024-conference",
+        abbreviation: "pycon-netherlands-2024",
+        name: "PyCon Netherlands 2024",
+        color: color,
+        location: "Utrecht, Netherlands",
+        date: "October 10, 2024",
+        subject: "PY",
+        startDate: Date.parse("2024-10-10"),
+        endDate: Date.parse("2024-10-10"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
       id: "python-niger-2024-deadline",
       abbreviation: "python-niger-2024",
       name: "Python Niger 2024 CfP (extended)",
       color: "red",
-      location: "Maradi, Niger Republic",
+      location: "Maradi, Niger",
       date: "April 28, 2024
 ",
       subject: "PY",
@@ -4188,7 +4240,7 @@ function load_conference_list() {
         abbreviation: "python-niger-2024",
         name: "Python Niger 2024",
         color: color,
-        location: "Maradi, Niger Republic",
+        location: "Maradi, Niger",
         date: "April 28, 2024",
         subject: "PY",
         startDate: Date.parse("2024-04-28"),

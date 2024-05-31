@@ -15,15 +15,12 @@ from tqdm import tqdm
 sys.path.append(".")
 import operator
 
-from tidy_conf import auto_add_sub
-from tidy_conf import write_conference_yaml
+from tidy_conf import auto_add_sub, write_conference_yaml
 from tidy_conf.date import clean_dates
 from tidy_conf.latlon import add_latlon
 from tidy_conf.links import check_link_availability
 from tidy_conf.titles import tidy_titles
-from tidy_conf.utils import Loader
-from tidy_conf.utils import get_schema
-from tidy_conf.utils import query_yes_no
+from tidy_conf.utils import Loader, get_schema, query_yes_no
 
 dateformat = "%Y-%m-%d %H:%M:%S"
 tba_words = ["tba", "tbd", "cancelled", "none", "na", "n/a", "nan", "n.a."]
@@ -164,7 +161,7 @@ def sort_data(base="", prefix="", skip_links=False):
     data = []
 
     for url in (current, archive, legacy):
-        with url.open() as stream, contextlib.suppress(yaml.YAMLError):
+        with url.open(encoding="utf-8") as stream, contextlib.suppress(yaml.YAMLError):
             if stream:
                 data += yaml.load(stream, Loader=Loader)  # nosec B506 # noqa: S506
 

@@ -65,7 +65,7 @@ def get_schema():
 
     This is used to determine the order of and accepted keys in a conference item.
     """
-    with Path("utils", "schema.yml").open() as file:
+    with Path("utils", "schema.yml").open(encoding="utf-8") as file:
         data = yaml.safe_load(file)
 
     # Convert the YAML data to a Pandas DataFrame
