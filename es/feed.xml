@@ -9,7 +9,7 @@
 		<title>Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Sat, 08 Jun 2024 15:13:13 +0000</lastBuildDate>
+		<lastBuildDate>Sat, 08 Jun 2024 16:03:03 +0000</lastBuildDate>
 		
 		
 		
@@ -20,7 +20,7 @@
 				<pubDate>Tue, 14 Jan 2025 23:59:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pytexas-2025/</link>
 				<guid isPermaLink="false">pytexas-2025</guid>
-				<category></category>
+				<category>PY</category>
 			</item>
 		
 		
@@ -85,7 +85,7 @@
 				<pubDate>Wed, 31 Jul 2024 23:59:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pybay-2024/</link>
 				<guid isPermaLink="false">pybay-2024</guid>
-				<category></category>
+				<category>PY</category>
 			</item>
 		
 		
@@ -254,7 +254,7 @@
 				<pubDate>Wed, 05 Jun 2024 21:29:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pyhep-2024/</link>
 				<guid isPermaLink="false">pyhep-2024</guid>
-				<category></category>
+				<category>PY</category>
 			</item>
 		
 		

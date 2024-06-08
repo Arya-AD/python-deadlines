@@ -42,11 +42,11 @@
 <link rel="alternate"  title="PyHEP.dev Conference Summary in German" hreflang="de" href="/de/series/pyhep-dev/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1717859593" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1717862583" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1717859593" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1717859593" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1717862583" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1717862583" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -323,7 +323,7 @@
         
           
           <div id="pyhep-2024"
-            class="ConfItem ">
+            class="ConfItem  PY-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
@@ -376,6 +376,9 @@
             <div class="row">
               <div class="col-6">
                 
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
                 
               </div>
               <div class="col-6">
@@ -1049,6 +1052,8 @@ $('#subject-select').multiselect({
       
         
         
+        
+          $('#pyhep-2024 .PY-tag').html("Python General".toLocaleLowerCase("es"));
         
         
 
