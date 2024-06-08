@@ -42,11 +42,11 @@
 <link rel="alternate"  title="Django Day Copenhagen Conference Summary in German" hreflang="de" href="/de/series/django-day-copenhagen/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1717147727" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1717859538" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1717147727" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1717147727" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1717859538" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1717859538" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -156,6 +156,38 @@
 <script type="text/javascript" src="/static/js/ouical.min.js"></script>
 <script type="text/javascript" src="/static/js/bootstrap-multiselect.min.js"></script>
 
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/mastodon.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("https://fosstodon.org/@djangodenmark.rss")
+        .then(function (response) {
+          return response.text();
+        })
+        .then(function (xmlText) {
+          var parser = new DOMParser();
+          var xml = parser.parseFromString(xmlText, "text/xml");
+          var items = xml.querySelectorAll("item");
+          var feedContainer = document.getElementById("mastodon-feed");
+          var postLimit = 2; // Number of posts to display
+
+          for (var i = 0; i < postLimit && i < items.length; i++) {
+            var item = items[i];
+            var post = item.querySelector("description").textContent;
+            var link = item.querySelector("link").textContent;
+            var pubDate = item.querySelector("pubDate").textContent;
+
+            var feedItem = document.createElement("div");
+            feedItem.setAttribute("class", "timeline-item")
+            feedItem.innerHTML = '<div class="timeline-content">' + post + '</div><a href="' + link + '">' + pubDate + ' by Django Day Copenhagen</a>';
+            feedContainer.appendChild(feedItem);
+          }
+        })
+        .catch(function (error) {
+          console.log("Error fetching Mastodon RSS feed:", error);
+        });
+    });
+  </script>
   
 <script type='text/javascript'>
   /* global google */
@@ -475,17 +507,114 @@ if (typeof Object.assign !== 'function') {
           <div class="col-12 col-md-6">
             <div>
               <img src="/static/img/203-earth.svg" class="badge-link" alt="Earth Icon" width="16" height="16" />
-              <a id="conf-website" target="_blank" href="https://2023.djangoday.dk/">https://2023.djangoday.dk/</a>
+              <a id="conf-website" target="_blank" href="https://2024.djangoday.dk/">https://2024.djangoday.dk/</a>
             </div>
             
+              <div>
+                <img src="/static/img/407-twitter.svg" class="badge-link" alt="Twitter icon" width="16" height="16" />
+                <a id="conf-twitter" target="_blank" href="https://twitter.com/djangodenmark">@djangodenmark</a>
+              </div>
+            
+            
+              <div>
+                <img src="/static/img/407-mastodon.svg" class="badge-link" alt="Mastodon icon" width="16" height="16" />
+                <a id="conf-mastodon" target="_blank" href="https://fosstodon.org/@djangodenmark">Mastodon</a>
+              </div>
             
             </div>
             <div class="col-12 col-md-6">
+            
+              <!-- Mastodon timeline -->
+              <div class="meta">Mastodon Posts by Django Day Copenhagen:</div>
+              <div id="mastodon-feed"></div>
+              <a href="https://fosstodon.org/@djangodenmark">See all Mastodon posts for Django Day Copenhagen</a>
             
           </div>
         </div>
         <hr />
       <div id="all_confs">
+        
+          
+          <div id="django-day-copenhagen-2024"
+            class="ConfItem  WEB-conf ">
+            <div class="row conf-row">
+              <div class="col-6">
+                <span class="conf-title">
+                  <a title="Deadline Details"
+                    href="/conference/django-day-copenhagen-2024/">Django Day Copenhagen 2024</a>
+                </span>
+                <span class="conf-title-small">
+                  <a title="Deadline Details"
+                    href="/conference/django-day-copenhagen-2024/">Django Day Copenhagen '24</a>
+                </span>
+                <span class="conf-title-icon">
+                  <a title="Conference Website" href="https://2024.djangoday.dk/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+                  &ZeroWidthSpace;
+                </span>
+                
+                  <span class="conf-title-icon">
+                    <a title="Call for Participation for Django Day Copenhagen" href="https://2024.djangoday.dk/cfp/" target="_blank"><img
+                        src="/static/img/035-file-text.svg" class="badge-link"
+                        alt="Link to Call for Participation for Django Day Copenhagen" width="16" height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
+                
+                
+                
+                  <span class="conf-title-icon">
+                    <a title="Mastodon for Django Day Copenhagen" href="https://fosstodon.org/@djangodenmark" target="_blank"><img
+                        src="/static/img/407-mastodon.svg" class="badge-link" alt="Link to Conference Mastodon" width="16"
+                        height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
+              </div>
+              <div class="col-6">
+                <span class="timer"></span>
+                <span class="timer-small"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="meta">
+
+                  <span class="conf-date">October 4, 2024
+.</span>
+                  <span class="conf-place">
+                    
+                      <a href="http://maps.google.com/?q=Copenhagen, Denmark">Copenhagen, Denmark</a>
+                      
+                    
+                  </span>
+                </div>
+                
+
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="deadline">
+                  <div>Deadline:
+                    <span class="deadline-time">Thursday, 31 August 2023</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                
+                
+                  <span title="Click to only show WEB conferences" data-sub="WEB"
+                    class="badge badge-light conf-sub WEB-tag"></span>
+                
+              </div>
+              <div class="col-6">
+                <div class="calendar"></div>
+              </div>
+            </div>
+            <hr>
+          </div>
         
           
           <div id="django-day-copenhagen-2023"
@@ -694,11 +823,11 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='8fea6c86-cc6f-4bb8-aff0-2e06011151ca' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='7642bf30-b73d-4e9a-9d07-35df43dc657d' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '8fea6c86-cc6f-4bb8-aff0-2e06011151ca',
-    [{"latitude":55.6867243,"longitude":12.5700724,"title":"Django Day Copenhagen 2023","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":55.6867243,"longitude":12.5700724,"title":"Django Day Copenhagen 2022","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
+    '7642bf30-b73d-4e9a-9d07-35df43dc657d',
+    [{"latitude":55.6867243,"longitude":12.5700724,"title":"Django Day Copenhagen 2023","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":55.6867243,"longitude":12.5700724,"title":"Django Day Copenhagen 2022","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":55.6867243,"longitude":12.5700724,"title":"Django Day Copenhagen 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
 </script>
@@ -874,6 +1003,77 @@ $('#subject-select').multiselect({
       // Set time zone to local timezone on web copy
       $('.local-timezone').text(today.toFormat('z'));
 
+      
+        
+        
+        
+          $('#django-day-copenhagen-2024 .WEB-tag').html("Python for Web".toLocaleLowerCase("en"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2023-08-31 23:59:59", { zone: "Europe/Copenhagen" });
+            var confDate = DateTime.fromSQL("2024-10-04", { zone: "Europe/Copenhagen" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2023-08-31 23:59:59");
+            var confDate = DateTime.fromSQL("2024-10-04");
+            console.log("Invalid timezone in django-day-copenhagen-2024. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#django-day-copenhagen-2024 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#django-day-copenhagen-2024 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#django-day-copenhagen-2024 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'django-day-copenhagen-2024',
+              title: 'Django Day Copenhagen 2024 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Copenhagen, Denmark',
+              link: 'https://2024.djangoday.dk/'
+            });
+            document.querySelector('#django-day-copenhagen-2024 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#django-day-copenhagen-2024 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#django-day-copenhagen-2024').attr("cfpDiff", cfpDiff.toMillis());
+          $('#django-day-copenhagen-2024').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#django-day-copenhagen-2024').addClass('pastcfp');
+            $('#django-day-copenhagen-2024 .timer').replaceWith($('#django-day-copenhagen-2024 .deadline'));
+            $('#django-day-copenhagen-2024 .timer-small').replaceWith($('#django-day-copenhagen-2024 .deadline'));
+            $('#django-day-copenhagen-2024 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#django-day-copenhagen-2024').addClass('pastconf');
+            $('#django-day-copenhagen-2024 .timer').replaceWith($('#django-day-copenhagen-2024 .deadline'));
+            $('#django-day-copenhagen-2024 .timer-small').replaceWith($('#django-day-copenhagen-2024 .deadline'));
+            $('#django-day-copenhagen-2024 .calendar').remove();
+          }
+        
       
         
         

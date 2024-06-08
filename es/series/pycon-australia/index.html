@@ -42,11 +42,11 @@
 <link rel="alternate"  title="PyCon Australia Conference Summary in German" hreflang="de" href="/de/series/pycon-australia/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1717147779" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1717859593" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1717147779" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1717147779" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1717859593" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1717859593" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -340,6 +340,13 @@
                   &ZeroWidthSpace;
                 </span>
                 
+                  <span class="conf-title-icon">
+                    <a title="Call for Participation for PyCon Australia" href="https://pretalx.com/pycon-au-2024/cfp" target="_blank"><img
+                        src="/static/img/035-file-text.svg" class="badge-link"
+                        alt="Link to Call for Participation for PyCon Australia" width="16" height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
                 
                 
                 
@@ -368,7 +375,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Monday, 22 July 2024</span>
                   </div>
                 </div>
 
@@ -1555,9 +1562,69 @@ $('#subject-select').multiselect({
           $('#pycon-australia-2024 .PY-tag').html("Python General".toLocaleLowerCase("es"));
         
         
-          $('#pycon-australia-2024 .timer').html("TBA");
-          $('#pycon-australia-2024 .deadline-time').html("TBA");
-          $('#pycon-australia-2024').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2024-07-22 22:00:00", { zone: "Australia/Melbourne" });
+            var confDate = DateTime.fromSQL("2024-11-22", { zone: "Australia/Melbourne" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2024-07-22 22:00:00");
+            var confDate = DateTime.fromSQL("2024-11-22");
+            console.log("Invalid timezone in pycon-australia-2024. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-australia-2024 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-australia-2024 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-australia-2024 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-australia-2024',
+              title: 'PyCon Australia 2024 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Melbourne, Australia',
+              link: 'https://2024.pycon.org.au/'
+            });
+            document.querySelector('#pycon-australia-2024 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-australia-2024 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-australia-2024').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-australia-2024').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-australia-2024').addClass('pastcfp');
+            $('#pycon-australia-2024 .timer').replaceWith($('#pycon-australia-2024 .deadline'));
+            $('#pycon-australia-2024 .timer-small').replaceWith($('#pycon-australia-2024 .deadline'));
+            $('#pycon-australia-2024 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-australia-2024').addClass('pastconf');
+            $('#pycon-australia-2024 .timer').replaceWith($('#pycon-australia-2024 .deadline'));
+            $('#pycon-australia-2024 .timer-small').replaceWith($('#pycon-australia-2024 .deadline'));
+            $('#pycon-australia-2024 .calendar').remove();
+          }
         
       
         
