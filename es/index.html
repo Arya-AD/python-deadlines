@@ -40,11 +40,11 @@
 <link rel="alternate"  title="Python Conference Deadlines in German" hreflang="de" href="/de/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1717862583" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1717863289" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1717862583" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1717862583" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1717863289" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1717863289" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -2766,7 +2766,7 @@
             <a title="Deadline Details" href="/es/conference/pyday-valparaiso-2024/">PyDay Valparaiso '24</a>
         </span>
         <span class="conf-title-icon">
-        <a title="Conference Website" href="https://www.pyday.cl/copiapo.html" target="_blank"><img src="/static/img/203-earth.svg" class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+        <a title="Conference Website" href="https://www.pyday.cl/valparaiso.html" target="_blank"><img src="/static/img/203-earth.svg" class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
         &ZeroWidthSpace;
         </span>
         
@@ -7383,13 +7383,13 @@ $('#subject-select').multiselect({
 
           // Use specified timezone for deadlines if available else use AoE timezone
           
-            var cfpDate = DateTime.fromSQL("2024-06-02 23:59:59", {zone: "Europe/Warsaw"});
+            var cfpDate = DateTime.fromSQL("2024-06-09 23:59:59", {zone: "Europe/Warsaw"});
             var confDate = DateTime.fromSQL("2024-08-26", {zone: "Europe/Warsaw"});
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
-            var cfpDate = DateTime.fromSQL("2024-06-02 23:59:59");
+            var cfpDate = DateTime.fromSQL("2024-06-09 23:59:59");
             var confDate = DateTime.fromSQL("2024-08-26");
             console.log("Invalid timezone in euroscipy-2024. Using system timezone instead.");
           }
@@ -7561,7 +7561,7 @@ $('#subject-select').multiselect({
             start_date: cfpDate.toJSDate(),
             duration: 60,
             place: 'Valparaiso, Chile',
-            link: 'https://www.pyday.cl/copiapo.html'
+            link: 'https://www.pyday.cl/valparaiso.html'
           });
           document.querySelector('#pyday-valparaiso-2024 .calendar').appendChild(myCalendar);
           } catch(err) {
