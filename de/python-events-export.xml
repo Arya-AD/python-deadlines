@@ -9,7 +9,7 @@
 		<title>Newsfeed for Python Events Calendar from Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Sat, 08 Jun 2024 16:15:46 +0000</lastBuildDate>
+		<lastBuildDate>Tue, 11 Jun 2024 12:03:05 +0000</lastBuildDate>
 		
 			<item>
 				<title>PyTexas 2025 Conference Deadline</title>
@@ -144,7 +144,7 @@
 			<item>
 				<title>Swiss Python Summit 2024 Conference Deadline</title>
 				<description><![CDATA[* name of the event: Swiss Python Summit 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Rapperswil, Switzerland<br/>* dates/times/recurrence (incl. time zone): 17. – 18. Oktober 2024
-<br/>* HTML link : <a href="https://python-summit.ch">Swiss Python Summit 2024</a>]]></description>
+<br/>* HTML link : <a href="https://python-summit.ch/">Swiss Python Summit 2024</a>]]></description>
 				<pubDate>Thu, 17 Oct 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/swiss-python-summit-2024/</link>
 				<guid isPermaLink="false">swiss-python-summit-2024</guid>

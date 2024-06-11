@@ -6,6 +6,26 @@ PY:
 - pyday
 - pycamp
 - pyjamas
+- pygrunn
+- pyohio
+- pytexas
+- fosdem
+- pycode conference
+- pygotham
+- belpy
+- pycascades
+- pycolorado
+- pybay
+- pycaribbean
+- pytennessee
+- rupy
+- pyparis
+- pymunich
+- pylondinium
+- pydelhi
+- pybits
+- piter py
+- mupy
 WEB:
 - django
 - flask
@@ -17,6 +37,8 @@ DATA:
 - jupyter
 SCIPY:
 - scipy
+- pyhep
+- pyhpc
 BIZ:
 - business
 GEO:

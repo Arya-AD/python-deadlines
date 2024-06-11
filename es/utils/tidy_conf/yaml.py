@@ -7,8 +7,8 @@ import contextlib
 from pathlib import Path
 
 import pandas as pd
-
-from tidy_conf.utils import get_schema
+from tidy_conf.schema import Conference
+from tidy_conf.schema import get_schema
 
 from .utils import ordered_dump
 
@@ -25,8 +25,11 @@ def write_conference_yaml(data: list[dict] | pd.DataFrame, url: str) -> None:
     """
     if isinstance(data, pd.DataFrame):
         data = [{k: v for k, v in record.items() if pd.notnull(v)} for record in data.to_dict(orient="records")]
+    if isinstance(data[0], Conference):
+        data = [record.model_dump(exclude_defaults=True, exclude_none=True) for record in data]
     with Path(url).open(
-        "w", encoding="utf-8",
+        "w",
+        encoding="utf-8",
     ) as outfile:
         for line in ordered_dump(
             data,
@@ -98,7 +101,8 @@ def update_title_mappings(data, path="utils/tidy_conf/data/titles.yml"):
     if not path.exists():
         path.parent.mkdir(parents=True, exist_ok=True)
         with path.open(
-            "w",encoding="utf-8",
+            "w",
+            encoding="utf-8",
         ) as file:
             yaml.dump({"spelling": [], "alt_name": data}, file, default_flow_style=False, allow_unicode=True)
     else:
@@ -106,7 +110,8 @@ def update_title_mappings(data, path="utils/tidy_conf/data/titles.yml"):
             title_data = yaml.safe_load(file)
         title_data["alt_name"].update(data)
         with path.open(
-            "w",encoding="utf-8",
+            "w",
+            encoding="utf-8",
         ) as file:
             yaml.dump(title_data, file, default_flow_style=False, allow_unicode=True)
 

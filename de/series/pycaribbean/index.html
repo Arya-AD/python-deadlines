@@ -42,11 +42,11 @@
 <link rel="alternate"  title="PyCaribbean Conference Summary in German" hreflang="de" href="/de/series/pycaribbean/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1717863346" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1718107385" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1717863346" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1717863346" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1718107385" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1718107385" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -446,6 +446,26 @@ if (typeof Object.assign !== 'function') {
           <span id="conf-subs" title="Conference subjects">
             
             
+            <span class="PY-tag badge badge-light conf-sub conf-PY">
+              
+                
+                  General Python
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </span>
+            
           </span>
         </div>
       </div>
@@ -469,7 +489,7 @@ if (typeof Object.assign !== 'function') {
         
           
           <div id="pycaribbean-2019"
-            class="ConfItem ">
+            class="ConfItem  PY-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
@@ -531,6 +551,9 @@ if (typeof Object.assign !== 'function') {
               <div class="col-6">
                 
                 
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
               </div>
               <div class="col-6">
                 <div class="calendar"></div>
@@ -541,7 +564,7 @@ if (typeof Object.assign !== 'function') {
         
           
           <div id="pycaribbean-2018"
-            class="ConfItem ">
+            class="ConfItem  PY-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
@@ -596,6 +619,9 @@ if (typeof Object.assign !== 'function') {
               <div class="col-6">
                 
                 
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
               </div>
               <div class="col-6">
                 <div class="calendar"></div>
@@ -606,7 +632,7 @@ if (typeof Object.assign !== 'function') {
         
           
           <div id="pycaribbean-2016"
-            class="ConfItem ">
+            class="ConfItem  PY-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
@@ -661,6 +687,9 @@ if (typeof Object.assign !== 'function') {
               <div class="col-6">
                 
                 
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
               </div>
               <div class="col-6">
                 <div class="calendar"></div>
@@ -672,10 +701,10 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='b1a2aad8-0048-4282-a622-4e7506f60884' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='be831597-e930-420e-8edb-95f50b5ffeb3' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'b1a2aad8-0048-4282-a622-4e7506f60884',
+    'be831597-e930-420e-8edb-95f50b5ffeb3',
     [{"latitude":18.4801972,"longitude":-69.942111,"title":"PyCaribbean 2018","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":18.4801972,"longitude":-69.942111,"title":"PyCaribbean 2016","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":18.4801972,"longitude":-69.942111,"title":"PyCaribbean 2019","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -856,6 +885,8 @@ $('#subject-select').multiselect({
         
         
         
+          $('#pycaribbean-2019 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
         
 
           // Use specified timezone for deadlines if available else use AoE timezone
@@ -925,6 +956,8 @@ $('#subject-select').multiselect({
         
         
         
+          $('#pycaribbean-2018 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
         
           $('#pycaribbean-2018 .timer').html("TBA");
           $('#pycaribbean-2018 .deadline-time').html("TBA");
@@ -933,6 +966,8 @@ $('#subject-select').multiselect({
       
         
         
+        
+          $('#pycaribbean-2016 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
         
         
           $('#pycaribbean-2016 .timer').html("TBA");

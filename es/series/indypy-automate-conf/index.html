@@ -42,11 +42,11 @@
 <link rel="alternate"  title="IndyPy Automate Conf Conference Summary in German" hreflang="de" href="/de/series/indypy-automate-conf/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1717863289" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1718107333" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1717863289" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1717863289" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1718107333" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1718107333" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -280,6 +280,26 @@
           <span id="conf-subs" title="Conference subjects">
             
             
+            <span class="PY-tag badge badge-light conf-sub conf-PY">
+              
+                
+                  General Python
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </span>
+            
           </span>
         </div>
       </div>
@@ -303,7 +323,7 @@
         
           
           <div id="indypy-automate-conf-2019"
-            class="ConfItem ">
+            class="ConfItem  PY-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
@@ -357,6 +377,9 @@
             <div class="row">
               <div class="col-6">
                 
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
                 
               </div>
               <div class="col-6">
@@ -540,6 +563,8 @@ $('#subject-select').multiselect({
       
         
         
+        
+          $('#indypy-automate-conf-2019 .PY-tag').html("Python General".toLocaleLowerCase("es"));
         
         
           $('#indypy-automate-conf-2019 .timer').html("TBA");

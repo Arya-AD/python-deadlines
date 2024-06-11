@@ -42,11 +42,11 @@
 <link rel="alternate"  title="PyBay Conference Summary in German" hreflang="de" href="/de/series/pybay/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1717863289" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1718107333" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1717863289" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1717863289" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1718107333" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1718107333" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -480,7 +480,7 @@
         
           
           <div id="pybay-2019"
-            class="ConfItem ">
+            class="ConfItem  PY-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
@@ -498,7 +498,7 @@
                 </span>
                 
                   <span class="conf-title-icon">
-                    <a title="Call for Participation for PyBay" href="https://pybay2019cfp.hubb.me" target="_blank"><img
+                    <a title="Call for Participation for PyBay" href="https://pybay2019cfp.hubb.me/" target="_blank"><img
                         src="/static/img/035-file-text.svg" class="badge-link"
                         alt="Link to Call for Participation for PyBay" width="16" height="16" /></a>
                     &ZeroWidthSpace;
@@ -542,6 +542,9 @@
               <div class="col-6">
                 
                 
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
               </div>
               <div class="col-6">
                 <div class="calendar"></div>
@@ -552,7 +555,7 @@
         
           
           <div id="pybay-2018"
-            class="ConfItem ">
+            class="ConfItem  PY-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
@@ -607,6 +610,9 @@
               <div class="col-6">
                 
                 
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
               </div>
               <div class="col-6">
                 <div class="calendar"></div>
@@ -617,7 +623,7 @@
         
           
           <div id="pybay-2016"
-            class="ConfItem ">
+            class="ConfItem  PY-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
@@ -671,6 +677,9 @@
             <div class="row">
               <div class="col-6">
                 
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
                 
               </div>
               <div class="col-6">
@@ -997,6 +1006,8 @@ $('#subject-select').multiselect({
         
         
         
+          $('#pybay-2019 .PY-tag').html("Python General".toLocaleLowerCase("es"));
+        
         
 
           // Use specified timezone for deadlines if available else use AoE timezone
@@ -1066,6 +1077,8 @@ $('#subject-select').multiselect({
         
         
         
+          $('#pybay-2018 .PY-tag').html("Python General".toLocaleLowerCase("es"));
+        
         
           $('#pybay-2018 .timer').html("TBA");
           $('#pybay-2018 .deadline-time').html("TBA");
@@ -1074,6 +1087,8 @@ $('#subject-select').multiselect({
       
         
         
+        
+          $('#pybay-2016 .PY-tag').html("Python General".toLocaleLowerCase("es"));
         
         
           $('#pybay-2016 .timer').html("TBA");

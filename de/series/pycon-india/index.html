@@ -42,11 +42,11 @@
 <link rel="alternate"  title="PyCon India Conference Summary in German" hreflang="de" href="/de/series/pycon-india/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1717863346" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1718107385" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1717863346" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1717863346" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1718107385" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1718107385" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -1300,7 +1300,7 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">27. – 26. September 2010
+                  <span class="conf-date">26. – 27. September 2010
 .</span>
                   <span class="conf-place">
                     
@@ -2449,13 +2449,13 @@ $('#subject-select').multiselect({
           // Use specified timezone for deadlines if available else use AoE timezone
           
             var cfpDate = DateTime.fromSQL("2010-07-31 23:59:00", { zone: "Asia/Kolkata" });
-            var confDate = DateTime.fromSQL("2010-09-27", { zone: "Asia/Kolkata" });
+            var confDate = DateTime.fromSQL("2010-09-26", { zone: "Asia/Kolkata" });
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
             var cfpDate = DateTime.fromSQL("2010-07-31 23:59:00");
-            var confDate = DateTime.fromSQL("2010-09-27");
+            var confDate = DateTime.fromSQL("2010-09-26");
             console.log("Invalid timezone in pycon-india-2010. Using system timezone instead.");
           }
 

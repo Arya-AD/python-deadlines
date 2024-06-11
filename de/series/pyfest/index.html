@@ -42,11 +42,11 @@
 <link rel="alternate"  title="PyFest Conference Summary in German" hreflang="de" href="/de/series/pyfest/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1717863346" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1718107385" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1717863346" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1717863346" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1718107385" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1718107385" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -280,6 +280,26 @@
           <span id="conf-subs" title="Conference subjects">
             
             
+            <span class="PY-tag badge badge-light conf-sub conf-PY">
+              
+                
+                  General Python
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </span>
+            
           </span>
         </div>
       </div>
@@ -289,7 +309,7 @@
           <div class="col-12 col-md-6">
             <div>
               <img src="/static/img/203-earth.svg" class="badge-link" alt="Earth Icon" width="16" height="16" />
-              <a id="conf-website" target="_blank" href="https://pyfest.Online/">https://pyfest.Online/</a>
+              <a id="conf-website" target="_blank" href="https://pyfest.online/">https://pyfest.online/</a>
             </div>
             
             
@@ -303,7 +323,7 @@
         
           
           <div id="pyfest-2021"
-            class="ConfItem ">
+            class="ConfItem  PY-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
@@ -315,7 +335,7 @@
                     href="/de/conference/pyfest-2021/">PyFest '21</a>
                 </span>
                 <span class="conf-title-icon">
-                  <a title="Conference Website" href="https://pyfest.Online/" target="_blank"><img src="/static/img/203-earth.svg"
+                  <a title="Conference Website" href="https://pyfest.online/" target="_blank"><img src="/static/img/203-earth.svg"
                       class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
                   &ZeroWidthSpace;
                 </span>
@@ -356,6 +376,9 @@
             <div class="row">
               <div class="col-6">
                 
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
                 
               </div>
               <div class="col-6">
@@ -539,6 +562,8 @@ $('#subject-select').multiselect({
       
         
         
+        
+          $('#pyfest-2021 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
         
         
           $('#pyfest-2021 .timer').html("TBA");

@@ -15,12 +15,15 @@ from tqdm import tqdm
 sys.path.append(".")
 import operator
 
-from tidy_conf import auto_add_sub, write_conference_yaml
+from tidy_conf import auto_add_sub
+from tidy_conf import write_conference_yaml
 from tidy_conf.date import clean_dates
 from tidy_conf.latlon import add_latlon
 from tidy_conf.links import check_link_availability
+from tidy_conf.schema import get_schema
 from tidy_conf.titles import tidy_titles
-from tidy_conf.utils import Loader, get_schema, query_yes_no
+from tidy_conf.utils import Loader
+from tidy_conf.utils import query_yes_no
 
 dateformat = "%Y-%m-%d %H:%M:%S"
 tba_words = ["tba", "tbd", "cancelled", "none", "na", "n/a", "nan", "n.a."]
@@ -50,7 +53,7 @@ def sort_by_date(data):
     """Sort by starting date."""
     if "start" not in data:
         return "TBA"
-    return str(data["start"])
+    return str(data.start)
 
 
 def sort_by_date_passed(data):
@@ -61,7 +64,7 @@ def sort_by_date_passed(data):
 
 def sort_by_name(data):
     """Sort by name."""
-    return f'{data["conference"]} {data["year"]!s}'.lower()
+    return f"{data.conference} {data.year!s}".lower()
 
 
 def order_keywords(data):
@@ -110,21 +113,23 @@ def split_data(data):
     """
     conf, tba, expired, legacy = [], [], [], []
     for q in tqdm(data):
-        if q["cfp"].lower() not in tba_words and " " not in q["cfp"]:
-            q["cfp"] += " 23:59:00"
-        if "cfp_ext" in q and " " not in q["cfp_ext"]:
-            q["cfp_ext"] += " 23:59:00"
-        if q.get("end", datetime.datetime.now(tz=timezone.utc).replace(microsecond=0).date()) < datetime.datetime.now(
+        if q.cfp.lower() not in tba_words and " " not in q.cfp:
+            q.cfp += " 23:59:00"
+        if "cfp_ext" in q and " " not in q.cfp_ext:
+            q.cfp_ext += " 23:59:00"
+        if q.end < datetime.datetime.now(
             tz=timezone.utc,
-        ).replace(microsecond=0).date() - datetime.timedelta(days=37):
-            if q["cfp"].lower() == "tba":
+        ).replace(
+            microsecond=0,
+        ).date() - datetime.timedelta(days=37):
+            if q.cfp.lower() == "tba":
                 legacy.append(q)
             else:
                 expired.append(q)
             continue
 
         try:
-            if q["cfp"].lower() in tba_words:
+            if q.cfp.lower() in tba_words:
                 tba.append(q)
             else:
                 conf.append(q)
@@ -165,6 +170,8 @@ def sort_data(base="", prefix="", skip_links=False):
             if stream:
                 data += yaml.load(stream, Loader=Loader)  # nosec B506 # noqa: S506
 
+    from tidy_conf.schema import Conference
+
     for i, q in enumerate(data.copy()):
         data[i] = order_keywords(q)
 
@@ -189,6 +196,8 @@ def sort_data(base="", prefix="", skip_links=False):
 
     for i, q in enumerate(data.copy()):
         data[i] = order_keywords(q)
+
+    data = [Conference(**q) for q in data]
 
     # Split data by cfp
     conf, tba, expired, legacy = split_data(data)

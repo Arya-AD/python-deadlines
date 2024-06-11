@@ -8,7 +8,7 @@ sys.path.append(".")
 import contextlib
 
 from tidy_conf.deduplicate import deduplicate
-from tidy_conf.utils import get_schema
+from tidy_conf.schema import get_schema
 from tidy_conf.utils import query_yes_no
 from tidy_conf.yaml import load_title_mappings
 from tidy_conf.yaml import update_title_mappings

@@ -42,11 +42,11 @@
 <link rel="alternate"  title="DragonPy Conference Summary in German" hreflang="de" href="/de/series/dragonpy/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1717863346" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1718107385" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1717863346" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1717863346" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1718107385" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1718107385" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -280,6 +280,46 @@
           <span id="conf-subs" title="Conference subjects">
             
             
+            <span class="WEB-tag badge badge-light conf-sub conf-WEB">
+              
+                
+              
+                
+              
+                
+              
+                
+                  Python for Web
+                
+              
+                
+              
+                
+              
+                
+              
+            </span>
+            
+            <span class="DATA-tag badge badge-light conf-sub conf-DATA">
+              
+                
+              
+                
+              
+                
+                  Python for Data
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </span>
+            
           </span>
         </div>
       </div>
@@ -303,7 +343,7 @@
         
           
           <div id="dragonpy-2020"
-            class="ConfItem ">
+            class="ConfItem  WEB-conf  DATA-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
@@ -343,12 +383,16 @@
                   </span>
                 </div>
                 
+                  <div class="note">
+                    <b>Note: </b>Cancelled due to COVID-19
+                  </div>
+                
 
               </div>
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Cancelled</span>
                   </div>
                 </div>
 
@@ -357,6 +401,12 @@
             <div class="row">
               <div class="col-6">
                 
+                
+                  <span title="Click to only show WEB conferences" data-sub="WEB"
+                    class="badge badge-light conf-sub WEB-tag"></span>
+                
+                  <span title="Click to only show DATA conferences" data-sub="DATA"
+                    class="badge badge-light conf-sub DATA-tag"></span>
                 
               </div>
               <div class="col-6">
@@ -541,9 +591,13 @@ $('#subject-select').multiselect({
         
         
         
+          $('#dragonpy-2020 .WEB-tag').html("Python für Web".toLocaleLowerCase("de"));
         
-          $('#dragonpy-2020 .timer').html("TBA");
-          $('#dragonpy-2020 .deadline-time').html("TBA");
+          $('#dragonpy-2020 .DATA-tag').html("Python für Daten".toLocaleLowerCase("de"));
+        
+        
+          $('#dragonpy-2020 .timer').html("Cancelled");
+          $('#dragonpy-2020 .deadline-time').html("Cancelled");
           $('#dragonpy-2020').attr("cfpDiff", Infinity);
         
       

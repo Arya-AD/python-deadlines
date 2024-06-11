@@ -1,5 +1,4 @@
 import sys
-from pathlib import Path
 
 import pandas as pd
 import yaml
@@ -58,18 +57,6 @@ def pretty_print(header, conf, tba=None, expired=None) -> None:
                 else:
                     print(q)
             print("\n")
-
-
-def get_schema():
-    """Load the schema from the schema.yml file and return it as a DataFrame.
-
-    This is used to determine the order of and accepted keys in a conference item.
-    """
-    with Path("utils", "schema.yml").open(encoding="utf-8") as file:
-        data = yaml.safe_load(file)
-
-    # Convert the YAML data to a Pandas DataFrame
-    return pd.DataFrame.from_dict(data).drop(index=0)
 
 
 # Helper function for yes no questions
