@@ -316,6 +316,9 @@
 <loc>https://pythondeadlin.es/conference/pycon-uk-2020/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/conference/dragonpy-2020/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/conference/pycon-slovakia-2020/</loc>
 </url>
 <url>
@@ -329,6 +332,9 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/pycon-web-2020/</loc>
+</url>
+<url>
+<loc>https://pythondeadlin.es/conference/caipyra-2019/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/pycon-web-2018/</loc>
@@ -2107,12 +2113,6 @@
 <loc>https://pythondeadlin.es/conference/europython-2002/</loc>
 </url>
 <url>
-<loc>https://pythondeadlin.es/conference/dragonpy-2020/</loc>
-</url>
-<url>
-<loc>https://pythondeadlin.es/conference/caipyra-2019/</loc>
-</url>
-<url>
 <loc>https://pythondeadlin.es/conference/rencontres-django-2017/</loc>
 </url>
 <url>
@@ -3196,6 +3196,9 @@
 <loc>https://pythondeadlin.es/series/pycon-uk/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/series/dragonpy/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/series/pycon-slovakia/</loc>
 </url>
 <url>
@@ -3209,6 +3212,9 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/pycon-web/</loc>
+</url>
+<url>
+<loc>https://pythondeadlin.es/series/caipyra/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/pycon-web/</loc>
@@ -4985,12 +4991,6 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/europython/</loc>
-</url>
-<url>
-<loc>https://pythondeadlin.es/series/dragonpy/</loc>
-</url>
-<url>
-<loc>https://pythondeadlin.es/series/caipyra/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/pytexas/</loc>

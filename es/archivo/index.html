@@ -40,11 +40,11 @@
 <link rel="alternate"  title="Conferencias anteriores de Python in German" hreflang="de" href="/de/archiv/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1718107333" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1718137113" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1718107333" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1718107333" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1718137113" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1718137113" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -44107,6 +44107,19 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
+			      $('#dragonpy-2020 .WEB-tag').html("Python para Web".toLocaleLowerCase("es"));
+			    
+			      $('#dragonpy-2020 .DATA-tag').html("Python para Datos".toLocaleLowerCase("es"));
+			    
+			    
+			      $('#dragonpy-2020 .timer').html("Cancelled");
+			      $('#dragonpy-2020 .deadline-time').html("Cancelled");
+			      $('#dragonpy-2020').attr("cfpDiff", Infinity);
+			    
+			  
+			    
+			    
+			    
 			      $('#pycon-slovakia-2020 .PY-tag').html("Python General".toLocaleLowerCase("es"));
 			    
 			    
@@ -44183,6 +44196,17 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#pycon-web-2020 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#caipyra-2019 .PY-tag').html("Python General".toLocaleLowerCase("es"));
+			    
+			    
+			      $('#caipyra-2019 .timer').html("Cancelled");
+			      $('#caipyra-2019 .deadline-time').html("Cancelled");
+			      $('#caipyra-2019').attr("cfpDiff", Infinity);
 			    
 			  
 			    
@@ -58360,30 +58384,6 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#europython-2002 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
-			    
-			  
-			    
-			    
-			    
-			      $('#dragonpy-2020 .WEB-tag').html("Python para Web".toLocaleLowerCase("es"));
-			    
-			      $('#dragonpy-2020 .DATA-tag').html("Python para Datos".toLocaleLowerCase("es"));
-			    
-			    
-			      $('#dragonpy-2020 .timer').html("Cancelled");
-			      $('#dragonpy-2020 .deadline-time').html("Cancelled");
-			      $('#dragonpy-2020').attr("cfpDiff", Infinity);
-			    
-			  
-			    
-			    
-			    
-			      $('#caipyra-2019 .PY-tag').html("Python General".toLocaleLowerCase("es"));
-			    
-			    
-			      $('#caipyra-2019 .timer').html("Cancelled");
-			      $('#caipyra-2019 .deadline-time').html("Cancelled");
-			      $('#caipyra-2019').attr("cfpDiff", Infinity);
 			    
 			  
 

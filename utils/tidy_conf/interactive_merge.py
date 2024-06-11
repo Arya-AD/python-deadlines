@@ -1,3 +1,4 @@
+import re
 import sys
 from collections import defaultdict
 
@@ -7,7 +8,6 @@ from thefuzz import process
 sys.path.append(".")
 import contextlib
 
-from tidy_conf.deduplicate import deduplicate
 from tidy_conf.schema import get_schema
 from tidy_conf.utils import query_yes_no
 from tidy_conf.yaml import load_title_mappings
@@ -25,16 +25,18 @@ def fuzzy_match(df_yml, df_remote):
     """
     # Load known title mappings
     _, known_mappings = load_title_mappings(reverse=True)
-    _, known_rejections = load_title_mappings(reverse=True, path="utils/tidy_conf/data/.tmp/rejections.yml")
-    df_remote.loc[:, "conference"] = df_remote.conference.replace(known_mappings)
-    df_yml.loc[:, "conference"] = df_yml.conference.replace(known_mappings)
+    _, known_rejections = load_title_mappings(path="utils/tidy_conf/data/.tmp/rejections.yml")
+    regex_year = re.compile(r"\b\s+(19|20)\d{2}\s*\b")
+    df_remote.loc[:, "conference"] = (
+        df_remote.conference.str.replace(regex_year, "", regex=True).str.strip().replace(known_mappings)
+    )
+    df_yml.loc[:, "conference"] = (
+        df_yml.conference.str.replace(regex_year, "", regex=True).str.strip().replace(known_mappings)
+    )
     new_mappings = defaultdict(list)
     new_rejections = defaultdict(list)
 
     # Make Title the index
-    df_remote = df_remote.set_index("conference", drop=False)
-    df_remote.index.rename("title_match", inplace=True)
-    df_remote = deduplicate(df_remote)
     df_remote = df_remote.set_index("conference", drop=False)
     df_remote.index.rename("title_match", inplace=True)
 
@@ -42,7 +44,7 @@ def fuzzy_match(df_yml, df_remote):
 
     # Get closest match for titles
     df["title_match"] = df["conference"].apply(
-        lambda x: process.extract(x, df_remote["conference"].replace(known_mappings), limit=1),
+        lambda x: process.extract(x, df_remote["conference"], limit=1),
     )
 
     # Get first match if it's over 90
@@ -55,14 +57,15 @@ def fuzzy_match(df_yml, df_remote):
         if prob == 100:
             title = title
         elif prob >= 70:
-            if (title in known_rejections and known_rejections[title] == i) or (
-                i in known_rejections and known_rejections[i] == title
+            if (title in known_rejections and i in known_rejections[title]) or (
+                i in known_rejections and title in known_rejections[i]
             ):
                 title = i
             else:
                 if not query_yes_no(f"Do '{row['conference']}' and '{title}' match? (y/n): "):
                     # Code for non-matching case
                     new_rejections[title].append(i)
+                    new_rejections[i].append(title)
                     title = i
                 else:
                     new_mappings[i].append(title)
@@ -176,11 +179,19 @@ def merge_conferences(df_yml, df_remote):
                             cfp_time_x = " " + ry.split(" ")[1]
 
                         # Check if the cfp_ext is the same and if so update the cfp
-                        if rx + cfp_time_x == row["cfp_ext"]:
+                        if rx + cfp_time_x == row["cfp_ext_x"]:
                             df_new.loc[i, "cfp"] = ry + cfp_time_y
                             df_new.loc[i, "cfp_ext"] = rx + cfp_time_x
                             continue
-                        if ry + cfp_time_y == row["cfp_ext"]:
+                        if ry + cfp_time_y == row["cfp_ext_y"]:
+                            df_new.loc[i, "cfp"] = rx + cfp_time_x
+                            df_new.loc[i, "cfp_ext"] = ry + cfp_time_y
+                            continue
+                        if rx + cfp_time_x == row["cfp_ext_y"]:
+                            df_new.loc[i, "cfp"] = ry + cfp_time_y
+                            df_new.loc[i, "cfp_ext"] = rx + cfp_time_x
+                            continue
+                        if ry + cfp_time_y == row["cfp_ext_x"]:
                             df_new.loc[i, "cfp"] = rx + cfp_time_x
                             df_new.loc[i, "cfp_ext"] = ry + cfp_time_y
                             continue

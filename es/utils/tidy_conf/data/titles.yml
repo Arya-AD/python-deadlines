@@ -1,4 +1,3 @@
----
 alt_name:
   DjangoCon Australia:
   - DjangoCon AU
@@ -62,6 +61,11 @@ alt_name:
   - PyCon LT
   PyCon MEA:
   - PyCon MEA @ GlobalDevSlam
+  - PyCon MEA & Data Science
+  PyCon Namibia:
+  - PyCon NA
+  PyCon Netherlands:
+  - PyCon NL
   PyCon Philippines:
   - PyCon PH
   PyCon Poland:
@@ -93,7 +97,6 @@ alt_name:
   - Prague Python Pizza
   Python Sul:
   - Python Sul (Brazil)
-  - Python Sul 2024 (Brazil)
   SciPy US:
   - Scipy
   - SciPy

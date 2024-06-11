@@ -3,27 +3,25 @@
 # Sort and Clean conference data.
 import contextlib
 import datetime
-import sys
+import operator
 import time
 from datetime import timezone
 from pathlib import Path
 
+import pydantic
 import pytz
 import yaml
-from tqdm import tqdm
-
-sys.path.append(".")
-import operator
-
 from tidy_conf import auto_add_sub
 from tidy_conf import write_conference_yaml
 from tidy_conf.date import clean_dates
 from tidy_conf.latlon import add_latlon
 from tidy_conf.links import check_link_availability
+from tidy_conf.schema import Conference
 from tidy_conf.schema import get_schema
 from tidy_conf.titles import tidy_titles
 from tidy_conf.utils import Loader
 from tidy_conf.utils import query_yes_no
+from tqdm import tqdm
 
 dateformat = "%Y-%m-%d %H:%M:%S"
 tba_words = ["tba", "tbd", "cancelled", "none", "na", "n/a", "nan", "n.a."]
@@ -31,19 +29,15 @@ tba_words = ["tba", "tbd", "cancelled", "none", "na", "n/a", "nan", "n.a."]
 
 def sort_by_cfp(data):
     """Sort by CFP date."""
-    if "cfp" not in data:
-        return "TBA"
-    if data["cfp"].lower() in tba_words:
-        return data["cfp"]
-    if " " not in data["cfp"]:
-        data["cfp"] += " 23:59:00"
+    if data.cfp.lower() in tba_words:
+        return data.cfp
+    if " " not in data.cfp:
+        data.cfp += " 23:59:00"
+    timezone = data.timezone or "AoE"
     return pytz.utc.normalize(
-        datetime.datetime.strptime(data["cfp"], dateformat).replace(
+        datetime.datetime.strptime(data.cfp, dateformat).replace(
             tzinfo=pytz.timezone(
-                data.get("timezone", "AoE")
-                .replace("AoE", "Etc/GMT+12")
-                .replace("UTC+", "Etc/GMT-")
-                .replace("UTC-", "Etc/GMT+"),
+                timezone.replace("AoE", "Etc/GMT+12").replace("UTC+", "Etc/GMT-").replace("UTC-", "Etc/GMT+"),
             ),
         ),
     ).strftime(dateformat)
@@ -51,8 +45,6 @@ def sort_by_cfp(data):
 
 def sort_by_date(data):
     """Sort by starting date."""
-    if "start" not in data:
-        return "TBA"
     return str(data.start)
 
 
@@ -64,16 +56,24 @@ def sort_by_date_passed(data):
 
 def sort_by_name(data):
     """Sort by name."""
-    return f"{data.conference} {data.year!s}".lower()
+    return f"{data.conference} {data.year}".lower()
 
 
 def order_keywords(data):
     """Order the keywords in the data."""
     schema = get_schema().columns.tolist()
+    _data_flag = False
+    if isinstance(data, Conference):
+        data = data.dict()
+        _data_flag = True
+
     new_dict = {}
     for key in schema:
         if key in data:
             new_dict[key] = data[key]
+
+    if _data_flag:
+        return Conference(**new_dict)
     return new_dict
 
 
@@ -197,7 +197,16 @@ def sort_data(base="", prefix="", skip_links=False):
     for i, q in enumerate(data.copy()):
         data[i] = order_keywords(q)
 
-    data = [Conference(**q) for q in data]
+    new_data = []
+    for q in data:
+        try:
+            new_data.append(Conference(**q))
+        except pydantic.error_wrappers.ValidationError as e:  # noqa: PERF203
+            print(f"Error: {e}")
+            print(f"Data: {q}")
+            print("\n")
+            continue
+    data = new_data
 
     # Split data by cfp
     conf, tba, expired, legacy = split_data(data)

@@ -108,7 +108,14 @@ def update_title_mappings(data, path="utils/tidy_conf/data/titles.yml"):
     else:
         with path.open(encoding="utf-8") as file:
             title_data = yaml.safe_load(file)
-        title_data["alt_name"].update(data)
+        for key, values in data.items():
+            if key in title_data["alt_name"].values():
+                continue
+            if key not in title_data["alt_name"]:
+                title_data["alt_name"][key] = []
+            for value in values:
+                if value not in title_data["alt_name"][key]:
+                    title_data["alt_name"][key].append(value)
         with path.open(
             "w",
             encoding="utf-8",
