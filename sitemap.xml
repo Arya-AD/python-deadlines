@@ -72,6 +72,9 @@
 <loc>https://pythondeadlin.es/conference/pycon-poland-2024/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/conference/python-brasil-2024/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/conference/pycon-asia-pacific-2024/</loc>
 </url>
 <url>
@@ -256,9 +259,6 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/pycon-sweden-2024/</loc>
-</url>
-<url>
-<loc>https://pythondeadlin.es/conference/python-brasil-2024/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/python-niger-2024/</loc>
@@ -5037,6 +5037,9 @@
 <loc>https://pythondeadlin.es/series/pycon-poland/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/series/python-brasil/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/series/pycon-asia-pacific/</loc>
 </url>
 <url>
@@ -5221,8 +5224,5 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/pycon-sweden/</loc>
-</url>
-<url>
-<loc>https://pythondeadlin.es/series/python-brasil/</loc>
 </url>
 </urlset>

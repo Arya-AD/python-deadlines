@@ -9,7 +9,7 @@
 		<title>Newsfeed for Python Events Calendar from Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Tue, 11 Jun 2024 20:19:27 +0000</lastBuildDate>
+		<lastBuildDate>Mon, 17 Jun 2024 17:52:05 +0000</lastBuildDate>
 		
 			<item>
 				<title>PyTexas 2025 Conference Deadline</title>
@@ -48,6 +48,16 @@
 				<pubDate>Thu, 29 Aug 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-poland-2024/</link>
 				<guid isPermaLink="false">pycon-poland-2024</guid>
+				<category>PY</category>
+			</item>
+		
+			<item>
+				<title>Python Brasil 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: Python Brasil 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Rio de Janeiro, Brazil<br/>* dates/times/recurrence (incl. time zone): 16. – 21. Oktober 2024
+<br/>* HTML link : <a href="https://2024.pythonbrasil.org.br/">Python Brasil 2024</a>]]></description>
+				<pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/python-brasil-2024/</link>
+				<guid isPermaLink="false">python-brasil-2024</guid>
 				<category>PY</category>
 			</item>
 		
@@ -228,16 +238,6 @@
 				<pubDate>Fri, 27 Sep 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-japan-2024/</link>
 				<guid isPermaLink="false">pycon-japan-2024</guid>
-				<category>PY</category>
-			</item>
-		
-			<item>
-				<title>PyCon Spain 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyCon Spain 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Vigo, Spain<br/>* dates/times/recurrence (incl. time zone): 4. – 6. Oktober 2024
-<br/>* HTML link : <a href="https://2024.es.pycon.org/">PyCon Spain 2024</a>]]></description>
-				<pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-spain-2024/</link>
-				<guid isPermaLink="false">pycon-spain-2024</guid>
 				<category>PY</category>
 			</item>
 		

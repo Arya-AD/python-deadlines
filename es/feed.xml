@@ -9,7 +9,7 @@
 		<title>Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Tue, 11 Jun 2024 20:18:33 +0000</lastBuildDate>
+		<lastBuildDate>Mon, 17 Jun 2024 17:51:12 +0000</lastBuildDate>
 		
 		
 		
@@ -59,6 +59,19 @@
 				<pubDate>Tue, 20 Aug 2024 23:59:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-poland-2024/</link>
 				<guid isPermaLink="false">pycon-poland-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>Python Brasil 2024 Conference Deadline</title>
+				<description>Conference in Rio de Janeiro, Brazil on 16 – 21 de octubre de 2024
+. CfP: 2024-08-10 23:59:00 AoE.&lt;br /&gt;Find them here: @PythonBrasil </description>
+				<pubDate>Sat, 10 Aug 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/python-brasil-2024/</link>
+				<guid isPermaLink="false">python-brasil-2024</guid>
 				<category>PY</category>
 			</item>
 		
@@ -293,19 +306,6 @@
 				<pubDate>Fri, 31 May 2024 23:59:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-japan-2024/</link>
 				<guid isPermaLink="false">pycon-japan-2024</guid>
-				<category>PY</category>
-			</item>
-		
-		
-		
-		
-			<item>
-				<title>PyCon Spain 2024 Conference Deadline</title>
-				<description>Conference in Vigo, Spain on 4 – 6 de octubre de 2024
-. CfP: 2024-05-31 21:00:00 AoE. </description>
-				<pubDate>Fri, 31 May 2024 21:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-spain-2024/</link>
-				<guid isPermaLink="false">pycon-spain-2024</guid>
 				<category>PY</category>
 			</item>
 		
