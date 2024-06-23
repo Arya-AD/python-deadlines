@@ -9,7 +9,7 @@
 		<title>Newsfeed for Python Events Calendar from Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Mon, 17 Jun 2024 17:52:05 +0000</lastBuildDate>
+		<lastBuildDate>Sun, 23 Jun 2024 20:09:41 +0000</lastBuildDate>
 		
 			<item>
 				<title>PyTexas 2025 Conference Deadline</title>
@@ -108,6 +108,16 @@
 				<pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-zimbabwe-2024/</link>
 				<guid isPermaLink="false">pycon-zimbabwe-2024</guid>
+				<category>PY</category>
+			</item>
+		
+			<item>
+				<title>PyCon Somalia 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: PyCon Somalia 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Mogadishu, Somalia<br/>* dates/times/recurrence (incl. time zone): 21. – 22. August 2024
+<br/>* HTML link : <a href="https://pycon.org.so/">PyCon Somalia 2024</a>]]></description>
+				<pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-somalia-2024/</link>
+				<guid isPermaLink="false">pycon-somalia-2024</guid>
 				<category>PY</category>
 			</item>
 		
@@ -228,16 +238,6 @@
 				<pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-israel-2024/</link>
 				<guid isPermaLink="false">pycon-israel-2024</guid>
-				<category>PY</category>
-			</item>
-		
-			<item>
-				<title>PyCon Japan 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyCon Japan 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Tokyo, Japan<br/>* dates/times/recurrence (incl. time zone): 27. – 29. September 2024
-<br/>* HTML link : <a href="https://2024.pycon.jp/">PyCon Japan 2024</a>]]></description>
-				<pubDate>Fri, 27 Sep 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-japan-2024/</link>
-				<guid isPermaLink="false">pycon-japan-2024</guid>
 				<category>PY</category>
 			</item>
 		

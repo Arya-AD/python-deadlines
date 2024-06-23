@@ -9,7 +9,7 @@
 		<title>Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Mon, 17 Jun 2024 17:50:19 +0000</lastBuildDate>
+		<lastBuildDate>Sun, 23 Jun 2024 20:07:47 +0000</lastBuildDate>
 		
 		
 		
@@ -137,6 +137,19 @@
 				<pubDate>Wed, 31 Jul 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-zimbabwe-2024/</link>
 				<guid isPermaLink="false">pycon-zimbabwe-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon Somalia 2024 Conference Deadline</title>
+				<description>Conference in Mogadishu, Somalia on August 21 – 22, 2024
+. CfP: 2024-07-25 23:59:00 AoE. </description>
+				<pubDate>Thu, 25 Jul 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-somalia-2024/</link>
+				<guid isPermaLink="false">pycon-somalia-2024</guid>
 				<category>PY</category>
 			</item>
 		
@@ -293,19 +306,6 @@
 				<pubDate>Sat, 01 Jun 2024 23:59:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-israel-2024/</link>
 				<guid isPermaLink="false">pycon-israel-2024</guid>
-				<category>PY</category>
-			</item>
-		
-		
-		
-		
-			<item>
-				<title>PyCon Japan 2024 Conference Deadline</title>
-				<description>Conference in Tokyo, Japan on September 27 – 29, 2024
-. CfP: 2024-05-31 23:59:00 AoE.&lt;br /&gt;Find them here: @pyconjapan </description>
-				<pubDate>Fri, 31 May 2024 23:59:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-japan-2024/</link>
-				<guid isPermaLink="false">pycon-japan-2024</guid>
 				<category>PY</category>
 			</item>
 		
