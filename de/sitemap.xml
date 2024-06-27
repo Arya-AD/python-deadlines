@@ -34,6 +34,9 @@
 <loc>https://pythondeadlin.es/conference/xtreme-python-2024/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/conference/pycon-ireland-2024/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/conference/pycon-south-africa-2024/</loc>
 </url>
 <url>
@@ -86,6 +89,9 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/pycon-latin-america-2024/</loc>
+</url>
+<url>
+<loc>https://pythondeadlin.es/conference/pytorch-conference-2024/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/pyhep-2024/</loc>
@@ -151,9 +157,6 @@
 <loc>https://pythondeadlin.es/conference/wagtail-space-us-2024/</loc>
 </url>
 <url>
-<loc>https://pythondeadlin.es/conference/flask-con-2024/</loc>
-</url>
-<url>
 <loc>https://pythondeadlin.es/conference/pycon-estonia-2024/</loc>
 </url>
 <url>
@@ -167,9 +170,6 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/pydata-paris-2024/</loc>
-</url>
-<url>
-<loc>https://pythondeadlin.es/conference/pygrunn-2024/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/earl-2024/</loc>
@@ -211,6 +211,9 @@
 <loc>https://pythondeadlin.es/conference/django-day-copenhagen-2024/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/conference/pytorch-conference-2023/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/conference/pydata-tel-aviv-2024/</loc>
 </url>
 <url>
@@ -224,9 +227,6 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/plone-conference-2024/</loc>
-</url>
-<url>
-<loc>https://pythondeadlin.es/conference/pycon-ireland-2024/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/pycon-sweden-2024/</loc>
@@ -347,6 +347,12 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/pycon-uk-2011/</loc>
+</url>
+<url>
+<loc>https://pythondeadlin.es/conference/flask-con-2024/</loc>
+</url>
+<url>
+<loc>https://pythondeadlin.es/conference/pygrunn-2024/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/pycamp-espana-2024/</loc>
@@ -3229,6 +3235,12 @@
 <loc>https://pythondeadlin.es/series/pycon-uk/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/series/flask-con/</loc>
+</url>
+<url>
+<loc>https://pythondeadlin.es/series/pygrunn/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/series/pycamp-espana/</loc>
 </url>
 <url>
@@ -5002,6 +5014,9 @@
 <loc>https://pythondeadlin.es/series/xtreme-python/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/series/pycon-ireland/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/series/pycon-south-africa/</loc>
 </url>
 <url>
@@ -5054,6 +5069,9 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/pycon-latin-america/</loc>
+</url>
+<url>
+<loc>https://pythondeadlin.es/series/pytorch-conference/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/pyhep/</loc>
@@ -5119,9 +5137,6 @@
 <loc>https://pythondeadlin.es/series/wagtail-space-us/</loc>
 </url>
 <url>
-<loc>https://pythondeadlin.es/series/flask-con/</loc>
-</url>
-<url>
 <loc>https://pythondeadlin.es/series/pycon-estonia/</loc>
 </url>
 <url>
@@ -5135,9 +5150,6 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/pydata-paris/</loc>
-</url>
-<url>
-<loc>https://pythondeadlin.es/series/pygrunn/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/earl/</loc>
@@ -5179,6 +5191,9 @@
 <loc>https://pythondeadlin.es/series/django-day-copenhagen/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/series/pytorch-conference/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/series/pydata-tel-aviv/</loc>
 </url>
 <url>
@@ -5192,9 +5207,6 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/plone-conference/</loc>
-</url>
-<url>
-<loc>https://pythondeadlin.es/series/pycon-ireland/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/pycon-sweden/</loc>

@@ -40,11 +40,11 @@
 <link rel="alternate"  title="Calendar Overview of Python Conference Deadlines and Dates in German" hreflang="de" href="/de/kalender/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1719445537" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1719446753" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1719445537" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1719445537" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1719446753" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1719446753" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -839,6 +839,58 @@ function load_conference_list() {
         subject: "PY",
         startDate: Date.parse("2024-11-19"),
         endDate: Date.parse("2024-11-19"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
+      id: "pycon-ireland-2024-deadline",
+      abbreviation: "pycon-ireland-2024",
+      name: "PyCon Ireland 2024 CfP ",
+      color: "red",
+      location: "Dublin, Ireland",
+      date: "November 16, 2024
+",
+      subject: "PY",
+      startDate: Date.parse("2024-08-25 23:59:00"),
+      endDate: Date.parse("2024-08-25 23:59:00"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+                    color = "#4B8BBE";
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+      conf_list_all.push({
+        id: "pycon-ireland-2024-conference",
+        abbreviation: "pycon-ireland-2024",
+        name: "PyCon Ireland 2024",
+        color: color,
+        location: "Dublin, Ireland",
+        date: "November 16, 2024",
+        subject: "PY",
+        startDate: Date.parse("2024-11-16"),
+        endDate: Date.parse("2024-11-16"),
       });
     
   
@@ -1811,6 +1863,58 @@ function load_conference_list() {
         subject: "PY",
         startDate: Date.parse("2024-09-19"),
         endDate: Date.parse("2024-09-21"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
+      id: "pytorch-conference-2024-deadline",
+      abbreviation: "pytorch-conference-2024",
+      name: "PyTorch Conference 2024 CfP (extended)",
+      color: "red",
+      location: "San Francisco, USA",
+      date: "September 18 – 19, 2024
+",
+      subject: "DATA",
+      startDate: Date.parse("2024-06-09 23:59:00"),
+      endDate: Date.parse("2024-06-09 23:59:00"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+      
+            
+                    color = "#849324";
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+      conf_list_all.push({
+        id: "pytorch-conference-2024-conference",
+        abbreviation: "pytorch-conference-2024",
+        name: "PyTorch Conference 2024",
+        color: color,
+        location: "San Francisco, USA",
+        date: "September 18 – 19, 2024",
+        subject: "DATA",
+        startDate: Date.parse("2024-09-18"),
+        endDate: Date.parse("2024-09-19"),
       });
     
   
@@ -2958,58 +3062,6 @@ function load_conference_list() {
     
     // add deadlines in red
     conf_list_all.push({
-      id: "flask-con-2024-deadline",
-      abbreviation: "flask-con-2024",
-      name: "Flask Con 2024 CfP (extended)",
-      color: "red",
-      location: "Pittsburgh, USA",
-      date: "May 17, 2024
-",
-      subject: "WEB",
-      startDate: Date.parse("2024-04-17 23:59:00"),
-      endDate: Date.parse("2024-04-17 23:59:00"),
-    });
-    
-    
-
-    // add Conferences in chosen color
-    
-      var color = "black";
-       // use first sub to choose color
-      
-            
-      
-            
-      
-            
-      
-            
-                    color = "#0D0A0B";
-            
-      
-            
-      
-            
-      
-            
-      
-      conf_list_all.push({
-        id: "flask-con-2024-conference",
-        abbreviation: "flask-con-2024",
-        name: "Flask Con 2024",
-        color: color,
-        location: "Pittsburgh, USA",
-        date: "May 17, 2024",
-        subject: "WEB",
-        startDate: Date.parse("2024-05-17"),
-        endDate: Date.parse("2024-05-17"),
-      });
-    
-  
-    
-    
-    // add deadlines in red
-    conf_list_all.push({
       id: "pycon-estonia-2024-deadline",
       abbreviation: "pycon-estonia-2024",
       name: "PyCon Estonia 2024 CfP (extended)",
@@ -3275,58 +3327,6 @@ function load_conference_list() {
         subject: "DATA",
         startDate: Date.parse("2024-09-25"),
         endDate: Date.parse("2024-09-26"),
-      });
-    
-  
-    
-    
-    // add deadlines in red
-    conf_list_all.push({
-      id: "pygrunn-2024-deadline",
-      abbreviation: "pygrunn-2024",
-      name: "PyGrunn 2024 CfP (extended)",
-      color: "red",
-      location: "Groningen, Netherlands",
-      date: "May 17, 2024
-",
-      subject: "PY",
-      startDate: Date.parse("2024-04-07 23:59:00"),
-      endDate: Date.parse("2024-04-07 23:59:00"),
-    });
-    
-    
-
-    // add Conferences in chosen color
-    
-      var color = "black";
-       // use first sub to choose color
-      
-            
-                    color = "#4B8BBE";
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-      conf_list_all.push({
-        id: "pygrunn-2024-conference",
-        abbreviation: "pygrunn-2024",
-        name: "PyGrunn 2024",
-        color: color,
-        location: "Groningen, Netherlands",
-        date: "May 17, 2024",
-        subject: "PY",
-        startDate: Date.parse("2024-05-17"),
-        endDate: Date.parse("2024-05-17"),
       });
     
   
@@ -4010,6 +4010,58 @@ function load_conference_list() {
     
     // add deadlines in red
     conf_list_all.push({
+      id: "pytorch-conference-2023-deadline",
+      abbreviation: "pytorch-conference-2023",
+      name: "PyTorch Conference 2023 CfP (extended)",
+      color: "red",
+      location: "San Francisco, USA",
+      date: "October 16 – 17, 2023
+",
+      subject: "DATA",
+      startDate: Date.parse("2023-07-21 23:59:00"),
+      endDate: Date.parse("2023-07-21 23:59:00"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+      
+            
+                    color = "#849324";
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+      conf_list_all.push({
+        id: "pytorch-conference-2023-conference",
+        abbreviation: "pytorch-conference-2023",
+        name: "PyTorch Conference 2023",
+        color: color,
+        location: "San Francisco, USA",
+        date: "October 16 – 17, 2023",
+        subject: "DATA",
+        startDate: Date.parse("2023-10-16"),
+        endDate: Date.parse("2024-10-17"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
       id: "pydata-tel-aviv-2024-deadline",
       abbreviation: "pydata-tel-aviv-2024",
       name: "PyData Tel Aviv 2024 CfP (extended)",
@@ -4263,58 +4315,6 @@ function load_conference_list() {
         subject: "WEB",
         startDate: Date.parse("2024-11-25"),
         endDate: Date.parse("2024-12-01"),
-      });
-    
-  
-    
-    
-    // add deadlines in red
-    conf_list_all.push({
-      id: "pycon-ireland-2024-deadline",
-      abbreviation: "pycon-ireland-2024",
-      name: "PyCon Ireland 2024 CfP (extended)",
-      color: "red",
-      location: "Dublin, Ireland",
-      date: "November 16, 2024
-",
-      subject: "PY",
-      startDate: Date.parse("TBA"),
-      endDate: Date.parse("TBA"),
-    });
-    
-    
-
-    // add Conferences in chosen color
-    
-      var color = "black";
-       // use first sub to choose color
-      
-            
-                    color = "#4B8BBE";
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-      conf_list_all.push({
-        id: "pycon-ireland-2024-conference",
-        abbreviation: "pycon-ireland-2024",
-        name: "PyCon Ireland 2024",
-        color: color,
-        location: "Dublin, Ireland",
-        date: "November 16, 2024",
-        subject: "PY",
-        startDate: Date.parse("2024-11-16"),
-        endDate: Date.parse("2024-11-16"),
       });
     
   

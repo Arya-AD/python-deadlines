@@ -9,7 +9,7 @@
 		<title>Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Wed, 26 Jun 2024 23:47:28 +0000</lastBuildDate>
+		<lastBuildDate>Thu, 27 Jun 2024 00:07:44 +0000</lastBuildDate>
 		
 		
 		
@@ -33,6 +33,19 @@
 				<pubDate>Fri, 30 Aug 2024 23:59:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/xtreme-python-2024/</link>
 				<guid isPermaLink="false">xtreme-python-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon Ireland 2024 Conference Deadline</title>
+				<description>Conference in Dublin, Ireland on 16. November 2024
+. CfP: 2024-08-25 23:59:00 AoE. </description>
+				<pubDate>Sun, 25 Aug 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-ireland-2024/</link>
+				<guid isPermaLink="false">pycon-ireland-2024</guid>
 				<category>PY</category>
 			</item>
 		
@@ -274,38 +287,25 @@
 		
 		
 			<item>
+				<title>PyTorch Conference 2024 Conference Deadline</title>
+				<description>Conference in San Francisco, USA on 18. – 19. September 2024
+. CfP: 2024-06-09 23:59:00 AoE. </description>
+				<pubDate>Sun, 09 Jun 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pytorch-conference-2024/</link>
+				<guid isPermaLink="false">pytorch-conference-2024</guid>
+				<category>DATA</category>
+			</item>
+		
+		
+		
+		
+			<item>
 				<title>PyHEP 2024 Conference Deadline</title>
 				<description>Conference in Online on 1. – 4. Juli 2024
 . CfP: 2024-06-05 21:29:00 AoE. </description>
 				<pubDate>Wed, 05 Jun 2024 21:29:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pyhep-2024/</link>
 				<guid isPermaLink="false">pyhep-2024</guid>
-				<category>PY</category>
-			</item>
-		
-		
-		
-		
-			<item>
-				<title>Piter Py 2024 Conference Deadline</title>
-				<description>Conference in Saint Petersburg, Russia on 26. – 27. September 2024
-. CfP: 2024-06-01 23:59:00 AoE. </description>
-				<pubDate>Sat, 01 Jun 2024 23:59:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/piter-py-2024/</link>
-				<guid isPermaLink="false">piter-py-2024</guid>
-				<category>PY</category>
-			</item>
-		
-		
-		
-		
-			<item>
-				<title>PyCon Israel 2024 Conference Deadline</title>
-				<description>Conference in Gelilot, Israel on 16. September 2024
-. CfP: 2024-06-01 23:59:00 AoE.&lt;br /&gt;Find them here: @PyConIL </description>
-				<pubDate>Sat, 01 Jun 2024 23:59:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-israel-2024/</link>
-				<guid isPermaLink="false">pycon-israel-2024</guid>
 				<category>PY</category>
 			</item>
 		

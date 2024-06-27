@@ -25,7 +25,7 @@ def ics_to_dataframe():
     ) as file:
         calendar = Calendar.from_ical(file.read())
 
-    link_desc = re.compile(r".*<a .*?href=\"? ?((?:https|http):\/\/[\w0-9\.\/\-\?= ]+)\"?.*?>(.*?)[#0-9 ]*<\/?a>.*")
+    link_desc = re.compile(r".*<a .*?href=\"? ?((?:https|http):\/\/[\w\.\/\-\?= ]+)\"?.*?>(.*?)[#0-9 ]*<\/?a>.*")
 
     # Initialize a list to hold event data
     event_data = []

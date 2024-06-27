@@ -74,7 +74,7 @@ To add or update a deadline:
 | `cfp_ext`           | Extension for Call for Participation / Proposals                              | `str`   |          |
 | `workshop_deadline` | Workshop deadline if different from cfp                                       | `str`   |          |
 | `tutorial_deadline` | Tutorial deadline if different from cfp                                       | `str`   |          |
-| `timezone`          | Standard [IANA Timezones](https://timezonefinder.michelfe.it/) (Omit for AoE) | `str`   | ✔        |
+| `timezone`          | Standard [IANA Timezones](https://timezonefinder.michelfe.it/) (Omit for AoE) | `str`   |          |
 | `place`             | City, Country                                                                 | `str`   | ✔        |
 | `start`             | Start date of conference for calendar                                         | `date`  | ✔        |
 | `end`               | End date of conference for calendar                                           | `date`  | ✔        |
@@ -82,7 +82,7 @@ To add or update a deadline:
 | `sponsor`           | URL to sponsorship opportunities                                              | `str`   |          |
 | `twitter`           | Twitter handle of conference                                                  | `str`   |          |
 | `mastodon`          | Mastodon handle of conference                                                 | `str`   |          |
-| `sub`               | Type of conference                                                            | `str`   |          |
+| `sub`               | Type of conference                                                            | `str`   | ✔        |
 | `note`              | Extra notes about the conference                                              | `str`   |          |
 | `location`          | Geolocation for inclusion in map                                              | `str`   |          |
 | `latitude`          | Latitude of venue                                                             | `float` |          |
@@ -90,14 +90,14 @@ To add or update a deadline:
 
 ### Conference types for `sub`
 
-| `sub`    | Category name       |
-| -------- | ------------------- |
-| `PY`     | General Python      |
-| `SCIPY`  | Scientific Python   |
-| `DATA`   | Python for Data     |
-| `WEB`    | Python for Web      |
-| `BIZ`    | Python for Business |
-| `GEO`    | Python for Earth    |
+| `sub`   | Category name       |
+| ------- | ------------------- |
+| `PY`    | General Python      |
+| `SCIPY` | Scientific Python   |
+| `DATA`  | Python for Data     |
+| `WEB`   | Python for Web      |
+| `BIZ`   | Python for Business |
+| `GEO`   | Python for Earth    |
 
 ### Utils
 

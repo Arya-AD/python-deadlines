@@ -9,7 +9,7 @@
 		<title>Newsfeed for Python Events Calendar from Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Wed, 26 Jun 2024 23:47:28 +0000</lastBuildDate>
+		<lastBuildDate>Thu, 27 Jun 2024 00:07:44 +0000</lastBuildDate>
 		
 			<item>
 				<title>PyTexas 2025 Conference Deadline</title>
@@ -28,6 +28,16 @@
 				<pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/xtreme-python-2024/</link>
 				<guid isPermaLink="false">xtreme-python-2024</guid>
+				<category>PY</category>
+			</item>
+		
+			<item>
+				<title>PyCon Ireland 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: PyCon Ireland 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Dublin, Ireland<br/>* dates/times/recurrence (incl. time zone): 16. November 2024
+<br/>* HTML link : <a href="https://python.ie/">PyCon Ireland 2024</a>]]></description>
+				<pubDate>Sat, 16 Nov 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-ireland-2024/</link>
+				<guid isPermaLink="false">pycon-ireland-2024</guid>
 				<category>PY</category>
 			</item>
 		
@@ -212,32 +222,22 @@
 			</item>
 		
 			<item>
+				<title>PyTorch Conference 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: PyTorch Conference 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): San Francisco, USA<br/>* dates/times/recurrence (incl. time zone): 18. – 19. September 2024
+<br/>* HTML link : <a href="https://events.linuxfoundation.org/pytorch-conference/">PyTorch Conference 2024</a>]]></description>
+				<pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pytorch-conference-2024/</link>
+				<guid isPermaLink="false">pytorch-conference-2024</guid>
+				<category>DATA</category>
+			</item>
+		
+			<item>
 				<title>PyHEP 2024 Conference Deadline</title>
 				<description><![CDATA[* name of the event: PyHEP 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Online<br/>* dates/times/recurrence (incl. time zone): 1. – 4. Juli 2024
 <br/>* HTML link : <a href="https://indico.cern.ch/event/1384010/">PyHEP 2024</a>]]></description>
 				<pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pyhep-2024/</link>
 				<guid isPermaLink="false">pyhep-2024</guid>
-				<category>PY</category>
-			</item>
-		
-			<item>
-				<title>Piter Py 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: Piter Py 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Saint Petersburg, Russia<br/>* dates/times/recurrence (incl. time zone): 26. – 27. September 2024
-<br/>* HTML link : <a href="https://piterpy.com/en/">Piter Py 2024</a>]]></description>
-				<pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/piter-py-2024/</link>
-				<guid isPermaLink="false">piter-py-2024</guid>
-				<category>PY</category>
-			</item>
-		
-			<item>
-				<title>PyCon Israel 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyCon Israel 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Gelilot, Israel<br/>* dates/times/recurrence (incl. time zone): 16. September 2024
-<br/>* HTML link : <a href="https://pycon.org.il/2024/">PyCon Israel 2024</a>]]></description>
-				<pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-israel-2024/</link>
-				<guid isPermaLink="false">pycon-israel-2024</guid>
 				<category>PY</category>
 			</item>
 		
