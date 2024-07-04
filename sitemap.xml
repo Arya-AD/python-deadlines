@@ -234,12 +234,6 @@
 <loc>https://pythondeadlin.es/conference/geopython-2024/</loc>
 </url>
 <url>
-<loc>https://pythondeadlin.es/conference/pycon-italia-2024/</loc>
-</url>
-<url>
-<loc>https://pythondeadlin.es/conference/pycon-us-2024/</loc>
-</url>
-<url>
 <loc>https://pythondeadlin.es/conference/django-day-copenhagen-2024/</loc>
 </url>
 <url>
@@ -262,6 +256,9 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/pycon-sweden-2024/</loc>
+</url>
+<url>
+<loc>https://pythondeadlin.es/conference/python-ho-2024/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/python-niger-2024/</loc>
@@ -405,6 +402,9 @@
 <loc>https://pythondeadlin.es/conference/pycon-lithuania-2024/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/conference/pycon-italia-2024/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/conference/pycascades-2024/</loc>
 </url>
 <url>
@@ -418,6 +418,9 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/pycon-germany-pydata-berlin-2024/</loc>
+</url>
+<url>
+<loc>https://pythondeadlin.es/conference/pycon-us-2024/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/fosdem-2024/</loc>
@@ -3291,6 +3294,9 @@
 <loc>https://pythondeadlin.es/series/pycon-lithuania/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/series/pycon-italia/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/series/pycascades/</loc>
 </url>
 <url>
@@ -3304,6 +3310,9 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/pycon-germany-pydata-berlin/</loc>
+</url>
+<url>
+<loc>https://pythondeadlin.es/series/pycon-us/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/fosdem/</loc>
@@ -5214,12 +5223,6 @@
 <loc>https://pythondeadlin.es/series/geopython/</loc>
 </url>
 <url>
-<loc>https://pythondeadlin.es/series/pycon-italia/</loc>
-</url>
-<url>
-<loc>https://pythondeadlin.es/series/pycon-us/</loc>
-</url>
-<url>
 <loc>https://pythondeadlin.es/series/django-day-copenhagen/</loc>
 </url>
 <url>
@@ -5242,5 +5245,8 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/pycon-sweden/</loc>
+</url>
+<url>
+<loc>https://pythondeadlin.es/series/python-ho/</loc>
 </url>
 </urlset>
