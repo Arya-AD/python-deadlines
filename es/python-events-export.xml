@@ -9,7 +9,7 @@
 		<title>Newsfeed for Python Events Calendar from Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Fri, 12 Jul 2024 21:55:55 +0000</lastBuildDate>
+		<lastBuildDate>Fri, 12 Jul 2024 22:45:00 +0000</lastBuildDate>
 		
 			<item>
 				<title>PyTexas 2025 Conference Deadline</title>
@@ -18,6 +18,16 @@
 				<pubDate>Fri, 11 Apr 2025 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pytexas-2025/</link>
 				<guid isPermaLink="false">pytexas-2025</guid>
+				<category>PY</category>
+			</item>
+		
+			<item>
+				<title>Python Ho 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: Python Ho 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Ho, Ghana<br/>* dates/times/recurrence (incl. time zone): 25 – 26 de octubre de 2024
+<br/>* HTML link : <a href="https://2024.pythonho.com/">Python Ho 2024</a>]]></description>
+				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/python-ho-2024/</link>
+				<guid isPermaLink="false">python-ho-2024</guid>
 				<category>PY</category>
 			</item>
 		
@@ -39,6 +49,16 @@
 				<link>https://pythondeadlin.es/conference/xtreme-python-2024/</link>
 				<guid isPermaLink="false">xtreme-python-2024</guid>
 				<category>PY</category>
+			</item>
+		
+			<item>
+				<title>Plone Conference 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: Plone Conference 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Brasilia, Brazil<br/>* dates/times/recurrence (incl. time zone): 25 – 1 de noviembre de 2024
+<br/>* HTML link : <a href="https://2024.ploneconf.org/en">Plone Conference 2024</a>]]></description>
+				<pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/plone-conference-2024/</link>
+				<guid isPermaLink="false">plone-conference-2024</guid>
+				<category>WEB</category>
 			</item>
 		
 			<item>
@@ -219,26 +239,6 @@
 				<link>https://pythondeadlin.es/conference/pycon-south-korea-2024/</link>
 				<guid isPermaLink="false">pycon-south-korea-2024</guid>
 				<category>PY</category>
-			</item>
-		
-			<item>
-				<title>PyCon Latin America 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyCon Latin America 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Mazatlan, Mexico<br/>* dates/times/recurrence (incl. time zone): 19 – 21 de septiembre de 2024
-<br/>* HTML link : <a href="https://www.pylatam.org/">PyCon Latin America 2024</a>]]></description>
-				<pubDate>Thu, 19 Sep 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-latin-america-2024/</link>
-				<guid isPermaLink="false">pycon-latin-america-2024</guid>
-				<category>PY</category>
-			</item>
-		
-			<item>
-				<title>PyTorch Conference 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyTorch Conference 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): San Francisco, USA<br/>* dates/times/recurrence (incl. time zone): 18 – 19 de septiembre de 2024
-<br/>* HTML link : <a href="https://events.linuxfoundation.org/pytorch-conference/">PyTorch Conference 2024</a>]]></description>
-				<pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pytorch-conference-2024/</link>
-				<guid isPermaLink="false">pytorch-conference-2024</guid>
-				<category>DATA</category>
 			</item>
 		
 	</channel>

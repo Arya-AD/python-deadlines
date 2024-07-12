@@ -9,7 +9,7 @@
 		<title>Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Fri, 12 Jul 2024 21:55:02 +0000</lastBuildDate>
+		<lastBuildDate>Fri, 12 Jul 2024 22:44:06 +0000</lastBuildDate>
 		
 		
 		
@@ -20,6 +20,19 @@
 				<pubDate>Tue, 14 Jan 2025 23:59:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pytexas-2025/</link>
 				<guid isPermaLink="false">pytexas-2025</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>Python Ho 2024 Conference Deadline</title>
+				<description>Conference in Ho, Ghana on October 25 – 26, 2024
+. CfP: 2024-09-24 11:22:33 AoE. </description>
+				<pubDate>Tue, 24 Sep 2024 11:22:33 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/python-ho-2024/</link>
+				<guid isPermaLink="false">python-ho-2024</guid>
 				<category>PY</category>
 			</item>
 		
@@ -47,6 +60,19 @@
 				<link>https://pythondeadlin.es/conference/xtreme-python-2024/</link>
 				<guid isPermaLink="false">xtreme-python-2024</guid>
 				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>Plone Conference 2024 Conference Deadline</title>
+				<description>Conference in Brasilia, Brazil on November 25 – 1, 2024
+. CfP: 2024-08-25 23:59:00 AoE.&lt;br /&gt;Find them here: @ploneconf </description>
+				<pubDate>Sun, 25 Aug 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/plone-conference-2024/</link>
+				<guid isPermaLink="false">plone-conference-2024</guid>
+				<category>WEB</category>
 			</item>
 		
 		
@@ -281,32 +307,6 @@
 				<link>https://pythondeadlin.es/conference/pycon-south-korea-2024/</link>
 				<guid isPermaLink="false">pycon-south-korea-2024</guid>
 				<category>PY</category>
-			</item>
-		
-		
-		
-		
-			<item>
-				<title>PyCon Latin America 2024 Conference Deadline</title>
-				<description>Conference in Mazatlan, Mexico on September 19 – 21, 2024
-. CfP: 2024-06-10 23:59:00 AoE. </description>
-				<pubDate>Mon, 10 Jun 2024 23:59:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-latin-america-2024/</link>
-				<guid isPermaLink="false">pycon-latin-america-2024</guid>
-				<category>PY</category>
-			</item>
-		
-		
-		
-		
-			<item>
-				<title>PyTorch Conference 2024 Conference Deadline</title>
-				<description>Conference in San Francisco, USA on September 18 – 19, 2024
-. CfP: 2024-06-09 23:59:00 AoE. </description>
-				<pubDate>Sun, 09 Jun 2024 23:59:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pytorch-conference-2024/</link>
-				<guid isPermaLink="false">pytorch-conference-2024</guid>
-				<category>DATA</category>
 			</item>
 		
 		

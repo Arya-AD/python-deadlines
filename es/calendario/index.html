@@ -40,11 +40,11 @@
 <link rel="alternate"  title="Calendario de conferencias de Python in German" hreflang="de" href="/de/kalender/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720821355" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720824300" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720821355" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720821355" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720824300" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720824300" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -794,6 +794,58 @@ function load_conference_list() {
     
     // add deadlines in red
     conf_list_all.push({
+      id: "python-ho-2024-deadline",
+      abbreviation: "python-ho-2024",
+      name: "Python Ho 2024 CfP ",
+      color: "red",
+      location: "Ho, Ghana",
+      date: "25 – 26 de octubre de 2024
+",
+      subject: "PY",
+      startDate: Date.parse("2024-09-24 11:22:33"),
+      endDate: Date.parse("2024-09-24 11:22:33"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+                    color = "#4B8BBE";
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+      conf_list_all.push({
+        id: "python-ho-2024-conference",
+        abbreviation: "python-ho-2024",
+        name: "Python Ho 2024",
+        color: color,
+        location: "Ho, Ghana",
+        date: "25 – 26 de octubre de 2024",
+        subject: "PY",
+        startDate: Date.parse("2024-10-25"),
+        endDate: Date.parse("2024-10-26"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
       id: "pycon-sweden-2024-deadline",
       abbreviation: "pycon-sweden-2024",
       name: "PyCon Sweden 2024 CfP ",
@@ -891,6 +943,58 @@ function load_conference_list() {
         subject: "PY",
         startDate: Date.parse("2024-11-19"),
         endDate: Date.parse("2024-11-19"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
+      id: "plone-conference-2024-deadline",
+      abbreviation: "plone-conference-2024",
+      name: "Plone Conference 2024 CfP ",
+      color: "red",
+      location: "Brasilia, Brazil",
+      date: "25 – 1 de noviembre de 2024
+",
+      subject: "WEB",
+      startDate: Date.parse("2024-08-25 23:59:00"),
+      endDate: Date.parse("2024-08-25 23:59:00"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+      
+            
+      
+            
+                    color = "#0D0A0B";
+            
+      
+            
+      
+            
+      
+            
+      
+      conf_list_all.push({
+        id: "plone-conference-2024-conference",
+        abbreviation: "plone-conference-2024",
+        name: "Plone Conference 2024",
+        color: color,
+        location: "Brasilia, Brazil",
+        date: "25 – 1 de noviembre de 2024",
+        subject: "WEB",
+        startDate: Date.parse("2024-11-25"),
+        endDate: Date.parse("2024-12-01"),
       });
     
   
@@ -4159,110 +4263,6 @@ function load_conference_list() {
         subject: "PY",
         startDate: Date.parse("2025-02-08"),
         endDate: Date.parse("2025-02-09"),
-      });
-    
-  
-    
-    
-    // add deadlines in red
-    conf_list_all.push({
-      id: "plone-conference-2024-deadline",
-      abbreviation: "plone-conference-2024",
-      name: "Plone Conference 2024 CfP (extended)",
-      color: "red",
-      location: "Brasilia, Brazil",
-      date: "25 – 1 de noviembre de 2024
-",
-      subject: "WEB",
-      startDate: Date.parse("TBA"),
-      endDate: Date.parse("TBA"),
-    });
-    
-    
-
-    // add Conferences in chosen color
-    
-      var color = "black";
-       // use first sub to choose color
-      
-            
-      
-            
-      
-            
-      
-            
-                    color = "#0D0A0B";
-            
-      
-            
-      
-            
-      
-            
-      
-      conf_list_all.push({
-        id: "plone-conference-2024-conference",
-        abbreviation: "plone-conference-2024",
-        name: "Plone Conference 2024",
-        color: color,
-        location: "Brasilia, Brazil",
-        date: "25 – 1 de noviembre de 2024",
-        subject: "WEB",
-        startDate: Date.parse("2024-11-25"),
-        endDate: Date.parse("2024-12-01"),
-      });
-    
-  
-    
-    
-    // add deadlines in red
-    conf_list_all.push({
-      id: "python-ho-2024-deadline",
-      abbreviation: "python-ho-2024",
-      name: "Python Ho 2024 CfP (extended)",
-      color: "red",
-      location: "Ho, Ghana",
-      date: "26 – 27 de octubre de 2024
-",
-      subject: "PY",
-      startDate: Date.parse("TBA"),
-      endDate: Date.parse("TBA"),
-    });
-    
-    
-
-    // add Conferences in chosen color
-    
-      var color = "black";
-       // use first sub to choose color
-      
-            
-                    color = "#4B8BBE";
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-      conf_list_all.push({
-        id: "python-ho-2024-conference",
-        abbreviation: "python-ho-2024",
-        name: "Python Ho 2024",
-        color: color,
-        location: "Ho, Ghana",
-        date: "26 – 27 de octubre de 2024",
-        subject: "PY",
-        startDate: Date.parse("2024-10-26"),
-        endDate: Date.parse("2024-10-27"),
       });
     
   

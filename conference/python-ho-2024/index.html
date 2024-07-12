@@ -40,11 +40,11 @@
 <link rel="alternate"  title="Python Ho 2024 Conference Deadlines in German" hreflang="de" href="/de/conference/python-ho-2024/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720821302" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720824246" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720821302" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720821302" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720824246" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720824246" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -465,14 +465,14 @@ if (typeof Object.assign !== 'function') {
     </div>
     <div id="page-content">
       <div id="conf-deadline-timer" class="row">
-        <div id="cfp-timer" class="col-12 conf-timer">TBA
+        <div id="cfp-timer" class="col-12 conf-timer">
         </div>
       </div>
       <div id="conf-key-facts" class="row">
         <div class="col-12 col-md-6">
           <div>
             <img src="/static/img/084-calendar.svg" class="badge-link" alt="Calendar icon" width="16" height="16" />
-            <span id="conf-date">October 26 – 27, 2024
+            <span id="conf-date">October 25 – 26, 2024
 </span>
           </div>
           <div>
@@ -483,6 +483,12 @@ if (typeof Object.assign !== 'function') {
           <div>
             <img src="/static/img/203-earth.svg" class="badge-link" alt="Earth Icon" width="16" height="16" />
             <a id="conf-website" target="_blank" href="https://2024.pythonho.com/">https://2024.pythonho.com/</a>
+          </div>
+          
+          <div>
+            <img src="/static/img/035-file-text.svg" class="badge-link" alt="Document Icon for CfP link" width="16"
+              height="16" />
+            <a id="conf-cfp_link" target="_blank" href="https://www.papercall.io/2024-pythonho-conference">Call for Participation</a>
           </div>
           
           <div>
@@ -521,7 +527,7 @@ if (typeof Object.assign !== 'function') {
             Deadline in timezone from conference website:
           </div>
           <div class="meta">
-            <span class="deadline-time">TBA</span>
+            <span class="deadline-time">Tuesday, 24 September 2024</span>
           </div>
           <div class="meta">
             Deadline in your local <span class='local-timezone'></span> timezone:
@@ -560,10 +566,10 @@ if (typeof Object.assign !== 'function') {
         </div>
       <div class="row">
         
-        <div id='e38c01eb-a91c-476f-904f-9b7acd54b315' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='ca4ab6df-dc0d-4928-bc56-ab040b3ce853' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'e38c01eb-a91c-476f-904f-9b7acd54b315',
+    'ca4ab6df-dc0d-4928-bc56-ab040b3ce853',
     [{"latitude":6.6126598,"longitude":0.4688932,"title":"Python Ho 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -687,9 +693,54 @@ function createCalendarFromObject(data) {
 
       // other
       
-      $('#cfp-timer').html("TBA");
-      $('.deadline-time').html("TBA");
-      $('.deadline-local-time').html("TBA");
+
+      // Use specified timezone for deadlines if available else use AoE timezone
+      
+      var confDeadline = DateTime.fromSQL("2024-09-24 11:22:33", { zone: "UTC" });
+      
+
+      // check if timezone is valid otherwise replace by system timezone
+      if (confDeadline.invalid) {
+        var confDeadline = DateTime.fromSQL("2024-09-24 11:22:33");
+        console.log("Invalid timezone. Using system timezone instead.");
+      }
+
+      // add calendar
+
+      var conferenceDeadlineCalendar = createCalendarFromObject({
+        id: 'python-ho-2024',
+        title: 'Python Ho 2024 deadline',
+        start_date: confDeadline.toJSDate(),
+        duration: 60,
+        place: 'Ho, Ghana',
+        link: 'https://2024.pythonho.com/',
+      });
+      document.querySelector('#conference-deadline').appendChild(conferenceDeadlineCalendar);
+
+
+      var conferenceCalendar = createCalendarFromObject({
+        id: 'python-ho-2024',
+        title: 'Python Ho 2024',
+        start_date: DateTime.fromSQL("2024-10-25").toJSDate(),
+        end_date: DateTime.fromSQL("2024-10-26").toJSDate(),
+        place: 'Ho, Ghana',
+        link: 'https://2024.pythonho.com/',
+      });
+      document.querySelector('#conference-calendar').appendChild(conferenceCalendar);
+
+      // render countdown timer
+      $('#cfp-timer').countdown(confDeadline.toJSDate(), function (event) {
+        $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+      });
+
+      // render deadline conference time
+      
+      $('.deadline-time').html(confDeadline.setZone("UTC").toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+      
+
+      // render deadline in local timezone
+      $('.deadline-local-time').html(confDeadline.setZone('system').toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+
       
 
     });
