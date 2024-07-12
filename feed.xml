@@ -9,7 +9,7 @@
 		<title>Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Thu, 04 Jul 2024 17:21:55 +0000</lastBuildDate>
+		<lastBuildDate>Fri, 12 Jul 2024 21:55:02 +0000</lastBuildDate>
 		
 		
 		
@@ -20,6 +20,19 @@
 				<pubDate>Tue, 14 Jan 2025 23:59:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pytexas-2025/</link>
 				<guid isPermaLink="false">pytexas-2025</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon Sweden 2024 Conference Deadline</title>
+				<description>Conference in Stockholm, Sweden on November 14 – 15, 2024
+. CfP: 2024-08-31 23:00:00 AoE. </description>
+				<pubDate>Sat, 31 Aug 2024 23:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-sweden-2024/</link>
+				<guid isPermaLink="false">pycon-sweden-2024</guid>
 				<category>PY</category>
 			</item>
 		
@@ -294,19 +307,6 @@
 				<link>https://pythondeadlin.es/conference/pytorch-conference-2024/</link>
 				<guid isPermaLink="false">pytorch-conference-2024</guid>
 				<category>DATA</category>
-			</item>
-		
-		
-		
-		
-			<item>
-				<title>PyHEP 2024 Conference Deadline</title>
-				<description>Conference in Online on July 1 – 4, 2024
-. CfP: 2024-06-05 21:29:00 AoE. </description>
-				<pubDate>Wed, 05 Jun 2024 21:29:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pyhep-2024/</link>
-				<guid isPermaLink="false">pyhep-2024</guid>
-				<category>PY</category>
 			</item>
 		
 		

@@ -9,7 +9,7 @@
 		<title>Newsfeed for Python Events Calendar from Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Thu, 04 Jul 2024 17:22:47 +0000</lastBuildDate>
+		<lastBuildDate>Fri, 12 Jul 2024 21:55:55 +0000</lastBuildDate>
 		
 			<item>
 				<title>PyTexas 2025 Conference Deadline</title>
@@ -18,6 +18,16 @@
 				<pubDate>Fri, 11 Apr 2025 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pytexas-2025/</link>
 				<guid isPermaLink="false">pytexas-2025</guid>
+				<category>PY</category>
+			</item>
+		
+			<item>
+				<title>PyCon Sweden 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: PyCon Sweden 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Stockholm, Sweden<br/>* dates/times/recurrence (incl. time zone): 14 – 15 de noviembre de 2024
+<br/>* HTML link : <a href="https://www.pycon.se/">PyCon Sweden 2024</a>]]></description>
+				<pubDate>Thu, 14 Nov 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-sweden-2024/</link>
+				<guid isPermaLink="false">pycon-sweden-2024</guid>
 				<category>PY</category>
 			</item>
 		
@@ -164,7 +174,7 @@
 			<item>
 				<title>PyCon Hong Kong 2024 Conference Deadline</title>
 				<description><![CDATA[* name of the event: PyCon Hong Kong 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Hong Kong, China<br/>* dates/times/recurrence (incl. time zone): 16 de noviembre de 2024
-<br/>* HTML link : <a href="https://pycon.hk/2024">PyCon Hong Kong 2024</a>]]></description>
+<br/>* HTML link : <a href="https://pycon.hk/2024/">PyCon Hong Kong 2024</a>]]></description>
 				<pubDate>Sat, 16 Nov 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-hong-kong-2024/</link>
 				<guid isPermaLink="false">pycon-hong-kong-2024</guid>
@@ -229,16 +239,6 @@
 				<link>https://pythondeadlin.es/conference/pytorch-conference-2024/</link>
 				<guid isPermaLink="false">pytorch-conference-2024</guid>
 				<category>DATA</category>
-			</item>
-		
-			<item>
-				<title>PyHEP 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyHEP 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Online<br/>* dates/times/recurrence (incl. time zone): 1 – 4 de julio de 2024
-<br/>* HTML link : <a href="https://indico.cern.ch/event/1384010/">PyHEP 2024</a>]]></description>
-				<pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pyhep-2024/</link>
-				<guid isPermaLink="false">pyhep-2024</guid>
-				<category>PY</category>
 			</item>
 		
 	</channel>
