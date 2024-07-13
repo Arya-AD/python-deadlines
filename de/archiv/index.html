@@ -40,11 +40,11 @@
 <link rel="alternate"  title="Archiv für Python-Konferenzen in German" hreflang="de" href="/de/archiv/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720824356" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720863133" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720824356" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720824356" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720863133" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720863133" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -138,6 +138,19 @@
 .CAMP-select.active {
     color: white;
     background: #303030;
+}
+
+
+.DAY-tag {
+  color: #3C1670;
+}
+.DAY-select {
+  color: #3C1670;
+  background: white;
+}
+.DAY-select.active {
+    color: white;
+    background: #3C1670;
 }
 
 
@@ -316,6 +329,10 @@
 											
 											<option value="CAMP" id="CAMP-checkbox">
 												Python Camps (CAMP)
+											</option>
+											
+											<option value="DAY" id="DAY-checkbox">
+												Python Day (DAY)
 											</option>
 											
 										</select>
@@ -3715,16 +3732,16 @@
 					</div>
 					 
 					<div
-						id="djangoday-copenhagen-2023"
-						class="ConfItem  WEB-conf "
+						id="django-day-copenhagen-2023"
+						class="ConfItem  WEB-conf  DAY-conf "
 					>
 						<div class="row conf-row">
     <div class="col-6">
         <span class="conf-title">
-            <a title="Deadline Details" href="/de/conference/djangoday-copenhagen-2023/">DjangoDay Copenhagen 2023</a>
+            <a title="Deadline Details" href="/de/conference/django-day-copenhagen-2023/">Django Day Copenhagen 2023</a>
         </span>
         <span class="conf-title-small">
-            <a title="Deadline Details" href="/de/conference/djangoday-copenhagen-2023/">DjangoDay Copenhagen '23</a>
+            <a title="Deadline Details" href="/de/conference/django-day-copenhagen-2023/">Django Day Copenhagen '23</a>
         </span>
         <span class="conf-title-icon">
         <a title="Conference Website" href="https://2023.djangoday.dk/" target="_blank"><img src="/static/img/203-earth.svg" class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
@@ -3732,7 +3749,7 @@
         </span>
         
         <span class="conf-title-icon">
-        <a title="Call for Participation for DjangoDay Copenhagen" href="https://2023.djangoday.dk/cfp/" target="_blank"><img src="/static/img/035-file-text.svg" class="badge-link" alt="Link to Call for Participation for DjangoDay Copenhagen" width="16" height="16" /></a>
+        <a title="Call for Participation for Django Day Copenhagen" href="https://2023.djangoday.dk/cfp/" target="_blank"><img src="/static/img/035-file-text.svg" class="badge-link" alt="Link to Call for Participation for Django Day Copenhagen" width="16" height="16" /></a>
         &ZeroWidthSpace;
         </span>
         
@@ -3740,7 +3757,7 @@
         
         
         <span class="conf-title-icon">
-        <a title="Mastodon for DjangoDay Copenhagen" href="https://fosstodon.org/@djangodenmark" target="_blank"><img src="/static/img/407-mastodon.svg" class="badge-link" alt="Link to Conference Mastodon" width="16" height="16" /></a>
+        <a title="Mastodon for Django Day Copenhagen" href="https://fosstodon.org/@djangodenmark" target="_blank"><img src="/static/img/407-mastodon.svg" class="badge-link" alt="Link to Conference Mastodon" width="16" height="16" /></a>
         &ZeroWidthSpace;
         </span>
         
@@ -3781,70 +3798,10 @@
 			class="badge badge-light conf-sub WEB-tag"
 		></span>
 		
-	</div>
-	<div class="col-6">
-		<div class="calendar"></div>
-	</div>
-</div>
-
-						<hr />
-					</div>
-					 
-					<div
-						id="django-day-copenhagen-2023"
-						class="ConfItem  WEB-conf "
-					>
-						<div class="row conf-row">
-    <div class="col-6">
-        <span class="conf-title">
-            <a title="Deadline Details" href="/de/conference/django-day-copenhagen-2023/">Django Day Copenhagen 2023</a>
-        </span>
-        <span class="conf-title-small">
-            <a title="Deadline Details" href="/de/conference/django-day-copenhagen-2023/">Django Day Copenhagen '23</a>
-        </span>
-        <span class="conf-title-icon">
-        <a title="Conference Website" href="https://2023.djangoday.dk/" target="_blank"><img src="/static/img/203-earth.svg" class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
-        &ZeroWidthSpace;
-        </span>
-        
-        
-        
-        
-    </div>
-    <div class="col-6">
-        <span class="timer"></span>
-        <span class="timer-small"></span>
-    </div>
-</div>
- <div class="row">
-	<div class="col-12 col-sm-6">
-		<div class="meta">
-			<span class="conf-date">6. Oktober 2023
-.</span>
-			<span class="conf-place">
-				
-				<a href="http://maps.google.com/?q=Copenhagen, Denmark">Copenhagen, Denmark</a>
-				 
-			</span>
-		</div>
-		
-	</div>
-	<div class="col-12 col-sm-6">
-		<div class="deadline">
-			<div>
-				Deadline:
-				<span class="deadline-time">Thursday, 31 August 2023</span>
-			</div>
-		</div>
-	</div>
-</div>
- <div class="row">
-	<div class="col-6">
-		
 		<span
-			title="Click to only show WEB conferences"
-			data-sub="WEB"
-			class="badge badge-light conf-sub WEB-tag"
+			title="Click to only show DAY conferences"
+			data-sub="DAY"
+			class="badge badge-light conf-sub DAY-tag"
 		></span>
 		
 	</div>
@@ -5969,7 +5926,7 @@
 					 
 					<div
 						id="pyday-la-paz-2023"
-						class="ConfItem  PY-conf "
+						class="ConfItem  DAY-conf "
 					>
 						<div class="row conf-row">
     <div class="col-6">
@@ -6029,9 +5986,9 @@
 	<div class="col-6">
 		
 		<span
-			title="Click to only show PY conferences"
-			data-sub="PY"
-			class="badge badge-light conf-sub PY-tag"
+			title="Click to only show DAY conferences"
+			data-sub="DAY"
+			class="badge badge-light conf-sub DAY-tag"
 		></span>
 		
 	</div>
@@ -10775,7 +10732,7 @@
 					 
 					<div
 						id="django-day-copenhagen-2022"
-						class="ConfItem  WEB-conf "
+						class="ConfItem  WEB-conf  DAY-conf "
 					>
 						<div class="row conf-row">
     <div class="col-6">
@@ -10828,6 +10785,12 @@
 			title="Click to only show WEB conferences"
 			data-sub="WEB"
 			class="badge badge-light conf-sub WEB-tag"
+		></span>
+		
+		<span
+			title="Click to only show DAY conferences"
+			data-sub="DAY"
+			class="badge badge-light conf-sub DAY-tag"
 		></span>
 		
 	</div>
@@ -44016,7 +43979,7 @@ von <a href="https://dramsch.net">Jesper Dramsch,</a> Ersteller von <a href="htt
 var subs = [];
 var _all_subs = [];
 // Get all subs
-var conf_type_data = [{"name":"General Python","sub":"PY","color":"#4B8BBE"},{"name":"Scientific Python","sub":"SCIPY","color":"#70163C"},{"name":"Python for Data","sub":"DATA","color":"#849324"},{"name":"Python for Web","sub":"WEB","color":"#0D0A0B"},{"name":"Python for Business","sub":"BIZ","color":"#A8B9CC"},{"name":"Python for Earth","sub":"GEO","color":"#310c0c"},{"name":"Python Camps","sub":"CAMP","color":"#303030"}];
+var conf_type_data = [{"name":"General Python","sub":"PY","color":"#4B8BBE"},{"name":"Scientific Python","sub":"SCIPY","color":"#70163C"},{"name":"Python for Data","sub":"DATA","color":"#849324"},{"name":"Python for Web","sub":"WEB","color":"#0D0A0B"},{"name":"Python for Business","sub":"BIZ","color":"#A8B9CC"},{"name":"Python for Earth","sub":"GEO","color":"#310c0c"},{"name":"Python Camps","sub":"CAMP","color":"#303030"},{"name":"Python Day","sub":"DAY","color":"#3C1670"}];
 var sub2name = {}; var name2sub = {};
 for (var i = 0; i < conf_type_data.length; i++) {
     _all_subs[i] = conf_type_data[i]['sub'];
@@ -45351,6 +45314,8 @@ $('#subject-select').multiselect({
 			    
 			      $('#django-day-copenhagen-2023 .WEB-tag').html("Python für Web".toLocaleLowerCase("de"));
 			    
+			      $('#django-day-copenhagen-2023 .DAY-tag').html("Python Tag".toLocaleLowerCase("de"));
+			    
 			    
 
 			      // Use specified timezone for deadlines if available else use AoE timezone
@@ -45368,30 +45333,6 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#django-day-copenhagen-2023 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
-			    
-			  
-			    
-			    
-			    
-			      $('#djangoday-copenhagen-2023 .WEB-tag').html("Python für Web".toLocaleLowerCase("de"));
-			    
-			    
-
-			      // Use specified timezone for deadlines if available else use AoE timezone
-			      
-			        var cfpDate = DateTime.fromSQL("2023-08-31 23:59:59", {zone: "Europe/Copenhagen"});
-			        var confDate = DateTime.fromSQL("2023-10-06", {zone: "Europe/Copenhagen"});
-			      
-
-			      // check if timezone is valid otherwise replace by system timezone
-			      if (cfpDate.invalid || confDate.invalid) {
-			        var cfpDate = DateTime.fromSQL("2023-08-31 23:59:59");
-			        var confDate = DateTime.fromSQL("2023-10-06");
-			        console.log("Invalid timezone in djangoday-copenhagen-2023. Using system timezone instead.");
-			      }
-
-			      // deadline in local timezone
-			      $('#djangoday-copenhagen-2023 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -46261,7 +46202,7 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
-			      $('#pyday-la-paz-2023 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+			      $('#pyday-la-paz-2023 .DAY-tag').html("Python Tag".toLocaleLowerCase("de"));
 			    
 			    
 
@@ -47752,6 +47693,8 @@ $('#subject-select').multiselect({
 			    
 			    
 			      $('#django-day-copenhagen-2022 .WEB-tag').html("Python für Web".toLocaleLowerCase("de"));
+			    
+			      $('#django-day-copenhagen-2022 .DAY-tag').html("Python Tag".toLocaleLowerCase("de"));
 			    
 			    
 

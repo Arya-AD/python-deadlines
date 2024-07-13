@@ -40,11 +40,11 @@
 <link rel="alternate"  title="PyCon Asia Pacific 2010 Conference Deadlines in German" hreflang="de" href="/de/conference/pycon-asia-pacific-2010/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720824356" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720863133" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720824356" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720824356" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720863133" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720863133" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -138,6 +138,19 @@
 .CAMP-select.active {
     color: white;
     background: #303030;
+}
+
+
+.DAY-tag {
+  color: #3C1670;
+}
+.DAY-select {
+  color: #3C1670;
+  background: white;
+}
+.DAY-select.active {
+    color: white;
+    background: #3C1670;
 }
 
 
@@ -459,6 +472,8 @@ if (typeof Object.assign !== 'function') {
               
               
               
+              
+              
             </span>
             
           </span>
@@ -550,10 +565,10 @@ if (typeof Object.assign !== 'function') {
         </div>
       <div class="row">
         
-        <div id='6c8f6b28-e8b3-4172-a097-c1d16aded8d8' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='d70f60fe-adb8-41f5-b928-7fdaf8614402' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '6c8f6b28-e8b3-4172-a097-c1d16aded8d8',
+    'd70f60fe-adb8-41f5-b928-7fdaf8614402',
     [{"latitude":1.2899175,"longitude":103.8519072,"title":"PyCon Asia Pacific 2010","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -603,7 +618,7 @@ von <a href="https://dramsch.net">Jesper Dramsch,</a> Ersteller von <a href="htt
 var subs = [];
 var _all_subs = [];
 // Get all subs
-var conf_type_data = [{"name":"General Python","sub":"PY","color":"#4B8BBE"},{"name":"Scientific Python","sub":"SCIPY","color":"#70163C"},{"name":"Python for Data","sub":"DATA","color":"#849324"},{"name":"Python for Web","sub":"WEB","color":"#0D0A0B"},{"name":"Python for Business","sub":"BIZ","color":"#A8B9CC"},{"name":"Python for Earth","sub":"GEO","color":"#310c0c"},{"name":"Python Camps","sub":"CAMP","color":"#303030"}];
+var conf_type_data = [{"name":"General Python","sub":"PY","color":"#4B8BBE"},{"name":"Scientific Python","sub":"SCIPY","color":"#70163C"},{"name":"Python for Data","sub":"DATA","color":"#849324"},{"name":"Python for Web","sub":"WEB","color":"#0D0A0B"},{"name":"Python for Business","sub":"BIZ","color":"#A8B9CC"},{"name":"Python for Earth","sub":"GEO","color":"#310c0c"},{"name":"Python Camps","sub":"CAMP","color":"#303030"},{"name":"Python Day","sub":"DAY","color":"#3C1670"}];
 var sub2name = {}; var name2sub = {};
 for (var i = 0; i < conf_type_data.length; i++) {
     _all_subs[i] = conf_type_data[i]['sub'];

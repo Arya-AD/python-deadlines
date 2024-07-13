@@ -34,6 +34,9 @@
 <loc>https://pythondeadlin.es/conference/python-ho-2024/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/conference/python-in-education-day-2024/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/conference/pycon-sweden-2024/</loc>
 </url>
 <url>
@@ -434,9 +437,6 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/django-day-copenhagen-2023/</loc>
-</url>
-<url>
-<loc>https://pythondeadlin.es/conference/djangoday-copenhagen-2023/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/pycon-south-africa-2023/</loc>
@@ -3331,9 +3331,6 @@
 <loc>https://pythondeadlin.es/series/django-day-copenhagen/</loc>
 </url>
 <url>
-<loc>https://pythondeadlin.es/series/djangoday-copenhagen/</loc>
-</url>
-<url>
 <loc>https://pythondeadlin.es/series/pycon-south-africa/</loc>
 </url>
 <url>
@@ -5024,6 +5021,9 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/python-ho/</loc>
+</url>
+<url>
+<loc>https://pythondeadlin.es/series/python-in-education-day/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/pycon-sweden/</loc>

@@ -40,11 +40,11 @@
 <link rel="alternate"  title="PyCon Russia 2022 Conference Deadlines in German" hreflang="de" href="/de/conference/pycon-russia-2022/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720824356" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720863133" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720824356" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720824356" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720863133" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720863133" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -138,6 +138,19 @@
 .CAMP-select.active {
     color: white;
     background: #303030;
+}
+
+
+.DAY-tag {
+  color: #3C1670;
+}
+.DAY-select {
+  color: #3C1670;
+  background: white;
+}
+.DAY-select.active {
+    color: white;
+    background: #3C1670;
 }
 
 
@@ -457,6 +470,8 @@ if (typeof Object.assign !== 'function') {
               
               
               
+              
+              
             </span>
             
           </span>
@@ -560,10 +575,10 @@ if (typeof Object.assign !== 'function') {
         </div>
       <div class="row">
         
-        <div id='b255e9da-abdc-48d9-a1e6-a6bb858d1aa1' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='cb133ea2-7c60-4d4d-9b2a-6f8b4ad61b07' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'b255e9da-abdc-48d9-a1e6-a6bb858d1aa1',
+    'cb133ea2-7c60-4d4d-9b2a-6f8b4ad61b07',
     [{"latitude":55.625578,"longitude":37.6063916,"title":"PyCon Russia 2022","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -613,7 +628,7 @@ von <a href="https://dramsch.net">Jesper Dramsch,</a> Ersteller von <a href="htt
 var subs = [];
 var _all_subs = [];
 // Get all subs
-var conf_type_data = [{"name":"General Python","sub":"PY","color":"#4B8BBE"},{"name":"Scientific Python","sub":"SCIPY","color":"#70163C"},{"name":"Python for Data","sub":"DATA","color":"#849324"},{"name":"Python for Web","sub":"WEB","color":"#0D0A0B"},{"name":"Python for Business","sub":"BIZ","color":"#A8B9CC"},{"name":"Python for Earth","sub":"GEO","color":"#310c0c"},{"name":"Python Camps","sub":"CAMP","color":"#303030"}];
+var conf_type_data = [{"name":"General Python","sub":"PY","color":"#4B8BBE"},{"name":"Scientific Python","sub":"SCIPY","color":"#70163C"},{"name":"Python for Data","sub":"DATA","color":"#849324"},{"name":"Python for Web","sub":"WEB","color":"#0D0A0B"},{"name":"Python for Business","sub":"BIZ","color":"#A8B9CC"},{"name":"Python for Earth","sub":"GEO","color":"#310c0c"},{"name":"Python Camps","sub":"CAMP","color":"#303030"},{"name":"Python Day","sub":"DAY","color":"#3C1670"}];
 var sub2name = {}; var name2sub = {};
 for (var i = 0; i < conf_type_data.length; i++) {
     _all_subs[i] = conf_type_data[i]['sub'];

@@ -66,8 +66,12 @@ class Conference(BaseModel):
     @field_validator("sub")
     @classmethod
     def validate_sub(cls, v):
+        # open the _data/type.yml file and check if the submission type is valid
+        with Path("_data", "types.yml").open(encoding="utf-8") as file:
+            valid_types = [entry["sub"] for entry in yaml.safe_load(file)]
+
         for x in v.split(","):
-            if x not in ("PY", "DATA", "WEB", "BIZ", "GEO", "CAMP", "SCIPY"):
+            if x not in valid_types:
                 raise ValueError("Invalid submission type")
         return v
 

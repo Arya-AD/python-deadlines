@@ -40,11 +40,11 @@
 <link rel="alternate"  title="Kalender für Python-Konferenzen in German" hreflang="de" href="/de/kalender/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720824356" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720863133" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720824356" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720824356" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720863133" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720863133" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -138,6 +138,19 @@
 .CAMP-select.active {
     color: white;
     background: #303030;
+}
+
+
+.DAY-tag {
+  color: #3C1670;
+}
+.DAY-select {
+  color: #3C1670;
+  background: white;
+}
+.DAY-select.active {
+    color: white;
+    background: #3C1670;
 }
 
 
@@ -319,6 +332,10 @@
 										Python Camps (CAMP)
 									</option>
 									
+									<option value="DAY" id="DAY-checkbox">
+										Python Day (DAY)
+									</option>
+									
 								</select>
 							</div>
 						</div>
@@ -420,6 +437,10 @@
 					<span class="color-box" style="background-color: #303030"></span> Python Camps
 				</div>
 				
+				<div class="col-6 col-sm-4">
+					<span class="color-box" style="background-color: #3C1670"></span> Python Day
+				</div>
+				
 			</div>
 			<footer><hr>
 <div class="row">
@@ -516,7 +537,7 @@ function createCalendarFromObject(data) {
 var subs = [];
 var _all_subs = [];
 // Get all subs
-var conf_type_data = [{"name":"General Python","sub":"PY","color":"#4B8BBE"},{"name":"Scientific Python","sub":"SCIPY","color":"#70163C"},{"name":"Python for Data","sub":"DATA","color":"#849324"},{"name":"Python for Web","sub":"WEB","color":"#0D0A0B"},{"name":"Python for Business","sub":"BIZ","color":"#A8B9CC"},{"name":"Python for Earth","sub":"GEO","color":"#310c0c"},{"name":"Python Camps","sub":"CAMP","color":"#303030"}];
+var conf_type_data = [{"name":"General Python","sub":"PY","color":"#4B8BBE"},{"name":"Scientific Python","sub":"SCIPY","color":"#70163C"},{"name":"Python for Data","sub":"DATA","color":"#849324"},{"name":"Python for Web","sub":"WEB","color":"#0D0A0B"},{"name":"Python for Business","sub":"BIZ","color":"#A8B9CC"},{"name":"Python for Earth","sub":"GEO","color":"#310c0c"},{"name":"Python Camps","sub":"CAMP","color":"#303030"},{"name":"Python Day","sub":"DAY","color":"#3C1670"}];
 var sub2name = {}; var name2sub = {};
 for (var i = 0; i < conf_type_data.length; i++) {
     _all_subs[i] = conf_type_data[i]['sub'];
@@ -777,6 +798,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pytexas-2025-conference",
         abbreviation: "pytexas-2025",
@@ -829,6 +852,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "python-ho-2024-conference",
         abbreviation: "python-ho-2024",
@@ -839,6 +864,60 @@ function load_conference_list() {
         subject: "PY",
         startDate: Date.parse("2024-10-25"),
         endDate: Date.parse("2024-10-26"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
+      id: "python-in-education-day-2024-deadline",
+      abbreviation: "python-in-education-day-2024",
+      name: "Python in Education Day 2024 CfP ",
+      color: "red",
+      location: "Oxford, UK",
+      date: "14. Oktober 2024
+",
+      subject: "DAY",
+      startDate: Date.parse("2024-08-31 23:59:00"),
+      endDate: Date.parse("2024-08-31 23:59:00"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+                    color = "#3C1670";
+            
+      
+      conf_list_all.push({
+        id: "python-in-education-day-2024-conference",
+        abbreviation: "python-in-education-day-2024",
+        name: "Python in Education Day 2024",
+        color: color,
+        location: "Oxford, UK",
+        date: "14. Oktober 2024",
+        subject: "DAY",
+        startDate: Date.parse("2024-10-14"),
+        endDate: Date.parse("2024-10-14"),
       });
     
   
@@ -867,6 +946,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -933,6 +1014,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "xtreme-python-2024-conference",
         abbreviation: "xtreme-python-2024",
@@ -985,6 +1068,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "plone-conference-2024-conference",
         abbreviation: "plone-conference-2024",
@@ -1023,6 +1108,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -1101,6 +1188,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pycon-south-africa-2024-conference",
         abbreviation: "pycon-south-africa-2024",
@@ -1139,6 +1228,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -1205,6 +1296,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "python-brasil-2024-conference",
         abbreviation: "python-brasil-2024",
@@ -1243,6 +1336,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -1309,6 +1404,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pybay-2024-conference",
         abbreviation: "pybay-2024",
@@ -1347,6 +1444,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -1413,6 +1512,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pycon-niger-2024-conference",
         abbreviation: "pycon-niger-2024",
@@ -1451,6 +1552,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -1517,6 +1620,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pycon-somalia-2024-conference",
         abbreviation: "pycon-somalia-2024",
@@ -1569,6 +1674,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pycon-australia-2024-conference",
         abbreviation: "pycon-australia-2024",
@@ -1607,6 +1714,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -1685,6 +1794,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pycon-africa-2024-conference",
         abbreviation: "pycon-africa-2024",
@@ -1723,6 +1834,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -1789,6 +1902,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "swiss-python-summit-2024-conference",
         abbreviation: "swiss-python-summit-2024",
@@ -1827,6 +1942,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -1893,6 +2010,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pyhep-dev-2024-conference",
         abbreviation: "pyhep-dev-2024",
@@ -1931,6 +2050,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -2009,6 +2130,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pycon-latin-america-2024-conference",
         abbreviation: "pycon-latin-america-2024",
@@ -2061,6 +2184,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pytorch-conference-2024-conference",
         abbreviation: "pytorch-conference-2024",
@@ -2099,6 +2224,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -2165,6 +2292,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "piter-py-2024-conference",
         abbreviation: "piter-py-2024",
@@ -2217,6 +2346,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pycon-israel-2024-conference",
         abbreviation: "pycon-israel-2024",
@@ -2255,6 +2386,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -2333,6 +2466,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pycon-spain-2024-conference",
         abbreviation: "pycon-spain-2024",
@@ -2371,6 +2506,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -2449,6 +2586,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pycon-india-2024-conference",
         abbreviation: "pycon-india-2024",
@@ -2513,6 +2652,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "euroscipy-2024-conference",
         abbreviation: "euroscipy-2024",
@@ -2537,7 +2678,7 @@ function load_conference_list() {
       location: "Copiapó, Chile",
       date: "12. Juni 2024
 ",
-      subject: "PY",
+      subject: "DAY",
       startDate: Date.parse("2024-05-24 23:59:00"),
       endDate: Date.parse("2024-05-24 23:59:00"),
     });
@@ -2550,8 +2691,6 @@ function load_conference_list() {
        // use first sub to choose color
       
             
-                    color = "#4B8BBE";
-            
       
             
       
@@ -2563,6 +2702,10 @@ function load_conference_list() {
       
             
       
+            
+      
+            
+                    color = "#3C1670";
             
       
       conf_list_all.push({
@@ -2572,7 +2715,7 @@ function load_conference_list() {
         color: color,
         location: "Copiapó, Chile",
         date: "12. Juni 2024",
-        subject: "PY",
+        subject: "DAY",
         startDate: Date.parse("2024-06-12"),
         endDate: Date.parse("2024-06-12"),
       });
@@ -2589,7 +2732,7 @@ function load_conference_list() {
       location: "Valparaiso, Chile",
       date: "14. Juni 2024
 ",
-      subject: "PY",
+      subject: "DAY",
       startDate: Date.parse("2024-05-24 23:59:00"),
       endDate: Date.parse("2024-05-24 23:59:00"),
     });
@@ -2602,8 +2745,6 @@ function load_conference_list() {
        // use first sub to choose color
       
             
-                    color = "#4B8BBE";
-            
       
             
       
@@ -2615,6 +2756,10 @@ function load_conference_list() {
       
             
       
+            
+      
+            
+                    color = "#3C1670";
             
       
       conf_list_all.push({
@@ -2624,7 +2769,7 @@ function load_conference_list() {
         color: color,
         location: "Valparaiso, Chile",
         date: "14. Juni 2024",
-        subject: "PY",
+        subject: "DAY",
         startDate: Date.parse("2024-06-14"),
         endDate: Date.parse("2024-06-14"),
       });
@@ -2655,6 +2800,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -2721,6 +2868,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pyohio-2024-conference",
         abbreviation: "pyohio-2024",
@@ -2773,6 +2922,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pydata-amsterdam-2024-conference",
         abbreviation: "pydata-amsterdam-2024",
@@ -2811,6 +2962,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -2877,6 +3030,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pydata-eindhoven-2024-conference",
         abbreviation: "pydata-eindhoven-2024",
@@ -2915,6 +3070,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -2993,6 +3150,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pycon-uganda-2024-conference",
         abbreviation: "pycon-uganda-2024",
@@ -3031,6 +3190,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -3097,6 +3258,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pydata-vermont-2024-conference",
         abbreviation: "pydata-vermont-2024",
@@ -3141,6 +3304,8 @@ function load_conference_list() {
       
             
                     color = "#0D0A0B";
+            
+      
             
       
             
@@ -3201,6 +3366,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "wagtail-space-us-2024-conference",
         abbreviation: "wagtail-space-us-2024",
@@ -3239,6 +3406,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -3305,6 +3474,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "belpy-2024-conference",
         abbreviation: "belpy-2024",
@@ -3343,6 +3514,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -3421,6 +3594,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pycon-taiwan-2024-conference",
         abbreviation: "pycon-taiwan-2024",
@@ -3463,6 +3638,8 @@ function load_conference_list() {
       
             
                     color = "#849324";
+            
+      
             
       
             
@@ -3525,6 +3702,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "earl-2024-conference",
         abbreviation: "earl-2024",
@@ -3563,6 +3742,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -3629,6 +3810,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pycon-nigeria-2024-conference",
         abbreviation: "pycon-nigeria-2024",
@@ -3681,6 +3864,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "wagtail-space-nl-2024-conference",
         abbreviation: "wagtail-space-nl-2024",
@@ -3719,6 +3904,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -3785,6 +3972,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "python-nordeste-2024-conference",
         abbreviation: "python-nordeste-2024",
@@ -3827,6 +4016,8 @@ function load_conference_list() {
       
             
                     color = "#849324";
+            
+      
             
       
             
@@ -3889,6 +4080,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "djangocon-europe-2024-conference",
         abbreviation: "djangocon-europe-2024",
@@ -3941,6 +4134,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "scipy-us-2024-conference",
         abbreviation: "scipy-us-2024",
@@ -3965,7 +4160,7 @@ function load_conference_list() {
       location: "Copenhagen, Denmark",
       date: "4. Oktober 2024
 ",
-      subject: "WEB",
+      subject: "WEB,DAY",
       startDate: Date.parse("2023-08-31 23:59:59"),
       endDate: Date.parse("2023-08-31 23:59:59"),
     });
@@ -3993,6 +4188,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "django-day-copenhagen-2024-conference",
         abbreviation: "django-day-copenhagen-2024",
@@ -4000,7 +4197,7 @@ function load_conference_list() {
         color: color,
         location: "Copenhagen, Denmark",
         date: "4. Oktober 2024",
-        subject: "WEB",
+        subject: "WEB,DAY",
         startDate: Date.parse("2024-10-04"),
         endDate: Date.parse("2024-10-04"),
       });
@@ -4035,6 +4232,8 @@ function load_conference_list() {
       
             
                     color = "#849324";
+            
+      
             
       
             
@@ -4097,6 +4296,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pydata-tel-aviv-2024-conference",
         abbreviation: "pydata-tel-aviv-2024",
@@ -4135,6 +4336,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             
@@ -4201,6 +4404,8 @@ function load_conference_list() {
       
             
       
+            
+      
       conf_list_all.push({
         id: "pycon-us-2025-conference",
         abbreviation: "pycon-us-2025",
@@ -4239,6 +4444,8 @@ function load_conference_list() {
       
             
                     color = "#4B8BBE";
+            
+      
             
       
             

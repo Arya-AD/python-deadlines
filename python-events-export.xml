@@ -9,7 +9,7 @@
 		<title>Newsfeed for Python Events Calendar from Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Fri, 12 Jul 2024 22:44:06 +0000</lastBuildDate>
+		<lastBuildDate>Sat, 13 Jul 2024 09:30:26 +0000</lastBuildDate>
 		
 			<item>
 				<title>PyTexas 2025 Conference Deadline</title>
@@ -29,6 +29,16 @@
 				<link>https://pythondeadlin.es/conference/python-ho-2024/</link>
 				<guid isPermaLink="false">python-ho-2024</guid>
 				<category>PY</category>
+			</item>
+		
+			<item>
+				<title>Python in Education Day 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: Python in Education Day 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Oxford, UK<br/>* dates/times/recurrence (incl. time zone): October 14, 2024
+<br/>* HTML link : <a href="https://scienceoxford.com/python-in-education-day/">Python in Education Day 2024</a>]]></description>
+				<pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/python-in-education-day-2024/</link>
+				<guid isPermaLink="false">python-in-education-day-2024</guid>
+				<category>DAY</category>
 			</item>
 		
 			<item>
@@ -229,16 +239,6 @@
 				<link>https://pythondeadlin.es/conference/pyhep-dev-2024/</link>
 				<guid isPermaLink="false">pyhep-dev-2024</guid>
 				<category>SCIPY</category>
-			</item>
-		
-			<item>
-				<title>PyCon South Korea 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyCon South Korea 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Suwon, South Korea<br/>* dates/times/recurrence (incl. time zone): October 25 – 27, 2024
-<br/>* HTML link : <a href="https://2024.pycon.kr/">PyCon South Korea 2024</a>]]></description>
-				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-south-korea-2024/</link>
-				<guid isPermaLink="false">pycon-south-korea-2024</guid>
-				<category>PY</category>
 			</item>
 		
 	</channel>

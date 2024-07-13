@@ -9,7 +9,7 @@
 		<title>Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Fri, 12 Jul 2024 22:45:00 +0000</lastBuildDate>
+		<lastBuildDate>Sat, 13 Jul 2024 09:31:20 +0000</lastBuildDate>
 		
 		
 		
@@ -34,6 +34,19 @@
 				<link>https://pythondeadlin.es/conference/python-ho-2024/</link>
 				<guid isPermaLink="false">python-ho-2024</guid>
 				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>Python in Education Day 2024 Conference Deadline</title>
+				<description>Conference in Oxford, UK on 14 de octubre de 2024
+. CfP: 2024-08-31 23:59:00 AoE.&lt;br /&gt;Find them here: @ScienceOxford </description>
+				<pubDate>Sat, 31 Aug 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/python-in-education-day-2024/</link>
+				<guid isPermaLink="false">python-in-education-day-2024</guid>
+				<category>DAY</category>
 			</item>
 		
 		
@@ -294,19 +307,6 @@
 				<link>https://pythondeadlin.es/conference/pyhep-dev-2024/</link>
 				<guid isPermaLink="false">pyhep-dev-2024</guid>
 				<category>SCIPY</category>
-			</item>
-		
-		
-		
-		
-			<item>
-				<title>PyCon South Korea 2024 Conference Deadline</title>
-				<description>Conference in Suwon, South Korea on 25 – 27 de octubre de 2024
-. CfP: 2024-06-22 23:59:00 AoE. </description>
-				<pubDate>Sat, 22 Jun 2024 23:59:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-south-korea-2024/</link>
-				<guid isPermaLink="false">pycon-south-korea-2024</guid>
-				<category>PY</category>
 			</item>
 		
 		

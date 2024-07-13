@@ -8,43 +8,43 @@
 
 
 
-<title>DjangoDay Copenhagen 2023 Conference Deadlines | PythonDeadlin.es</title>
+<title>Python in Education Day 2024 Conference Deadlines | PythonDeadlin.es</title>
 <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="DjangoDay Copenhagen 2023 Conference Deadlines" />
+<meta property="og:title" content="Python in Education Day 2024 Conference Deadlines" />
 <meta name="author" content="Jesper Dramsch" />
-<meta property="og:locale" content="de" />
+<meta property="og:locale" content="en" />
 <meta name="description" content="Countdown for the Call for Participation of this conference including conference dates and details." />
 <meta property="og:description" content="Countdown for the Call for Participation of this conference including conference dates and details." />
-<link rel="canonical" href="https://pythondeadlin.es/conference/djangoday-copenhagen-2023/" />
-<meta property="og:url" content="https://pythondeadlin.es/conference/djangoday-copenhagen-2023/" />
+<link rel="canonical" href="https://pythondeadlin.es/conference/python-in-education-day-2024/" />
+<meta property="og:url" content="https://pythondeadlin.es/conference/python-in-education-day-2024/" />
 <meta property="og:site_name" content="Python Conference Deadlines" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="DjangoDay Copenhagen 2023 Conference Deadlines" />
+<meta property="twitter:title" content="Python in Education Day 2024 Conference Deadlines" />
 <meta name="twitter:site" content="@jesperdramsch" />
 <meta name="twitter:creator" content="@jesperdramsch" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Jesper Dramsch","url":"https://dramsch.net"},"description":"Countdown for the Call for Participation of this conference including conference dates and details.","headline":"DjangoDay Copenhagen 2023 Conference Deadlines","url":"https://pythondeadlin.es/conference/djangoday-copenhagen-2023/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Jesper Dramsch","url":"https://dramsch.net"},"description":"Countdown for the Call for Participation of this conference including conference dates and details.","headline":"Python in Education Day 2024 Conference Deadlines","url":"https://pythondeadlin.es/conference/python-in-education-day-2024/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
 <link rel="alternate" type="application/rss+xml" title="RSS Feed for Pythondeadlin.es" href="/feed.xml" />
 
-<link rel="alternate" hreflang="en" href="/conference/djangoday-copenhagen-2023/" title="">
+<link rel="alternate" hreflang="en" href="/conference/python-in-education-day-2024/" title="">
 
 
-<link rel="alternate"  title="DjangoDay Copenhagen 2023 Conference Deadlines in Spanish" hreflang="es" href="/es/conference/djangoday-copenhagen-2023/">
+<link rel="alternate"  title="Python in Education Day 2024 Conference Deadlines in Spanish" hreflang="es" href="/es/conference/python-in-education-day-2024/">
 
 
-<link rel="alternate"  title="DjangoDay Copenhagen 2023 Conference Deadlines in German" hreflang="de" href="/de/conference/djangoday-copenhagen-2023/">
+<link rel="alternate"  title="Python in Education Day 2024 Conference Deadlines in German" hreflang="de" href="/de/conference/python-in-education-day-2024/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720824356" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720863026" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720824356" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720824356" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720863026" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720863026" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -141,6 +141,19 @@
 }
 
 
+.DAY-tag {
+  color: #3C1670;
+}
+.DAY-select {
+  color: #3C1670;
+  background: white;
+}
+.DAY-select.active {
+    color: white;
+    background: #3C1670;
+}
+
+
   </style>
 
 <script defer data-domain="pythondeadlin.es" src="https://info.pythondeadlin.es/js/script.js"></script>
@@ -155,37 +168,15 @@
 <script type="text/javascript" src="/static/js/bootstrap-multiselect.min.js"></script>
 
   
-  <link rel="stylesheet" type="text/css" href="/static/css/mastodon.css">
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch("https://fosstodon.org/@djangodenmark.rss")
-        .then(function (response) {
-          return response.text();
-        })
-        .then(function (xmlText) {
-          var parser = new DOMParser();
-          var xml = parser.parseFromString(xmlText, "text/xml");
-          var items = xml.querySelectorAll("item");
-          var feedContainer = document.getElementById("mastodon-feed");
-          var postLimit = 2; // Number of posts to display
+  <style>
+    #twitter-widget {
+      width: 100%;
+    }
 
-          for (var i = 0; i < postLimit && i < items.length; i++) {
-            var item = items[i];
-            var post = item.querySelector("description").textContent;
-            var link = item.querySelector("link").textContent;
-            var pubDate = item.querySelector("pubDate").textContent;
-
-            var feedItem = document.createElement("div");
-            feedItem.setAttribute("class", "timeline-item")
-            feedItem.innerHTML = '<div class="timeline-content">' + post + '</div><a href="' + link + '">' + pubDate + ' by DjangoDay Copenhagen</a>';
-            feedContainer.appendChild(feedItem);
-          }
-        })
-        .catch(function (error) {
-          console.log("Error fetching Mastodon RSS feed:", error);
-        });
-    });
-  </script>
+    .twitter-timeline {
+      width: 100% !important;
+    }
+    </style>
   
 <script type='text/javascript'>
   /* global google */
@@ -360,7 +351,7 @@ if (typeof Object.assign !== 'function') {
 	<div class="container">
 		<div style="vertical-align: middle; padding-top: 8px">
 			<div>
-				<a class="navbar-brand" href="/de/" style="border-bottom: none; line-height: 0.1em">
+				<a class="navbar-brand" href="/" style="border-bottom: none; line-height: 0.1em">
 					Python Deadlines<br /><br />
 				</a>
 			</div>
@@ -383,22 +374,22 @@ if (typeof Object.assign !== 'function') {
 		<div class="collapse navbar-collapse" id="navbar-toggler">
 			<ul class="navbar-nav mr-auto">
 				<li>
-					<a href="/de/" class="nav-link" style="border-bottom: none"
+					<a href="/" class="nav-link" style="border-bottom: none"
 						>Countdowns</a
 					>
 				</li>
 				<li>
-					<a href="/de/kalender/" class="nav-link" style="border-bottom: none">Kalender</a>
+					<a href="/calendar/" class="nav-link" style="border-bottom: none">Calendar</a>
 				</li>
 				<li>
-					<a href="/de/karte/" class="nav-link" style="border-bottom: none">Karte</a>
+					<a href="/map/" class="nav-link" style="border-bottom: none">Map</a>
 				</li>
 				<li>
-					<a href="/de/serien/" class="nav-link" style="border-bottom: none">Eventserien</a>
+					<a href="/series/" class="nav-link" style="border-bottom: none">Series</a>
 				</li>
 				<li>
-					<a href="/de/ressourcen/" class="nav-link" style="border-bottom: none"
-						>Ressourcen</a
+					<a href="/resources/" class="nav-link" style="border-bottom: none"
+						>Resources</a
 					>
 				</li>
 			</ul>
@@ -412,26 +403,26 @@ if (typeof Object.assign !== 'function') {
 						aria-haspopup="true"
 						aria-expanded="false"
 					>
-						de
+						en
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-						<h6 class="dropdown-header">Wähle Sprache</h6>
+						<h6 class="dropdown-header">Choose Language</h6>
 						
 						<a
-							class="dropdown-item"
-							href="/conference/djangoday-copenhagen-2023/"
+							class="dropdown-item active"
+							href="/conference/python-in-education-day-2024/"
 							>English</a
 						>
 						 
 						<a
 							class="dropdown-item"
-							href="/es/conference/djangoday-copenhagen-2023/"
+							href="/es/conference/python-in-education-day-2024/"
 							>Español</a
 						>
 						 
 						<a
-							class="dropdown-item active"
-							href="/de/conference/djangoday-copenhagen-2023/"
+							class="dropdown-item"
+							href="/de/conference/python-in-education-day-2024/"
 							>Deutsch</a
 						>
 						
@@ -455,13 +446,13 @@ if (typeof Object.assign !== 'function') {
   
 
   
-    / <a href="#">DjangoDay Copenhagen 2023 Conference Deadlines</a>
+    / <a href="#">Python in Education Day 2024 Conference Deadlines</a>
   
 
 </div>
 
           <h1>
-            <span id="conf-title-href" href="/conference/djangoday-copenhagen-2023/">DjangoDay Copenhagen 2023</span>
+            <span id="conf-title-href" href="/conference/python-in-education-day-2024/">Python in Education Day 2024</span>
           </h1>
           
         </div>
@@ -471,7 +462,7 @@ if (typeof Object.assign !== 'function') {
           <span id="conf-subs" title="Conference subjects">
             
             
-            <span class="WEB-tag badge badge-light conf-sub conf-WEB">
+            <span class="DAY-tag badge badge-light conf-sub conf-DAY">
               
               
               
@@ -480,13 +471,15 @@ if (typeof Object.assign !== 'function') {
               
               
               
-              Python for Web
               
               
               
               
               
               
+              
+              
+              Python Day
               
               
             </span>
@@ -504,63 +497,58 @@ if (typeof Object.assign !== 'function') {
         <div class="col-12 col-md-6">
           <div>
             <img src="/static/img/084-calendar.svg" class="badge-link" alt="Calendar icon" width="16" height="16" />
-            <span id="conf-date">6. Oktober 2023
+            <span id="conf-date">October 14, 2024
 </span>
           </div>
           <div>
             <img src="/static/img/072-location.svg" class="badge-link" alt="Location icon" width="16" height="16" />
             <a id="conf-place" target="_blank"
-              href="https://maps.google.com/?q=Copenhagen, Denmark">Copenhagen, Denmark</a>
+              href="https://maps.google.com/?q=Oxford, UK">Oxford, UK</a>
           </div>
           <div>
             <img src="/static/img/203-earth.svg" class="badge-link" alt="Earth Icon" width="16" height="16" />
-            <a id="conf-website" target="_blank" href="https://2023.djangoday.dk/">https://2023.djangoday.dk/</a>
+            <a id="conf-website" target="_blank" href="https://scienceoxford.com/python-in-education-day/">https://scienceoxford.com/python-in-education-day/</a>
           </div>
           
           <div>
             <img src="/static/img/035-file-text.svg" class="badge-link" alt="Document Icon for CfP link" width="16"
               height="16" />
-            <a id="conf-cfp_link" target="_blank" href="https://2023.djangoday.dk/cfp/">Aufruf zur Teilnahme</a>
+            <a id="conf-cfp_link" target="_blank" href="https://www.surveymonkey.com/r/PythonInEducationDay">Call for Participation</a>
           </div>
           
           <div>
             <img src="/static/img/002-home2.svg" class="badge-link" alt="Conference Series" width="16" height="16" />
-            <a id="conf-series" href="/de/series/djangoday-copenhagen">Alle Konferenzen für DjangoDay Copenhagen</a>
+            <a id="conf-series" href="/series/python-in-education-day">All conferences for Python in Education Day</a>
           </div>
           
           
           
           <div>
             <img src="/static/img/407-twitter.svg" class="badge-link" alt="Twitter icon" width="16" height="16" />
-            <a id="conf-twitter" target="_blank" href="https://twitter.com/djangodenmark">@djangodenmark</a>
+            <a id="conf-twitter" target="_blank" href="https://twitter.com/ScienceOxford">@ScienceOxford</a>
           </div>
           
-          
-          <div>
-            <img src="/static/img/407-mastodon.svg" class="badge-link" alt="Mastodon icon" width="16" height="16" />
-            <a id="conf-mastodon" target="_blank" href="https://fosstodon.org/@djangodenmark">Mastodon</a>
-          </div>
           
         </div>
         </div>
         <div id="conf-deadlines" class="row">
           <div class="col-12 col-md-6">
           <div class="meta deadline">
-            Download der Konferenzdeadline:
+            Download Conference Deadline:
           </div>
           <div id="conference-deadline" class="calendar meta"></div>
           <div class="meta deadline">
-            Download der Konferenzdaten:
+            Download Conference Dates:
           </div>
           <div id="conference-calendar" class="calendar meta"></div>
           <div class="meta deadline">
-            Deadline in der Zeitzone der Konferenz:
+            Deadline in timezone from conference website:
           </div>
           <div class="meta">
-            <span class="deadline-time">Thursday, 31 August 2023</span>
+            <span class="deadline-time">Saturday, 31 August 2024</span>
           </div>
           <div class="meta">
-            Deadline in lokaler <span class='local-timezone'></span> Zeitzone:
+            Deadline in your local <span class='local-timezone'></span> timezone:
           </div>
           <div class="local-timezone-hide meta">
             <span class="deadline-local-time"></span>
@@ -568,44 +556,46 @@ if (typeof Object.assign !== 'function') {
         </div>
         <div class="col-12 col-md-6">
           
-          <!-- Mastodon timeline -->
-          <div class="meta">Mastodon Posts by DjangoDay Copenhagen:</div>
-          <div id="mastodon-feed"></div>
-          <a href="https://fosstodon.org/@djangodenmark">See all Mastodon posts for DjangoDay Copenhagen</a>
+          <!-- Twitter timeline -->
+          <div id="twitter-widget">
+            <a class="twitter-timeline" href="https://twitter.com/ScienceOxford" data-tweet-limit=2>Tweets by
+              ScienceOxford</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
           
         </div>
       </div>
       <div class="row" id="conf-share-links">
         <div class="col-12">
-              <a href="https://twitter.com/share?url=https://pythondeadlin.es/conference/djangoday-copenhagen-2023/&via=jesperdramsch&text=I%20found%20this%20Python%20conference:%20DjangoDay Copenhagen%202023"
+              <a href="https://twitter.com/share?url=https://pythondeadlin.es/conference/python-in-education-day-2024/&via=jesperdramsch&text=I%20found%20this%20Python%20conference:%20Python in Education Day%202024"
                 data-toggle="tooltip" title="Tweet on Twitter!">
-                Konferenz tweeten
+                Tweet Conference
               </a> |
-              <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://pythondeadlin.es/conference/djangoday-copenhagen-2023/" data-toggle="tooltip"
+              <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://pythondeadlin.es/conference/python-in-education-day-2024/" data-toggle="tooltip"
                 title="Share on Linkedin!">
-                Konferenz auf LinkedIn verlinken
+                Link Conference on LinkedIn
               </a> |
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https://pythondeadlin.es/conference/djangoday-copenhagen-2023/&t=DjangoDay Copenhagen%202023"
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://pythondeadlin.es/conference/python-in-education-day-2024/&t=Python in Education Day%202024"
                 data-toggle="tooltip" title="Share of Facebook!">
-                Konferenz auf FB teilen
+                Share Conference on FB
               </a> |
-              <a href="https://api.whatsapp.com/send?text=I%20found%20this%20Python%20conference:%20DjangoDay Copenhagen%202023%20https://pythondeadlin.es/conference/djangoday-copenhagen-2023/"
+              <a href="https://api.whatsapp.com/send?text=I%20found%20this%20Python%20conference:%20Python in Education Day%202024%20https://pythondeadlin.es/conference/python-in-education-day-2024/"
                 data-action="share/whatsapp/share" data-toggle="tooltip" title="Text on Whatsapp!">
-                Konferenz per WhatsApp teilen
+                Text Conference on WhatsApp
               </a> |
-              <a href="mailto:?subject=Do%20you%20want%20to%20speak%20at%20DjangoDay Copenhagen%202023&body=Hey,%20the%20CfP%20deadline%20for%20DjangoDay Copenhagen%202023%20is%20approaching!%20%20https://pythondeadlin.es/conference/djangoday-copenhagen-2023/"
+              <a href="mailto:?subject=Do%20you%20want%20to%20speak%20at%20Python in Education Day%202024&body=Hey,%20the%20CfP%20deadline%20for%20Python in Education Day%202024%20is%20approaching!%20%20https://pythondeadlin.es/conference/python-in-education-day-2024/"
                 data-toggle="tooltip" title="Email to a Friend!">
-                Konferenz per E-Mail teilen
+                Email Conference
               </a>
         </div>
         </div>
       <div class="row">
         
-        <div id='528e7fbb-cbef-47d8-a71f-b6cb6763b5c2' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='35753f9a-c6f6-4af8-8efa-a17e41e7a6a0' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '528e7fbb-cbef-47d8-a71f-b6cb6763b5c2',
-    [{"latitude":55.6867243,"longitude":12.5700724,"title":"DjangoDay Copenhagen 2023","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
+    '35753f9a-c6f6-4af8-8efa-a17e41e7a6a0',
+    [{"latitude":51.7520131,"longitude":-1.2578499,"title":"Python in Education Day 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
 </script>
@@ -617,16 +607,16 @@ if (typeof Object.assign !== 'function') {
       <hr>
 <div class="row">
   <div class="col-12 col-sm-12">
-    <p><a href="">pythondeadlin.es</a> wird seit 2022 von <a href="https://dramsch.net/">Jesper Dramsch</a> gepflegt. <br />Es wurde inspiriert (und ursprünglich geschrieben) von der fantastischen <a href="https://aideadlin.es">aideadlin.es</a>. Keine Gewähr für die Richtigkeit, Fehler bitte korrigieren durch <a href="https://github.com/JesperDramsch/python-deadlines/pulls/">Senden eines Pull-Requests</a>.</p>
+    <p><a href="">pythondeadlin.es</a> is maintained by <a href="https://dramsch.net/">Jesper Dramsch</a> since 2022. <br />It was inspired (and originally coded) by the fantastic <a href="https://aideadlin.es">aideadlin.es</a>. No guarantee for correctness, please correct mistakes by <a href="https://github.com/JesperDramsch/python-deadlines/">submitting a pull request</a>.</p>
 
   </div>
 </div>
 <div class="row">
   <div class="col-12 col-sm-12">
     <div class="footer-links">
-      <p><a href="/de/legal/impressum/">Impressum</a> &amp;
-<a href="">Datenschutzerklärung</a>
-von <a href="https://dramsch.net">Jesper Dramsch,</a> Ersteller von <a href="https://ml.recipes">ML.recipes</a>, &lt;a href= „https://data-science-gui.de“&gt;data-science-gui.de&lt;/a&gt;, <a href="https://late.email">Late to the Party 🎉</a> und der <a href="https://latent.club">Latent Space Community</a>.</p>
+      <p><a href="/legal/terms-conditions/">Terms</a> &amp;
+<a href="/legal/privacy-policy/">Privacy Policy</a>
+from <a href="https://dramsch.net">Jesper Dramsch,</a> creator of <a href="https://ml.recipes">ML.recipes</a>, <a href="https://data-science-gui.de">data-science-gui.de</a>, <a href="https://late.email">Late to the Party 🎉</a> and the <a href="https://latent.club">Latent Space Community</a>.</p>
 
     </div>
   </div>
@@ -646,7 +636,7 @@ von <a href="https://dramsch.net">Jesper Dramsch,</a> Ersteller von <a href="htt
       var url = new URL(window.location);
       var conf = url.searchParams.get('id');
 
-      luxon.Settings.defaultLocale = "de";
+      luxon.Settings.defaultLocale = "en";
       var DateTime = luxon.DateTime;
       var today = DateTime.now();
 
@@ -654,7 +644,7 @@ von <a href="https://dramsch.net">Jesper Dramsch,</a> Ersteller von <a href="htt
 var subs = [];
 var _all_subs = [];
 // Get all subs
-var conf_type_data = [{"name":"General Python","sub":"PY","color":"#4B8BBE"},{"name":"Scientific Python","sub":"SCIPY","color":"#70163C"},{"name":"Python for Data","sub":"DATA","color":"#849324"},{"name":"Python for Web","sub":"WEB","color":"#0D0A0B"},{"name":"Python for Business","sub":"BIZ","color":"#A8B9CC"},{"name":"Python for Earth","sub":"GEO","color":"#310c0c"},{"name":"Python Camps","sub":"CAMP","color":"#303030"}];
+var conf_type_data = [{"name":"General Python","sub":"PY","color":"#4B8BBE"},{"name":"Scientific Python","sub":"SCIPY","color":"#70163C"},{"name":"Python for Data","sub":"DATA","color":"#849324"},{"name":"Python for Web","sub":"WEB","color":"#0D0A0B"},{"name":"Python for Business","sub":"BIZ","color":"#A8B9CC"},{"name":"Python for Earth","sub":"GEO","color":"#310c0c"},{"name":"Python Camps","sub":"CAMP","color":"#303030"},{"name":"Python Day","sub":"DAY","color":"#3C1670"}];
 var sub2name = {}; var name2sub = {};
 for (var i = 0; i < conf_type_data.length; i++) {
     _all_subs[i] = conf_type_data[i]['sub'];
@@ -731,46 +721,46 @@ function createCalendarFromObject(data) {
 
       // Use specified timezone for deadlines if available else use AoE timezone
       
-      var confDeadline = DateTime.fromSQL("2023-08-31 23:59:59", { zone: "Europe/Copenhagen" });
+      var confDeadline = DateTime.fromSQL("2024-08-31 23:59:00", { zone: "UTC-12" });
       
 
       // check if timezone is valid otherwise replace by system timezone
       if (confDeadline.invalid) {
-        var confDeadline = DateTime.fromSQL("2023-08-31 23:59:59");
+        var confDeadline = DateTime.fromSQL("2024-08-31 23:59:00");
         console.log("Invalid timezone. Using system timezone instead.");
       }
 
       // add calendar
 
       var conferenceDeadlineCalendar = createCalendarFromObject({
-        id: 'djangoday-copenhagen-2023',
-        title: 'DjangoDay Copenhagen 2023 deadline',
+        id: 'python-in-education-day-2024',
+        title: 'Python in Education Day 2024 deadline',
         start_date: confDeadline.toJSDate(),
         duration: 60,
-        place: 'Copenhagen, Denmark',
-        link: 'https://2023.djangoday.dk/',
+        place: 'Oxford, UK',
+        link: 'https://scienceoxford.com/python-in-education-day/',
       });
       document.querySelector('#conference-deadline').appendChild(conferenceDeadlineCalendar);
 
 
       var conferenceCalendar = createCalendarFromObject({
-        id: 'djangoday-copenhagen-2023',
-        title: 'DjangoDay Copenhagen 2023',
-        start_date: DateTime.fromSQL("2023-10-06").toJSDate(),
-        end_date: DateTime.fromSQL("2023-10-06").toJSDate(),
-        place: 'Copenhagen, Denmark',
-        link: 'https://2023.djangoday.dk/',
+        id: 'python-in-education-day-2024',
+        title: 'Python in Education Day 2024',
+        start_date: DateTime.fromSQL("2024-10-14").toJSDate(),
+        end_date: DateTime.fromSQL("2024-10-14").toJSDate(),
+        place: 'Oxford, UK',
+        link: 'https://scienceoxford.com/python-in-education-day/',
       });
       document.querySelector('#conference-calendar').appendChild(conferenceCalendar);
 
       // render countdown timer
       $('#cfp-timer').countdown(confDeadline.toJSDate(), function (event) {
-        $(this).html(event.strftime('%D Tage %HS %Mm %Ss'));
+        $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
       });
 
       // render deadline conference time
       
-      $('.deadline-time').html(confDeadline.setZone("Europe/Copenhagen").toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+      $('.deadline-time').html(confDeadline.setZone("UTC-12").toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
       
 
       // render deadline in local timezone

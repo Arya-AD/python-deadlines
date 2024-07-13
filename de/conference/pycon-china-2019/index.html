@@ -40,11 +40,11 @@
 <link rel="alternate"  title="PyCon China 2019 Conference Deadlines in German" hreflang="de" href="/de/conference/pycon-china-2019/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720824356" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720863133" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720824356" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720824356" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720863133" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720863133" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -138,6 +138,19 @@
 .CAMP-select.active {
     color: white;
     background: #303030;
+}
+
+
+.DAY-tag {
+  color: #3C1670;
+}
+.DAY-select {
+  color: #3C1670;
+  background: white;
+}
+.DAY-select.active {
+    color: white;
+    background: #3C1670;
 }
 
 
@@ -457,6 +470,8 @@ if (typeof Object.assign !== 'function') {
               
               
               
+              
+              
             </span>
             
           </span>
@@ -548,10 +563,10 @@ if (typeof Object.assign !== 'function') {
         </div>
       <div class="row">
         
-        <div id='6391ce3c-906f-4380-96d5-eb5c1dbf2fc1' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='b19635ec-ea97-468c-b9a8-ca8320c7a34f' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '6391ce3c-906f-4380-96d5-eb5c1dbf2fc1',
+    'b19635ec-ea97-468c-b9a8-ca8320c7a34f',
     [{"latitude":31.2323437,"longitude":121.4691024,"title":"PyCon China 2019","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":40.190632,"longitude":116.412144,"title":"PyCon China 2019","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":30.2489634,"longitude":120.2052342,"title":"PyCon China 2019","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":22.5445741,"longitude":114.0545429,"title":"PyCon China 2019","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":34.127,"longitude":105.422,"title":"PyCon China 2019","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":22.8193063,"longitude":108.3627211,"title":"PyCon China 2019","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -601,7 +616,7 @@ von <a href="https://dramsch.net">Jesper Dramsch,</a> Ersteller von <a href="htt
 var subs = [];
 var _all_subs = [];
 // Get all subs
-var conf_type_data = [{"name":"General Python","sub":"PY","color":"#4B8BBE"},{"name":"Scientific Python","sub":"SCIPY","color":"#70163C"},{"name":"Python for Data","sub":"DATA","color":"#849324"},{"name":"Python for Web","sub":"WEB","color":"#0D0A0B"},{"name":"Python for Business","sub":"BIZ","color":"#A8B9CC"},{"name":"Python for Earth","sub":"GEO","color":"#310c0c"},{"name":"Python Camps","sub":"CAMP","color":"#303030"}];
+var conf_type_data = [{"name":"General Python","sub":"PY","color":"#4B8BBE"},{"name":"Scientific Python","sub":"SCIPY","color":"#70163C"},{"name":"Python for Data","sub":"DATA","color":"#849324"},{"name":"Python for Web","sub":"WEB","color":"#0D0A0B"},{"name":"Python for Business","sub":"BIZ","color":"#A8B9CC"},{"name":"Python for Earth","sub":"GEO","color":"#310c0c"},{"name":"Python Camps","sub":"CAMP","color":"#303030"},{"name":"Python Day","sub":"DAY","color":"#3C1670"}];
 var sub2name = {}; var name2sub = {};
 for (var i = 0; i < conf_type_data.length; i++) {
     _all_subs[i] = conf_type_data[i]['sub'];
