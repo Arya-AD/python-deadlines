@@ -42,11 +42,11 @@
 <link rel="alternate"  title="Python Sul Conference Summary in German" hreflang="de" href="/de/series/python-sul/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720863026" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720999947" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720863026" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720863026" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720999947" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720999947" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -437,6 +437,13 @@
                   &ZeroWidthSpace;
                 </span>
                 
+                  <span class="conf-title-icon">
+                    <a title="Call for Participation for Python Sul" href="http://speakerfight.com/events/python-sul-2017-palestras/" target="_blank"><img
+                        src="/static/img/035-file-text.svg" class="badge-link"
+                        alt="Link to Call for Participation for Python Sul" width="16" height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
                 
                 
                 
@@ -450,7 +457,7 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">September 8 – 11, 2017
+                  <span class="conf-date">September 8 – 10, 2017
 .</span>
                   <span class="conf-place">
                     
@@ -465,7 +472,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Thursday, 30 March 2017</span>
                   </div>
                 </div>
 
@@ -735,9 +742,69 @@ $('#subject-select').multiselect({
           $('#python-sul-2017 .PY-tag').html("General Python".toLocaleLowerCase("en"));
         
         
-          $('#python-sul-2017 .timer').html("TBA");
-          $('#python-sul-2017 .deadline-time').html("TBA");
-          $('#python-sul-2017').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2017-03-30 00:00:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2017-09-08", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2017-03-30 00:00:00");
+            var confDate = DateTime.fromSQL("2017-09-08");
+            console.log("Invalid timezone in python-sul-2017. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#python-sul-2017 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#python-sul-2017 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#python-sul-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'python-sul-2017',
+              title: 'Python Sul 2017 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Caxias do Sul, Brazil',
+              link: 'https://web.archive.org/web/20170902194604/http://pythonsul.org/'
+            });
+            document.querySelector('#python-sul-2017 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#python-sul-2017 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#python-sul-2017').attr("cfpDiff", cfpDiff.toMillis());
+          $('#python-sul-2017').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#python-sul-2017').addClass('pastcfp');
+            $('#python-sul-2017 .timer').replaceWith($('#python-sul-2017 .deadline'));
+            $('#python-sul-2017 .timer-small').replaceWith($('#python-sul-2017 .deadline'));
+            $('#python-sul-2017 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#python-sul-2017').addClass('pastconf');
+            $('#python-sul-2017 .timer').replaceWith($('#python-sul-2017 .deadline'));
+            $('#python-sul-2017 .timer-small').replaceWith($('#python-sul-2017 .deadline'));
+            $('#python-sul-2017 .calendar').remove();
+          }
         
       
 

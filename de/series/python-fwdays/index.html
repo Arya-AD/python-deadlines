@@ -42,11 +42,11 @@
 <link rel="alternate"  title="Python fwdays Conference Summary in German" hreflang="de" href="/de/series/python-fwdays/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1720863133" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1721000053" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1720863133" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1720863133" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1721000053" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1721000053" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -425,7 +425,7 @@
                     href="/de/conference/python-fwdays-2020/">Python fwdays '20</a>
                 </span>
                 <span class="conf-title-icon">
-                  <a title="Conference Website" href="https://fwdays.com/en/event/python-fwdays-conference" target="_blank"><img src="/static/img/203-earth.svg"
+                  <a title="Conference Website" href="https://web.archive.org/web/20200527064935/https://fwdays.com/en/event/python-fwdays-conference" target="_blank"><img src="/static/img/203-earth.svg"
                       class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
                   &ZeroWidthSpace;
                 </span>
@@ -457,7 +457,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Wednesday,  1 April 2020</span>
                   </div>
                 </div>
 
@@ -802,9 +802,69 @@ $('#subject-select').multiselect({
           $('#python-fwdays-2020 .WEB-tag').html("Python für Web".toLocaleLowerCase("de"));
         
         
-          $('#python-fwdays-2020 .timer').html("TBA");
-          $('#python-fwdays-2020 .deadline-time').html("TBA");
-          $('#python-fwdays-2020').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2020-04-01 23:59:59", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2020-05-16", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2020-04-01 23:59:59");
+            var confDate = DateTime.fromSQL("2020-05-16");
+            console.log("Invalid timezone in python-fwdays-2020. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#python-fwdays-2020 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#python-fwdays-2020 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#python-fwdays-2020 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'python-fwdays-2020',
+              title: 'Python fwdays 2020 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Online',
+              link: 'https://web.archive.org/web/20200527064935/https://fwdays.com/en/event/python-fwdays-conference'
+            });
+            document.querySelector('#python-fwdays-2020 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#python-fwdays-2020 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#python-fwdays-2020').attr("cfpDiff", cfpDiff.toMillis());
+          $('#python-fwdays-2020').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#python-fwdays-2020').addClass('pastcfp');
+            $('#python-fwdays-2020 .timer').replaceWith($('#python-fwdays-2020 .deadline'));
+            $('#python-fwdays-2020 .timer-small').replaceWith($('#python-fwdays-2020 .deadline'));
+            $('#python-fwdays-2020 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#python-fwdays-2020').addClass('pastconf');
+            $('#python-fwdays-2020 .timer').replaceWith($('#python-fwdays-2020 .deadline'));
+            $('#python-fwdays-2020 .timer-small').replaceWith($('#python-fwdays-2020 .deadline'));
+            $('#python-fwdays-2020 .calendar').remove();
+          }
         
       
         
