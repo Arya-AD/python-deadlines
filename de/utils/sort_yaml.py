@@ -201,7 +201,7 @@ def sort_data(base="", prefix="", skip_links=False):
     for q in data:
         try:
             new_data.append(Conference(**q))
-        except pydantic.error_wrappers.ValidationError as e:  # noqa: PERF203
+        except pydantic.ValidationError as e:  # noqa: PERF203
             print(f"Error: {e}")
             print(f"Data: {q}")
             print("\n")

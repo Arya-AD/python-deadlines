@@ -40,11 +40,11 @@
 <link rel="alternate"  title="Kalender für Python-Konferenzen in German" hreflang="de" href="/de/kalender/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1721486872" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1721824746" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1721486872" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1721486872" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1721824746" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1721824746" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -810,6 +810,60 @@ function load_conference_list() {
         subject: "PY",
         startDate: Date.parse("2025-04-11"),
         endDate: Date.parse("2025-04-13"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
+      id: "pycon-wroclaw-2024-deadline",
+      abbreviation: "pycon-wroclaw-2024",
+      name: "PyCon Wroclaw 2024 CfP ",
+      color: "red",
+      location: "Wrocław, Poland",
+      date: "30. November 2024
+",
+      subject: "PY",
+      startDate: Date.parse("2024-10-14 23:59:00"),
+      endDate: Date.parse("2024-10-14 23:59:00"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+                    color = "#4B8BBE";
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+      conf_list_all.push({
+        id: "pycon-wroclaw-2024-conference",
+        abbreviation: "pycon-wroclaw-2024",
+        name: "PyCon Wroclaw 2024",
+        color: color,
+        location: "Wrocław, Poland",
+        date: "30. November 2024",
+        subject: "PY",
+        startDate: Date.parse("2024-11-30"),
+        endDate: Date.parse("2024-11-30"),
       });
     
   
@@ -2671,114 +2725,6 @@ function load_conference_list() {
     
     // add deadlines in red
     conf_list_all.push({
-      id: "pyday-copiapo-2024-deadline",
-      abbreviation: "pyday-copiapo-2024",
-      name: "PyDay Copiapó 2024 CfP (extended)",
-      color: "red",
-      location: "Copiapó, Chile",
-      date: "12. Juni 2024
-",
-      subject: "DAY",
-      startDate: Date.parse("2024-05-24 23:59:00"),
-      endDate: Date.parse("2024-05-24 23:59:00"),
-    });
-    
-    
-
-    // add Conferences in chosen color
-    
-      var color = "black";
-       // use first sub to choose color
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-                    color = "#3C1670";
-            
-      
-      conf_list_all.push({
-        id: "pyday-copiapo-2024-conference",
-        abbreviation: "pyday-copiapo-2024",
-        name: "PyDay Copiapó 2024",
-        color: color,
-        location: "Copiapó, Chile",
-        date: "12. Juni 2024",
-        subject: "DAY",
-        startDate: Date.parse("2024-06-12"),
-        endDate: Date.parse("2024-06-12"),
-      });
-    
-  
-    
-    
-    // add deadlines in red
-    conf_list_all.push({
-      id: "pyday-valparaiso-2024-deadline",
-      abbreviation: "pyday-valparaiso-2024",
-      name: "PyDay Valparaiso 2024 CfP (extended)",
-      color: "red",
-      location: "Valparaiso, Chile",
-      date: "14. Juni 2024
-",
-      subject: "DAY",
-      startDate: Date.parse("2024-05-24 23:59:00"),
-      endDate: Date.parse("2024-05-24 23:59:00"),
-    });
-    
-    
-
-    // add Conferences in chosen color
-    
-      var color = "black";
-       // use first sub to choose color
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-                    color = "#3C1670";
-            
-      
-      conf_list_all.push({
-        id: "pyday-valparaiso-2024-conference",
-        abbreviation: "pyday-valparaiso-2024",
-        name: "PyDay Valparaiso 2024",
-        color: color,
-        location: "Valparaiso, Chile",
-        date: "14. Juni 2024",
-        subject: "DAY",
-        startDate: Date.parse("2024-06-14"),
-        endDate: Date.parse("2024-06-14"),
-      });
-    
-  
-    
-    
-    // add deadlines in red
-    conf_list_all.push({
       id: "kiwi-pycon-2024-deadline",
       abbreviation: "kiwi-pycon-2024",
       name: "Kiwi PyCon 2024 CfP (extended)",
@@ -3439,60 +3385,6 @@ function load_conference_list() {
     
     // add deadlines in red
     conf_list_all.push({
-      id: "belpy-2024-deadline",
-      abbreviation: "belpy-2024",
-      name: "BelPy 2024 CfP (extended)",
-      color: "red",
-      location: "Belagavi, India",
-      date: "6. – 8. Juni 2024
-",
-      subject: "PY",
-      startDate: Date.parse("2024-04-14 19:18:00"),
-      endDate: Date.parse("2024-04-14 19:18:00"),
-    });
-    
-    
-
-    // add Conferences in chosen color
-    
-      var color = "black";
-       // use first sub to choose color
-      
-            
-                    color = "#4B8BBE";
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-      conf_list_all.push({
-        id: "belpy-2024-conference",
-        abbreviation: "belpy-2024",
-        name: "BelPy 2024",
-        color: color,
-        location: "Belagavi, India",
-        date: "6. – 8. Juni 2024",
-        subject: "PY",
-        startDate: Date.parse("2024-06-06"),
-        endDate: Date.parse("2024-06-08"),
-      });
-    
-  
-    
-    
-    // add deadlines in red
-    conf_list_all.push({
       id: "north-bay-python-2024-deadline",
       abbreviation: "north-bay-python-2024",
       name: "North Bay Python 2024 CfP (extended)",
@@ -3721,60 +3613,6 @@ function load_conference_list() {
     
     // add deadlines in red
     conf_list_all.push({
-      id: "pycon-colombia-2024-deadline",
-      abbreviation: "pycon-colombia-2024",
-      name: "PyCon Colombia 2024 CfP (extended)",
-      color: "red",
-      location: "Medellín, Colombia",
-      date: "7. – 9. Juni 2024
-",
-      subject: "PY",
-      startDate: Date.parse("2024-03-11 23:59:59"),
-      endDate: Date.parse("2024-03-11 23:59:59"),
-    });
-    
-    
-
-    // add Conferences in chosen color
-    
-      var color = "black";
-       // use first sub to choose color
-      
-            
-                    color = "#4B8BBE";
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-      conf_list_all.push({
-        id: "pycon-colombia-2024-conference",
-        abbreviation: "pycon-colombia-2024",
-        name: "PyCon Colombia 2024",
-        color: color,
-        location: "Medellín, Colombia",
-        date: "7. – 9. Juni 2024",
-        subject: "PY",
-        startDate: Date.parse("2024-06-07"),
-        endDate: Date.parse("2024-06-09"),
-      });
-    
-  
-    
-    
-    // add deadlines in red
-    conf_list_all.push({
       id: "pycon-nigeria-2024-deadline",
       abbreviation: "pycon-nigeria-2024",
       name: "PyCon Nigeria 2024 CfP (extended)",
@@ -3822,60 +3660,6 @@ function load_conference_list() {
         subject: "PY",
         startDate: Date.parse("2024-07-10"),
         endDate: Date.parse("2024-07-13"),
-      });
-    
-  
-    
-    
-    // add deadlines in red
-    conf_list_all.push({
-      id: "wagtail-space-nl-2024-deadline",
-      abbreviation: "wagtail-space-nl-2024",
-      name: "Wagtail Space NL 2024 CfP (extended)",
-      color: "red",
-      location: "Arnhem, Netherlands",
-      date: "12. – 14. Juni 2024
-",
-      subject: "WEB",
-      startDate: Date.parse("2024-03-08 23:59:00"),
-      endDate: Date.parse("2024-03-08 23:59:00"),
-    });
-    
-    
-
-    // add Conferences in chosen color
-    
-      var color = "black";
-       // use first sub to choose color
-      
-            
-      
-            
-      
-            
-      
-            
-                    color = "#0D0A0B";
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-      conf_list_all.push({
-        id: "wagtail-space-nl-2024-conference",
-        abbreviation: "wagtail-space-nl-2024",
-        name: "Wagtail Space NL 2024",
-        color: color,
-        location: "Arnhem, Netherlands",
-        date: "12. – 14. Juni 2024",
-        subject: "WEB",
-        startDate: Date.parse("2024-06-12"),
-        endDate: Date.parse("2024-06-14"),
       });
     
   
@@ -3984,114 +3768,6 @@ function load_conference_list() {
         subject: "PY",
         startDate: Date.parse("2024-08-09"),
         endDate: Date.parse("2024-08-11"),
-      });
-    
-  
-    
-    
-    // add deadlines in red
-    conf_list_all.push({
-      id: "pydata-london-2024-deadline",
-      abbreviation: "pydata-london-2024",
-      name: "PyData London 2024 CfP (extended)",
-      color: "red",
-      location: "London, UK",
-      date: "14. – 16. Juni 2024
-",
-      subject: "DATA",
-      startDate: Date.parse("2024-03-04 23:59:00"),
-      endDate: Date.parse("2024-03-04 23:59:00"),
-    });
-    
-    
-
-    // add Conferences in chosen color
-    
-      var color = "black";
-       // use first sub to choose color
-      
-            
-      
-            
-      
-            
-                    color = "#849324";
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-      conf_list_all.push({
-        id: "pydata-london-2024-conference",
-        abbreviation: "pydata-london-2024",
-        name: "PyData London 2024",
-        color: color,
-        location: "London, UK",
-        date: "14. – 16. Juni 2024",
-        subject: "DATA",
-        startDate: Date.parse("2024-06-14"),
-        endDate: Date.parse("2024-06-16"),
-      });
-    
-  
-    
-    
-    // add deadlines in red
-    conf_list_all.push({
-      id: "djangocon-europe-2024-deadline",
-      abbreviation: "djangocon-europe-2024",
-      name: "DjangoCon Europe 2024 CfP (extended)",
-      color: "red",
-      location: "Vigo, Spain",
-      date: "5. – 9. Juni 2024
-",
-      subject: "WEB",
-      startDate: Date.parse("2024-02-29 23:59:00"),
-      endDate: Date.parse("2024-02-29 23:59:00"),
-    });
-    
-    
-
-    // add Conferences in chosen color
-    
-      var color = "black";
-       // use first sub to choose color
-      
-            
-      
-            
-      
-            
-      
-            
-                    color = "#0D0A0B";
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-      conf_list_all.push({
-        id: "djangocon-europe-2024-conference",
-        abbreviation: "djangocon-europe-2024",
-        name: "DjangoCon Europe 2024",
-        color: color,
-        location: "Vigo, Spain",
-        date: "5. – 9. Juni 2024",
-        subject: "WEB",
-        startDate: Date.parse("2024-06-05"),
-        endDate: Date.parse("2024-06-09"),
       });
     
   

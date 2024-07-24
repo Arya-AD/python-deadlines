@@ -42,11 +42,11 @@
 <link rel="alternate"  title="DjangoCon Europe Conference Summary in German" hreflang="de" href="/de/series/djangocon-europe/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1721486817" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1721824692" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1721486817" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1721486817" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1721824692" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1721824692" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -169,38 +169,6 @@
 <script type="text/javascript" src="/static/js/ouical.min.js"></script>
 <script type="text/javascript" src="/static/js/bootstrap-multiselect.min.js"></script>
 
-  
-  <link rel="stylesheet" type="text/css" href="/static/css/mastodon.css">
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch("https://fosstodon.org/@djangoconeurope.rss")
-        .then(function (response) {
-          return response.text();
-        })
-        .then(function (xmlText) {
-          var parser = new DOMParser();
-          var xml = parser.parseFromString(xmlText, "text/xml");
-          var items = xml.querySelectorAll("item");
-          var feedContainer = document.getElementById("mastodon-feed");
-          var postLimit = 2; // Number of posts to display
-
-          for (var i = 0; i < postLimit && i < items.length; i++) {
-            var item = items[i];
-            var post = item.querySelector("description").textContent;
-            var link = item.querySelector("link").textContent;
-            var pubDate = item.querySelector("pubDate").textContent;
-
-            var feedItem = document.createElement("div");
-            feedItem.setAttribute("class", "timeline-item")
-            feedItem.innerHTML = '<div class="timeline-content">' + post + '</div><a href="' + link + '">' + pubDate + ' by DjangoCon Europe</a>';
-            feedContainer.appendChild(feedItem);
-          }
-        })
-        .catch(function (error) {
-          console.log("Error fetching Mastodon RSS feed:", error);
-        });
-    });
-  </script>
   
 </head>
 
@@ -376,7 +344,7 @@
               <!-- Mastodon timeline -->
               <div class="meta">Mastodon Posts by DjangoCon Europe:</div>
               <div id="mastodon-feed"></div>
-              <a href="https://fosstodon.org/@djangoconeurope">See all Mastodon posts for DjangoCon Europe</a>
+              <a href="">See all Mastodon posts for DjangoCon Europe</a>
             
           </div>
         </div>

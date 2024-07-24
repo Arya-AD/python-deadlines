@@ -9,7 +9,7 @@
 		<title>Newsfeed for Python Events Calendar from Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Sat, 20 Jul 2024 14:46:02 +0000</lastBuildDate>
+		<lastBuildDate>Wed, 24 Jul 2024 12:37:18 +0000</lastBuildDate>
 		
 			<item>
 				<title>PyTexas 2025 Conference Deadline</title>
@@ -18,6 +18,16 @@
 				<pubDate>Fri, 11 Apr 2025 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pytexas-2025/</link>
 				<guid isPermaLink="false">pytexas-2025</guid>
+				<category>PY</category>
+			</item>
+		
+			<item>
+				<title>PyCon Wroclaw 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: PyCon Wroclaw 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Wrocław, Poland<br/>* dates/times/recurrence (incl. time zone): November 30, 2024
+<br/>* HTML link : <a href="https://www.pyconwroclaw.com/">PyCon Wroclaw 2024</a>]]></description>
+				<pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-wroclaw-2024/</link>
+				<guid isPermaLink="false">pycon-wroclaw-2024</guid>
 				<category>PY</category>
 			</item>
 		
@@ -229,16 +239,6 @@
 				<link>https://pythondeadlin.es/conference/pycon-malaysia-2024/</link>
 				<guid isPermaLink="false">pycon-malaysia-2024</guid>
 				<category>PY</category>
-			</item>
-		
-			<item>
-				<title>PyHEP.dev 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyHEP.dev 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Aachen, Germany<br/>* dates/times/recurrence (incl. time zone): August 26 – 30, 2024
-<br/>* HTML link : <a href="https://indico.cern.ch/event/1375573/">PyHEP.dev 2024</a>]]></description>
-				<pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pyhep-dev-2024/</link>
-				<guid isPermaLink="false">pyhep-dev-2024</guid>
-				<category>SCIPY</category>
 			</item>
 		
 	</channel>
