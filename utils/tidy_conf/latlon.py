@@ -51,9 +51,10 @@ def add_latlon(data):
                 ]
 
             else:
+                headers = {"User-Agent": "Pythondeadlin.es Location Search/0.1 (https://pythondeadlin.es)"}
                 # Get the location from Openstreetmaps
                 url = "https://nominatim.openstreetmap.org/search" + "?format=json&q=" + urllib.parse.quote(place)
-                response = requests.get(url, timeout=10)
+                response = requests.get(url, timeout=10, headers=headers)
 
                 if response:
                     try:
