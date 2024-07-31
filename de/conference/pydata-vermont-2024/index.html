@@ -40,11 +40,11 @@
 <link rel="alternate"  title="PyData Vermont 2024 Conference Deadlines in German" hreflang="de" href="/de/conference/pydata-vermont-2024/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1722445574" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1722452399" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1722445574" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1722445574" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1722452399" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1722452399" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -493,11 +493,17 @@ if (typeof Object.assign !== 'function') {
           <div>
             <img src="/static/img/072-location.svg" class="badge-link" alt="Location icon" width="16" height="16" />
             <a id="conf-place" target="_blank"
-              href="https://maps.google.com/?q=Burlington, Canada">Burlington, Canada</a>
+              href="https://maps.google.com/?q=Burlington, United States of America">Burlington, United States of America</a>
           </div>
           <div>
             <img src="/static/img/203-earth.svg" class="badge-link" alt="Earth Icon" width="16" height="16" />
             <a id="conf-website" target="_blank" href="https://pydata.org/vermont2024/">https://pydata.org/vermont2024/</a>
+          </div>
+          
+          <div>
+            <img src="/static/img/035-file-text.svg" class="badge-link" alt="Document Icon for CfP link" width="16"
+              height="16" />
+            <a id="conf-cfp_link" target="_blank" href="https://pydata.org/vermont2024/call-for-proposals">Aufruf zur Teilnahme</a>
           </div>
           
           <div>
@@ -569,10 +575,10 @@ if (typeof Object.assign !== 'function') {
         </div>
       <div class="row">
         
-        <div id='418413e7-f580-4d83-8eff-e9e0318a1bc1' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='40a380d9-1dac-48c0-99e1-132a2b5d2b83' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '418413e7-f580-4d83-8eff-e9e0318a1bc1',
+    '40a380d9-1dac-48c0-99e1-132a2b5d2b83',
     [{"latitude":43.3248924,"longitude":-79.7966835,"title":"PyData Vermont 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -713,7 +719,7 @@ function createCalendarFromObject(data) {
         title: 'PyData Vermont 2024 deadline',
         start_date: confDeadline.toJSDate(),
         duration: 60,
-        place: 'Burlington, Canada',
+        place: 'Burlington, United States of America',
         link: 'https://pydata.org/vermont2024/',
       });
       document.querySelector('#conference-deadline').appendChild(conferenceDeadlineCalendar);
@@ -724,7 +730,7 @@ function createCalendarFromObject(data) {
         title: 'PyData Vermont 2024',
         start_date: DateTime.fromSQL("2024-07-29").toJSDate(),
         end_date: DateTime.fromSQL("2024-07-30").toJSDate(),
-        place: 'Burlington, Canada',
+        place: 'Burlington, United States of America',
         link: 'https://pydata.org/vermont2024/',
       });
       document.querySelector('#conference-calendar').appendChild(conferenceCalendar);
