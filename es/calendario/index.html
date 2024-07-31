@@ -40,11 +40,11 @@
 <link rel="alternate"  title="Calendario de conferencias de Python in German" hreflang="de" href="/de/kalender/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1722291690" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1722445521" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1722291690" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1722291690" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1722445521" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1722445521" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -913,6 +913,59 @@ function load_conference_list() {
         subject: "PY",
         startDate: Date.parse("2024-10-25"),
         endDate: Date.parse("2024-10-26"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
+      id: "pycon-chile-2024-deadline",
+      abbreviation: "pycon-chile-2024",
+      name: "PyCon Chile 2024 CfP ",
+      color: "red",
+      location: "Santiago, Chile",
+      date: "25 – 27 de octubre de 2024",
+      subject: "PY",
+      startDate: Date.parse("2024-09-06 23:59:00"),
+      endDate: Date.parse("2024-09-06 23:59:00"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+                    color = "#4B8BBE";
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+      conf_list_all.push({
+        id: "pycon-chile-2024-conference",
+        abbreviation: "pycon-chile-2024",
+        name: "PyCon Chile 2024",
+        color: color,
+        location: "Santiago, Chile",
+        date: "25 – 27 de octubre de 2024",
+        subject: "PY",
+        startDate: Date.parse("2024-10-25"),
+        endDate: Date.parse("2024-10-27"),
       });
     
   
@@ -3223,59 +3276,6 @@ function load_conference_list() {
         subject: "WEB",
         startDate: Date.parse("2024-09-22"),
         endDate: Date.parse("2024-09-27"),
-      });
-    
-  
-    
-    
-    // add deadlines in red
-    conf_list_all.push({
-      id: "wagtail-space-us-2024-deadline",
-      abbreviation: "wagtail-space-us-2024",
-      name: "Wagtail Space US 2024 CfP (extended)",
-      color: "red",
-      location: "Philadelphia, USA",
-      date: "20 – 22 de junio de 2024",
-      subject: "WEB",
-      startDate: Date.parse("2024-04-22 23:59:00"),
-      endDate: Date.parse("2024-04-22 23:59:00"),
-    });
-    
-    
-
-    // add Conferences in chosen color
-    
-      var color = "black";
-       // use first sub to choose color
-      
-            
-      
-            
-      
-            
-      
-            
-                    color = "#0D0A0B";
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-      conf_list_all.push({
-        id: "wagtail-space-us-2024-conference",
-        abbreviation: "wagtail-space-us-2024",
-        name: "Wagtail Space US 2024",
-        color: color,
-        location: "Philadelphia, USA",
-        date: "20 – 22 de junio de 2024",
-        subject: "WEB",
-        startDate: Date.parse("2024-06-20"),
-        endDate: Date.parse("2024-06-22"),
       });
     
   

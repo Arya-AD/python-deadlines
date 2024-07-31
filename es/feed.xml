@@ -9,7 +9,7 @@
 		<title>Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Mon, 29 Jul 2024 22:21:30 +0000</lastBuildDate>
+		<lastBuildDate>Wed, 31 Jul 2024 17:05:21 +0000</lastBuildDate>
 		
 		
 		
@@ -46,6 +46,19 @@
 				<pubDate>Tue, 24 Sep 2024 11:22:33 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/python-ho-2024/</link>
 				<guid isPermaLink="false">python-ho-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon Chile 2024 Conference Deadline</title>
+				<description>Conference in Santiago, Chile on 25 – 27 de octubre de 2024
+. CfP: 2024-09-06 23:59:00 AoE. </description>
+				<pubDate>Fri, 06 Sep 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-chile-2024/</link>
+				<guid isPermaLink="false">pycon-chile-2024</guid>
 				<category>PY</category>
 			</item>
 		
@@ -293,19 +306,6 @@
 				<pubDate>Sun, 30 Jun 2024 23:59:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/swiss-python-summit-2024/</link>
 				<guid isPermaLink="false">swiss-python-summit-2024</guid>
-				<category>PY</category>
-			</item>
-		
-		
-		
-		
-			<item>
-				<title>PyCon Malaysia 2024 Conference Deadline</title>
-				<description>Conference in Petaling Jaya, Malaysia on 24 – 25 de agosto de 2024
-. CfP: 2024-06-30 23:59:00 AoE.&lt;br /&gt;Find them here: @pyconmy </description>
-				<pubDate>Sun, 30 Jun 2024 23:59:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-malaysia-2024/</link>
-				<guid isPermaLink="false">pycon-malaysia-2024</guid>
 				<category>PY</category>
 			</item>
 		

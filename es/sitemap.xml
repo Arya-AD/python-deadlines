@@ -37,6 +37,9 @@
 <loc>https://pythondeadlin.es/conference/python-ho-2024/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/conference/pycon-chile-2024/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/conference/python-in-education-day-2024/</loc>
 </url>
 <url>
@@ -161,9 +164,6 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/djangocon-us-2024/</loc>
-</url>
-<url>
-<loc>https://pythondeadlin.es/conference/wagtail-space-us-2024/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/pycon-estonia-2024/</loc>
@@ -335,6 +335,9 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/pyday-copiapo-2024/</loc>
+</url>
+<url>
+<loc>https://pythondeadlin.es/conference/wagtail-space-us-2024/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/conference/flask-con-2024/</loc>
@@ -3241,6 +3244,9 @@
 <loc>https://pythondeadlin.es/series/pyday-copiapo/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/series/wagtail-space-us/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/series/flask-con/</loc>
 </url>
 <url>
@@ -5053,6 +5059,9 @@
 <loc>https://pythondeadlin.es/series/python-ho/</loc>
 </url>
 <url>
+<loc>https://pythondeadlin.es/series/pycon-chile/</loc>
+</url>
+<url>
 <loc>https://pythondeadlin.es/series/python-in-education-day/</loc>
 </url>
 <url>
@@ -5177,9 +5186,6 @@
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/djangocon-us/</loc>
-</url>
-<url>
-<loc>https://pythondeadlin.es/series/wagtail-space-us/</loc>
 </url>
 <url>
 <loc>https://pythondeadlin.es/series/pycon-estonia/</loc>

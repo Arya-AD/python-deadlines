@@ -9,7 +9,7 @@
 		<title>Newsfeed for Python Events Calendar from Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Mon, 29 Jul 2024 22:21:30 +0000</lastBuildDate>
+		<lastBuildDate>Wed, 31 Jul 2024 17:05:21 +0000</lastBuildDate>
 		
 			<item>
 				<title>PyTexas 2025 Conference Deadline</title>
@@ -38,6 +38,16 @@
 				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/python-ho-2024/</link>
 				<guid isPermaLink="false">python-ho-2024</guid>
+				<category>PY</category>
+			</item>
+		
+			<item>
+				<title>PyCon Chile 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: PyCon Chile 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Santiago, Chile<br/>* dates/times/recurrence (incl. time zone): 25 – 27 de octubre de 2024
+<br/>* HTML link : <a href="https://pycon.cl/">PyCon Chile 2024</a>]]></description>
+				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-chile-2024/</link>
+				<guid isPermaLink="false">pycon-chile-2024</guid>
 				<category>PY</category>
 			</item>
 		
@@ -228,16 +238,6 @@
 				<pubDate>Thu, 17 Oct 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/swiss-python-summit-2024/</link>
 				<guid isPermaLink="false">swiss-python-summit-2024</guid>
-				<category>PY</category>
-			</item>
-		
-			<item>
-				<title>PyCon Malaysia 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyCon Malaysia 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Petaling Jaya, Malaysia<br/>* dates/times/recurrence (incl. time zone): 24 – 25 de agosto de 2024
-<br/>* HTML link : <a href="https://pycon.my/">PyCon Malaysia 2024</a>]]></description>
-				<pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-malaysia-2024/</link>
-				<guid isPermaLink="false">pycon-malaysia-2024</guid>
 				<category>PY</category>
 			</item>
 		
