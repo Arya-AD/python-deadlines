@@ -40,11 +40,11 @@
 <link rel="alternate"  title="Conferencias anteriores de Python in German" hreflang="de" href="/de/archiv/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1722575058" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1723855471" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1722575058" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1722575058" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1723855471" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1723855471" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -347,6 +347,143 @@
 				<div id="past_confs">
 					<h1 id="past-events-title">Eventos Pasados</h1>
 					  
+					<div
+						id="pyhep-2024"
+						class="ConfItem  PY-conf "
+					>
+						<div class="row conf-row">
+    <div class="col-6">
+        <span class="conf-title">
+            <a title="Deadline Details" href="/es/conference/pyhep-2024/">PyHEP 2024</a>
+        </span>
+        <span class="conf-title-small">
+            <a title="Deadline Details" href="/es/conference/pyhep-2024/">PyHEP '24</a>
+        </span>
+        <span class="conf-title-icon">
+        <a title="Conference Website" href="https://indico.cern.ch/event/1384010/" target="_blank"><img src="/static/img/203-earth.svg" class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+        &ZeroWidthSpace;
+        </span>
+        
+        
+        
+        
+    </div>
+    <div class="col-6">
+        <span class="timer"></span>
+        <span class="timer-small"></span>
+    </div>
+</div>
+ <div class="row">
+	<div class="col-12 col-sm-6">
+		<div class="meta">
+			<span class="conf-date">1 – 4 de julio de 2024
+.</span>
+			<span class="conf-place">
+				
+				<a href="#">Online</a>
+				
+			</span>
+		</div>
+		
+	</div>
+	<div class="col-12 col-sm-6">
+		<div class="deadline">
+			<div>
+				Deadline:
+				<span class="deadline-time">Wednesday,  5 June 2024</span>
+			</div>
+		</div>
+	</div>
+</div>
+ <div class="row">
+	<div class="col-6">
+		
+		<span
+			title="Click to only show PY conferences"
+			data-sub="PY"
+			class="badge badge-light conf-sub PY-tag"
+		></span>
+		
+	</div>
+	<div class="col-6">
+		<div class="calendar"></div>
+	</div>
+</div>
+
+						<hr />
+					</div>
+					 
+					<div
+						id="north-bay-python-2024"
+						class="ConfItem  PY-conf "
+					>
+						<div class="row conf-row">
+    <div class="col-6">
+        <span class="conf-title">
+            <a title="Deadline Details" href="/es/conference/north-bay-python-2024/">North Bay Python 2024</a>
+        </span>
+        <span class="conf-title-small">
+            <a title="Deadline Details" href="/es/conference/north-bay-python-2024/">North Bay Python '24</a>
+        </span>
+        <span class="conf-title-icon">
+        <a title="Conference Website" href="https://2024.northbaypython.org/" target="_blank"><img src="/static/img/203-earth.svg" class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+        &ZeroWidthSpace;
+        </span>
+        
+        
+        
+        
+        <span class="conf-title-icon">
+        <a title="Mastodon for North Bay Python" href="https://social.northbaypython.org/@NorthBayPython" target="_blank"><img src="/static/img/407-mastodon.svg" class="badge-link" alt="Link to Conference Mastodon" width="16" height="16" /></a>
+        &ZeroWidthSpace;
+        </span>
+        
+    </div>
+    <div class="col-6">
+        <span class="timer"></span>
+        <span class="timer-small"></span>
+    </div>
+</div>
+ <div class="row">
+	<div class="col-12 col-sm-6">
+		<div class="meta">
+			<span class="conf-date">29 – 30 de junio de 2024
+.</span>
+			<span class="conf-place">
+				
+				<a href="http://maps.google.com/?q=Petaluma, USA">Petaluma, USA</a>
+				 
+			</span>
+		</div>
+		
+	</div>
+	<div class="col-12 col-sm-6">
+		<div class="deadline">
+			<div>
+				Deadline:
+				<span class="deadline-time">Friday, 12 April 2024</span>
+			</div>
+		</div>
+	</div>
+</div>
+ <div class="row">
+	<div class="col-6">
+		
+		<span
+			title="Click to only show PY conferences"
+			data-sub="PY"
+			class="badge badge-light conf-sub PY-tag"
+		></span>
+		
+	</div>
+	<div class="col-6">
+		<div class="calendar"></div>
+	</div>
+</div>
+
+						<hr />
+					</div>
+					 
 					<div
 						id="wagtail-space-us-2024"
 						class="ConfItem  WEB-conf "
@@ -45419,6 +45556,30 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
+			      $('#pyhep-2024 .PY-tag').html("Python General".toLocaleLowerCase("es"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2024-06-05 21:29:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2024-07-01", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2024-06-05 21:29:00");
+			        var confDate = DateTime.fromSQL("2024-07-01");
+			        console.log("Invalid timezone in pyhep-2024. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pyhep-2024 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
 			      $('#pyday-valparaiso-2024 .DAY-tag').html("Día de Python".toLocaleLowerCase("es"));
 			    
 			    
@@ -45534,6 +45695,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#belpy-2024 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#north-bay-python-2024 .PY-tag').html("Python General".toLocaleLowerCase("es"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2024-04-12 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2024-06-29", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2024-04-12 23:59:00");
+			        var confDate = DateTime.fromSQL("2024-06-29");
+			        console.log("Invalid timezone in north-bay-python-2024. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#north-bay-python-2024 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    

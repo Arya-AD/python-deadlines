@@ -40,11 +40,11 @@
 <link rel="alternate"  title="PyCascades 2025 Conference Deadlines in German" hreflang="de" href="/de/conference/pycascades-2025/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1722575005" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1723855416" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1722575005" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1722575005" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1723855416" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1723855416" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -167,6 +167,38 @@
 <script type="text/javascript" src="/static/js/ouical.min.js"></script>
 <script type="text/javascript" src="/static/js/bootstrap-multiselect.min.js"></script>
 
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/mastodon.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("https://fosstodon.org/@pycascades.rss")
+        .then(function (response) {
+          return response.text();
+        })
+        .then(function (xmlText) {
+          var parser = new DOMParser();
+          var xml = parser.parseFromString(xmlText, "text/xml");
+          var items = xml.querySelectorAll("item");
+          var feedContainer = document.getElementById("mastodon-feed");
+          var postLimit = 2; // Number of posts to display
+
+          for (var i = 0; i < postLimit && i < items.length; i++) {
+            var item = items[i];
+            var post = item.querySelector("description").textContent;
+            var link = item.querySelector("link").textContent;
+            var pubDate = item.querySelector("pubDate").textContent;
+
+            var feedItem = document.createElement("div");
+            feedItem.setAttribute("class", "timeline-item")
+            feedItem.innerHTML = '<div class="timeline-content">' + post + '</div><a href="' + link + '">' + pubDate + ' by PyCascades</a>';
+            feedContainer.appendChild(feedItem);
+          }
+        })
+        .catch(function (error) {
+          console.log("Error fetching Mastodon RSS feed:", error);
+        });
+    });
+  </script>
   
 <script type='text/javascript'>
   /* global google */
@@ -480,7 +512,7 @@ if (typeof Object.assign !== 'function') {
     </div>
     <div id="page-content">
       <div id="conf-deadline-timer" class="row">
-        <div id="cfp-timer" class="col-12 conf-timer">TBA
+        <div id="cfp-timer" class="col-12 conf-timer">
         </div>
       </div>
       <div id="conf-key-facts" class="row">
@@ -503,7 +535,7 @@ if (typeof Object.assign !== 'function') {
           <div>
             <img src="/static/img/035-file-text.svg" class="badge-link" alt="Document Icon for CfP link" width="16"
               height="16" />
-            <a id="conf-cfp_link" target="_blank" href="https://2025.pycascades.com/program/cfp/">Call for Participation</a>
+            <a id="conf-cfp_link" target="_blank" href="https://pretalx.com/pycascades-2025/cfp/">Call for Participation</a>
           </div>
           
           <div>
@@ -513,6 +545,11 @@ if (typeof Object.assign !== 'function') {
           
           
           
+          
+          <div>
+            <img src="/static/img/407-mastodon.svg" class="badge-link" alt="Mastodon icon" width="16" height="16" />
+            <a id="conf-mastodon" target="_blank" href="https://fosstodon.org/@pycascades">Mastodon</a>
+          </div>
           
         </div>
         </div>
@@ -530,7 +567,7 @@ if (typeof Object.assign !== 'function') {
             Deadline in timezone from conference website:
           </div>
           <div class="meta">
-            <span class="deadline-time">TBA</span>
+            <span class="deadline-time">Sunday, 15 September 2024</span>
           </div>
           <div class="meta">
             Deadline in your local <span class='local-timezone'></span> timezone:
@@ -540,6 +577,11 @@ if (typeof Object.assign !== 'function') {
           </div>
         </div>
         <div class="col-12 col-md-6">
+          
+          <!-- Mastodon timeline -->
+          <div class="meta">Mastodon Posts by PyCascades:</div>
+          <div id="mastodon-feed"></div>
+          <a href="https://fosstodon.org/@pycascades">See all Mastodon posts for PyCascades</a>
           
         </div>
       </div>
@@ -569,10 +611,10 @@ if (typeof Object.assign !== 'function') {
         </div>
       <div class="row">
         
-        <div id='052fdc9b-5fad-406b-aa4b-6246a87c840d' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='9b5c1dba-3aff-4812-b32e-a19b65b84511' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '052fdc9b-5fad-406b-aa4b-6246a87c840d',
+    '9b5c1dba-3aff-4812-b32e-a19b65b84511',
     [{"latitude":45.5202471,"longitude":-122.674194,"title":"PyCascades 2025","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -694,9 +736,54 @@ function createCalendarFromObject(data) {
 
       // other
       
-      $('#cfp-timer').html("TBA");
-      $('.deadline-time').html("TBA");
-      $('.deadline-local-time').html("TBA");
+
+      // Use specified timezone for deadlines if available else use AoE timezone
+      
+      var confDeadline = DateTime.fromSQL("2024-09-15 23:59:00", { zone: "UTC-12" });
+      
+
+      // check if timezone is valid otherwise replace by system timezone
+      if (confDeadline.invalid) {
+        var confDeadline = DateTime.fromSQL("2024-09-15 23:59:00");
+        console.log("Invalid timezone. Using system timezone instead.");
+      }
+
+      // add calendar
+
+      var conferenceDeadlineCalendar = createCalendarFromObject({
+        id: 'pycascades-2025',
+        title: 'PyCascades 2025 deadline',
+        start_date: confDeadline.toJSDate(),
+        duration: 60,
+        place: 'Portland, USA',
+        link: 'https://2025.pycascades.com/',
+      });
+      document.querySelector('#conference-deadline').appendChild(conferenceDeadlineCalendar);
+
+
+      var conferenceCalendar = createCalendarFromObject({
+        id: 'pycascades-2025',
+        title: 'PyCascades 2025',
+        start_date: DateTime.fromSQL("2025-02-08").toJSDate(),
+        end_date: DateTime.fromSQL("2025-02-09").toJSDate(),
+        place: 'Portland, USA',
+        link: 'https://2025.pycascades.com/',
+      });
+      document.querySelector('#conference-calendar').appendChild(conferenceCalendar);
+
+      // render countdown timer
+      $('#cfp-timer').countdown(confDeadline.toJSDate(), function (event) {
+        $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+      });
+
+      // render deadline conference time
+      
+      $('.deadline-time').html(confDeadline.setZone("UTC-12").toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+      
+
+      // render deadline in local timezone
+      $('.deadline-local-time').html(confDeadline.setZone('system').toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+
       
 
     });

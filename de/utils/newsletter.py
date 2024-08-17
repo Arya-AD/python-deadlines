@@ -7,15 +7,19 @@ from tidy_conf import load_conferences
 
 
 # Filter conferences where CFP closes within the next 10 days
-def filter_conferences(df):
+def filter_conferences(df, days=10):
     now = datetime.now(tz=timezone(timedelta(hours=2))).date()
-    deadline_threshold = now + timedelta(days=10)
+    deadline_threshold = now + timedelta(days=days)
+
+    df["cfp"] = df["cfp_ext"].where(df["cfp_ext"].notna(), df["cfp"])
 
     # Convert 'cfp' to datetime, errors='coerce' will handle 'TBA' and invalid dates
     df["cfp"] = pd.to_datetime(df["cfp"], errors="coerce").dt.date
 
     # Filter the DataFrame
-    filtered_df = df[(df["cfp"] >= now) & (df["cfp"] <= deadline_threshold)]
+    filtered_df = df[((df["cfp"] >= now) & (df["cfp"] <= deadline_threshold))]
+
+    print(filtered_df)
 
     return filtered_df
 
@@ -36,10 +40,10 @@ def create_markdown_links(df):
 
 
 # Main function
-def main():
+def main(days=10):
     df = load_conferences()
 
-    upcoming_cfp_conferences = filter_conferences(df)
+    upcoming_cfp_conferences = filter_conferences(df, days)
 
     markdown_links = create_markdown_links(upcoming_cfp_conferences)
 
@@ -49,4 +53,10 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Print upcoming conferences with CFP closing within the next 10 days")
+    parser.add_argument("--days", type=int, default=10, help="Number of days to look ahead for CFP closing")
+    args = parser.parse_args()
+
+    main(args.days)
