@@ -42,11 +42,11 @@
 <link rel="alternate"  title="PyData Boston Conference Summary in German" hreflang="de" href="/de/series/pydata-boston/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1723855416" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724016282" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1723855416" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1723855416" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724016282" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724016282" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -368,7 +368,7 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">July 27 – 29, 2013
+                  <span class="conf-date">July 27 – 28, 2013
 .</span>
                   <span class="conf-place">
                     
@@ -383,7 +383,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Monday,  3 June 2013</span>
                   </div>
                 </div>
 
@@ -580,9 +580,69 @@ $('#subject-select').multiselect({
           $('#pydata-boston-2013 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
         
         
-          $('#pydata-boston-2013 .timer').html("TBA");
-          $('#pydata-boston-2013 .deadline-time').html("TBA");
-          $('#pydata-boston-2013').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2013-06-03 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2013-07-27", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2013-06-03 23:59:00");
+            var confDate = DateTime.fromSQL("2013-07-27");
+            console.log("Invalid timezone in pydata-boston-2013. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pydata-boston-2013 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pydata-boston-2013 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pydata-boston-2013 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pydata-boston-2013',
+              title: 'PyData Boston 2013 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Cambridge, USA',
+              link: 'https://web.archive.org/web/20130720075327/http://pydata.org/bos2013/'
+            });
+            document.querySelector('#pydata-boston-2013 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pydata-boston-2013 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pydata-boston-2013').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pydata-boston-2013').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pydata-boston-2013').addClass('pastcfp');
+            $('#pydata-boston-2013 .timer').replaceWith($('#pydata-boston-2013 .deadline'));
+            $('#pydata-boston-2013 .timer-small').replaceWith($('#pydata-boston-2013 .deadline'));
+            $('#pydata-boston-2013 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pydata-boston-2013').addClass('pastconf');
+            $('#pydata-boston-2013 .timer').replaceWith($('#pydata-boston-2013 .deadline'));
+            $('#pydata-boston-2013 .timer-small').replaceWith($('#pydata-boston-2013 .deadline'));
+            $('#pydata-boston-2013 .calendar').remove();
+          }
         
       
 

@@ -40,11 +40,11 @@
 <link rel="alternate"  title="PyCon Spain 2020 Conference Deadlines in German" hreflang="de" href="/de/conference/pycon-spain-2020/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1723855525" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724016390" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1723855525" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1723855525" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724016390" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724016390" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -316,14 +316,14 @@
     </div>
     <div id="page-content">
       <div id="conf-deadline-timer" class="row">
-        <div id="cfp-timer" class="col-12 conf-timer">TBA
+        <div id="cfp-timer" class="col-12 conf-timer">
         </div>
       </div>
       <div id="conf-key-facts" class="row">
         <div class="col-12 col-md-6">
           <div>
             <img src="/static/img/084-calendar.svg" class="badge-link" alt="Calendar icon" width="16" height="16" />
-            <span id="conf-date">2. – 4. Oktober 2020
+            <span id="conf-date">2. – 3. Oktober 2020
 </span>
           </div>
           <div>
@@ -334,6 +334,12 @@
           <div>
             <img src="/static/img/203-earth.svg" class="badge-link" alt="Earth Icon" width="16" height="16" />
             <a id="conf-website" target="_blank" href="https://2020.es.pycon.org/">https://2020.es.pycon.org/</a>
+          </div>
+          
+          <div>
+            <img src="/static/img/035-file-text.svg" class="badge-link" alt="Document Icon for CfP link" width="16"
+              height="16" />
+            <a id="conf-cfp_link" target="_blank" href="https://web.archive.org/web/20200825225439/https://2020.es.pycon.org/">Aufruf zur Teilnahme</a>
           </div>
           
           <div>
@@ -360,7 +366,7 @@
             Deadline in der Zeitzone der Konferenz:
           </div>
           <div class="meta">
-            <span class="deadline-time">TBA</span>
+            <span class="deadline-time">Tuesday, 25 August 2020</span>
           </div>
           <div class="meta">
             Deadline in lokaler <span class='local-timezone'></span> Zeitzone:
@@ -514,9 +520,54 @@ function createCalendarFromObject(data) {
 
       // other
       
-      $('#cfp-timer').html("TBA");
-      $('.deadline-time').html("TBA");
-      $('.deadline-local-time').html("TBA");
+
+      // Use specified timezone for deadlines if available else use AoE timezone
+      
+      var confDeadline = DateTime.fromSQL("2020-08-25 23:59:00", { zone: "UTC-12" });
+      
+
+      // check if timezone is valid otherwise replace by system timezone
+      if (confDeadline.invalid) {
+        var confDeadline = DateTime.fromSQL("2020-08-25 23:59:00");
+        console.log("Invalid timezone. Using system timezone instead.");
+      }
+
+      // add calendar
+
+      var conferenceDeadlineCalendar = createCalendarFromObject({
+        id: 'pycon-spain-2020',
+        title: 'PyCon Spain 2020 deadline',
+        start_date: confDeadline.toJSDate(),
+        duration: 60,
+        place: 'Online',
+        link: 'https://2020.es.pycon.org/',
+      });
+      document.querySelector('#conference-deadline').appendChild(conferenceDeadlineCalendar);
+
+
+      var conferenceCalendar = createCalendarFromObject({
+        id: 'pycon-spain-2020',
+        title: 'PyCon Spain 2020',
+        start_date: DateTime.fromSQL("2020-10-02").toJSDate(),
+        end_date: DateTime.fromSQL("2020-10-03").toJSDate(),
+        place: 'Online',
+        link: 'https://2020.es.pycon.org/',
+      });
+      document.querySelector('#conference-calendar').appendChild(conferenceCalendar);
+
+      // render countdown timer
+      $('#cfp-timer').countdown(confDeadline.toJSDate(), function (event) {
+        $(this).html(event.strftime('%D Tage %HS %Mm %Ss'));
+      });
+
+      // render deadline conference time
+      
+      $('.deadline-time').html(confDeadline.setZone("UTC-12").toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+      
+
+      // render deadline in local timezone
+      $('.deadline-local-time').html(confDeadline.setZone('system').toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+
       
 
     });

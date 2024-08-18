@@ -42,11 +42,11 @@
 <link rel="alternate"  title="PyData BCN Conference Summary in German" hreflang="de" href="/de/series/pydata-bcn/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1723855416" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724016282" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1723855416" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1723855416" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724016282" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724016282" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -383,7 +383,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Sunday,  9 April 2017</span>
                   </div>
                 </div>
 
@@ -580,9 +580,69 @@ $('#subject-select').multiselect({
           $('#pydata-bcn-2017 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
         
         
-          $('#pydata-bcn-2017 .timer').html("TBA");
-          $('#pydata-bcn-2017 .deadline-time').html("TBA");
-          $('#pydata-bcn-2017').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2017-04-09 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2017-05-19", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2017-04-09 23:59:00");
+            var confDate = DateTime.fromSQL("2017-05-19");
+            console.log("Invalid timezone in pydata-bcn-2017. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pydata-bcn-2017 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pydata-bcn-2017 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pydata-bcn-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pydata-bcn-2017',
+              title: 'PyData BCN 2017 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Barcelona, Spain',
+              link: 'https://web.archive.org/web/20170313045143/http://pydata.org/barcelona2017/'
+            });
+            document.querySelector('#pydata-bcn-2017 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pydata-bcn-2017 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pydata-bcn-2017').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pydata-bcn-2017').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pydata-bcn-2017').addClass('pastcfp');
+            $('#pydata-bcn-2017 .timer').replaceWith($('#pydata-bcn-2017 .deadline'));
+            $('#pydata-bcn-2017 .timer-small').replaceWith($('#pydata-bcn-2017 .deadline'));
+            $('#pydata-bcn-2017 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pydata-bcn-2017').addClass('pastconf');
+            $('#pydata-bcn-2017 .timer').replaceWith($('#pydata-bcn-2017 .deadline'));
+            $('#pydata-bcn-2017 .timer-small').replaceWith($('#pydata-bcn-2017 .deadline'));
+            $('#pydata-bcn-2017 .calendar').remove();
+          }
         
       
 

@@ -40,7 +40,7 @@ def create_markdown_links(df):
 
 
 # Main function
-def main(days=10):
+def main(days=15):
     df = load_conferences()
 
     upcoming_cfp_conferences = filter_conferences(df, days)
@@ -51,12 +51,14 @@ def main(days=10):
     for link in markdown_links:
         print(link)
 
+    print("\n\n", ", ".join(markdown_links))
+
 
 if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="Print upcoming conferences with CFP closing within the next 10 days")
-    parser.add_argument("--days", type=int, default=10, help="Number of days to look ahead for CFP closing")
+    parser.add_argument("--days", type=int, default=15, help="Number of days to look ahead for CFP closing")
     args = parser.parse_args()
 
     main(args.days)

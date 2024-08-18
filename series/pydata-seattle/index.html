@@ -42,11 +42,11 @@
 <link rel="alternate"  title="PyData Seattle Conference Summary in German" hreflang="de" href="/de/series/pydata-seattle/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1723855416" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724016282" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1723855416" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1723855416" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724016282" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724016282" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -169,16 +169,6 @@
 <script type="text/javascript" src="/static/js/ouical.min.js"></script>
 <script type="text/javascript" src="/static/js/bootstrap-multiselect.min.js"></script>
 
-  
-  <style>
-    #twitter-widget {
-      width: 100%;
-    }
-
-    .twitter-timeline {
-      width: 100% !important;
-    }
-    </style>
   
 </head>
 
@@ -348,7 +338,7 @@
             
               <!-- Twitter timeline -->
               <div id="twitter-widget">
-                <a class="twitter-timeline" href="https://twitter.com/PyDataSeattle" data-tweet-limit=2>Tweets by
+                <a class="twitter-timeline" href="https://twitter.com/" data-tweet-limit=2>Tweets by
                   PyDataSeattle</a>
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               </div>
@@ -466,6 +456,13 @@
                   &ZeroWidthSpace;
                 </span>
                 
+                  <span class="conf-title-icon">
+                    <a title="Call for Participation for PyData Seattle" href="https://pydata.org/seattle2017/cfp/" target="_blank"><img
+                        src="/static/img/035-file-text.svg" class="badge-link"
+                        alt="Link to Call for Participation for PyData Seattle" width="16" height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
                 
                 
                 
@@ -479,11 +476,11 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">July 5 – 8, 2017
+                  <span class="conf-date">July 5 – 7, 2017
 .</span>
                   <span class="conf-place">
                     
-                      <a href="http://maps.google.com/?q=Redmond, WA. USA">Redmond, WA. USA</a>
+                      <a href="http://maps.google.com/?q=Redmond, USA">Redmond, USA</a>
                       
                     
                   </span>
@@ -494,7 +491,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Monday,  1 May 2017</span>
                   </div>
                 </div>
 
@@ -762,9 +759,69 @@ $('#subject-select').multiselect({
           $('#pydata-seattle-2017 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
         
         
-          $('#pydata-seattle-2017 .timer').html("TBA");
-          $('#pydata-seattle-2017 .deadline-time').html("TBA");
-          $('#pydata-seattle-2017').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2017-05-01 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2017-07-05", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2017-05-01 23:59:00");
+            var confDate = DateTime.fromSQL("2017-07-05");
+            console.log("Invalid timezone in pydata-seattle-2017. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pydata-seattle-2017 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pydata-seattle-2017 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pydata-seattle-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pydata-seattle-2017',
+              title: 'PyData Seattle 2017 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Redmond, USA',
+              link: 'https://web.archive.org/web/20170606194443/http://pydata.org/seattle2017/'
+            });
+            document.querySelector('#pydata-seattle-2017 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pydata-seattle-2017 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pydata-seattle-2017').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pydata-seattle-2017').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pydata-seattle-2017').addClass('pastcfp');
+            $('#pydata-seattle-2017 .timer').replaceWith($('#pydata-seattle-2017 .deadline'));
+            $('#pydata-seattle-2017 .timer-small').replaceWith($('#pydata-seattle-2017 .deadline'));
+            $('#pydata-seattle-2017 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pydata-seattle-2017').addClass('pastconf');
+            $('#pydata-seattle-2017 .timer').replaceWith($('#pydata-seattle-2017 .deadline'));
+            $('#pydata-seattle-2017 .timer-small').replaceWith($('#pydata-seattle-2017 .deadline'));
+            $('#pydata-seattle-2017 .calendar').remove();
+          }
         
       
 

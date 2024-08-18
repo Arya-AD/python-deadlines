@@ -42,11 +42,11 @@
 <link rel="alternate"  title="PyData Florence Conference Summary in German" hreflang="de" href="/de/series/pydata-florence/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1723855525" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724016390" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1723855525" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1723855525" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724016390" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724016390" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -368,7 +368,7 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">15. – 18. April 2016
+                  <span class="conf-date">15. – 17. April 2016
 .</span>
                   <span class="conf-place">
                     
@@ -383,7 +383,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Tuesday,  9 February 2016</span>
                   </div>
                 </div>
 
@@ -580,9 +580,69 @@ $('#subject-select').multiselect({
           $('#pydata-florence-2016 .DATA-tag').html("Python für Daten".toLocaleLowerCase("de"));
         
         
-          $('#pydata-florence-2016 .timer').html("TBA");
-          $('#pydata-florence-2016 .deadline-time').html("TBA");
-          $('#pydata-florence-2016').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2016-02-09 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2016-04-15", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2016-02-09 23:59:00");
+            var confDate = DateTime.fromSQL("2016-04-15");
+            console.log("Invalid timezone in pydata-florence-2016. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pydata-florence-2016 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pydata-florence-2016 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pydata-florence-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pydata-florence-2016',
+              title: 'PyData Florence 2016 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Florence, Italy',
+              link: 'https://web.archive.org/web/20160405012143/http://pydata.it/'
+            });
+            document.querySelector('#pydata-florence-2016 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pydata-florence-2016 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pydata-florence-2016').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pydata-florence-2016').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pydata-florence-2016').addClass('pastcfp');
+            $('#pydata-florence-2016 .timer').replaceWith($('#pydata-florence-2016 .deadline'));
+            $('#pydata-florence-2016 .timer-small').replaceWith($('#pydata-florence-2016 .deadline'));
+            $('#pydata-florence-2016 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pydata-florence-2016').addClass('pastconf');
+            $('#pydata-florence-2016 .timer').replaceWith($('#pydata-florence-2016 .deadline'));
+            $('#pydata-florence-2016 .timer-small').replaceWith($('#pydata-florence-2016 .deadline'));
+            $('#pydata-florence-2016 .calendar').remove();
+          }
         
       
 

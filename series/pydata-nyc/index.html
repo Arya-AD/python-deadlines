@@ -42,11 +42,11 @@
 <link rel="alternate"  title="PyData NYC Conference Summary in German" hreflang="de" href="/de/series/pydata-nyc/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1723855416" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724016282" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1723855416" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1723855416" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724016282" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724016282" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -706,7 +706,7 @@ if (typeof Object.assign !== 'function') {
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Monday, 16 September 2013</span>
                   </div>
                 </div>
 
@@ -730,11 +730,11 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='014fdca7-5af0-43d4-b45e-7c2bf106aac5' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='94cde2e2-e5b3-42bb-adee-4407288d38c3' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '014fdca7-5af0-43d4-b45e-7c2bf106aac5',
-    [{"latitude":40.7127281,"longitude":-74.0060152,"title":"PyData NYC 2013","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":40.7127281,"longitude":-74.0060152,"title":"PyData NYC 2022","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":40.7127281,"longitude":-74.0060152,"title":"PyData NYC 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
+    '94cde2e2-e5b3-42bb-adee-4407288d38c3',
+    [{"latitude":40.7127281,"longitude":-74.0060152,"title":"PyData NYC 2022","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":40.7127281,"longitude":-74.0060152,"title":"PyData NYC 2013","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":40.7127281,"longitude":-74.0060152,"title":"PyData NYC 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
 </script>
@@ -1057,9 +1057,69 @@ $('#subject-select').multiselect({
           $('#pydata-nyc-2013 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
         
         
-          $('#pydata-nyc-2013 .timer').html("TBA");
-          $('#pydata-nyc-2013 .deadline-time').html("TBA");
-          $('#pydata-nyc-2013').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2013-09-16 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2013-11-08", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2013-09-16 23:59:00");
+            var confDate = DateTime.fromSQL("2013-11-08");
+            console.log("Invalid timezone in pydata-nyc-2013. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pydata-nyc-2013 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pydata-nyc-2013 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pydata-nyc-2013 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pydata-nyc-2013',
+              title: 'PyData NYC 2013 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'New York, USA',
+              link: 'https://web.archive.org/web/20131111203506/http://pydata.org/nyc2013/'
+            });
+            document.querySelector('#pydata-nyc-2013 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pydata-nyc-2013 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pydata-nyc-2013').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pydata-nyc-2013').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pydata-nyc-2013').addClass('pastcfp');
+            $('#pydata-nyc-2013 .timer').replaceWith($('#pydata-nyc-2013 .deadline'));
+            $('#pydata-nyc-2013 .timer-small').replaceWith($('#pydata-nyc-2013 .deadline'));
+            $('#pydata-nyc-2013 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pydata-nyc-2013').addClass('pastconf');
+            $('#pydata-nyc-2013 .timer').replaceWith($('#pydata-nyc-2013 .deadline'));
+            $('#pydata-nyc-2013 .timer-small').replaceWith($('#pydata-nyc-2013 .deadline'));
+            $('#pydata-nyc-2013 .calendar').remove();
+          }
         
       
 

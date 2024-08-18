@@ -40,11 +40,11 @@
 <link rel="alternate"  title="PyData Seattle 2017 Conference Deadlines in German" hreflang="de" href="/de/conference/pydata-seattle-2017/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1723855416" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724016282" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1723855416" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1723855416" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724016282" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724016282" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -480,24 +480,30 @@ if (typeof Object.assign !== 'function') {
     </div>
     <div id="page-content">
       <div id="conf-deadline-timer" class="row">
-        <div id="cfp-timer" class="col-12 conf-timer">TBA
+        <div id="cfp-timer" class="col-12 conf-timer">
         </div>
       </div>
       <div id="conf-key-facts" class="row">
         <div class="col-12 col-md-6">
           <div>
             <img src="/static/img/084-calendar.svg" class="badge-link" alt="Calendar icon" width="16" height="16" />
-            <span id="conf-date">July 5 – 8, 2017
+            <span id="conf-date">July 5 – 7, 2017
 </span>
           </div>
           <div>
             <img src="/static/img/072-location.svg" class="badge-link" alt="Location icon" width="16" height="16" />
             <a id="conf-place" target="_blank"
-              href="https://maps.google.com/?q=Redmond, WA. USA">Redmond, WA. USA</a>
+              href="https://maps.google.com/?q=Redmond, USA">Redmond, USA</a>
           </div>
           <div>
             <img src="/static/img/203-earth.svg" class="badge-link" alt="Earth Icon" width="16" height="16" />
             <a id="conf-website" target="_blank" href="https://web.archive.org/web/20170606194443/http://pydata.org/seattle2017/">https://web.archive.org/web/20170606194443/http://pydata.org/seattle2017/</a>
+          </div>
+          
+          <div>
+            <img src="/static/img/035-file-text.svg" class="badge-link" alt="Document Icon for CfP link" width="16"
+              height="16" />
+            <a id="conf-cfp_link" target="_blank" href="https://pydata.org/seattle2017/cfp/">Call for Participation</a>
           </div>
           
           <div>
@@ -524,7 +530,7 @@ if (typeof Object.assign !== 'function') {
             Deadline in timezone from conference website:
           </div>
           <div class="meta">
-            <span class="deadline-time">TBA</span>
+            <span class="deadline-time">Monday,  1 May 2017</span>
           </div>
           <div class="meta">
             Deadline in your local <span class='local-timezone'></span> timezone:
@@ -563,10 +569,10 @@ if (typeof Object.assign !== 'function') {
         </div>
       <div class="row">
         
-        <div id='12ac0796-497f-4acc-8d00-669a096aa4a2' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='055cd0ea-d7c0-4ea8-b423-2c7b46c4baee' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '12ac0796-497f-4acc-8d00-669a096aa4a2',
+    '055cd0ea-d7c0-4ea8-b423-2c7b46c4baee',
     [{"latitude":47.6694141,"longitude":-122.1238767,"title":"PyData Seattle 2017","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -688,9 +694,54 @@ function createCalendarFromObject(data) {
 
       // other
       
-      $('#cfp-timer').html("TBA");
-      $('.deadline-time').html("TBA");
-      $('.deadline-local-time').html("TBA");
+
+      // Use specified timezone for deadlines if available else use AoE timezone
+      
+      var confDeadline = DateTime.fromSQL("2017-05-01 23:59:00", { zone: "UTC-12" });
+      
+
+      // check if timezone is valid otherwise replace by system timezone
+      if (confDeadline.invalid) {
+        var confDeadline = DateTime.fromSQL("2017-05-01 23:59:00");
+        console.log("Invalid timezone. Using system timezone instead.");
+      }
+
+      // add calendar
+
+      var conferenceDeadlineCalendar = createCalendarFromObject({
+        id: 'pydata-seattle-2017',
+        title: 'PyData Seattle 2017 deadline',
+        start_date: confDeadline.toJSDate(),
+        duration: 60,
+        place: 'Redmond, USA',
+        link: 'https://web.archive.org/web/20170606194443/http://pydata.org/seattle2017/',
+      });
+      document.querySelector('#conference-deadline').appendChild(conferenceDeadlineCalendar);
+
+
+      var conferenceCalendar = createCalendarFromObject({
+        id: 'pydata-seattle-2017',
+        title: 'PyData Seattle 2017',
+        start_date: DateTime.fromSQL("2017-07-05").toJSDate(),
+        end_date: DateTime.fromSQL("2017-07-07").toJSDate(),
+        place: 'Redmond, USA',
+        link: 'https://web.archive.org/web/20170606194443/http://pydata.org/seattle2017/',
+      });
+      document.querySelector('#conference-calendar').appendChild(conferenceCalendar);
+
+      // render countdown timer
+      $('#cfp-timer').countdown(confDeadline.toJSDate(), function (event) {
+        $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+      });
+
+      // render deadline conference time
+      
+      $('.deadline-time').html(confDeadline.setZone("UTC-12").toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+      
+
+      // render deadline in local timezone
+      $('.deadline-local-time').html(confDeadline.setZone('system').toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+
       
 
     });
