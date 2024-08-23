@@ -1,0 +1,7 @@
+#search-box {
+	width: 6em;
+	transition: width 0.5s ease;
+}
+#search-box:focus {
+	width: 15em;
+}
