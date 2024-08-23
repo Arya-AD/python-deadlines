@@ -40,11 +40,11 @@
 <link rel="alternate"  title="PyCon Estonia 2019 Conference Deadlines in German" hreflang="de" href="/de/conference/pycon-estonia-2019/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724364947" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724410420" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724364947" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724364947" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724410420" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724410420" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -482,14 +482,14 @@ if (typeof Object.assign !== 'function') {
     </div>
     <div id="page-content">
       <div id="conf-deadline-timer" class="row">
-        <div id="cfp-timer" class="col-12 conf-timer">TBA
+        <div id="cfp-timer" class="col-12 conf-timer">
         </div>
       </div>
       <div id="conf-key-facts" class="row">
         <div class="col-12 col-md-6">
           <div>
             <img src="/static/img/084-calendar.svg" class="badge-link" alt="Calendar icon" width="16" height="16" />
-            <span id="conf-date">3 – 4 de octubre de 2019
+            <span id="conf-date">3 de octubre de 2019
 </span>
           </div>
           <div>
@@ -499,7 +499,7 @@ if (typeof Object.assign !== 'function') {
           </div>
           <div>
             <img src="/static/img/203-earth.svg" class="badge-link" alt="Earth Icon" width="16" height="16" />
-            <a id="conf-website" target="_blank" href="https://pycon.ee/">https://pycon.ee/</a>
+            <a id="conf-website" target="_blank" href="https://web.archive.org/web/20190724094325/https://pycon.ee/">https://web.archive.org/web/20190724094325/https://pycon.ee/</a>
           </div>
           
           <div>
@@ -526,7 +526,7 @@ if (typeof Object.assign !== 'function') {
             Fecha límite en la zona horaria de la conferencia:
           </div>
           <div class="meta">
-            <span class="deadline-time">TBA</span>
+            <span class="deadline-time">Monday,  1 April 2019</span>
           </div>
           <div class="meta">
             Fecha límite en sua zona horaria <span class='local-timezone'></span>:
@@ -565,10 +565,10 @@ if (typeof Object.assign !== 'function') {
         </div>
       <div class="row">
         
-        <div id='bd222b73-e497-475f-8d80-d32249b4bf3d' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='a5143c21-63ff-47ba-afca-79d846c43fa8' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'bd222b73-e497-475f-8d80-d32249b4bf3d',
+    'a5143c21-63ff-47ba-afca-79d846c43fa8',
     [{"latitude":59.4372155,"longitude":24.7453688,"title":"PyCon Estonia 2019","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -690,9 +690,54 @@ function createCalendarFromObject(data) {
 
       // other
       
-      $('#cfp-timer').html("TBA");
-      $('.deadline-time').html("TBA");
-      $('.deadline-local-time').html("TBA");
+
+      // Use specified timezone for deadlines if available else use AoE timezone
+      
+      var confDeadline = DateTime.fromSQL("2019-04-01 23:59:00", { zone: "UTC-12" });
+      
+
+      // check if timezone is valid otherwise replace by system timezone
+      if (confDeadline.invalid) {
+        var confDeadline = DateTime.fromSQL("2019-04-01 23:59:00");
+        console.log("Invalid timezone. Using system timezone instead.");
+      }
+
+      // add calendar
+
+      var conferenceDeadlineCalendar = createCalendarFromObject({
+        id: 'pycon-estonia-2019',
+        title: 'PyCon Estonia 2019 deadline',
+        start_date: confDeadline.toJSDate(),
+        duration: 60,
+        place: 'Tallinn, Estonia',
+        link: 'https://web.archive.org/web/20190724094325/https://pycon.ee/',
+      });
+      document.querySelector('#conference-deadline').appendChild(conferenceDeadlineCalendar);
+
+
+      var conferenceCalendar = createCalendarFromObject({
+        id: 'pycon-estonia-2019',
+        title: 'PyCon Estonia 2019',
+        start_date: DateTime.fromSQL("2019-10-03").toJSDate(),
+        end_date: DateTime.fromSQL("2019-10-03").toJSDate(),
+        place: 'Tallinn, Estonia',
+        link: 'https://web.archive.org/web/20190724094325/https://pycon.ee/',
+      });
+      document.querySelector('#conference-calendar').appendChild(conferenceCalendar);
+
+      // render countdown timer
+      $('#cfp-timer').countdown(confDeadline.toJSDate(), function (event) {
+        $(this).html(event.strftime('%D dias %Hh %Mm %Ss'));
+      });
+
+      // render deadline conference time
+      
+      $('.deadline-time').html(confDeadline.setZone("UTC-12").toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+      
+
+      // render deadline in local timezone
+      $('.deadline-local-time').html(confDeadline.setZone('system').toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+
       
 
     });

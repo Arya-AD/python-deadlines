@@ -40,11 +40,11 @@
 <link rel="alternate"  title="PyCon Czechia 2015 Conference Deadlines in German" hreflang="de" href="/de/conference/pycon-czechia-2015/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724364893" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724410366" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724364893" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724364893" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724410366" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724410366" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -482,14 +482,14 @@ if (typeof Object.assign !== 'function') {
     </div>
     <div id="page-content">
       <div id="conf-deadline-timer" class="row">
-        <div id="cfp-timer" class="col-12 conf-timer">TBA
+        <div id="cfp-timer" class="col-12 conf-timer">
         </div>
       </div>
       <div id="conf-key-facts" class="row">
         <div class="col-12 col-md-6">
           <div>
             <img src="/static/img/084-calendar.svg" class="badge-link" alt="Calendar icon" width="16" height="16" />
-            <span id="conf-date">November 14 – 16, 2015
+            <span id="conf-date">November 14 – 15, 2015
 </span>
           </div>
           <div>
@@ -499,7 +499,7 @@ if (typeof Object.assign !== 'function') {
           </div>
           <div>
             <img src="/static/img/203-earth.svg" class="badge-link" alt="Earth Icon" width="16" height="16" />
-            <a id="conf-website" target="_blank" href="https://web.archive.org/web/20230502190107/https://cz.pycon.org/2023/">https://web.archive.org/web/20230502190107/https://cz.pycon.org/2023/</a>
+            <a id="conf-website" target="_blank" href="http://web.archive.org/web/20150905053606/https://cz.pycon.org/">http://web.archive.org/web/20150905053606/https://cz.pycon.org/</a>
           </div>
           
           <div>
@@ -526,7 +526,7 @@ if (typeof Object.assign !== 'function') {
             Deadline in timezone from conference website:
           </div>
           <div class="meta">
-            <span class="deadline-time">TBA</span>
+            <span class="deadline-time">Monday, 28 September 2015</span>
           </div>
           <div class="meta">
             Deadline in your local <span class='local-timezone'></span> timezone:
@@ -565,10 +565,10 @@ if (typeof Object.assign !== 'function') {
         </div>
       <div class="row">
         
-        <div id='fa6af0d2-ddd3-4571-bd6a-838eb7955a87' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='fd01d1e3-db90-441c-9e21-8154fa22b8e7' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'fa6af0d2-ddd3-4571-bd6a-838eb7955a87',
+    'fd01d1e3-db90-441c-9e21-8154fa22b8e7',
     [{"latitude":49.1922443,"longitude":16.6113382,"title":"PyCon Czechia 2015","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -690,9 +690,54 @@ function createCalendarFromObject(data) {
 
       // other
       
-      $('#cfp-timer').html("TBA");
-      $('.deadline-time').html("TBA");
-      $('.deadline-local-time').html("TBA");
+
+      // Use specified timezone for deadlines if available else use AoE timezone
+      
+      var confDeadline = DateTime.fromSQL("2015-09-28 23:59:00", { zone: "UTC-12" });
+      
+
+      // check if timezone is valid otherwise replace by system timezone
+      if (confDeadline.invalid) {
+        var confDeadline = DateTime.fromSQL("2015-09-28 23:59:00");
+        console.log("Invalid timezone. Using system timezone instead.");
+      }
+
+      // add calendar
+
+      var conferenceDeadlineCalendar = createCalendarFromObject({
+        id: 'pycon-czechia-2015',
+        title: 'PyCon Czechia 2015 deadline',
+        start_date: confDeadline.toJSDate(),
+        duration: 60,
+        place: 'Brno, Czechia',
+        link: 'http://web.archive.org/web/20150905053606/https://cz.pycon.org/',
+      });
+      document.querySelector('#conference-deadline').appendChild(conferenceDeadlineCalendar);
+
+
+      var conferenceCalendar = createCalendarFromObject({
+        id: 'pycon-czechia-2015',
+        title: 'PyCon Czechia 2015',
+        start_date: DateTime.fromSQL("2015-11-14").toJSDate(),
+        end_date: DateTime.fromSQL("2015-11-15").toJSDate(),
+        place: 'Brno, Czechia',
+        link: 'http://web.archive.org/web/20150905053606/https://cz.pycon.org/',
+      });
+      document.querySelector('#conference-calendar').appendChild(conferenceCalendar);
+
+      // render countdown timer
+      $('#cfp-timer').countdown(confDeadline.toJSDate(), function (event) {
+        $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+      });
+
+      // render deadline conference time
+      
+      $('.deadline-time').html(confDeadline.setZone("UTC-12").toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+      
+
+      // render deadline in local timezone
+      $('.deadline-local-time').html(confDeadline.setZone('system').toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+
       
 
     });
