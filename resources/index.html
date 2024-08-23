@@ -40,12 +40,12 @@
 <link rel="alternate"  title="Resources for Writing top-notch CfPs in German" hreflang="de" href="/de/ressourcen/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724433068" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724437395" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724433068" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724433068" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1724433068" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724437395" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724437395" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1724437395" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -268,11 +268,16 @@
 	</div>
 </nav>
 
-    <div class="container">
-        <div class="page-header">
-            <div class="row">
-                <div class="col-12 col-sm-12">
-                  <div id="breadcrumbs">
+
+    
+    
+    
+
+    <div class="page-header">
+	<div class="container">
+		<div class="row align-items-end">
+			<div class="col-md-8">
+				<div id="breadcrumbs">
 
 <a href="">Home</a>
 
@@ -282,21 +287,96 @@
 
 </div>
 
-                  <h1>
-                    Resources for Writing top-notch CfPs
-                  </h1>
-                </div>
-                <div class="meta col-12">
-                  Python deadlines curates your favourite Python conferences. Here are some resources that might make your CfP more successful!
-                </div>
-            </div>
-            <br>
-            <div class="row">
-              <div class="meta col-12">
-                Is your favourite conference missing? Add / edit a conference by <a target="_blank" href="https://github.com/jesperdramsch/python-deadlines">sending in a pull request</a>.<br>
-              </div>
-            </div>
-        </div>
+				<h1 class="display-4">
+      Resources for Writing top-notch CfPs
+    </h1>
+				<span class="lead"> 
+      <p>PythonDeadlin.es curates your favourite Python conferences.</p>
+
+     </span>
+				<span class="text-muted"> 
+      <p>This page is dedicated to helping you craft outstanding Call for Proposals (CfPs) for Python conferences. Here, you’ll find a collection of blog posts, guides, and tips on writing compelling proposals.</p>
+
+<p>Our resources cover various aspects of CfP writing, from choosing a topic to structuring your submission. Whether you’re a first-time speaker or a seasoned presenter, these tools aim to enhance your proposal-writing skills.</p>
+
+<p>Explore our curated content to increase your chances of getting your talk or workshop accepted at Python events worldwide.</p>
+
+     </span>
+			</div>
+			<div class="col-md-4">
+				<div class="d-flex justify-content-center">
+					<a href="/python-deadlines.ics" class="btn btn-outline-primary mx-1">
+						<i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Get the iCal
+					</a>
+					<a
+						href="https://calendar.google.com/calendar/r?cid=https://pythondeadlin.es/python-deadlines.ics"
+						class="btn btn-outline-danger mx-1"
+					>
+						<i class="fa fa-google" aria-hidden="true"></i> Add to Google Calendar
+					</a>
+					<a
+						href="https://github.com/jesperdramsch/python-deadlines/"
+						class="btn btn-outline-dark mx-1"
+					>
+						<i class="fa fa-github" aria-hidden="true"></i> Submit a Conference on GitHub
+					</a>
+				</div>
+				<hr class="my-3" />
+				<form>
+					<div class="form-group">
+						<label for="subject-select" class="mb-2 align-center control-label">
+							Filter by Subcategory:
+						</label>
+						<br />
+						<select
+							id="subject-select"
+							name="subject-select"
+							multiple="multiple"
+							class="form-control"
+							style="display: none"
+						>
+							
+							<option value="PY" id="PY-checkbox">
+								General Python (PY)
+							</option>
+							
+							<option value="SCIPY" id="SCIPY-checkbox">
+								Scientific Python (SCIPY)
+							</option>
+							
+							<option value="DATA" id="DATA-checkbox">
+								Python for Data (DATA)
+							</option>
+							
+							<option value="WEB" id="WEB-checkbox">
+								Python for Web (WEB)
+							</option>
+							
+							<option value="BIZ" id="BIZ-checkbox">
+								Python for Business (BIZ)
+							</option>
+							
+							<option value="GEO" id="GEO-checkbox">
+								Python for Earth (GEO)
+							</option>
+							
+							<option value="CAMP" id="CAMP-checkbox">
+								Python Camps (CAMP)
+							</option>
+							
+							<option value="DAY" id="DAY-checkbox">
+								Python Day (DAY)
+							</option>
+							
+						</select>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+    <div class="container">
         <div id="confs">
         <div id="past_confs">
           

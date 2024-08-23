@@ -40,12 +40,12 @@
 <link rel="alternate"  title="Kalender für Python-Konferenzen in German" hreflang="de" href="/de/kalender/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724433193" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724437532" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724433193" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724433193" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1724433193" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724437532" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724437532" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1724437532" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -268,10 +268,11 @@
 		</div>
 	</div>
 </nav>
-
-		<div class="container">
-			<br />
-			<div id="breadcrumbs">
+    <div class="page-header">
+	<div class="container">
+		<div class="row align-items-end">
+			<div class="col-md-8">
+				<div id="breadcrumbs">
 
 <a href="">Home</a>
 
@@ -281,82 +282,91 @@
 
 </div>
 
-			<h1>Kalender für Python-Konferenzen</h1>
-			<div class="row">
-				<div class="meta col-sm-12"><p>Die PythonDeadlin.es Übersicht über Fristen und Termine für Python Konferenzen in einem Kalender.</p>
+				<h1 class="display-4"> Kalender für Python-Konferenzen </h1>
+				<span class="lead">  </span>
+				<span class="text-muted">  <p>Die PythonDeadlin.es Übersicht über Fristen und Termine für Python Konferenzen in einem Kalender.</p>
 
 <p>Hier können optional <strong>alle Fristen</strong> nach <a href="https://calendar.google.com/calendar/r?cid=https://pythondeadlin.es/python-deadlines.ics" exportieren.="">Google Kalender</a> oder
 <a href="/de/python-deadlines.ics">iCal</a> exportiert werden. Dieser Kalender eignet sich hervorragend, um den Überblick über die tatsächlichen Fristen zu behalten!</p>
 
 <p>Alternativ können <strong>kommende Python-Veranstaltungen</strong> zu<a href="https://calendar.google.com/calendar/r?cid=https://pythondeadlin.es/python-conferences.ics">Google Kalender</a> oder <a href="/de/python-conferences.ics">iCal</a> importiert werden. Dies ist der klassische „Veranstaltungskalender“.</p>
-</div>
-				<br />
+  </span>
 			</div>
-
-			<br />
-
-			<!-- Filter Form -->
-			<div class="row">
-				<form class="container">
-					<div class="row justify-content-center">
-						<div class="row align-items-md-center col-12 col-10-md">
-							<div class="col-12 col-md-5 filter-label">
-								<label
-									for="subject-select"
-									class="align-center"
-									style="margin-bottom: 0px; line-height: 1.5"
-								>
-									Filter nach Unterkategorie:
-								</label>
-							</div>
-							<div class="col-12 col-md-6">
-								<select
-									id="subject-select"
-									name="subject-select"
-									multiple="multiple"
-									style="display: none"
-								>
-									
-									<option value="PY" id="PY-checkbox">
-										General Python (PY)
-									</option>
-									
-									<option value="SCIPY" id="SCIPY-checkbox">
-										Scientific Python (SCIPY)
-									</option>
-									
-									<option value="DATA" id="DATA-checkbox">
-										Python for Data (DATA)
-									</option>
-									
-									<option value="WEB" id="WEB-checkbox">
-										Python for Web (WEB)
-									</option>
-									
-									<option value="BIZ" id="BIZ-checkbox">
-										Python for Business (BIZ)
-									</option>
-									
-									<option value="GEO" id="GEO-checkbox">
-										Python for Earth (GEO)
-									</option>
-									
-									<option value="CAMP" id="CAMP-checkbox">
-										Python Camps (CAMP)
-									</option>
-									
-									<option value="DAY" id="DAY-checkbox">
-										Python Day (DAY)
-									</option>
-									
-								</select>
-							</div>
-						</div>
+			<div class="col-md-4">
+				<div class="d-flex justify-content-center">
+					<a href="/de/python-deadlines.ics" class="btn btn-outline-primary mx-1">
+						<i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Lade iCal runter
+					</a>
+					<a
+						href="https://calendar.google.com/calendar/r?cid=https://pythondeadlin.es/python-deadlines.ics"
+						class="btn btn-outline-danger mx-1"
+					>
+						<i class="fa fa-google" aria-hidden="true"></i> Zu Google Kalender hinzufügen
+					</a>
+					<a
+						href="https://github.com/jesperdramsch/python-deadlines/"
+						class="btn btn-outline-dark mx-1"
+					>
+						<i class="fa fa-github" aria-hidden="true"></i> Konferenz auf GitHub einreichen
+					</a>
+				</div>
+				<hr class="my-3" />
+				<form>
+					<div class="form-group">
+						<label for="subject-select" class="mb-2 align-center control-label">
+							Filter nach Unterkategorie:
+						</label>
+						<br />
+						<select
+							id="subject-select"
+							name="subject-select"
+							multiple="multiple"
+							class="form-control"
+							style="display: none"
+						>
+							
+							<option value="PY" id="PY-checkbox">
+								General Python (PY)
+							</option>
+							
+							<option value="SCIPY" id="SCIPY-checkbox">
+								Scientific Python (SCIPY)
+							</option>
+							
+							<option value="DATA" id="DATA-checkbox">
+								Python for Data (DATA)
+							</option>
+							
+							<option value="WEB" id="WEB-checkbox">
+								Python for Web (WEB)
+							</option>
+							
+							<option value="BIZ" id="BIZ-checkbox">
+								Python for Business (BIZ)
+							</option>
+							
+							<option value="GEO" id="GEO-checkbox">
+								Python for Earth (GEO)
+							</option>
+							
+							<option value="CAMP" id="CAMP-checkbox">
+								Python Camps (CAMP)
+							</option>
+							
+							<option value="DAY" id="DAY-checkbox">
+								Python Day (DAY)
+							</option>
+							
+						</select>
 					</div>
 				</form>
 			</div>
+		</div>
+	</div>
+</div>
 
-			<br />
+
+		<div class="container">
 			<div id="calendar-page" class="calendar-page"></div>
 
 			<div class="modal fade" id="event-modal">
@@ -3724,7 +3734,7 @@ function load_conference_list() {
         date: "16. – 17. Oktober 2023",
         subject: "DATA",
         startDate: Date.parse("2023-10-16"),
-        endDate: Date.parse("2024-10-17"),
+        endDate: Date.parse("2023-10-17"),
       });
     
   

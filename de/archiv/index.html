@@ -40,12 +40,12 @@
 <link rel="alternate"  title="Archiv für Python-Konferenzen in German" hreflang="de" href="/de/archiv/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724433193" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724437532" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724433193" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724433193" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1724433193" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724437532" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724437532" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1724437532" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -170,7 +170,7 @@
 
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<div class="container">
 		<div style="vertical-align: middle; padding-top: 8px">
 			<div>
@@ -268,11 +268,16 @@
 	</div>
 </nav>
 
-		<div class="container">
-			<div class="page-header">
-				<div class="row">
-					<div class="col-12 col-sm-12">
-						<div id="breadcrumbs">
+
+    
+    
+    
+
+    <div class="page-header">
+	<div class="container">
+		<div class="row align-items-end">
+			<div class="col-md-8">
+				<div id="breadcrumbs">
 
 <a href="">Home</a>
 
@@ -282,128 +287,145 @@
 
 </div>
 
-						<h1>Archiv für Python-Konferenzen</h1>
-					</div>
-					<div class="meta col-12"><p>PythonDeadlin.es sammelt deine Lieblings Python-Konferenzen.</p>
-</div>
-				</div>
-				<br />
-				<div class="row">
-					<div class="meta col-8"><p>Dieses Community-Tool dient als zentrales Repository für Fristen für Teilnahmeaufrufe, für Präsentationen, Workshops und Tutorials auf Python-Konferenzen.</p>
+				<h1 class="display-4">
+      Archiv für Python-Konferenzen
+    </h1>
+				<span class="lead"> 
+      <p>PythonDeadlin.es sammelt deine Lieblings Python-Konferenzen.</p>
+
+     </span>
+				<span class="text-muted"> 
+      <p>Dieses Community-Tool dient als zentrales Repository für Fristen für Teilnahmeaufrufe, für Präsentationen, Workshops und Tutorials auf Python-Konferenzen.</p>
 
 <p>Die Termine werden als Countdowns, in lokalen Zeitzonen und weiter unten sogar als Google-Kalender zur Verfügung gestellt!</p>
 
 <p>Fristen werden in <span class="local-timezone">der lokalen Ortszeit</span> angezeigt. Um sie in den Zeitzonen der Konferenz-Website anzuzeigen einfach auf die Konferenz klicken.</p>
-</div>
-					<div class="meta col-4">
-						<form class="container">
-							<div class="row justify-content-center">
-								<div class="row align-items-md-center col-12 col-10-md">
-									<div class="col-12 col-md-5 filter-label">
-										<label
-											for="subject-select"
-											class="align-center"
-											style="margin-bottom: 0px; line-height: 1.5"
-										>
-											Filter nach Unterkategorie:
-										</label>
-									</div>
-									<div class="col-12 col-md-6">
-										<select
-											id="subject-select"
-											name="subject-select"
-											multiple="multiple"
-											style="display: none"
-										>
-											
-											<option value="PY" id="PY-checkbox">
-												General Python (PY)
-											</option>
-											
-											<option value="SCIPY" id="SCIPY-checkbox">
-												Scientific Python (SCIPY)
-											</option>
-											
-											<option value="DATA" id="DATA-checkbox">
-												Python for Data (DATA)
-											</option>
-											
-											<option value="WEB" id="WEB-checkbox">
-												Python for Web (WEB)
-											</option>
-											
-											<option value="BIZ" id="BIZ-checkbox">
-												Python for Business (BIZ)
-											</option>
-											
-											<option value="GEO" id="GEO-checkbox">
-												Python for Earth (GEO)
-											</option>
-											
-											<option value="CAMP" id="CAMP-checkbox">
-												Python Camps (CAMP)
-											</option>
-											
-											<option value="DAY" id="DAY-checkbox">
-												Python Day (DAY)
-											</option>
-											
-										</select>
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
+
+     </span>
 			</div>
+			<div class="col-md-4">
+				<div class="d-flex justify-content-center">
+					<a href="/de/python-deadlines.ics" class="btn btn-outline-primary mx-1">
+						<i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Lade iCal runter
+					</a>
+					<a
+						href="https://calendar.google.com/calendar/r?cid=https://pythondeadlin.es/python-deadlines.ics"
+						class="btn btn-outline-danger mx-1"
+					>
+						<i class="fa fa-google" aria-hidden="true"></i> Zu Google Kalender hinzufügen
+					</a>
+					<a
+						href="https://github.com/jesperdramsch/python-deadlines/"
+						class="btn btn-outline-dark mx-1"
+					>
+						<i class="fa fa-github" aria-hidden="true"></i> Konferenz auf GitHub einreichen
+					</a>
+				</div>
+				<hr class="my-3" />
+				<form>
+					<div class="form-group">
+						<label for="subject-select" class="mb-2 align-center control-label">
+							Filter nach Unterkategorie:
+						</label>
+						<br />
+						<select
+							id="subject-select"
+							name="subject-select"
+							multiple="multiple"
+							class="form-control"
+							style="display: none"
+						>
+							
+							<option value="PY" id="PY-checkbox">
+								General Python (PY)
+							</option>
+							
+							<option value="SCIPY" id="SCIPY-checkbox">
+								Scientific Python (SCIPY)
+							</option>
+							
+							<option value="DATA" id="DATA-checkbox">
+								Python for Data (DATA)
+							</option>
+							
+							<option value="WEB" id="WEB-checkbox">
+								Python for Web (WEB)
+							</option>
+							
+							<option value="BIZ" id="BIZ-checkbox">
+								Python for Business (BIZ)
+							</option>
+							
+							<option value="GEO" id="GEO-checkbox">
+								Python for Earth (GEO)
+							</option>
+							
+							<option value="CAMP" id="CAMP-checkbox">
+								Python Camps (CAMP)
+							</option>
+							
+							<option value="DAY" id="DAY-checkbox">
+								Python Day (DAY)
+							</option>
+							
+						</select>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+		<div class="container">
 			<div id="confs">
 				<h1 id="past-events-title">Vergangene Konferenzen</h1>
 				   
-				<li><a href="/2002/">Year 2002</a></li>
+				<li><a href="/archive/2002/index.html">Year 2002</a></li>
 				   
-				<li><a href="/2003/">Year 2003</a></li>
+				<li><a href="/archive/2003/index.html">Year 2003</a></li>
 				   
-				<li><a href="/2004/">Year 2004</a></li>
+				<li><a href="/archive/2004/index.html">Year 2004</a></li>
 				   
-				<li><a href="/2005/">Year 2005</a></li>
+				<li><a href="/archive/2005/index.html">Year 2005</a></li>
 				   
-				<li><a href="/2006/">Year 2006</a></li>
+				<li><a href="/archive/2006/index.html">Year 2006</a></li>
 				   
-				<li><a href="/2007/">Year 2007</a></li>
+				<li><a href="/archive/2007/index.html">Year 2007</a></li>
 				   
-				<li><a href="/2008/">Year 2008</a></li>
+				<li><a href="/archive/2008/index.html">Year 2008</a></li>
 				   
-				<li><a href="/2009/">Year 2009</a></li>
+				<li><a href="/archive/2009/index.html">Year 2009</a></li>
 				   
-				<li><a href="/2010/">Year 2010</a></li>
+				<li><a href="/archive/2010/index.html">Year 2010</a></li>
 				   
-				<li><a href="/2011/">Year 2011</a></li>
+				<li><a href="/archive/2011/index.html">Year 2011</a></li>
 				   
-				<li><a href="/2012/">Year 2012</a></li>
+				<li><a href="/archive/2012/index.html">Year 2012</a></li>
 				   
-				<li><a href="/2013/">Year 2013</a></li>
+				<li><a href="/archive/2013/index.html">Year 2013</a></li>
 				   
-				<li><a href="/2014/">Year 2014</a></li>
+				<li><a href="/archive/2014/index.html">Year 2014</a></li>
 				   
-				<li><a href="/2015/">Year 2015</a></li>
+				<li><a href="/archive/2015/index.html">Year 2015</a></li>
 				   
-				<li><a href="/2016/">Year 2016</a></li>
+				<li><a href="/archive/2016/index.html">Year 2016</a></li>
 				   
-				<li><a href="/2017/">Year 2017</a></li>
+				<li><a href="/archive/2017/index.html">Year 2017</a></li>
 				   
-				<li><a href="/2018/">Year 2018</a></li>
+				<li><a href="/archive/2018/index.html">Year 2018</a></li>
 				   
-				<li><a href="/2019/">Year 2019</a></li>
+				<li><a href="/archive/2019/index.html">Year 2019</a></li>
 				   
-				<li><a href="/2020/">Year 2020</a></li>
+				<li><a href="/archive/2020/index.html">Year 2020</a></li>
 				   
-				<li><a href="/2021/">Year 2021</a></li>
+				<li><a href="/archive/2021/index.html">Year 2021</a></li>
 				   
-				<li><a href="/2022/">Year 2022</a></li>
+				<li><a href="/archive/2022/index.html">Year 2022</a></li>
 				   
-				<li><a href="/2023/">Year 2023</a></li>
+				<li><a href="/archive/2023/index.html">Year 2023</a></li>
 				   
-				<li><a href="/2024/">Year 2024</a></li>
+				<li><a href="/archive/2024/index.html">Year 2024</a></li>
 				    
 			</div>
 			<footer><hr>
