@@ -40,12 +40,12 @@
 <link rel="alternate"  title="Buscar in German" hreflang="de" href="/de/suche/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724441839" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724442590" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724441839" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724441839" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1724441839" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724442590" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724442590" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1724442590" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -280,12 +280,24 @@
 				<h1 class="display-4"> Buscar </h1>
 				<span class="lead">  <p>PythonDeadlin.es junta tus conferencias favoritas de Python.</p>
   </span>
-				<span class="text-muted">  <p>Esta herramienta comunitaria sirve como depósito central de fechas límite de invitaciones de participación, propuestas, talleres y tutoriales en conferencias de Python.</p>
+				<span class="text-muted"> <p>Esta página muestra los resultados de búsqueda de nuestra exhaustiva base de datos de plazos y eventos de conferencias de Python. Los resultados se presentan como una lista de conferencias relevantes que coinciden con su consulta.</p>
 
-<p>Las fechas están disponibles como cuentas regresivas, en zonas horarias locales.</p>
+<p>Cada resultado incluye detalles clave como el nombre de la conferencia, las fechas límite y breves descripciones. Los plazos se muestran en <span class="local-timezone">su zona horaria local</span>.</p>
 
-<p>Los plazos se muestran en <span class="local-timezone">tu hora local</span>. Para verlos en las zonas horarias del sitio web de la conferencia, haga clic en la conferencia.</p>
-  </span>
+<p>Haga clic en el nombre de una conferencia para ver información más detallada, incluyendo pautas de presentación y enlaces al sitio web oficial de la conferencia.</p>
+
+		<form class="form" action="/es/buscar/" method="get">
+			<input
+				type="search"
+				id="search"
+				name="query"
+				class="form-control col-md-12"
+				placeholder="Buscar"
+				aria-label="Search"
+			/>
+			<button class="btn btn-outline-dark col-md-12" type="submit">Buscar</button>
+		</form>
+		 </span>
 			</div>
 			<div class="col-md-4">
 				<div class="d-flex justify-content-center">

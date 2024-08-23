@@ -40,12 +40,12 @@
 <link rel="alternate"  title="Suche in German" hreflang="de" href="/de/suche/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724441900" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724442655" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724441900" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724441900" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1724441900" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724442655" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724442655" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1724442655" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -280,12 +280,24 @@
 				<h1 class="display-4"> Suche </h1>
 				<span class="lead">  <p>PythonDeadlin.es sammelt deine Lieblings Python-Konferenzen.</p>
   </span>
-				<span class="text-muted">  <p>Dieses Community-Tool dient als zentrales Repository für Fristen für Teilnahmeaufrufe, für Präsentationen, Workshops und Tutorials auf Python-Konferenzen.</p>
+				<span class="text-muted"> <p>Diese Seite zeigt die Suchergebnisse aus unserer umfassenden Datenbank von Python-Konferenzfristen und -Veranstaltungen. Die Ergebnisse werden als Liste relevanter Konferenzen präsentiert, die Ihrer Anfrage entsprechen.</p>
 
-<p>Die Termine werden als Countdowns, in lokalen Zeitzonen und weiter unten sogar als Google-Kalender zur Verfügung gestellt!</p>
+<p>Jedes Ergebnis enthält wichtige Details wie den Konferenznamen, Einreichungsfristen und kurze Beschreibungen. Die Fristen werden in <span class="local-timezone">Ihrer lokalen Zeitzone</span> angezeigt.</p>
 
-<p>Fristen werden in <span class="local-timezone">der lokalen Ortszeit</span> angezeigt. Um sie in den Zeitzonen der Konferenz-Website anzuzeigen einfach auf die Konferenz klicken.</p>
-  </span>
+<p>Klicke auf einen Konferenznamen, um detailliertere Informationen einschließlich Einreichungsrichtlinien und Links zur offiziellen Konferenzwebsite zu erhalten.</p>
+
+		<form class="form" action="/de/suche/" method="get">
+			<input
+				type="search"
+				id="search"
+				name="query"
+				class="form-control col-md-12"
+				placeholder="Suche"
+				aria-label="Search"
+			/>
+			<button class="btn btn-outline-dark col-md-12" type="submit">Suche</button>
+		</form>
+		 </span>
 			</div>
 			<div class="col-md-4">
 				<div class="d-flex justify-content-center">
