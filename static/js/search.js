@@ -18,10 +18,10 @@
                 <div class="row conf-row">
                     <div class="col-6">
                         <span class="conf-title">
-                            <a title="Deadline Details" href="${item.url}/">${item.title}</a>
+                            <a title="Deadline Details" href="${item.url}">${item.title}</a>
                         </span>
                         <span class="conf-title-small">
-                            <a title="Deadline Details" href="${item.url}/">${item.title}</a>
+                            <a title="Deadline Details" href="${item.url}">${item.title}</a>
                         </span>
                         ${
 							item.link
