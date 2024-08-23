@@ -108,6 +108,8 @@
 			this.field('title', { boost: 10 });
 			this.field('date');
 			this.field('content');
+			this.field('place');
+			this.field('alt_name', { boost: 10 });
 
 			for (var key in window.store) {
 				// Add the data to lunr
@@ -116,11 +118,13 @@
 					title: window.store[key].title,
 					date: window.store[key].date,
 					content: window.store[key].content,
+					place: window.store[key].place,
+					alt_name: window.store[key].alt_name,
 				});
 			}
 		});
 
-		var results = idx.search(searchTerm + '^30 *' + searchTerm + '*'); // Get lunr to perform a search
+		var results = idx.search(searchTerm + '^30 ' + searchTerm + '~1 *' + searchTerm + '*'); // Get lunr to perform a search
 		displaySearchResults(results, window.store);
 	}
 })();
