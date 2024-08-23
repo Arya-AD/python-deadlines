@@ -53,6 +53,12 @@ class Conference(BaseModel):
 
     @model_validator(mode="after")
     def validate_dates(self):
+        if self.start.year != self.end.year:
+            raise ValueError("Are you sure this is a multi-year conference?")
+        return self
+
+    @model_validator(mode="after")
+    def validate_years(self):
         if self.start > self.end:
             raise ValueError("The start date must be before the end date")
         return self

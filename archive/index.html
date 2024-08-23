@@ -40,12 +40,12 @@
 <link rel="alternate"  title="Past Python Conferences in German" hreflang="de" href="/de/archiv/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724437395" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724437912" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724437395" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724437395" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1724437395" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724437912" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724437912" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1724437912" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -2287,6 +2287,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#pycon-india-2023 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pytorch-conference-2023 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2023-07-21 23:59:00", {zone: "America/Los_Angeles"});
+			        var confDate = DateTime.fromSQL("2023-10-16", {zone: "America/Los_Angeles"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2023-07-21 23:59:00");
+			        var confDate = DateTime.fromSQL("2023-10-16");
+			        console.log("Invalid timezone in pytorch-conference-2023. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pytorch-conference-2023 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
