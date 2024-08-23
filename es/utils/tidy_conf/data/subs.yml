@@ -1,0 +1,50 @@
+---
+# Description: Substitutions for the tidy_conf module
+PY:
+- pycon
+- pyladies
+- pyday
+- pycamp
+- pyjamas
+- pygrunn
+- pyohio
+- pytexas
+- fosdem
+- pycode conference
+- pygotham
+- belpy
+- pycascades
+- pycolorado
+- pybay
+- pycaribbean
+- pytennessee
+- rupy
+- pyparis
+- pymunich
+- pylondinium
+- pydelhi
+- pybits
+- piter py
+- mupy
+WEB:
+- django
+- flask
+- plone
+- wagtail
+- web
+DATA:
+- pydata
+- jupyter
+SCIPY:
+- scipy
+- pyhep
+- pyhpc
+BIZ:
+- business
+GEO:
+- geopython
+CAMP:
+- pycamp
+- barcamp
+DAY:
+- pyday

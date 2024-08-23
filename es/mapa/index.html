@@ -1,0 +1,622 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+
+
+
+<title>Mapa de conferencias de Python | PythonDeadlin.es</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="titles.map" />
+<meta name="author" content="Jesper Dramsch" />
+<meta property="og:locale" content="es" />
+<meta name="description" content="Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!" />
+<meta property="og:description" content="Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!" />
+<link rel="canonical" href="https://pythondeadlin.es/es/mapa/" />
+<meta property="og:url" content="https://pythondeadlin.es/es/mapa/" />
+<meta property="og:site_name" content="Python Conference Deadlines" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="titles.map" />
+<meta name="twitter:site" content="@jesperdramsch" />
+<meta name="twitter:creator" content="@jesperdramsch" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Jesper Dramsch","url":"https://dramsch.net"},"description":"Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!","headline":"titles.map","url":"https://pythondeadlin.es/es/mapa/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS Feed for Pythondeadlin.es" href="/feed.xml" />
+
+<link rel="alternate" hreflang="en" href="/map/" title="">
+
+
+<link rel="alternate"  title="Mapa de conferencias de Python in Spanish" hreflang="es" href="/es/mapa/">
+
+
+<link rel="alternate"  title="Mapa de conferencias de Python in German" hreflang="de" href="/de/karte/">
+
+
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724441839" media="screen,projection">
+
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724441839" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724441839" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1724441839" media="screen,projection">
+
+<link rel="shortcut icon" href="/static/img/favicon.png">
+
+<style>
+
+.PY-tag {
+  color: #4B8BBE;
+}
+.PY-select {
+  color: #4B8BBE;
+  background: white;
+}
+.PY-select.active {
+    color: white;
+    background: #4B8BBE;
+}
+
+
+.SCIPY-tag {
+  color: #70163C;
+}
+.SCIPY-select {
+  color: #70163C;
+  background: white;
+}
+.SCIPY-select.active {
+    color: white;
+    background: #70163C;
+}
+
+
+.DATA-tag {
+  color: #849324;
+}
+.DATA-select {
+  color: #849324;
+  background: white;
+}
+.DATA-select.active {
+    color: white;
+    background: #849324;
+}
+
+
+.WEB-tag {
+  color: #0D0A0B;
+}
+.WEB-select {
+  color: #0D0A0B;
+  background: white;
+}
+.WEB-select.active {
+    color: white;
+    background: #0D0A0B;
+}
+
+
+.BIZ-tag {
+  color: #A8B9CC;
+}
+.BIZ-select {
+  color: #A8B9CC;
+  background: white;
+}
+.BIZ-select.active {
+    color: white;
+    background: #A8B9CC;
+}
+
+
+.GEO-tag {
+  color: #310c0c;
+}
+.GEO-select {
+  color: #310c0c;
+  background: white;
+}
+.GEO-select.active {
+    color: white;
+    background: #310c0c;
+}
+
+
+.CAMP-tag {
+  color: #303030;
+}
+.CAMP-select {
+  color: #303030;
+  background: white;
+}
+.CAMP-select.active {
+    color: white;
+    background: #303030;
+}
+
+
+.DAY-tag {
+  color: #3C1670;
+}
+.DAY-select {
+  color: #3C1670;
+  background: white;
+}
+.DAY-select.active {
+    color: white;
+    background: #3C1670;
+}
+
+
+  </style>
+
+<script defer data-domain="pythondeadlin.es" src="https://info.pythondeadlin.es/js/script.js"></script>
+<script type="text/javascript" src="/static/js/js-year-calendar.js"></script>
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/popper.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.countdown.min.js"></script>
+<script type="text/javascript" src="/static/js/luxon.js"></script>
+<script type="text/javascript" src="/static/js/store.min.js"></script>
+<script type="text/javascript" src="/static/js/ouical.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap-multiselect.min.js"></script>
+
+	<script type='text/javascript'>
+  /* global google */
+/* global MarkerClusterer */
+// eslint-disable-next-line no-unused-vars
+var jekyllMaps = (function() {
+  'use strict'
+  var clusterSettings = {}
+  var clusterReady = false
+  var mapReady = false
+  var options = {}
+  var data = []
+  var maps = []
+
+  return {
+    initializeMap: initializeMap,
+    initializeCluster: initializeCluster,
+    register: register
+  }
+
+  /**
+   * Setup Google Maps options and call renderer.
+   */
+  function initializeMap() {
+    options = {
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      center: new google.maps.LatLng(0, 0),
+      styles: []
+    }
+    mapReady = true
+    render()
+  }
+
+  /**
+   * Register map data to be rendered once Google Maps API is loaded.
+   *
+   * @param string id
+   * @param Array locations
+   * @param Object settings
+   */
+  function register(id, locations, options) {
+    data.push({ id: id, locations: locations, options: options })
+    render()
+  }
+
+  /**
+   * Render maps data if Google Maps API is loaded.
+   */
+  function render() {
+    if (!mapReady) return
+
+    while (data.length > 0) {
+      var item = data.pop()
+      var bounds = new google.maps.LatLngBounds()
+      var mapOptions = Object.assign({}, options, item.options)
+      var map = new google.maps.Map(
+        document.getElementById(item.id),
+        mapOptions
+      )
+      var infoWindow = new google.maps.InfoWindow()
+      var markers = item.locations.map(createMarker)
+
+      map.fitBounds(bounds)
+      google.maps.event.addListenerOnce(map, 'idle', function() {
+        if (this.customZoom) this.setZoom(this.customZoom)
+      })
+      if (mapOptions.useCluster) {
+        maps.push({ map: map, markers: markers })
+        processCluster()
+      }
+    }
+
+    function createMarker(location) {
+      var position = new google.maps.LatLng(
+        location.latitude,
+        location.longitude
+      )
+      bounds.extend(position)
+      if (!mapOptions.showMarker) return false
+
+      var marker = new google.maps.Marker({
+        position: position,
+        title: location.title,
+        image: location.image,
+        popup_html: location.popup_html,
+        icon: location.icon || mapOptions.markerIcon,
+        url: markerUrl(mapOptions.baseUrl, location.url),
+        url_text: location.url_text,
+        map: map
+      })
+      if (mapOptions.showMarkerPopup) marker.addListener('click', markerPopup)
+
+      return marker
+    }
+
+    function markerUrl(baseUrl, url) {
+      if (/^(https?|\/\/)/.test(url)) return url
+
+      return url.length > 0 ? baseUrl + url : ''
+    }
+
+    function markerPopup() {
+      var content = '<div class="map-info-window"><h5>' + this.title + '</h5>'
+      if (this.popup_html.length > 0) {
+        content += this.popup_html
+      }
+      else {
+        var imageTag =
+          this.image.length > 0 &&
+          '<img src="' + this.image + '" alt="' + this.title + '"/>'
+        if (this.url.length > 0) {
+          var linkContent = imageTag || this.url_text || 'View'
+          content += '<a href="' + this.url + '">' + linkContent + '</a>'
+        } else if (imageTag) {
+          content += imageTag
+        }
+      }
+      content += '</div>'
+      infoWindow.setContent(content)
+      infoWindow.open(map, this)
+    }
+  }
+
+  function initializeCluster(settings) {
+    clusterReady = true
+    clusterSettings = settings || {}
+    processCluster()
+  }
+
+  function processCluster() {
+    if (!clusterReady) return
+
+    while (maps.length > 0) {
+      var obj = maps.pop()
+      // eslint-disable-next-line no-new
+      new MarkerClusterer(obj.map, obj.markers, {
+        gridSize: clusterSettings.grid_size || 25,
+        imagePath:
+          'https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/images/m'
+      })
+    }
+  }
+})()
+/* Object.assign polyfill */
+if (typeof Object.assign !== 'function') {
+  Object.assign = function(target) {
+    'use strict'
+    if (target == null) {
+      throw new TypeError('Cannot convert undefined or null to object')
+    }
+
+    target = Object(target)
+    for (var index = 1; index < arguments.length; index++) {
+      var source = arguments[index]
+      if (source != null) {
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key]
+          }
+        }
+      }
+    }
+    return target
+  }
+}
+
+</script>
+</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<div class="container">
+		<div style="vertical-align: middle; padding-top: 8px">
+			<div>
+				<a class="navbar-brand" href="/es/" style="border-bottom: none; line-height: 0.1em">
+					Python Deadlines<br /><br />
+				</a>
+			</div>
+			<div style="color: white; font-size: x-small">
+				<a href="https://dramsch.net" class="pwc-link"> by Jesper Dramsch </a>
+			</div>
+		</div>
+
+		<button
+			class="navbar-toggler"
+			type="button"
+			data-toggle="collapse"
+			data-target="#navbar-toggler"
+			aria-controls="navbars-toggler"
+			aria-expanded="false"
+			aria-label="Toggle navigation"
+		>
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbar-toggler">
+			<ul class="navbar-nav mr-auto">
+				<li>
+					<a href="/es/" class="nav-link" style="border-bottom: none"
+						>Fechas</a
+					>
+				</li>
+				<li>
+					<a href="/es/calendario/" class="nav-link" style="border-bottom: none">Calendario</a>
+				</li>
+				<li>
+					<a href="/es/mapa/" class="nav-link" style="border-bottom: none">Mapa</a>
+				</li>
+				<li>
+					<a href="/es/serias/" class="nav-link" style="border-bottom: none">Serie</a>
+				</li>
+				<li>
+					<a href="/es/recursos/" class="nav-link" style="border-bottom: none"
+						>Recursos</a
+					>
+				</li>
+			</ul>
+
+			<form class="form-inline my-2 my-lg-0" action="/es/buscar/" method="get">
+				<input
+					type="search"
+					id="search-box"
+					name="query"
+					class="form-control mr-sm-2"
+					placeholder="Buscar"
+					aria-label="Search"
+				/>
+				<button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Buscar</button>
+			</form>
+			<ul class="navbar-nav ml-auto my-2 my-lg-0">
+				<li class="nav-item dropdown">
+					<a
+						class="nav-link dropdown-toggle"
+						href="#"
+						id="navbarDropdownMenuLink"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						es
+					</a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+						<h6 class="dropdown-header">Elija Idioma</h6>
+						
+						<a
+							class="dropdown-item"
+							href="/map/"
+							>English</a
+						>
+						 
+						<a
+							class="dropdown-item active"
+							href="/es/mapa/"
+							>Español</a
+						>
+						 
+						<a
+							class="dropdown-item"
+							href="/de/karte/"
+							>Deutsch</a
+						>
+						
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+    <div class="page-header">
+	<div class="container">
+		<div class="row align-items-end">
+			<div class="col-md-8">
+				<div id="breadcrumbs">
+	 
+	<a href="/es/">Home</a>
+	   / <a href="#">Mapa de conferencias de Python</a>  
+</div>
+
+				<h1 class="display-4"> Mapa de conferencias de Python </h1>
+				<span class="lead">  <p>PythonDeadlin.es junta tus conferencias favoritas de Python.</p>
+  </span>
+				<span class="text-muted">  <p>Esta herramienta comunitaria sirve como depósito central de fechas límite de invitaciones de participación, propuestas, talleres y tutoriales en conferencias de Python.</p>
+
+<p>Las fechas están disponibles como cuentas regresivas, en zonas horarias locales.</p>
+
+<p>Los plazos se muestran en <span class="local-timezone">tu hora local</span>. Para verlos en las zonas horarias del sitio web de la conferencia, haga clic en la conferencia.</p>
+  </span>
+			</div>
+			<div class="col-md-4">
+				<div class="d-flex justify-content-center">
+					<a href="/es/python-deadlines.ics" class="btn btn-outline-primary mx-1">
+						<i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Obtener el iCal
+					</a>
+					<a
+						href="https://calendar.google.com/calendar/r?cid=https://pythondeadlin.es/python-deadlines.ics"
+						class="btn btn-outline-danger mx-1"
+					>
+						<i class="fa fa-google" aria-hidden="true"></i> Añadir al Calendario de Google
+					</a>
+					<a
+						href="https://github.com/jesperdramsch/python-deadlines/"
+						class="btn btn-outline-dark mx-1"
+					>
+						<i class="fa fa-github" aria-hidden="true"></i> Enviar una Conferencia en GitHub
+					</a>
+				</div>
+				<hr class="my-3" />
+				<form>
+					<div class="form-group">
+						<label for="subject-select" class="mb-2 align-center control-label">
+							Filtrar por Subcategoría:
+						</label>
+						<br />
+						<select
+							id="subject-select"
+							name="subject-select"
+							multiple="multiple"
+							class="form-control"
+							style="display: none"
+						>
+							
+							<option value="PY" id="PY-checkbox">
+								General Python (PY)
+							</option>
+							
+							<option value="SCIPY" id="SCIPY-checkbox">
+								Scientific Python (SCIPY)
+							</option>
+							
+							<option value="DATA" id="DATA-checkbox">
+								Python for Data (DATA)
+							</option>
+							
+							<option value="WEB" id="WEB-checkbox">
+								Python for Web (WEB)
+							</option>
+							
+							<option value="BIZ" id="BIZ-checkbox">
+								Python for Business (BIZ)
+							</option>
+							
+							<option value="GEO" id="GEO-checkbox">
+								Python for Earth (GEO)
+							</option>
+							
+							<option value="CAMP" id="CAMP-checkbox">
+								Python Camps (CAMP)
+							</option>
+							
+							<option value="DAY" id="DAY-checkbox">
+								Python Day (DAY)
+							</option>
+							
+						</select>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+		<div class="container">
+			<!-- Filter Form -->
+			<div class="row">
+				<div id='places' style='width:100%;height:400px;' class=' jekyll-map'></div>
+<script type='text/javascript'>
+  jekyllMaps.register(
+    'places',
+    [{"latitude":30.2711286,"longitude":-97.7436995,"title":"PyTexas 2025","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":51.11,"longitude":17.0325,"title":"PyCon Wroclaw 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":6.6126598,"longitude":0.4688932,"title":"Python Ho 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":45.5202471,"longitude":-122.674194,"title":"PyCascades 2025","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":-33.4377756,"longitude":-70.6504502,"title":"PyCon Chile 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":40.7127281,"longitude":-74.0060152,"title":"PyData NYC 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":51.7520131,"longitude":-1.2578499,"title":"Python in Education Day 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":59.3251172,"longitude":18.0710935,"title":"PyCon Sweden 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":-10.3333333,"longitude":-53.2,"title":"Plone Conference 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":53.3498006,"longitude":-6.2602964,"title":"PyCon Ireland 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":-33.9680556,"longitude":18.4877778,"title":"PyCon South Africa 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":50.294113,"longitude":18.6657306,"title":"PyCon Poland 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":-22.9110137,"longitude":-43.2093727,"title":"Python Brasil 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":-7.9778383999999996,"longitude":110.36722565020244,"title":"PyCon Asia Pacific 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":38.676839,"longitude":-90.2497213,"title":"PyBay 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":52.090833,"longitude":5.121667,"title":"PyCon Netherlands 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":13.515,"longitude":2.1175,"title":"PyCon Niger 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":-17.8567035,"longitude":31.0601584,"title":"PyCon Zimbabwe 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":2.0349312,"longitude":45.3419183,"title":"PyCon Somalia 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":-37.8142454,"longitude":144.9631732,"title":"PyCon Australia 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":48.584614,"longitude":7.7507127,"title":"PyCon France 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":5.5571096,"longitude":-0.2012376,"title":"PyCon Africa 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":22.2793278,"longitude":114.1628131,"title":"PyCon Hong Kong 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":47.2266532,"longitude":8.8164042,"title":"Swiss Python Summit 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":3.0988792,"longitude":101.6454202,"title":"PyCon Malaysia 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":50.776351,"longitude":6.083862,"title":"PyHEP.dev 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":37.2633325,"longitude":127.0287472,"title":"PyCon South Korea 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":23.2035785,"longitude":-106.4208391,"title":"PyCon Latin America 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":37.7681571,"longitude":-122.392929,"title":"PyTorch Conference 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":59.9606739,"longitude":30.1586551,"title":"Piter Py 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":32.13655705,"longitude":34.80366518770497,"title":"PyCon Israel 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":35.718741949999995,"longitude":139.73118058112317,"title":"PyCon Japan 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":42.240599,"longitude":-8.720727,"title":"PyCon Spain 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":25.074282349999997,"longitude":55.18853865430702,"title":"PyCon MEA 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":12.9767936,"longitude":77.590082,"title":"PyCon India 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":53.42968095,"longitude":14.592912670292268,"title":"EuroSciPy 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":-41.2887953,"longitude":174.7772114,"title":"Kiwi PyCon 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":41.4996574,"longitude":-81.6936772,"title":"PyOhio 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":52.4111289,"longitude":4.877231604293446,"title":"PyData Amsterdam 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":55.625578,"longitude":37.6063916,"title":"PyCon Russia 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":-27.5973002,"longitude":-48.5496098,"title":"Python Sul 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":0.3177137,"longitude":32.5813539,"title":"PyCon Uganda 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":41.5510583,"longitude":-8.4280045,"title":"PyCon Portugal 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":43.3248924,"longitude":-79.7966835,"title":"PyData Vermont 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":42.240599,"longitude":-8.720727,"title":"DjangoCon US 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":59.4372155,"longitude":24.7453688,"title":"PyCon Estonia 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":22.6203348,"longitude":120.3120375,"title":"PyCon Taiwan 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":48.8588897,"longitude":2.3200410217200766,"title":"PyData Paris 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":50.8214626,"longitude":-0.1400561,"title":"EARL 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":-5.7944777,"longitude":-35.2119324,"title":"Python Nordeste 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":55.6867243,"longitude":12.5700724,"title":"Django Day Copenhagen 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":32.0852997,"longitude":34.7818064,"title":"PyData Tel Aviv 2023","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":44.4938203,"longitude":11.3426327,"title":"PyCon Italia 2025","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":40.4416941,"longitude":-79.9900861,"title":"PyCon US 2025","icon":null,"url":"","url_text":null,"image":"","popup_html":""},{"latitude":-3.1477898,"longitude":-58.4461041,"title":"Python Norte 2024","icon":null,"url":"","url_text":null,"image":"","popup_html":""}],
+    {"baseUrl":"","useCluster":false,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":2}
+  );
+</script>
+
+			</div>
+			<footer><hr>
+<div class="row">
+  <div class="col-12 col-sm-12">
+    <p><a href="">pythondeadlin.es</a> es mantenido por <a href="https://dramsch.net/">Jesper Dramsch</a> desde 2022. <br />Se inspiró (y originalmente codificó) en el fantástico <a href="https://aiheadlin.es">aiheadlin.es</a>. No hay garantía de que sea correcto; corrija los errores <a href="https://github.com/JesperDramsch/python-deadlines/pulls/">enviar un pull request</a> por favor.</p>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-12 col-sm-12">
+    <div class="footer-links">
+      <p><a href="/es/legal/condiciones/">Condiciones</a> &amp;
+<a href="">Privacidad</a>
+de <a href="https://dramsch.net">Jesper Dramsch,</a> creador de <a href="https://ml.recipes">ML.recipes</a>, <a href="https://data-science-gui.de">data-science-gui.de</a>, <a href="https://late.email">Tarde a la fiesta 🎉</a> y la <a href="https://latent.club">Comunidad del Espacio Latente</a>.</p>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+</footer>
+		</div>
+	          <script async defer>
+
+
+            // Load maps only when DOM is loaded
+            document.addEventListener("DOMContentLoaded", function() {
+                if (window.google && window.google.maps && jekyllMaps) {
+                  // Maps script already loaded -> Execute callback method
+                  jekyllMaps.initializeMap();
+                } else if (!('IntersectionObserver' in window) ||
+                !('IntersectionObserverEntry' in window) ||
+                !('intersectionRatio' in window.IntersectionObserverEntry.prototype)) {
+                  // Intersection Observer -> Backup solution : load maps now
+                  lazyLoadGoogleMap();
+                } else {
+                  // Google Maps not loaded & Intersection Observer working -> Enable it
+                  enableMapsObserver();
+                }
+            });
+
+            function enableMapsObserver() {
+              // Enable Observer on all Maps
+              var maps = document.getElementsByClassName('jekyll-map');
+
+              const observer = new IntersectionObserver(function(entries, observer) {
+                // Test if one of the maps is in the viewport
+                var isIntersecting = typeof entries[0].isIntersecting === 'boolean' ? entries[0].isIntersecting : entries[0].intersectionRatio > 0;
+                if (isIntersecting) {
+                  lazyLoadGoogleMap();
+                  observer.disconnect();
+                }
+              });
+
+              for(var i = 0; i < maps.length; i++) {
+                observer.observe(maps[i]);
+              }
+            }
+
+            function lazyLoadGoogleMap() {
+                // If google maps api script not already loaded
+                if(!window.google || !window.google.maps) {
+                  var fjs = document.getElementsByTagName('script')[0];
+                  var js = document.createElement('script');
+                  js.id = 'gmap-api';
+                  js.setAttribute('async', '');
+                  js.setAttribute('defer', '');
+                  js.src = "//maps.google.com/maps/api/js?key=AIzaSyCEJ_S3OFxqrOfgx5WdSEMl8hxzgTFEw20&callback=jekyllMaps.initializeMap";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }
+            }
+          </script>
+
+<script async defer src='https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js'
+        onload='jekyllMaps.initializeCluster({})'></script>
+
+</body>
+</html>

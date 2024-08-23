@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/static/xml/rss.xsl" media="all"?>
+<rss version="2.0"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+>
+	<channel>
+		<title>Python Conference Deadlines</title>
+		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
+		<link>https://pythondeadlin.es/feed.xml</link>
+		<lastBuildDate>Fri, 23 Aug 2024 19:37:19 +0000</lastBuildDate>
+		
+		
+		
+			<item>
+				<title>PyTexas 2025 Conference Deadline</title>
+				<description>Conference in Austin, USA on11 – 13 de abril de 2025. CfP: 2025-01-14 23:59:00 AoE. </description>
+				<pubDate>Tue, 14 Jan 2025 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pytexas-2025/</link>
+				<guid isPermaLink="false">pytexas-2025</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon Wroclaw 2024 Conference Deadline</title>
+				<description>Conference in Wrocław, Poland on30 de noviembre de 2024. CfP: 2024-10-14 23:59:00 AoE. </description>
+				<pubDate>Mon, 14 Oct 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-wroclaw-2024/</link>
+				<guid isPermaLink="false">pycon-wroclaw-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>Python Ho 2024 Conference Deadline</title>
+				<description>Conference in Ho, Ghana on25 – 26 de octubre de 2024. CfP: 2024-09-24 11:22:33 AoE. </description>
+				<pubDate>Tue, 24 Sep 2024 11:22:33 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/python-ho-2024/</link>
+				<guid isPermaLink="false">python-ho-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyLadiesCon 2024 Conference Deadline</title>
+				<description>Conference in Online on6 – 8 de diciembre de 2024. CfP: 2024-09-16 21:32:00 AoE. </description>
+				<pubDate>Mon, 16 Sep 2024 21:32:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pyladiescon-2024/</link>
+				<guid isPermaLink="false">pyladiescon-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCascades 2025 Conference Deadline</title>
+				<description>Conference in Portland, USA on8 – 9 de febrero de 2025. CfP: 2024-09-15 23:59:00 AoE. </description>
+				<pubDate>Sun, 15 Sep 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycascades-2025/</link>
+				<guid isPermaLink="false">pycascades-2025</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon Chile 2024 Conference Deadline</title>
+				<description>Conference in Santiago, Chile on25 – 27 de octubre de 2024. CfP: 2024-09-06 23:59:00 AoE. </description>
+				<pubDate>Fri, 06 Sep 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-chile-2024/</link>
+				<guid isPermaLink="false">pycon-chile-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyData NYC 2024 Conference Deadline</title>
+				<description>Conference in New York, USA on6 – 8 de noviembre de 2024. CfP: 2024-09-03 23:59:00 AoE. </description>
+				<pubDate>Tue, 03 Sep 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pydata-nyc-2024/</link>
+				<guid isPermaLink="false">pydata-nyc-2024</guid>
+				<category>DATA</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>Python in Education Day 2024 Conference Deadline</title>
+				<description>Conference in Oxford, UK on14 de octubre de 2024. CfP: 2024-08-31 23:59:00 AoE.&lt;br /&gt;Find them here: @ScienceOxford </description>
+				<pubDate>Sat, 31 Aug 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/python-in-education-day-2024/</link>
+				<guid isPermaLink="false">python-in-education-day-2024</guid>
+				<category>DAY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon Sweden 2024 Conference Deadline</title>
+				<description>Conference in Stockholm, Sweden on14 – 15 de noviembre de 2024. CfP: 2024-08-31 23:00:00 AoE. </description>
+				<pubDate>Sat, 31 Aug 2024 23:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-sweden-2024/</link>
+				<guid isPermaLink="false">pycon-sweden-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>Xtreme Python 2024 Conference Deadline</title>
+				<description>Conference in Online on19 de noviembre de 2024. CfP: 2024-08-30 23:59:00 AoE. </description>
+				<pubDate>Fri, 30 Aug 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/xtreme-python-2024/</link>
+				<guid isPermaLink="false">xtreme-python-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>Plone Conference 2024 Conference Deadline</title>
+				<description>Conference in Brasilia, Brazil on25 – 1 de noviembre de 2024. CfP: 2024-08-25 23:59:00 AoE.&lt;br /&gt;Find them here: @ploneconf </description>
+				<pubDate>Sun, 25 Aug 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/plone-conference-2024/</link>
+				<guid isPermaLink="false">plone-conference-2024</guid>
+				<category>WEB</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon Ireland 2024 Conference Deadline</title>
+				<description>Conference in Dublin, Ireland on16 de noviembre de 2024. CfP: 2024-08-25 23:59:00 AoE. </description>
+				<pubDate>Sun, 25 Aug 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-ireland-2024/</link>
+				<guid isPermaLink="false">pycon-ireland-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon South Africa 2024 Conference Deadline</title>
+				<description>Conference in Rondebosch, South Africa on2 – 6 de octubre de 2024. CfP: 2024-08-18 23:59:00 AoE.&lt;br /&gt;Find them here: @PyConZA </description>
+				<pubDate>Sun, 18 Aug 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-south-africa-2024/</link>
+				<guid isPermaLink="false">pycon-south-africa-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon Poland 2024 Conference Deadline</title>
+				<description>Conference in Gliwice, Poland on29 – 1 de agosto de 2024. CfP: 2024-08-20 23:59:00 AoE. </description>
+				<pubDate>Tue, 20 Aug 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-poland-2024/</link>
+				<guid isPermaLink="false">pycon-poland-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>Python Brasil 2024 Conference Deadline</title>
+				<description>Conference in Rio de Janeiro, Brazil on16 – 21 de octubre de 2024. CfP: 2024-08-10 23:59:00 AoE.&lt;br /&gt;Find them here: @PythonBrasil </description>
+				<pubDate>Sat, 10 Aug 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/python-brasil-2024/</link>
+				<guid isPermaLink="false">python-brasil-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon Asia Pacific 2024 Conference Deadline</title>
+				<description>Conference in Yogyakarta, Indonesia on25 – 27 de octubre de 2024. CfP: 2024-08-01 23:59:00 AoE. </description>
+				<pubDate>Thu, 01 Aug 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-asia-pacific-2024/</link>
+				<guid isPermaLink="false">pycon-asia-pacific-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyBay 2024 Conference Deadline</title>
+				<description>Conference in San Franciso, USA on21 de septiembre de 2024. CfP: 2024-07-31 23:59:00 AoE. </description>
+				<pubDate>Wed, 31 Jul 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pybay-2024/</link>
+				<guid isPermaLink="false">pybay-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon Netherlands 2024 Conference Deadline</title>
+				<description>Conference in Utrecht, Netherlands on10 de octubre de 2024. CfP: 2024-07-31 23:59:00 AoE. </description>
+				<pubDate>Wed, 31 Jul 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-netherlands-2024/</link>
+				<guid isPermaLink="false">pycon-netherlands-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon Niger 2024 Conference Deadline</title>
+				<description>Conference in Niamey, Niger on28 – 29 de septiembre de 2024. CfP: 2024-07-30 23:59:00 AoE.&lt;br /&gt;Find them here: @pythonniger </description>
+				<pubDate>Tue, 30 Jul 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-niger-2024/</link>
+				<guid isPermaLink="false">pycon-niger-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon Zimbabwe 2024 Conference Deadline</title>
+				<description>Conference in Harare, Zimbabwe on31 – 2 de octubre de 2024. CfP: 2024-07-31 00:00:00 AoE. </description>
+				<pubDate>Wed, 31 Jul 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-zimbabwe-2024/</link>
+				<guid isPermaLink="false">pycon-zimbabwe-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon Somalia 2024 Conference Deadline</title>
+				<description>Conference in Mogadishu, Somalia on21 – 22 de agosto de 2024. CfP: 2024-07-25 23:59:00 AoE. </description>
+				<pubDate>Thu, 25 Jul 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-somalia-2024/</link>
+				<guid isPermaLink="false">pycon-somalia-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon Australia 2024 Conference Deadline</title>
+				<description>Conference in Melbourne, Australia on22 – 26 de noviembre de 2024. CfP: 2024-07-22 22:00:00 AoE. </description>
+				<pubDate>Mon, 22 Jul 2024 22:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-australia-2024/</link>
+				<guid isPermaLink="false">pycon-australia-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon France 2024 Conference Deadline</title>
+				<description>Conference in Strasbourg, France on31 – 3 de octubre de 2024. CfP: 2024-07-21 23:59:00 AoE.&lt;br /&gt;Find them here: @PyConFR </description>
+				<pubDate>Sun, 21 Jul 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-france-2024/</link>
+				<guid isPermaLink="false">pycon-france-2024</guid>
+				<category>PY</category>
+			</item>
+		
+		
+	</channel>
+</rss>

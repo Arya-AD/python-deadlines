@@ -1,0 +1,2279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+
+
+
+<title>PyCon South Africa Conference Summary | PythonDeadlin.es</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="PyCon South Africa Conference Summary" />
+<meta name="author" content="Jesper Dramsch" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Summary of the conference and its instances throughout the years." />
+<meta property="og:description" content="Summary of the conference and its instances throughout the years." />
+<link rel="canonical" href="https://pythondeadlin.es/series/pycon-south-africa/" />
+<meta property="og:url" content="https://pythondeadlin.es/series/pycon-south-africa/" />
+<meta property="og:site_name" content="Python Conference Deadlines" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="PyCon South Africa Conference Summary" />
+<meta name="twitter:site" content="@jesperdramsch" />
+<meta name="twitter:creator" content="@jesperdramsch" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Jesper Dramsch","url":"https://dramsch.net"},"description":"Summary of the conference and its instances throughout the years.","headline":"PyCon South Africa Conference Summary","url":"https://pythondeadlin.es/series/pycon-south-africa/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS Feed for Pythondeadlin.es" href="/feed.xml" />
+
+<link rel="alternate" hreflang="en" href="/series/pycon-south-africa/" title="">
+
+
+<link rel="alternate"  title="PyCon South Africa Conference Summary in Spanish" hreflang="es" href="/es/series/pycon-south-africa/">
+
+
+<link rel="alternate"  title="PyCon South Africa Conference Summary in German" hreflang="de" href="/de/series/pycon-south-africa/">
+
+
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1724441900" media="screen,projection">
+
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1724441900" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1724441900" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1724441900" media="screen,projection">
+
+<link rel="shortcut icon" href="/static/img/favicon.png">
+
+<style>
+
+.PY-tag {
+  color: #4B8BBE;
+}
+.PY-select {
+  color: #4B8BBE;
+  background: white;
+}
+.PY-select.active {
+    color: white;
+    background: #4B8BBE;
+}
+
+
+.SCIPY-tag {
+  color: #70163C;
+}
+.SCIPY-select {
+  color: #70163C;
+  background: white;
+}
+.SCIPY-select.active {
+    color: white;
+    background: #70163C;
+}
+
+
+.DATA-tag {
+  color: #849324;
+}
+.DATA-select {
+  color: #849324;
+  background: white;
+}
+.DATA-select.active {
+    color: white;
+    background: #849324;
+}
+
+
+.WEB-tag {
+  color: #0D0A0B;
+}
+.WEB-select {
+  color: #0D0A0B;
+  background: white;
+}
+.WEB-select.active {
+    color: white;
+    background: #0D0A0B;
+}
+
+
+.BIZ-tag {
+  color: #A8B9CC;
+}
+.BIZ-select {
+  color: #A8B9CC;
+  background: white;
+}
+.BIZ-select.active {
+    color: white;
+    background: #A8B9CC;
+}
+
+
+.GEO-tag {
+  color: #310c0c;
+}
+.GEO-select {
+  color: #310c0c;
+  background: white;
+}
+.GEO-select.active {
+    color: white;
+    background: #310c0c;
+}
+
+
+.CAMP-tag {
+  color: #303030;
+}
+.CAMP-select {
+  color: #303030;
+  background: white;
+}
+.CAMP-select.active {
+    color: white;
+    background: #303030;
+}
+
+
+.DAY-tag {
+  color: #3C1670;
+}
+.DAY-select {
+  color: #3C1670;
+  background: white;
+}
+.DAY-select.active {
+    color: white;
+    background: #3C1670;
+}
+
+
+  </style>
+
+<script defer data-domain="pythondeadlin.es" src="https://info.pythondeadlin.es/js/script.js"></script>
+<script type="text/javascript" src="/static/js/js-year-calendar.js"></script>
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/popper.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.countdown.min.js"></script>
+<script type="text/javascript" src="/static/js/luxon.js"></script>
+<script type="text/javascript" src="/static/js/store.min.js"></script>
+<script type="text/javascript" src="/static/js/ouical.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap-multiselect.min.js"></script>
+
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/mastodon.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("https://fosstodon.org/@PyConZA.rss")
+        .then(function (response) {
+          return response.text();
+        })
+        .then(function (xmlText) {
+          var parser = new DOMParser();
+          var xml = parser.parseFromString(xmlText, "text/xml");
+          var items = xml.querySelectorAll("item");
+          var feedContainer = document.getElementById("mastodon-feed");
+          var postLimit = 2; // Number of posts to display
+
+          for (var i = 0; i < postLimit && i < items.length; i++) {
+            var item = items[i];
+            var post = item.querySelector("description").textContent;
+            var link = item.querySelector("link").textContent;
+            var pubDate = item.querySelector("pubDate").textContent;
+
+            var feedItem = document.createElement("div");
+            feedItem.setAttribute("class", "timeline-item")
+            feedItem.innerHTML = '<div class="timeline-content">' + post + '</div><a href="' + link + '">' + pubDate + ' by PyCon South Africa</a>';
+            feedContainer.appendChild(feedItem);
+          }
+        })
+        .catch(function (error) {
+          console.log("Error fetching Mastodon RSS feed:", error);
+        });
+    });
+  </script>
+  
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<div class="container">
+		<div style="vertical-align: middle; padding-top: 8px">
+			<div>
+				<a class="navbar-brand" href="/de/" style="border-bottom: none; line-height: 0.1em">
+					Python Deadlines<br /><br />
+				</a>
+			</div>
+			<div style="color: white; font-size: x-small">
+				<a href="https://dramsch.net" class="pwc-link"> by Jesper Dramsch </a>
+			</div>
+		</div>
+
+		<button
+			class="navbar-toggler"
+			type="button"
+			data-toggle="collapse"
+			data-target="#navbar-toggler"
+			aria-controls="navbars-toggler"
+			aria-expanded="false"
+			aria-label="Toggle navigation"
+		>
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbar-toggler">
+			<ul class="navbar-nav mr-auto">
+				<li>
+					<a href="/de/" class="nav-link" style="border-bottom: none"
+						>Countdowns</a
+					>
+				</li>
+				<li>
+					<a href="/de/kalender/" class="nav-link" style="border-bottom: none">Kalender</a>
+				</li>
+				<li>
+					<a href="/de/karte/" class="nav-link" style="border-bottom: none">Karte</a>
+				</li>
+				<li>
+					<a href="/de/serien/" class="nav-link" style="border-bottom: none">Eventserien</a>
+				</li>
+				<li>
+					<a href="/de/ressourcen/" class="nav-link" style="border-bottom: none"
+						>Ressourcen</a
+					>
+				</li>
+			</ul>
+
+			<form class="form-inline my-2 my-lg-0" action="/de/suche/" method="get">
+				<input
+					type="search"
+					id="search-box"
+					name="query"
+					class="form-control mr-sm-2"
+					placeholder="Suche"
+					aria-label="Search"
+				/>
+				<button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Suche</button>
+			</form>
+			<ul class="navbar-nav ml-auto my-2 my-lg-0">
+				<li class="nav-item dropdown">
+					<a
+						class="nav-link dropdown-toggle"
+						href="#"
+						id="navbarDropdownMenuLink"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						de
+					</a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+						<h6 class="dropdown-header">Wähle Sprache</h6>
+						
+						<a
+							class="dropdown-item"
+							href="/series/pycon-south-africa/"
+							>English</a
+						>
+						 
+						<a
+							class="dropdown-item"
+							href="/es/series/pycon-south-africa/"
+							>Español</a
+						>
+						 
+						<a
+							class="dropdown-item active"
+							href="/de/series/pycon-south-africa/"
+							>Deutsch</a
+						>
+						
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+  
+  <div class="container">
+    <div class="page-header" id="conf-title">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="breadcrumbs">
+	 
+	<a href="/de/">Home</a>
+	   /
+	<a
+		href="/series/"
+		>Series</a
+	>
+	   / <a href="#">PyCon South Africa Conference Summary</a>  
+</div>
+
+          <h1>
+            <span id="conf-title-href" href="/summary/pycon-south-africa/">PyCon South Africa Conference Summary</span>
+            <span id="twitter-box"><a href="https://twitter.com/share" class="twitter-share-button"
+                data-text="Conference instances for the #PyCon South Africa conference!" data-show-count="false"
+                style="font-size:13px;">Tweet</a>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </span>
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12" id="conf-subs">
+          <span id="conf-subs" title="Conference subjects">
+            
+            
+            <span class="PY-tag badge badge-light conf-sub conf-PY">
+              
+                
+                  General Python
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </span>
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div id="page-content">
+        <div id="conf-key-facts" class="row">
+          <div class="col-12 col-md-6">
+            <div>
+              <img src="/static/img/203-earth.svg" class="badge-link" alt="Earth Icon" width="16" height="16" />
+              <a id="conf-website" target="_blank" href="https://za.pycon.org/">https://za.pycon.org/</a>
+            </div>
+            
+              <div>
+                <img src="/static/img/407-twitter.svg" class="badge-link" alt="Twitter icon" width="16" height="16" />
+                <a id="conf-twitter" target="_blank" href="https://twitter.com/PyConZA">@PyConZA</a>
+              </div>
+            
+            
+              <div>
+                <img src="/static/img/407-mastodon.svg" class="badge-link" alt="Mastodon icon" width="16" height="16" />
+                <a id="conf-mastodon" target="_blank" href="https://fosstodon.org/@PyConZA">Mastodon</a>
+              </div>
+            
+            </div>
+            <div class="col-12 col-md-6">
+            
+              <!-- Mastodon timeline -->
+              <div class="meta">Mastodon Posts by PyCon South Africa:</div>
+              <div id="mastodon-feed"></div>
+              <a href="https://fosstodon.org/@PyConZA">See all Mastodon posts for PyCon South Africa</a>
+            
+          </div>
+        </div>
+        <hr />
+      <div id="all_confs">
+        
+          
+          <div id="pycon-south-africa-2024"
+            class="ConfItem  PY-conf ">
+            <div class="row conf-row">
+              <div class="col-6">
+                <span class="conf-title">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2024/">PyCon South Africa 2024</a>
+                </span>
+                <span class="conf-title-small">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2024/">PyCon South Africa '24</a>
+                </span>
+                <span class="conf-title-icon">
+                  <a title="Conference Website" href="https://za.pycon.org/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+                  &ZeroWidthSpace;
+                </span>
+                
+                  <span class="conf-title-icon">
+                    <a title="Call for Participation for PyCon South Africa" href="https://za.pycon.org/talks/how-to-submit-a-talk/" target="_blank"><img
+                        src="/static/img/035-file-text.svg" class="badge-link"
+                        alt="Link to Call for Participation for PyCon South Africa" width="16" height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
+                
+                
+                
+                  <span class="conf-title-icon">
+                    <a title="Mastodon for PyCon South Africa" href="https://fosstodon.org/@PyConZA" target="_blank"><img
+                        src="/static/img/407-mastodon.svg" class="badge-link" alt="Link to Conference Mastodon" width="16"
+                        height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
+              </div>
+              <div class="col-6">
+                <span class="timer"></span>
+                <span class="timer-small"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="meta">
+
+                  <span class="conf-date">2. – 6. Oktober 2024.</span>
+                  <span class="conf-place">
+                    
+                      <a href="http://maps.google.com/?q=Rondebosch, South Africa">Rondebosch, South Africa</a>
+                      
+                    
+                  </span>
+                </div>
+                
+
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="deadline">
+                  <div>Deadline:
+                    <span class="deadline-time">Sunday, 18 August 2024</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
+              </div>
+              <div class="col-6">
+                <div class="calendar"></div>
+              </div>
+            </div>
+            <hr>
+          </div>
+        
+          
+          <div id="pycon-south-africa-2023"
+            class="ConfItem  PY-conf ">
+            <div class="row conf-row">
+              <div class="col-6">
+                <span class="conf-title">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2023/">PyCon South Africa 2023</a>
+                </span>
+                <span class="conf-title-small">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2023/">PyCon South Africa '23</a>
+                </span>
+                <span class="conf-title-icon">
+                  <a title="Conference Website" href="https://za.pycon.org/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+                  &ZeroWidthSpace;
+                </span>
+                
+                  <span class="conf-title-icon">
+                    <a title="Call for Participation for PyCon South Africa" href="https://web.archive.org/web/20231004163314/https://za.pycon.org/talks/how-to-submit-a-talk/" target="_blank"><img
+                        src="/static/img/035-file-text.svg" class="badge-link"
+                        alt="Link to Call for Participation for PyCon South Africa" width="16" height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
+                
+                
+                
+                  <span class="conf-title-icon">
+                    <a title="Mastodon for PyCon South Africa" href="https://fosstodon.org/@PyConZA" target="_blank"><img
+                        src="/static/img/407-mastodon.svg" class="badge-link" alt="Link to Conference Mastodon" width="16"
+                        height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
+              </div>
+              <div class="col-6">
+                <span class="timer"></span>
+                <span class="timer-small"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="meta">
+
+                  <span class="conf-date">5. – 6. Oktober 2023.</span>
+                  <span class="conf-place">
+                    
+                      <a href="http://maps.google.com/?q=Durban, South Africa">Durban, South Africa</a>
+                      
+                    
+                  </span>
+                </div>
+                
+
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="deadline">
+                  <div>Deadline:
+                    <span class="deadline-time">Friday, 18 August 2023</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
+              </div>
+              <div class="col-6">
+                <div class="calendar"></div>
+              </div>
+            </div>
+            <hr>
+          </div>
+        
+          
+          <div id="pycon-south-africa-2022"
+            class="ConfItem  PY-conf ">
+            <div class="row conf-row">
+              <div class="col-6">
+                <span class="conf-title">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2022/">PyCon South Africa 2022</a>
+                </span>
+                <span class="conf-title-small">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2022/">PyCon South Africa '22</a>
+                </span>
+                <span class="conf-title-icon">
+                  <a title="Conference Website" href="https://za.pycon.org/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+                  &ZeroWidthSpace;
+                </span>
+                
+                
+                
+                
+              </div>
+              <div class="col-6">
+                <span class="timer"></span>
+                <span class="timer-small"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="meta">
+
+                  <span class="conf-date">13. – 14. Oktober 2022.</span>
+                  <span class="conf-place">
+                    
+                      <a href="http://maps.google.com/?q=Durban, South Africa">Durban, South Africa</a>
+                      
+                    
+                  </span>
+                </div>
+                
+
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="deadline">
+                  <div>Deadline:
+                    <span class="deadline-time">Friday, 19 August 2022</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
+              </div>
+              <div class="col-6">
+                <div class="calendar"></div>
+              </div>
+            </div>
+            <hr>
+          </div>
+        
+          
+          <div id="pycon-south-africa-2021"
+            class="ConfItem  PY-conf ">
+            <div class="row conf-row">
+              <div class="col-6">
+                <span class="conf-title">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2021/">PyCon South Africa 2021</a>
+                </span>
+                <span class="conf-title-small">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2021/">PyCon South Africa '21</a>
+                </span>
+                <span class="conf-title-icon">
+                  <a title="Conference Website" href="https://2021.za.pycon.org/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+                  &ZeroWidthSpace;
+                </span>
+                
+                
+                
+                
+              </div>
+              <div class="col-6">
+                <span class="timer"></span>
+                <span class="timer-small"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="meta">
+
+                  <span class="conf-date">7. – 8. Oktober 2021.</span>
+                  <span class="conf-place">
+                    
+                      <a href="#">Online</a>
+                    
+                  </span>
+                </div>
+                
+
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="deadline">
+                  <div>Deadline:
+                    <span class="deadline-time">Monday, 16 August 2021</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
+              </div>
+              <div class="col-6">
+                <div class="calendar"></div>
+              </div>
+            </div>
+            <hr>
+          </div>
+        
+          
+          <div id="pycon-south-africa-2019"
+            class="ConfItem  PY-conf ">
+            <div class="row conf-row">
+              <div class="col-6">
+                <span class="conf-title">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2019/">PyCon South Africa 2019</a>
+                </span>
+                <span class="conf-title-small">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2019/">PyCon South Africa '19</a>
+                </span>
+                <span class="conf-title-icon">
+                  <a title="Conference Website" href="https://web.archive.org/web/20191008045812/https://za.pycon.org/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+                  &ZeroWidthSpace;
+                </span>
+                
+                  <span class="conf-title-icon">
+                    <a title="Call for Participation for PyCon South Africa" href="https://2019.za.pycon.org/archived/submit-talk/" target="_blank"><img
+                        src="/static/img/035-file-text.svg" class="badge-link"
+                        alt="Link to Call for Participation for PyCon South Africa" width="16" height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
+                
+                
+                
+              </div>
+              <div class="col-6">
+                <span class="timer"></span>
+                <span class="timer-small"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="meta">
+
+                  <span class="conf-date">9. – 13. Oktober 2019.</span>
+                  <span class="conf-place">
+                    
+                      <a href="http://maps.google.com/?q=Johannesburg, South Africa">Johannesburg, South Africa</a>
+                      
+                    
+                  </span>
+                </div>
+                
+
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="deadline">
+                  <div>Deadline:
+                    <span class="deadline-time">Friday, 30 August 2019</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
+              </div>
+              <div class="col-6">
+                <div class="calendar"></div>
+              </div>
+            </div>
+            <hr>
+          </div>
+        
+          
+          <div id="pycon-south-africa-2018"
+            class="ConfItem  PY-conf ">
+            <div class="row conf-row">
+              <div class="col-6">
+                <span class="conf-title">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2018/">PyCon South Africa 2018</a>
+                </span>
+                <span class="conf-title-small">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2018/">PyCon South Africa '18</a>
+                </span>
+                <span class="conf-title-icon">
+                  <a title="Conference Website" href="https://web.archive.org/web/20180419141939/https://za.pycon.org/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+                  &ZeroWidthSpace;
+                </span>
+                
+                  <span class="conf-title-icon">
+                    <a title="Call for Participation for PyCon South Africa" href="https://2018.za.pycon.org/archived/submit-talk/" target="_blank"><img
+                        src="/static/img/035-file-text.svg" class="badge-link"
+                        alt="Link to Call for Participation for PyCon South Africa" width="16" height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
+                
+                
+                
+              </div>
+              <div class="col-6">
+                <span class="timer"></span>
+                <span class="timer-small"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="meta">
+
+                  <span class="conf-date">10. – 14. Oktober 2018.</span>
+                  <span class="conf-place">
+                    
+                      <a href="http://maps.google.com/?q=Johannesburg, South Africa">Johannesburg, South Africa</a>
+                      
+                    
+                  </span>
+                </div>
+                
+
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="deadline">
+                  <div>Deadline:
+                    <span class="deadline-time">Monday, 17 September 2018</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
+              </div>
+              <div class="col-6">
+                <div class="calendar"></div>
+              </div>
+            </div>
+            <hr>
+          </div>
+        
+          
+          <div id="pycon-south-africa-2017"
+            class="ConfItem  PY-conf ">
+            <div class="row conf-row">
+              <div class="col-6">
+                <span class="conf-title">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2017/">PyCon South Africa 2017</a>
+                </span>
+                <span class="conf-title-small">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2017/">PyCon South Africa '17</a>
+                </span>
+                <span class="conf-title-icon">
+                  <a title="Conference Website" href="https://web.archive.org/web/20170801125832/https://za.pycon.org/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+                  &ZeroWidthSpace;
+                </span>
+                
+                  <span class="conf-title-icon">
+                    <a title="Call for Participation for PyCon South Africa" href="https://web.archive.org/web/20210815075207/https://2017.za.pycon.org/archived/submit-talk/" target="_blank"><img
+                        src="/static/img/035-file-text.svg" class="badge-link"
+                        alt="Link to Call for Participation for PyCon South Africa" width="16" height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
+                
+                
+                
+              </div>
+              <div class="col-6">
+                <span class="timer"></span>
+                <span class="timer-small"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="meta">
+
+                  <span class="conf-date">4. – 8. Oktober 2017.</span>
+                  <span class="conf-place">
+                    
+                      <a href="http://maps.google.com/?q=Cape Town, South Africa">Cape Town, South Africa</a>
+                      
+                    
+                  </span>
+                </div>
+                
+
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="deadline">
+                  <div>Deadline:
+                    <span class="deadline-time">Sunday,  1 October 2017</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
+              </div>
+              <div class="col-6">
+                <div class="calendar"></div>
+              </div>
+            </div>
+            <hr>
+          </div>
+        
+          
+          <div id="pycon-south-africa-2016"
+            class="ConfItem  PY-conf ">
+            <div class="row conf-row">
+              <div class="col-6">
+                <span class="conf-title">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2016/">PyCon South Africa 2016</a>
+                </span>
+                <span class="conf-title-small">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2016/">PyCon South Africa '16</a>
+                </span>
+                <span class="conf-title-icon">
+                  <a title="Conference Website" href="https://web.archive.org/web/20160422045615/https://za.pycon.org/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+                  &ZeroWidthSpace;
+                </span>
+                
+                
+                
+                
+              </div>
+              <div class="col-6">
+                <span class="timer"></span>
+                <span class="timer-small"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="meta">
+
+                  <span class="conf-date">6. – 9. Oktober 2016.</span>
+                  <span class="conf-place">
+                    
+                      <a href="http://maps.google.com/?q=Johannesburg, South Africa">Johannesburg, South Africa</a>
+                      
+                    
+                  </span>
+                </div>
+                
+
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="deadline">
+                  <div>Deadline:
+                    <span class="deadline-time">Saturday,  1 October 2016</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
+              </div>
+              <div class="col-6">
+                <div class="calendar"></div>
+              </div>
+            </div>
+            <hr>
+          </div>
+        
+          
+          <div id="pycon-south-africa-2015"
+            class="ConfItem  PY-conf ">
+            <div class="row conf-row">
+              <div class="col-6">
+                <span class="conf-title">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2015/">PyCon South Africa 2015</a>
+                </span>
+                <span class="conf-title-small">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2015/">PyCon South Africa '15</a>
+                </span>
+                <span class="conf-title-icon">
+                  <a title="Conference Website" href="https://web.archive.org/web/20150924233205/https://za.pycon.org/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+                  &ZeroWidthSpace;
+                </span>
+                
+                
+                
+                
+              </div>
+              <div class="col-6">
+                <span class="timer"></span>
+                <span class="timer-small"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="meta">
+
+                  <span class="conf-date">1. – 4. Oktober 2015.</span>
+                  <span class="conf-place">
+                    
+                      <a href="http://maps.google.com/?q=Johannesburg, South Africa">Johannesburg, South Africa</a>
+                      
+                    
+                  </span>
+                </div>
+                
+
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="deadline">
+                  <div>Deadline:
+                    <span class="deadline-time">Thursday,  1 October 2015</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
+              </div>
+              <div class="col-6">
+                <div class="calendar"></div>
+              </div>
+            </div>
+            <hr>
+          </div>
+        
+          
+          <div id="pycon-south-africa-2014"
+            class="ConfItem  PY-conf ">
+            <div class="row conf-row">
+              <div class="col-6">
+                <span class="conf-title">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2014/">PyCon South Africa 2014</a>
+                </span>
+                <span class="conf-title-small">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2014/">PyCon South Africa '14</a>
+                </span>
+                <span class="conf-title-icon">
+                  <a title="Conference Website" href="https://web.archive.org/web/20140712234719/https://za.pycon.org/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+                  &ZeroWidthSpace;
+                </span>
+                
+                
+                
+                
+              </div>
+              <div class="col-6">
+                <span class="timer"></span>
+                <span class="timer-small"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="meta">
+
+                  <span class="conf-date">2. – 6. Oktober 2014.</span>
+                  <span class="conf-place">
+                    
+                      <a href="http://maps.google.com/?q=Johannesburg, South Africa">Johannesburg, South Africa</a>
+                      
+                    
+                  </span>
+                </div>
+                
+
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="deadline">
+                  <div>Deadline:
+                    <span class="deadline-time">Monday,  1 September 2014</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
+              </div>
+              <div class="col-6">
+                <div class="calendar"></div>
+              </div>
+            </div>
+            <hr>
+          </div>
+        
+          
+          <div id="pycon-south-africa-2013"
+            class="ConfItem  PY-conf ">
+            <div class="row conf-row">
+              <div class="col-6">
+                <span class="conf-title">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2013/">PyCon South Africa 2013</a>
+                </span>
+                <span class="conf-title-small">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2013/">PyCon South Africa '13</a>
+                </span>
+                <span class="conf-title-icon">
+                  <a title="Conference Website" href="https://web.archive.org/web/20130925120247/http://za.pycon.org/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+                  &ZeroWidthSpace;
+                </span>
+                
+                
+                
+                
+              </div>
+              <div class="col-6">
+                <span class="timer"></span>
+                <span class="timer-small"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="meta">
+
+                  <span class="conf-date">3. – 4. Oktober 2013.</span>
+                  <span class="conf-place">
+                    
+                      <a href="http://maps.google.com/?q=Cape Town, South Africa">Cape Town, South Africa</a>
+                      
+                    
+                  </span>
+                </div>
+                
+
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="deadline">
+                  <div>Deadline:
+                    <span class="deadline-time">Sunday,  1 September 2013</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
+              </div>
+              <div class="col-6">
+                <div class="calendar"></div>
+              </div>
+            </div>
+            <hr>
+          </div>
+        
+          
+          <div id="pycon-south-africa-2012"
+            class="ConfItem  PY-conf ">
+            <div class="row conf-row">
+              <div class="col-6">
+                <span class="conf-title">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2012/">PyCon South Africa 2012</a>
+                </span>
+                <span class="conf-title-small">
+                  <a title="Deadline Details"
+                    href="/de/conference/pycon-south-africa-2012/">PyCon South Africa '12</a>
+                </span>
+                <span class="conf-title-icon">
+                  <a title="Conference Website" href="https://web.archive.org/web/20120825164659/http://za.pycon.org/#&panel1-3" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+                  &ZeroWidthSpace;
+                </span>
+                
+                
+                
+                
+              </div>
+              <div class="col-6">
+                <span class="timer"></span>
+                <span class="timer-small"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="meta">
+
+                  <span class="conf-date">4. – 5. Oktober 2012.</span>
+                  <span class="conf-place">
+                    
+                      <a href="http://maps.google.com/?q=Cape Town, South Africa">Cape Town, South Africa</a>
+                      
+                    
+                  </span>
+                </div>
+                
+
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="deadline">
+                  <div>Deadline:
+                    <span class="deadline-time">Saturday, 15 September 2012</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
+              </div>
+              <div class="col-6">
+                <div class="calendar"></div>
+              </div>
+            </div>
+            <hr>
+          </div>
+        
+    </div>
+    
+  </div>
+    <footer>
+      <hr>
+<div class="row">
+  <div class="col-12 col-sm-12">
+    <p><a href="">pythondeadlin.es</a> wird seit 2022 von <a href="https://dramsch.net/">Jesper Dramsch</a> gepflegt. <br />Es wurde inspiriert (und ursprünglich geschrieben) von der fantastischen <a href="https://aideadlin.es">aideadlin.es</a>. Keine Gewähr für die Richtigkeit, Fehler bitte korrigieren durch <a href="https://github.com/JesperDramsch/python-deadlines/pulls/">Senden eines Pull-Requests</a>.</p>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-12 col-sm-12">
+    <div class="footer-links">
+      <p><a href="/de/legal/impressum/">Impressum</a> &amp;
+<a href="">Datenschutzerklärung</a>
+von <a href="https://dramsch.net">Jesper Dramsch,</a> Ersteller von <a href="https://ml.recipes">ML.recipes</a>, &lt;a href= „https://data-science-gui.de“&gt;data-science-gui.de&lt;/a&gt;, <a href="https://late.email">Late to the Party 🎉</a> und der <a href="https://latent.club">Latent Space Community</a>.</p>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+    </footer>
+    <br><br>
+  </div>
+  <script type="text/javascript" charset="utf-8">
+    $(function () {
+
+      var DateTime = luxon.DateTime;
+      var today = DateTime.now();
+
+      // Make sure this is >= no. of subs
+      // Currently not used
+      var colors = ['#341f97', '#ee5253', '#2e86de',
+        '#ff9f43', '#10ac84', '#222f3e']
+
+
+      
+var subs = [];
+var _all_subs = [];
+// Get all subs
+var conf_type_data = [{"name":"General Python","sub":"PY","color":"#4B8BBE"},{"name":"Scientific Python","sub":"SCIPY","color":"#70163C"},{"name":"Python for Data","sub":"DATA","color":"#849324"},{"name":"Python for Web","sub":"WEB","color":"#0D0A0B"},{"name":"Python for Business","sub":"BIZ","color":"#A8B9CC"},{"name":"Python for Earth","sub":"GEO","color":"#310c0c"},{"name":"Python Camps","sub":"CAMP","color":"#303030"},{"name":"Python Day","sub":"DAY","color":"#3C1670"}];
+var sub2name = {}; var name2sub = {};
+for (var i = 0; i < conf_type_data.length; i++) {
+    _all_subs[i] = conf_type_data[i]['sub'];
+    sub2name[conf_type_data[i]['sub']] = conf_type_data[i]['name'];
+    name2sub[conf_type_data[i]['name']] = conf_type_data[i]['sub'];
+}
+const all_subs = _all_subs;
+
+      function update_filtering(data) {
+	var page_url = window.location.pathname;
+	store.set('pythondeadlin.es-subs', { subs: data.subs, timestamp: new Date().getTime() });
+
+	$('.confItem').hide();
+
+	// Loop through selected values in data.subs
+	for (const s of data.subs) {
+		// Show elements with class .s-conf (where s is the selected value)
+		$('.' + s + '-conf').show();
+	}
+
+	if (data.subs.length === 0 || data.subs.length == data.all_subs.length) {
+		window.history.pushState('', '', page_url);
+	} else {
+		// Join the selected values into a query parameter
+		window.history.pushState('', '', page_url + '?sub=' + data.subs.join());
+	}
+}
+
+function isDataExpired(data) {
+	const EXPIRATION_PERIOD = 1 * 17 * 60 * 60 * 1000; // 1 day in milliseconds
+	const now = new Date().getTime();
+	if (data.timestamp && now - data.timestamp > EXPIRATION_PERIOD) {
+		return true;
+	}
+	return false;
+}
+
+function createCalendarFromObject(data) {
+	return createCalendar({
+		options: {
+			class: 'calendar-obj',
+
+			// You can pass an ID. If you don't, one will be generated for you
+			id: data.id,
+		},
+		data: {
+			// Event title
+			title: data.title,
+
+			// Event start date
+			start: data.start_date,
+
+			// Event duration (minutes)
+			duration: 60,
+
+			// You can also choose to set an end time
+			// If an end time is set, this will take precedence over duration
+			end: data.end_date,
+
+			// Event Address
+			address: data.place,
+
+			// Event Description
+			description: '<a href=' + data.link + '>' + data.title + '</a>',
+		},
+	});
+}
+
+      // Multi-select handler
+$('#subject-select').multiselect({
+	includeSelectAllOption: true,
+	numberDisplayed: 5,
+	onChange: function (option, checked, select) {
+		var csub = $(option).val();
+		if (checked == true) {
+			if (subs.indexOf(csub) < 0) subs.push(csub);
+		} else {
+			var idx = subs.indexOf(csub);
+			if (idx >= 0) subs.splice(idx, 1);
+			// In case a conf with multiple types (including this type) is wrongly hid, show all confs with at least one checked type.
+			for (var i = 0; i < subs.length; i++) {
+				// $('.' + subs[i] + '-conf').show();
+			}
+		}
+		update_filtering({ subs: subs, all_subs: all_subs });
+	},
+	onSelectAll: function (options) {
+		subs = all_subs;
+		update_filtering({ subs: subs, all_subs: all_subs });
+	},
+	onDeselectAll: function (options) {
+		subs = [];
+		update_filtering({ subs: subs, all_subs: all_subs });
+	},
+	buttonText: function (options, select) {
+		if (options.length === 0) {
+			return 'Keine Konferenz ausgewählt';
+		} else if (options.length === select.children('option').length) {
+			return 'Alle Konferenzen ausgewählt';
+		} else {
+			var labels = [];
+			options.each(function () {
+				if ($(this).attr('value') !== undefined) {
+					labels.push($(this).attr('value').slice(0, 3));
+				} else {
+					labels.push($(this).html());
+				}
+			});
+			return labels.join(', ') + '';
+		}
+	},
+	buttonTitle: function (options, select) {
+		return '';
+	},
+	optionClass: function (element) {
+		return $(element).val() + '-select';
+	},
+});
+
+
+      // Set time zone to local timezone on web copy
+      $('.local-timezone').text(today.toFormat('z'));
+
+      
+        
+        
+        
+          $('#pycon-south-africa-2024 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2024-08-18 23:59:00", { zone: "Africa/Johannesburg" });
+            var confDate = DateTime.fromSQL("2024-10-02", { zone: "Africa/Johannesburg" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2024-08-18 23:59:00");
+            var confDate = DateTime.fromSQL("2024-10-02");
+            console.log("Invalid timezone in pycon-south-africa-2024. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-south-africa-2024 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-south-africa-2024 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-south-africa-2024 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-south-africa-2024',
+              title: 'PyCon South Africa 2024 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Rondebosch, South Africa',
+              link: 'https://za.pycon.org/'
+            });
+            document.querySelector('#pycon-south-africa-2024 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-south-africa-2024 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-south-africa-2024').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-south-africa-2024').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-south-africa-2024').addClass('pastcfp');
+            $('#pycon-south-africa-2024 .timer').replaceWith($('#pycon-south-africa-2024 .deadline'));
+            $('#pycon-south-africa-2024 .timer-small').replaceWith($('#pycon-south-africa-2024 .deadline'));
+            $('#pycon-south-africa-2024 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-south-africa-2024').addClass('pastconf');
+            $('#pycon-south-africa-2024 .timer').replaceWith($('#pycon-south-africa-2024 .deadline'));
+            $('#pycon-south-africa-2024 .timer-small').replaceWith($('#pycon-south-africa-2024 .deadline'));
+            $('#pycon-south-africa-2024 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pycon-south-africa-2023 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2023-08-18 23:59:00", { zone: "Africa/Johannesburg" });
+            var confDate = DateTime.fromSQL("2023-10-05", { zone: "Africa/Johannesburg" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2023-08-18 23:59:00");
+            var confDate = DateTime.fromSQL("2023-10-05");
+            console.log("Invalid timezone in pycon-south-africa-2023. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-south-africa-2023 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-south-africa-2023 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-south-africa-2023 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-south-africa-2023',
+              title: 'PyCon South Africa 2023 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Durban, South Africa',
+              link: 'https://za.pycon.org/'
+            });
+            document.querySelector('#pycon-south-africa-2023 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-south-africa-2023 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-south-africa-2023').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-south-africa-2023').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-south-africa-2023').addClass('pastcfp');
+            $('#pycon-south-africa-2023 .timer').replaceWith($('#pycon-south-africa-2023 .deadline'));
+            $('#pycon-south-africa-2023 .timer-small').replaceWith($('#pycon-south-africa-2023 .deadline'));
+            $('#pycon-south-africa-2023 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-south-africa-2023').addClass('pastconf');
+            $('#pycon-south-africa-2023 .timer').replaceWith($('#pycon-south-africa-2023 .deadline'));
+            $('#pycon-south-africa-2023 .timer-small').replaceWith($('#pycon-south-africa-2023 .deadline'));
+            $('#pycon-south-africa-2023 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pycon-south-africa-2022 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2022-08-19 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2022-10-13", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2022-08-19 23:59:00");
+            var confDate = DateTime.fromSQL("2022-10-13");
+            console.log("Invalid timezone in pycon-south-africa-2022. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-south-africa-2022 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-south-africa-2022 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-south-africa-2022 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-south-africa-2022',
+              title: 'PyCon South Africa 2022 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Durban, South Africa',
+              link: 'https://za.pycon.org/'
+            });
+            document.querySelector('#pycon-south-africa-2022 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-south-africa-2022 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-south-africa-2022').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-south-africa-2022').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-south-africa-2022').addClass('pastcfp');
+            $('#pycon-south-africa-2022 .timer').replaceWith($('#pycon-south-africa-2022 .deadline'));
+            $('#pycon-south-africa-2022 .timer-small').replaceWith($('#pycon-south-africa-2022 .deadline'));
+            $('#pycon-south-africa-2022 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-south-africa-2022').addClass('pastconf');
+            $('#pycon-south-africa-2022 .timer').replaceWith($('#pycon-south-africa-2022 .deadline'));
+            $('#pycon-south-africa-2022 .timer-small').replaceWith($('#pycon-south-africa-2022 .deadline'));
+            $('#pycon-south-africa-2022 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pycon-south-africa-2021 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2021-08-16 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2021-10-07", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2021-08-16 23:59:00");
+            var confDate = DateTime.fromSQL("2021-10-07");
+            console.log("Invalid timezone in pycon-south-africa-2021. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-south-africa-2021 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-south-africa-2021 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-south-africa-2021 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-south-africa-2021',
+              title: 'PyCon South Africa 2021 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Online',
+              link: 'https://2021.za.pycon.org/'
+            });
+            document.querySelector('#pycon-south-africa-2021 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-south-africa-2021 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-south-africa-2021').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-south-africa-2021').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-south-africa-2021').addClass('pastcfp');
+            $('#pycon-south-africa-2021 .timer').replaceWith($('#pycon-south-africa-2021 .deadline'));
+            $('#pycon-south-africa-2021 .timer-small').replaceWith($('#pycon-south-africa-2021 .deadline'));
+            $('#pycon-south-africa-2021 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-south-africa-2021').addClass('pastconf');
+            $('#pycon-south-africa-2021 .timer').replaceWith($('#pycon-south-africa-2021 .deadline'));
+            $('#pycon-south-africa-2021 .timer-small').replaceWith($('#pycon-south-africa-2021 .deadline'));
+            $('#pycon-south-africa-2021 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pycon-south-africa-2019 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2019-08-30 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2019-10-09", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2019-08-30 23:59:00");
+            var confDate = DateTime.fromSQL("2019-10-09");
+            console.log("Invalid timezone in pycon-south-africa-2019. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-south-africa-2019 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-south-africa-2019 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-south-africa-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-south-africa-2019',
+              title: 'PyCon South Africa 2019 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Johannesburg, South Africa',
+              link: 'https://web.archive.org/web/20191008045812/https://za.pycon.org/'
+            });
+            document.querySelector('#pycon-south-africa-2019 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-south-africa-2019 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-south-africa-2019').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-south-africa-2019').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-south-africa-2019').addClass('pastcfp');
+            $('#pycon-south-africa-2019 .timer').replaceWith($('#pycon-south-africa-2019 .deadline'));
+            $('#pycon-south-africa-2019 .timer-small').replaceWith($('#pycon-south-africa-2019 .deadline'));
+            $('#pycon-south-africa-2019 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-south-africa-2019').addClass('pastconf');
+            $('#pycon-south-africa-2019 .timer').replaceWith($('#pycon-south-africa-2019 .deadline'));
+            $('#pycon-south-africa-2019 .timer-small').replaceWith($('#pycon-south-africa-2019 .deadline'));
+            $('#pycon-south-africa-2019 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pycon-south-africa-2018 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2018-09-17 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2018-10-10", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2018-09-17 23:59:00");
+            var confDate = DateTime.fromSQL("2018-10-10");
+            console.log("Invalid timezone in pycon-south-africa-2018. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-south-africa-2018 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-south-africa-2018 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-south-africa-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-south-africa-2018',
+              title: 'PyCon South Africa 2018 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Johannesburg, South Africa',
+              link: 'https://web.archive.org/web/20180419141939/https://za.pycon.org/'
+            });
+            document.querySelector('#pycon-south-africa-2018 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-south-africa-2018 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-south-africa-2018').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-south-africa-2018').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-south-africa-2018').addClass('pastcfp');
+            $('#pycon-south-africa-2018 .timer').replaceWith($('#pycon-south-africa-2018 .deadline'));
+            $('#pycon-south-africa-2018 .timer-small').replaceWith($('#pycon-south-africa-2018 .deadline'));
+            $('#pycon-south-africa-2018 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-south-africa-2018').addClass('pastconf');
+            $('#pycon-south-africa-2018 .timer').replaceWith($('#pycon-south-africa-2018 .deadline'));
+            $('#pycon-south-africa-2018 .timer-small').replaceWith($('#pycon-south-africa-2018 .deadline'));
+            $('#pycon-south-africa-2018 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pycon-south-africa-2017 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2017-10-01 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2017-10-04", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2017-10-01 23:59:00");
+            var confDate = DateTime.fromSQL("2017-10-04");
+            console.log("Invalid timezone in pycon-south-africa-2017. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-south-africa-2017 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-south-africa-2017 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-south-africa-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-south-africa-2017',
+              title: 'PyCon South Africa 2017 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Cape Town, South Africa',
+              link: 'https://web.archive.org/web/20170801125832/https://za.pycon.org/'
+            });
+            document.querySelector('#pycon-south-africa-2017 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-south-africa-2017 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-south-africa-2017').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-south-africa-2017').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-south-africa-2017').addClass('pastcfp');
+            $('#pycon-south-africa-2017 .timer').replaceWith($('#pycon-south-africa-2017 .deadline'));
+            $('#pycon-south-africa-2017 .timer-small').replaceWith($('#pycon-south-africa-2017 .deadline'));
+            $('#pycon-south-africa-2017 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-south-africa-2017').addClass('pastconf');
+            $('#pycon-south-africa-2017 .timer').replaceWith($('#pycon-south-africa-2017 .deadline'));
+            $('#pycon-south-africa-2017 .timer-small').replaceWith($('#pycon-south-africa-2017 .deadline'));
+            $('#pycon-south-africa-2017 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pycon-south-africa-2016 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2016-10-01 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2016-10-06", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2016-10-01 23:59:00");
+            var confDate = DateTime.fromSQL("2016-10-06");
+            console.log("Invalid timezone in pycon-south-africa-2016. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-south-africa-2016 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-south-africa-2016 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-south-africa-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-south-africa-2016',
+              title: 'PyCon South Africa 2016 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Johannesburg, South Africa',
+              link: 'https://web.archive.org/web/20160422045615/https://za.pycon.org/'
+            });
+            document.querySelector('#pycon-south-africa-2016 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-south-africa-2016 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-south-africa-2016').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-south-africa-2016').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-south-africa-2016').addClass('pastcfp');
+            $('#pycon-south-africa-2016 .timer').replaceWith($('#pycon-south-africa-2016 .deadline'));
+            $('#pycon-south-africa-2016 .timer-small').replaceWith($('#pycon-south-africa-2016 .deadline'));
+            $('#pycon-south-africa-2016 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-south-africa-2016').addClass('pastconf');
+            $('#pycon-south-africa-2016 .timer').replaceWith($('#pycon-south-africa-2016 .deadline'));
+            $('#pycon-south-africa-2016 .timer-small').replaceWith($('#pycon-south-africa-2016 .deadline'));
+            $('#pycon-south-africa-2016 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pycon-south-africa-2015 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2015-10-01 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2015-10-01", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2015-10-01 23:59:00");
+            var confDate = DateTime.fromSQL("2015-10-01");
+            console.log("Invalid timezone in pycon-south-africa-2015. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-south-africa-2015 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-south-africa-2015 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-south-africa-2015 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-south-africa-2015',
+              title: 'PyCon South Africa 2015 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Johannesburg, South Africa',
+              link: 'https://web.archive.org/web/20150924233205/https://za.pycon.org/'
+            });
+            document.querySelector('#pycon-south-africa-2015 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-south-africa-2015 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-south-africa-2015').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-south-africa-2015').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-south-africa-2015').addClass('pastcfp');
+            $('#pycon-south-africa-2015 .timer').replaceWith($('#pycon-south-africa-2015 .deadline'));
+            $('#pycon-south-africa-2015 .timer-small').replaceWith($('#pycon-south-africa-2015 .deadline'));
+            $('#pycon-south-africa-2015 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-south-africa-2015').addClass('pastconf');
+            $('#pycon-south-africa-2015 .timer').replaceWith($('#pycon-south-africa-2015 .deadline'));
+            $('#pycon-south-africa-2015 .timer-small').replaceWith($('#pycon-south-africa-2015 .deadline'));
+            $('#pycon-south-africa-2015 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pycon-south-africa-2014 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2014-09-01 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2014-10-02", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2014-09-01 23:59:00");
+            var confDate = DateTime.fromSQL("2014-10-02");
+            console.log("Invalid timezone in pycon-south-africa-2014. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-south-africa-2014 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-south-africa-2014 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-south-africa-2014 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-south-africa-2014',
+              title: 'PyCon South Africa 2014 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Johannesburg, South Africa',
+              link: 'https://web.archive.org/web/20140712234719/https://za.pycon.org/'
+            });
+            document.querySelector('#pycon-south-africa-2014 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-south-africa-2014 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-south-africa-2014').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-south-africa-2014').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-south-africa-2014').addClass('pastcfp');
+            $('#pycon-south-africa-2014 .timer').replaceWith($('#pycon-south-africa-2014 .deadline'));
+            $('#pycon-south-africa-2014 .timer-small').replaceWith($('#pycon-south-africa-2014 .deadline'));
+            $('#pycon-south-africa-2014 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-south-africa-2014').addClass('pastconf');
+            $('#pycon-south-africa-2014 .timer').replaceWith($('#pycon-south-africa-2014 .deadline'));
+            $('#pycon-south-africa-2014 .timer-small').replaceWith($('#pycon-south-africa-2014 .deadline'));
+            $('#pycon-south-africa-2014 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pycon-south-africa-2013 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2013-09-15 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2013-10-03", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2013-09-15 23:59:00");
+            var confDate = DateTime.fromSQL("2013-10-03");
+            console.log("Invalid timezone in pycon-south-africa-2013. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-south-africa-2013 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-south-africa-2013 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-south-africa-2013 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-south-africa-2013',
+              title: 'PyCon South Africa 2013 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Cape Town, South Africa',
+              link: 'https://web.archive.org/web/20130925120247/http://za.pycon.org/'
+            });
+            document.querySelector('#pycon-south-africa-2013 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-south-africa-2013 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-south-africa-2013').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-south-africa-2013').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-south-africa-2013').addClass('pastcfp');
+            $('#pycon-south-africa-2013 .timer').replaceWith($('#pycon-south-africa-2013 .deadline'));
+            $('#pycon-south-africa-2013 .timer-small').replaceWith($('#pycon-south-africa-2013 .deadline'));
+            $('#pycon-south-africa-2013 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-south-africa-2013').addClass('pastconf');
+            $('#pycon-south-africa-2013 .timer').replaceWith($('#pycon-south-africa-2013 .deadline'));
+            $('#pycon-south-africa-2013 .timer-small').replaceWith($('#pycon-south-africa-2013 .deadline'));
+            $('#pycon-south-africa-2013 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pycon-south-africa-2012 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2012-09-15 23:59:00", { zone: "Africa/Johannesburg" });
+            var confDate = DateTime.fromSQL("2012-10-04", { zone: "Africa/Johannesburg" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2012-09-15 23:59:00");
+            var confDate = DateTime.fromSQL("2012-10-04");
+            console.log("Invalid timezone in pycon-south-africa-2012. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-south-africa-2012 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-south-africa-2012 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-south-africa-2012 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-south-africa-2012',
+              title: 'PyCon South Africa 2012 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Cape Town, South Africa',
+              link: 'https://web.archive.org/web/20120825164659/http://za.pycon.org/#&panel1-3'
+            });
+            document.querySelector('#pycon-south-africa-2012 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-south-africa-2012 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-south-africa-2012').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-south-africa-2012').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-south-africa-2012').addClass('pastcfp');
+            $('#pycon-south-africa-2012 .timer').replaceWith($('#pycon-south-africa-2012 .deadline'));
+            $('#pycon-south-africa-2012 .timer-small').replaceWith($('#pycon-south-africa-2012 .deadline'));
+            $('#pycon-south-africa-2012 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-south-africa-2012').addClass('pastconf');
+            $('#pycon-south-africa-2012 .timer').replaceWith($('#pycon-south-africa-2012 .deadline'));
+            $('#pycon-south-africa-2012 .timer-small').replaceWith($('#pycon-south-africa-2012 .deadline'));
+            $('#pycon-south-africa-2012 .calendar').remove();
+          }
+        
+      
+
+      // Sort coming_confs and past_confs
+      $("#all_confs .ConfItem").sort(function (a, b) {
+        return $(a).attr('cfpDiff') - $(b).attr('cfpDiff');
+      }).appendTo($("#coming_confs"));
+
+  </script>
+</body>
+
+</html>
