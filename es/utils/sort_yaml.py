@@ -16,6 +16,7 @@ from tidy_conf import write_conference_yaml
 from tidy_conf.date import clean_dates
 from tidy_conf.latlon import add_latlon
 from tidy_conf.links import check_link_availability
+from tidy_conf.links import get_cache
 from tidy_conf.schema import Conference
 from tidy_conf.schema import get_schema
 from tidy_conf.titles import tidy_titles
@@ -140,13 +141,13 @@ def split_data(data):
 
 def check_links(data):
     """Check the links in the data iteratively."""
+    cache, cache_archived = get_cache()
     for i, q in tqdm(enumerate(sorted(data, key=operator.itemgetter("year"), reverse=True)), total=len(data)):
         for key in ("link", "cfp_link", "sponsor", "finaid"):
             if key in q:
-                new_link = check_link_availability(q[key], q["start"])
-                if "https://web.archive.org" not in new_link:
+                new_link = check_link_availability(q[key], q["start"], cache=cache, cache_archived=cache_archived)
+                if q[key] != new_link and "archive.org" in new_link:
                     time.sleep(0.5)
-
                 q[key] = new_link
                 data[i] = q
     return data

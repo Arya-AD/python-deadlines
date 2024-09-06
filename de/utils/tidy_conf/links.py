@@ -8,7 +8,28 @@ import requests
 from tqdm import tqdm
 
 
-def check_link_availability(url, start):
+def get_cache_location():
+    # Check if the URL is cached
+    cache_file = Path("utils", "tidy_conf", "data", ".tmp", "no_archive.txt")
+    cache_file_archived = Path("utils", "tidy_conf", "data", ".tmp", "archived_links.txt")
+    return cache_file, cache_file_archived
+
+
+def get_cache():
+    cache_file, cache_file_archived = get_cache_location()
+
+    # Create the cache file if it doesn't exist
+    cache_file.touch()
+    cache_file_archived.touch()
+
+    # Read the cache file
+    cache = set(cache_file.read_text(encoding="utf-8").split("\n")[:-1])
+    cache_archived = set(cache_file_archived.read_text(encoding="utf-8").split("\n")[:-1])
+
+    return cache, cache_archived
+
+
+def check_link_availability(url, start, cache=None, cache_archived=None):
     """Checks if a URL is available.
 
     If not, tries to retrieve an archived version from the Wayback Machine.
@@ -24,19 +45,11 @@ def check_link_availability(url, start):
     if url.startswith(("https://web.archive.org", "http://web.archive.org")):
         return url
 
-    # Check if the URL is cached
-    cache_file = Path("utils", "tidy_conf", "data", ".tmp", "no_archive.txt")
-    cache_file_archived = Path("utils", "tidy_conf", "data", ".tmp", "archived_links.txt")
+    # Get the cache
+    if cache is None or cache_archived is None:
+        cache, cache_archived = get_cache()
 
-    # Create the cache file if it doesn't exist
-    cache_file.touch()
-    cache_file_archived.touch()
-
-    # Read the cache file
-    with cache_file.open(encoding="utf-8") as f:
-        cache = f.read().split("\n")[:-1]
-    with cache_file_archived.open(encoding="utf-8") as f:
-        cache_archived = f.read().split("\n")[:-1]
+    cache_file, _ = get_cache_location()
 
     # Check if the URL is in the cache
     if url in cache and url not in cache_archived:
@@ -65,7 +78,7 @@ def check_link_availability(url, start):
                 )
             else:
                 if start > datetime.now(tz=timezone.utc).date():
-                    attempt_archive_url(url, cache_file_archived)
+                    attempt_archive_url(url, cache_archived)
                 return url
         except requests.RequestException as e:
             tqdm.write(f"An error occurred: {e}. Trying to find an archived version...")
@@ -89,7 +102,7 @@ def check_link_availability(url, start):
                 tqdm.write(f"Found archived version: {archived_url}")
                 return archived_url
             tqdm.write("No archived version found.")
-            attempt_archive_url(url, cache_file_archived)
+            attempt_archive_url(url, cache_archived)
             with cache_file.open("a") as f:
                 f.write(url + "\n")
             return url
@@ -101,25 +114,25 @@ def check_link_availability(url, start):
         return url
 
 
-def attempt_archive_url(url, cache_file):
+def attempt_archive_url(url, cache=None):
     """Attempts to archive a URL using the Wayback Machine."""
     # Read the cache file
-    cache_file = Path(cache_file)
-
-    with cache_file.open(encoding="utf-8") as f:
-        cache = f.read().split("\n")[:-1]
+    if cache is None:
+        _, cache = get_cache()
 
     # Check if the URL is in the cache
     if url in cache:
         tqdm.write(f"URL {url} was already archived.")
         return
-    with cache_file.open("a") as f:
-        f.write(url + "\n")
 
     try:
         tqdm.write(f"Attempting archive of {url}.")
-        archive_response = requests.get("https://web.archive.org/save/" + url, timeout=7)
+        headers = {"User-Agent": "Pythondeadlin.es Archival Attempt/0.1 (https://pythondeadlin.es)"}
+        archive_response = requests.get("https://web.archive.org/save/" + url, timeout=30, headers=headers)
         if archive_response.status_code == 200:
+            _, cache_file = get_cache_location()
+            with cache_file.open("a") as f:
+                f.write(url + "\n")
             tqdm.write(f"Successfully archived {url}.")
     except requests.RequestException as e:
         tqdm.write(f"An error occurred while attempting to archive: {e}")

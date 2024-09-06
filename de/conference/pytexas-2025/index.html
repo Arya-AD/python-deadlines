@@ -42,12 +42,12 @@
 <link rel="alternate"  title="PyTexas 2025 Conference Deadlines in German" hreflang="de" href="/de/conference/pytexas-2025/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1725460943" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1725651013" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1725460943" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1725460943" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1725460943" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1725651013" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1725651013" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1725651013" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -512,8 +512,20 @@ if (typeof Object.assign !== 'function') {
           </div>
           
           <div>
+            <img src="/static/img/035-file-text.svg" class="badge-link" alt="Document Icon for CfP link" width="16"
+              height="16" />
+            <a id="conf-cfp_link" target="_blank" href="https://pretalx.com/pytexas-2025/">Aufruf zur Teilnahme</a>
+          </div>
+          
+          <div>
             <img src="/static/img/002-home2.svg" class="badge-link" alt="Conference Series" width="16" height="16" />
             <a id="conf-series" href="/de/series/pytexas">Alle Konferenzen für PyTexas</a>
+          </div>
+          
+          <div>
+            <img src="/static/img/066-lifebuoy.svg" class="badge-link" alt="Life Buoy for Financial Aid" width="16"
+              height="16" />
+            <a id="conf-finaid" target="_blank" href="https://www.pytexas.org/2025/attend/in-person/#grants">Finanzielle Unterstützung</a>
           </div>
           
           
@@ -580,10 +592,10 @@ if (typeof Object.assign !== 'function') {
         </div>
       <div class="row">
         
-        <div id='4f0d3c62-9c1b-49c0-9552-bd96ff2620ef' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='b2dbaf0f-fa77-4d70-83d3-df894b1f2fcd' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '4f0d3c62-9c1b-49c0-9552-bd96ff2620ef',
+    'b2dbaf0f-fa77-4d70-83d3-df894b1f2fcd',
     [{"latitude":30.2711286,"longitude":-97.7436995,"title":"PyTexas 2025","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -708,7 +720,7 @@ function createCalendarFromObject(data) {
 
       // Use specified timezone for deadlines if available else use AoE timezone
       
-      var confDeadline = DateTime.fromSQL("2025-01-14 23:59:00", { zone: "UTC-12" });
+      var confDeadline = DateTime.fromSQL("2025-01-14 23:59:00", { zone: "America/Chicago" });
       
 
       // check if timezone is valid otherwise replace by system timezone
@@ -747,7 +759,7 @@ function createCalendarFromObject(data) {
 
       // render deadline conference time
       
-      $('.deadline-time').html(confDeadline.setZone("UTC-12").toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+      $('.deadline-time').html(confDeadline.setZone("America/Chicago").toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
       
 
       // render deadline in local timezone
