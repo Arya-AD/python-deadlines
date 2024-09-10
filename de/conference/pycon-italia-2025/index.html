@@ -42,12 +42,12 @@
 <link rel="alternate"  title="PyCon Italia 2025 Conference Deadlines in German" hreflang="de" href="/de/conference/pycon-italia-2025/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726006698" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726007407" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726006698" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726006698" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726006698" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726007407" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726007407" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726007407" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -170,6 +170,38 @@
 <script type="text/javascript" src="/static/js/ouical.min.js"></script>
 <script type="text/javascript" src="/static/js/bootstrap-multiselect.min.js"></script>
 
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/mastodon.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("https://social.python.it/@pycon.rss")
+        .then(function (response) {
+          return response.text();
+        })
+        .then(function (xmlText) {
+          var parser = new DOMParser();
+          var xml = parser.parseFromString(xmlText, "text/xml");
+          var items = xml.querySelectorAll("item");
+          var feedContainer = document.getElementById("mastodon-feed");
+          var postLimit = 2; // Number of posts to display
+
+          for (var i = 0; i < postLimit && i < items.length; i++) {
+            var item = items[i];
+            var post = item.querySelector("description").textContent;
+            var link = item.querySelector("link").textContent;
+            var pubDate = item.querySelector("pubDate").textContent;
+
+            var feedItem = document.createElement("div");
+            feedItem.setAttribute("class", "timeline-item")
+            feedItem.innerHTML = '<div class="timeline-content">' + post + '</div><a href="' + link + '">' + pubDate + ' by PyCon Italia</a>';
+            feedContainer.appendChild(feedItem);
+          }
+        })
+        .catch(function (error) {
+          console.log("Error fetching Mastodon RSS feed:", error);
+        });
+    });
+  </script>
   
 <script type='text/javascript'>
   /* global google */
@@ -520,6 +552,16 @@ if (typeof Object.assign !== 'function') {
           
           
           
+          <div>
+            <img src="/static/img/407-twitter.svg" class="badge-link" alt="Twitter icon" width="16" height="16" />
+            <a id="conf-twitter" target="_blank" href="https://twitter.com/PyConIT">@PyConIT</a>
+          </div>
+          
+          
+          <div>
+            <img src="/static/img/407-mastodon.svg" class="badge-link" alt="Mastodon icon" width="16" height="16" />
+            <a id="conf-mastodon" target="_blank" href="https://social.python.it/@pycon">Mastodon</a>
+          </div>
           
         </div>
         </div>
@@ -547,6 +589,11 @@ if (typeof Object.assign !== 'function') {
           </div>
         </div>
         <div class="col-12 col-md-6">
+          
+          <!-- Mastodon timeline -->
+          <div class="meta">Mastodon Posts by PyCon Italia:</div>
+          <div id="mastodon-feed"></div>
+          <a href="https://social.python.it/@pycon">See all Mastodon posts for PyCon Italia</a>
           
         </div>
       </div>
@@ -576,10 +623,10 @@ if (typeof Object.assign !== 'function') {
         </div>
       <div class="row">
         
-        <div id='f9bb783f-1d96-4fd8-a42c-35af04b06bcc' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='641103dc-7203-4835-8971-63029eedf05d' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'f9bb783f-1d96-4fd8-a42c-35af04b06bcc',
+    '641103dc-7203-4835-8971-63029eedf05d',
     [{"latitude":44.4938203,"longitude":11.3426327,"title":"PyCon Italia 2025","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );

@@ -44,12 +44,12 @@
 <link rel="alternate"  title="Python BarCamp Karlsruhe Conference Summary in German" hreflang="de" href="/de/series/python-barcamp-karlsruhe/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726006698" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726007407" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726006698" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726006698" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726006698" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726007407" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726007407" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726007407" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -349,17 +349,17 @@
       <div id="all_confs">
         
           
-          <div id="python-barcamp-karlsruhe-2025"
+          <div id="python-barcamp-karlsruhe-2024"
             class="ConfItem  CAMP-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
                   <a title="Deadline Details"
-                    href="/de/conference/python-barcamp-karlsruhe-2025/">Python BarCamp Karlsruhe 2025</a>
+                    href="/de/conference/python-barcamp-karlsruhe-2024/">Python BarCamp Karlsruhe 2024</a>
                 </span>
                 <span class="conf-title-small">
                   <a title="Deadline Details"
-                    href="/de/conference/python-barcamp-karlsruhe-2025/">Python BarCamp Karlsruhe '25</a>
+                    href="/de/conference/python-barcamp-karlsruhe-2024/">Python BarCamp Karlsruhe '24</a>
                 </span>
                 <span class="conf-title-icon">
                   <a title="Conference Website" href="https://barcamps.eu/python-barcamp-karlsruhe-2025/" target="_blank"><img src="/static/img/203-earth.svg"
@@ -588,7 +588,7 @@ $('#subject-select').multiselect({
         
         
         
-          $('#python-barcamp-karlsruhe-2025 .CAMP-tag').html("Python Camps".toLocaleLowerCase("de"));
+          $('#python-barcamp-karlsruhe-2024 .CAMP-tag').html("Python Camps".toLocaleLowerCase("de"));
         
         
 
@@ -602,35 +602,35 @@ $('#subject-select').multiselect({
           if (cfpDate.invalid || confDate.invalid) {
             var cfpDate = DateTime.fromSQL("2024-02-14 23:59:00");
             var confDate = DateTime.fromSQL("2025-02-15");
-            console.log("Invalid timezone in python-barcamp-karlsruhe-2025. Using system timezone instead.");
+            console.log("Invalid timezone in python-barcamp-karlsruhe-2024. Using system timezone instead.");
           }
 
           // render countdown timer
-          $('#python-barcamp-karlsruhe-2025 .timer').countdown(cfpDate.toJSDate(), function (event) {
+          $('#python-barcamp-karlsruhe-2024 .timer').countdown(cfpDate.toJSDate(), function (event) {
             $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
           });
 
           // render countdown timer small
-          $('#python-barcamp-karlsruhe-2025 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+          $('#python-barcamp-karlsruhe-2024 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
             $(this).html(event.strftime('%Dd %H:%M:%S'));
           });
 
           // deadline in local timezone
-          $('#python-barcamp-karlsruhe-2025 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+          $('#python-barcamp-karlsruhe-2024 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 
           // add calendar button
           try {
             var myCalendar = createCalendarFromObject({
-              id: 'python-barcamp-karlsruhe-2025',
-              title: 'Python BarCamp Karlsruhe 2025 deadline',
+              id: 'python-barcamp-karlsruhe-2024',
+              title: 'Python BarCamp Karlsruhe 2024 deadline',
               start_date: cfpDate.toJSDate(),
               duration: 60,
               place: 'Karlsruhe, Germany',
               link: 'https://barcamps.eu/python-barcamp-karlsruhe-2025/'
             });
-            document.querySelector('#python-barcamp-karlsruhe-2025 .calendar').appendChild(myCalendar);
+            document.querySelector('#python-barcamp-karlsruhe-2024 .calendar').appendChild(myCalendar);
           } catch (err) {
-            document.querySelector('#python-barcamp-karlsruhe-2025 .calendar').appendChild("<p>Calendar not available.</p>");
+            document.querySelector('#python-barcamp-karlsruhe-2024 .calendar').appendChild("<p>Calendar not available.</p>");
             console.log("Error in cfp date.");
           }
 
@@ -638,21 +638,21 @@ $('#subject-select').multiselect({
           cfpDiff = cfpDate.diffNow("seconds");
           confDiff = confDate.diffNow("seconds");
 
-          $('#python-barcamp-karlsruhe-2025').attr("cfpDiff", cfpDiff.toMillis());
-          $('#python-barcamp-karlsruhe-2025').attr("confDiff", confDiff.toMillis());
+          $('#python-barcamp-karlsruhe-2024').attr("cfpDiff", cfpDiff.toMillis());
+          $('#python-barcamp-karlsruhe-2024').attr("confDiff", confDiff.toMillis());
 
           if (cfpDiff < 0) {
-            $('#python-barcamp-karlsruhe-2025').addClass('pastcfp');
-            $('#python-barcamp-karlsruhe-2025 .timer').replaceWith($('#python-barcamp-karlsruhe-2025 .deadline'));
-            $('#python-barcamp-karlsruhe-2025 .timer-small').replaceWith($('#python-barcamp-karlsruhe-2025 .deadline'));
-            $('#python-barcamp-karlsruhe-2025 .calendar').remove();
+            $('#python-barcamp-karlsruhe-2024').addClass('pastcfp');
+            $('#python-barcamp-karlsruhe-2024 .timer').replaceWith($('#python-barcamp-karlsruhe-2024 .deadline'));
+            $('#python-barcamp-karlsruhe-2024 .timer-small').replaceWith($('#python-barcamp-karlsruhe-2024 .deadline'));
+            $('#python-barcamp-karlsruhe-2024 .calendar').remove();
           }
 
           if (confDiff < 0) {
-            $('#python-barcamp-karlsruhe-2025').addClass('pastconf');
-            $('#python-barcamp-karlsruhe-2025 .timer').replaceWith($('#python-barcamp-karlsruhe-2025 .deadline'));
-            $('#python-barcamp-karlsruhe-2025 .timer-small').replaceWith($('#python-barcamp-karlsruhe-2025 .deadline'));
-            $('#python-barcamp-karlsruhe-2025 .calendar').remove();
+            $('#python-barcamp-karlsruhe-2024').addClass('pastconf');
+            $('#python-barcamp-karlsruhe-2024 .timer').replaceWith($('#python-barcamp-karlsruhe-2024 .deadline'));
+            $('#python-barcamp-karlsruhe-2024 .timer-small').replaceWith($('#python-barcamp-karlsruhe-2024 .deadline'));
+            $('#python-barcamp-karlsruhe-2024 .calendar').remove();
           }
         
       

@@ -42,12 +42,12 @@
 <link rel="alternate"  title="Calendario de conferencias de Python in German" hreflang="de" href="/de/kalender/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726006634" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726007345" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726006634" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726006634" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726006634" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726007345" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726007345" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726007345" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -3528,9 +3528,9 @@ function load_conference_list() {
     
     // add deadlines in red
     conf_list_all.push({
-      id: "python-barcamp-karlsruhe-2025-deadline",
-      abbreviation: "python-barcamp-karlsruhe-2025",
-      name: "Python BarCamp Karlsruhe 2025 CfP (extended)",
+      id: "python-barcamp-karlsruhe-2024-deadline",
+      abbreviation: "python-barcamp-karlsruhe-2024",
+      name: "Python BarCamp Karlsruhe 2024 CfP (extended)",
       color: "red",
       location: "Karlsruhe, Germany",
       date: "15 – 16 de febrero de 2025",
@@ -3565,9 +3565,9 @@ function load_conference_list() {
             
       
       conf_list_all.push({
-        id: "python-barcamp-karlsruhe-2025-conference",
-        abbreviation: "python-barcamp-karlsruhe-2025",
-        name: "Python BarCamp Karlsruhe 2025",
+        id: "python-barcamp-karlsruhe-2024-conference",
+        abbreviation: "python-barcamp-karlsruhe-2024",
+        name: "Python BarCamp Karlsruhe 2024",
         color: color,
         location: "Karlsruhe, Germany",
         date: "15 – 16 de febrero de 2025",
@@ -3786,6 +3786,59 @@ function load_conference_list() {
         subject: "PY",
         startDate: Date.parse("2025-05-14"),
         endDate: Date.parse("2025-05-21"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
+      id: "pycon-panama-2024-deadline",
+      abbreviation: "pycon-panama-2024",
+      name: "PyCon Panamá 2024 CfP (extended)",
+      color: "red",
+      location: "Panama City, Panamá",
+      date: "16 – 18 de octubre de 2024",
+      subject: "PY",
+      startDate: Date.parse("TBA"),
+      endDate: Date.parse("TBA"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+                    color = "#4B8BBE";
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+      conf_list_all.push({
+        id: "pycon-panama-2024-conference",
+        abbreviation: "pycon-panama-2024",
+        name: "PyCon Panamá 2024",
+        color: color,
+        location: "Panama City, Panamá",
+        date: "16 – 18 de octubre de 2024",
+        subject: "PY",
+        startDate: Date.parse("2024-10-16"),
+        endDate: Date.parse("2024-10-18"),
       });
     
   
