@@ -9,7 +9,7 @@
 		<title>Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Fri, 06 Sep 2024 19:30:13 +0000</lastBuildDate>
+		<lastBuildDate>Tue, 10 Sep 2024 22:18:18 +0000</lastBuildDate>
 		
 		
 		
@@ -20,6 +20,18 @@
 				<link>https://pythondeadlin.es/conference/pytexas-2025/</link>
 				<guid isPermaLink="false">pytexas-2025</guid>
 				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>GeoPython 2025 Conference Deadline</title>
+				<description>Conference in Basel, Switzerland on24. – 26. Februar 2025. CfP: 2024-11-15 23:59:00 AoE.&lt;br /&gt;Find them here: @GeoPythonConf </description>
+				<pubDate>Fri, 15 Nov 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/geopython-2025/</link>
+				<guid isPermaLink="false">geopython-2025</guid>
+				<category>GEO</category>
 			</item>
 		
 		
@@ -271,18 +283,6 @@
 				<pubDate>Mon, 22 Jul 2024 22:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-australia-2024/</link>
 				<guid isPermaLink="false">pycon-australia-2024</guid>
-				<category>PY</category>
-			</item>
-		
-		
-		
-		
-			<item>
-				<title>PyCon France 2024 Conference Deadline</title>
-				<description>Conference in Strasbourg, France on31. – 3. Oktober 2024. CfP: 2024-07-21 23:59:00 AoE.&lt;br /&gt;Find them here: @PyConFR </description>
-				<pubDate>Sun, 21 Jul 2024 23:59:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-france-2024/</link>
-				<guid isPermaLink="false">pycon-france-2024</guid>
 				<category>PY</category>
 			</item>
 		

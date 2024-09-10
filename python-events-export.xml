@@ -9,7 +9,7 @@
 		<title>Newsfeed for Python Events Calendar from Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Fri, 06 Sep 2024 19:28:05 +0000</lastBuildDate>
+		<lastBuildDate>Tue, 10 Sep 2024 22:16:09 +0000</lastBuildDate>
 		
 			<item>
 				<title>PyTexas 2025 Conference Deadline</title>
@@ -18,6 +18,15 @@
 				<link>https://pythondeadlin.es/conference/pytexas-2025/</link>
 				<guid isPermaLink="false">pytexas-2025</guid>
 				<category>PY</category>
+			</item>
+		
+			<item>
+				<title>GeoPython 2025 Conference Deadline</title>
+				<description><![CDATA[* name of the event: GeoPython 2025<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Basel, Switzerland<br/>* dates/times/recurrence (incl. time zone):February 24 – 26, 2025<br/>* HTML link : <a href="https://2025.geopython.net/">GeoPython 2025</a>]]></description>
+				<pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/geopython-2025/</link>
+				<guid isPermaLink="false">geopython-2025</guid>
+				<category>GEO</category>
 			</item>
 		
 			<item>
@@ -206,15 +215,6 @@
 				<pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-australia-2024/</link>
 				<guid isPermaLink="false">pycon-australia-2024</guid>
-				<category>PY</category>
-			</item>
-		
-			<item>
-				<title>PyCon France 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyCon France 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Strasbourg, France<br/>* dates/times/recurrence (incl. time zone):October 31 – 3, 2024<br/>* HTML link : <a href="https://pycon.fr/2024/">PyCon France 2024</a>]]></description>
-				<pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-france-2024/</link>
-				<guid isPermaLink="false">pycon-france-2024</guid>
 				<category>PY</category>
 			</item>
 		

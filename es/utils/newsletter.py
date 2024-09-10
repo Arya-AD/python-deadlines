@@ -47,7 +47,7 @@ def main(days=15):
 
     markdown_links = create_markdown_links(upcoming_cfp_conferences)
 
-    print("Conferences with CFP closing within the next 10 days:")
+    print(f"Conferences with CFP closing within the next {days} days:")
     for link in markdown_links:
         print(link)
 
