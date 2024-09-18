@@ -44,12 +44,12 @@
 <link rel="alternate"  title="Xtreme Python Conference Summary in German" hreflang="de" href="/de/series/xtreme-python/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726007345" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726699922" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726007345" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726007345" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726007345" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726699922" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726699922" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726699922" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -810,10 +810,10 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='572138b0-338d-41ae-aaa1-e53532ee3c44' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='6ca45dc3-0fee-4eca-8afa-e6ae2db7c140' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '572138b0-338d-41ae-aaa1-e53532ee3c44',
+    '6ca45dc3-0fee-4eca-8afa-e6ae2db7c140',
     [],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -998,13 +998,13 @@ $('#subject-select').multiselect({
 
           // Use specified timezone for deadlines if available else use AoE timezone
           
-            var cfpDate = DateTime.fromSQL("2024-08-30 23:59:00", { zone: "UTC-12" });
+            var cfpDate = DateTime.fromSQL("2024-09-20 23:59:00", { zone: "UTC-12" });
             var confDate = DateTime.fromSQL("2024-11-19", { zone: "UTC-12" });
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
-            var cfpDate = DateTime.fromSQL("2024-08-30 23:59:00");
+            var cfpDate = DateTime.fromSQL("2024-09-20 23:59:00");
             var confDate = DateTime.fromSQL("2024-11-19");
             console.log("Invalid timezone in xtreme-python-2024. Using system timezone instead.");
           }
