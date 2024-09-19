@@ -9,7 +9,7 @@
 		<title>Newsfeed for Python Events Calendar from Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Wed, 18 Sep 2024 22:52:02 +0000</lastBuildDate>
+		<lastBuildDate>Thu, 19 Sep 2024 20:50:26 +0000</lastBuildDate>
 		
 			<item>
 				<title>PyTexas 2025 Conference Deadline</title>
@@ -202,8 +202,8 @@
 		
 			<item>
 				<title>PyCon Somalia 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyCon Somalia 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Mogadishu, Somalia<br/>* dates/times/recurrence (incl. time zone):21 – 22 de agosto de 2024<br/>* HTML link : <a href="https://pycon.org.so/">PyCon Somalia 2024</a>]]></description>
-				<pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+				<description><![CDATA[* name of the event: PyCon Somalia 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Mogadishu, Somalia<br/>* dates/times/recurrence (incl. time zone):28 – 29 de agosto de 2024<br/>* HTML link : <a href="https://pycon.org.so/">PyCon Somalia 2024</a>]]></description>
+				<pubDate>Wed, 28 Aug 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-somalia-2024/</link>
 				<guid isPermaLink="false">pycon-somalia-2024</guid>
 				<category>PY</category>
