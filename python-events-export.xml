@@ -9,7 +9,7 @@
 		<title>Newsfeed for Python Events Calendar from Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Thu, 19 Sep 2024 20:52:32 +0000</lastBuildDate>
+		<lastBuildDate>Thu, 19 Sep 2024 21:29:22 +0000</lastBuildDate>
 		
 			<item>
 				<title>PyTexas 2025 Conference Deadline</title>
@@ -36,6 +36,15 @@
 				<link>https://pythondeadlin.es/conference/pycon-wroclaw-2024/</link>
 				<guid isPermaLink="false">pycon-wroclaw-2024</guid>
 				<category>PY</category>
+			</item>
+		
+			<item>
+				<title>PyData Global 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: PyData Global 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Online<br/>* dates/times/recurrence (incl. time zone):December 3 – 5, 2024<br/>* HTML link : <a href="https://pydata.org/global2024/">PyData Global 2024</a>]]></description>
+				<pubDate>Tue, 03 Dec 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pydata-global-2024/</link>
+				<guid isPermaLink="false">pydata-global-2024</guid>
+				<category>DATA</category>
 			</item>
 		
 			<item>
@@ -206,15 +215,6 @@
 				<pubDate>Wed, 28 Aug 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-somalia-2024/</link>
 				<guid isPermaLink="false">pycon-somalia-2024</guid>
-				<category>PY</category>
-			</item>
-		
-			<item>
-				<title>PyCon Australia 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyCon Australia 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Melbourne, Australia<br/>* dates/times/recurrence (incl. time zone):November 22 – 26, 2024<br/>* HTML link : <a href="https://2024.pycon.org.au/">PyCon Australia 2024</a>]]></description>
-				<pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-australia-2024/</link>
-				<guid isPermaLink="false">pycon-australia-2024</guid>
 				<category>PY</category>
 			</item>
 		
