@@ -42,12 +42,12 @@
 <link rel="alternate"  title="Calendar Overview of Python Conference Deadlines and Dates in German" hreflang="de" href="/de/kalender/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726781362" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726863063" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726781362" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726781362" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726781362" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726863063" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726863063" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726863063" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -1102,13 +1102,13 @@ function load_conference_list() {
     conf_list_all.push({
       id: "pycascades-2025-deadline",
       abbreviation: "pycascades-2025",
-      name: "PyCascades 2025 CfP ",
+      name: "PyCascades 2025 CfP (extended)",
       color: "red",
       location: "Portland, USA",
       date: "February 8 – 9, 2025",
       subject: "PY",
-      startDate: Date.parse("2024-09-15 23:59:00"),
-      endDate: Date.parse("2024-09-15 23:59:00"),
+      startDate: Date.parse("2024-09-20 23:59:00"),
+      endDate: Date.parse("2024-09-20 23:59:00"),
     });
     
     
@@ -1155,7 +1155,7 @@ function load_conference_list() {
     conf_list_all.push({
       id: "pycon-chile-2024-deadline",
       abbreviation: "pycon-chile-2024",
-      name: "PyCon Chile 2024 CfP ",
+      name: "PyCon Chile 2024 CfP (extended)",
       color: "red",
       location: "Santiago, Chile",
       date: "October 25 – 27, 2024",
@@ -1208,7 +1208,7 @@ function load_conference_list() {
     conf_list_all.push({
       id: "pydata-nyc-2024-deadline",
       abbreviation: "pydata-nyc-2024",
-      name: "PyData NYC 2024 CfP ",
+      name: "PyData NYC 2024 CfP (extended)",
       color: "red",
       location: "New York, USA",
       date: "November 6 – 8, 2024",
@@ -1261,7 +1261,7 @@ function load_conference_list() {
     conf_list_all.push({
       id: "python-in-education-day-2024-deadline",
       abbreviation: "python-in-education-day-2024",
-      name: "Python in Education Day 2024 CfP ",
+      name: "Python in Education Day 2024 CfP (extended)",
       color: "red",
       location: "Oxford, UK",
       date: "October 14, 2024",
@@ -1314,7 +1314,7 @@ function load_conference_list() {
     conf_list_all.push({
       id: "pycon-sweden-2024-deadline",
       abbreviation: "pycon-sweden-2024",
-      name: "PyCon Sweden 2024 CfP ",
+      name: "PyCon Sweden 2024 CfP (extended)",
       color: "red",
       location: "Stockholm, Sweden",
       date: "November 14 – 15, 2024",
@@ -3680,6 +3680,59 @@ function load_conference_list() {
         subject: "DATA",
         startDate: Date.parse("2024-11-04"),
         endDate: Date.parse("2024-11-04"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
+      id: "pytorch-conference-2025-deadline",
+      abbreviation: "pytorch-conference-2025",
+      name: "PyTorch Conference 2025 CfP (extended)",
+      color: "red",
+      location: "San Francisco, USA",
+      date: "October 22 – 23, 2025",
+      subject: "DATA",
+      startDate: Date.parse("TBA"),
+      endDate: Date.parse("TBA"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+      
+            
+                    color = "#849324";
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+      conf_list_all.push({
+        id: "pytorch-conference-2025-conference",
+        abbreviation: "pytorch-conference-2025",
+        name: "PyTorch Conference 2025",
+        color: color,
+        location: "San Francisco, USA",
+        date: "October 22 – 23, 2025",
+        subject: "DATA",
+        startDate: Date.parse("2025-10-22"),
+        endDate: Date.parse("2025-10-23"),
       });
     
   
