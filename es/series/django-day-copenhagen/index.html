@@ -44,12 +44,12 @@
 <link rel="alternate"  title="Django Day Copenhagen Conference Summary in German" hreflang="de" href="/de/series/django-day-copenhagen/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727031787" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727043214" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727031787" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727031787" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727031787" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727043214" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727043214" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727043214" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -867,7 +867,7 @@ if (typeof Object.assign !== 'function') {
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Sunday, 16 February 2020</span>
                   </div>
                 </div>
 
@@ -891,10 +891,10 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='c49a2601-139d-4280-bf8c-704193976aab' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='0e62b841-db08-48ea-bec7-9037d6734698' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'c49a2601-139d-4280-bf8c-704193976aab',
+    '0e62b841-db08-48ea-bec7-9037d6734698',
     [{"latitude":55.6867243,"longitude":12.5700724,"title":"Django Day Copenhagen 2023","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":55.6867243,"longitude":12.5700724,"title":"Django Day Copenhagen 2022","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":55.6867243,"longitude":12.5700724,"title":"Django Day Copenhagen 2024","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -1295,9 +1295,69 @@ $('#subject-select').multiselect({
           $('#django-day-copenhagen-2020 .WEB-tag').html("Python para Web".toLocaleLowerCase("es"));
         
         
-          $('#django-day-copenhagen-2020 .timer').html("TBA");
-          $('#django-day-copenhagen-2020 .deadline-time').html("TBA");
-          $('#django-day-copenhagen-2020').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2020-02-16 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2020-09-25", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2020-02-16 23:59:00");
+            var confDate = DateTime.fromSQL("2020-09-25");
+            console.log("Invalid timezone in django-day-copenhagen-2020. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#django-day-copenhagen-2020 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#django-day-copenhagen-2020 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#django-day-copenhagen-2020 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'django-day-copenhagen-2020',
+              title: 'Django Day Copenhagen 2020 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Online & Copenhagen, Denmark',
+              link: 'https://djangoday.dk/'
+            });
+            document.querySelector('#django-day-copenhagen-2020 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#django-day-copenhagen-2020 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#django-day-copenhagen-2020').attr("cfpDiff", cfpDiff.toMillis());
+          $('#django-day-copenhagen-2020').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#django-day-copenhagen-2020').addClass('pastcfp');
+            $('#django-day-copenhagen-2020 .timer').replaceWith($('#django-day-copenhagen-2020 .deadline'));
+            $('#django-day-copenhagen-2020 .timer-small').replaceWith($('#django-day-copenhagen-2020 .deadline'));
+            $('#django-day-copenhagen-2020 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#django-day-copenhagen-2020').addClass('pastconf');
+            $('#django-day-copenhagen-2020 .timer').replaceWith($('#django-day-copenhagen-2020 .deadline'));
+            $('#django-day-copenhagen-2020 .timer-small').replaceWith($('#django-day-copenhagen-2020 .deadline'));
+            $('#django-day-copenhagen-2020 .calendar').remove();
+          }
         
       
 
