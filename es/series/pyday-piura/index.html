@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyDay Piura Conference Summary in German" hreflang="de" href="/de/series/pyday-piura/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726863126" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727031787" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726863126" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726863126" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726863126" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727031787" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727031787" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727031787" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -305,10 +305,8 @@
           <span id="conf-subs" title="Conference subjects">
             
             
-            <span class="PY-tag badge badge-light conf-sub conf-PY">
+            <span class="DAY-tag badge badge-light conf-sub conf-DAY">
               
-                
-                  General Python
                 
               
                 
@@ -323,6 +321,8 @@
               
                 
               
+                
+                  Python Day
                 
               
             </span>
@@ -350,7 +350,7 @@
         
           
           <div id="pyday-piura-2016"
-            class="ConfItem  PY-conf ">
+            class="ConfItem  DAY-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
@@ -380,7 +380,7 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">20 – 21 de agosto de 2016.</span>
+                  <span class="conf-date">20 de agosto de 2016.</span>
                   <span class="conf-place">
                     
                       <a href="http://maps.google.com/?q=Piura, Peru">Piura, Peru</a>
@@ -394,7 +394,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">None</span>
                   </div>
                 </div>
 
@@ -404,8 +404,8 @@
               <div class="col-6">
                 
                 
-                  <span title="Click to only show PY conferences" data-sub="PY"
-                    class="badge badge-light conf-sub PY-tag"></span>
+                  <span title="Click to only show DAY conferences" data-sub="DAY"
+                    class="badge badge-light conf-sub DAY-tag"></span>
                 
               </div>
               <div class="col-6">
@@ -588,11 +588,11 @@ $('#subject-select').multiselect({
         
         
         
-          $('#pyday-piura-2016 .PY-tag').html("Python General".toLocaleLowerCase("es"));
+          $('#pyday-piura-2016 .DAY-tag').html("Día de Python".toLocaleLowerCase("es"));
         
         
-          $('#pyday-piura-2016 .timer').html("TBA");
-          $('#pyday-piura-2016 .deadline-time').html("TBA");
+          $('#pyday-piura-2016 .timer').html("None");
+          $('#pyday-piura-2016 .deadline-time').html("None");
           $('#pyday-piura-2016').attr("cfpDiff", Infinity);
         
       

@@ -42,12 +42,12 @@
 <link rel="alternate"  title="Kalender für Python-Konferenzen in German" hreflang="de" href="/de/kalender/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726863189" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727031853" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726863189" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726863189" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726863189" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727031853" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727031853" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727031853" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -3945,6 +3945,112 @@ function load_conference_list() {
         subject: "PY",
         startDate: Date.parse("2025-04-23"),
         endDate: Date.parse("2025-04-25"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
+      id: "pycon-balkan-2024-deadline",
+      abbreviation: "pycon-balkan-2024",
+      name: "PyCon Balkan 2024 CfP (extended)",
+      color: "red",
+      location: "Belgrade, Serbia",
+      date: "30. – 1. Oktober 2024",
+      subject: "PY",
+      startDate: Date.parse("TBA"),
+      endDate: Date.parse("TBA"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+                    color = "#4B8BBE";
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+      conf_list_all.push({
+        id: "pycon-balkan-2024-conference",
+        abbreviation: "pycon-balkan-2024",
+        name: "PyCon Balkan 2024",
+        color: color,
+        location: "Belgrade, Serbia",
+        date: "30. – 1. Oktober 2024",
+        subject: "PY",
+        startDate: Date.parse("2024-10-30"),
+        endDate: Date.parse("2024-11-01"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
+      id: "pyday-cali-2024-deadline",
+      abbreviation: "pyday-cali-2024",
+      name: "PyDay Cali 2024 CfP (extended)",
+      color: "red",
+      location: "Cali, Colombia",
+      date: "19. Oktober 2024",
+      subject: "DAY",
+      startDate: Date.parse("None"),
+      endDate: Date.parse("None"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+                    color = "#3C1670";
+            
+      
+      conf_list_all.push({
+        id: "pyday-cali-2024-conference",
+        abbreviation: "pyday-cali-2024",
+        name: "PyDay Cali 2024",
+        color: color,
+        location: "Cali, Colombia",
+        date: "19. Oktober 2024",
+        subject: "DAY",
+        startDate: Date.parse("2024-10-19"),
+        endDate: Date.parse("2024-10-19"),
       });
     
   

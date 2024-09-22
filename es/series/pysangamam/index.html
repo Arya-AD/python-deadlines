@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PySangamam Conference Summary in German" hreflang="de" href="/de/series/pysangamam/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726863126" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727031787" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726863126" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726863126" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726863126" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727031787" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727031787" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727031787" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -380,7 +380,7 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">7 – 9 de septiembre de 2018.</span>
+                  <span class="conf-date">7 – 8 de septiembre de 2018.</span>
                   <span class="conf-place">
                     
                       <a href="http://maps.google.com/?q=Tamil Nadu, India">Tamil Nadu, India</a>
@@ -394,7 +394,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Sunday,  1 July 2018</span>
                   </div>
                 </div>
 
@@ -591,9 +591,69 @@ $('#subject-select').multiselect({
           $('#pysangamam-2018 .PY-tag').html("Python General".toLocaleLowerCase("es"));
         
         
-          $('#pysangamam-2018 .timer').html("TBA");
-          $('#pysangamam-2018 .deadline-time').html("TBA");
-          $('#pysangamam-2018').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2018-07-01 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2018-09-07", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2018-07-01 23:59:00");
+            var confDate = DateTime.fromSQL("2018-09-07");
+            console.log("Invalid timezone in pysangamam-2018. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pysangamam-2018 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pysangamam-2018 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pysangamam-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pysangamam-2018',
+              title: 'PySangamam 2018 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Tamil Nadu, India',
+              link: 'https://web.archive.org/web/20181120212752/https://pysangamam.org/'
+            });
+            document.querySelector('#pysangamam-2018 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pysangamam-2018 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pysangamam-2018').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pysangamam-2018').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pysangamam-2018').addClass('pastcfp');
+            $('#pysangamam-2018 .timer').replaceWith($('#pysangamam-2018 .deadline'));
+            $('#pysangamam-2018 .timer-small').replaceWith($('#pysangamam-2018 .deadline'));
+            $('#pysangamam-2018 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pysangamam-2018').addClass('pastconf');
+            $('#pysangamam-2018 .timer').replaceWith($('#pysangamam-2018 .deadline'));
+            $('#pysangamam-2018 .timer-small').replaceWith($('#pysangamam-2018 .deadline'));
+            $('#pysangamam-2018 .calendar').remove();
+          }
         
       
 

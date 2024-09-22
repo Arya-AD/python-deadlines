@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyConf Hyderabad Conference Summary in German" hreflang="de" href="/de/series/pyconf-hyderabad/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726863189" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727031853" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726863189" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726863189" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726863189" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727031853" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727031853" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727031853" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -367,6 +367,13 @@
                   &ZeroWidthSpace;
                 </span>
                 
+                  <span class="conf-title-icon">
+                    <a title="Call for Participation for PyConf Hyderabad" href="https://web.archive.org/web/20171008124816/https://pyconfhyd.talkfunnel.com/2017/" target="_blank"><img
+                        src="/static/img/035-file-text.svg" class="badge-link"
+                        alt="Link to Call for Participation for PyConf Hyderabad" width="16" height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
                 
                 
                 
@@ -380,10 +387,10 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">7. – 9. Oktober 2017.</span>
+                  <span class="conf-date">7. – 8. Oktober 2017.</span>
                   <span class="conf-place">
                     
-                      <a href="http://maps.google.com/?q=IIIT Hyderabad, India">IIIT Hyderabad, India</a>
+                      <a href="http://maps.google.com/?q=Hyderabad, India">Hyderabad, India</a>
                       
                     
                   </span>
@@ -394,7 +401,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Thursday, 31 August 2017</span>
                   </div>
                 </div>
 
@@ -591,9 +598,69 @@ $('#subject-select').multiselect({
           $('#pyconf-hyderabad-2017 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
         
         
-          $('#pyconf-hyderabad-2017 .timer').html("TBA");
-          $('#pyconf-hyderabad-2017 .deadline-time').html("TBA");
-          $('#pyconf-hyderabad-2017').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2017-08-31 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2017-10-07", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2017-08-31 23:59:00");
+            var confDate = DateTime.fromSQL("2017-10-07");
+            console.log("Invalid timezone in pyconf-hyderabad-2017. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pyconf-hyderabad-2017 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pyconf-hyderabad-2017 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pyconf-hyderabad-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pyconf-hyderabad-2017',
+              title: 'PyConf Hyderabad 2017 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Hyderabad, India',
+              link: 'https://web.archive.org/web/20171008124816/http://pyconf.hydpy.org/'
+            });
+            document.querySelector('#pyconf-hyderabad-2017 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pyconf-hyderabad-2017 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pyconf-hyderabad-2017').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pyconf-hyderabad-2017').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pyconf-hyderabad-2017').addClass('pastcfp');
+            $('#pyconf-hyderabad-2017 .timer').replaceWith($('#pyconf-hyderabad-2017 .deadline'));
+            $('#pyconf-hyderabad-2017 .timer-small').replaceWith($('#pyconf-hyderabad-2017 .deadline'));
+            $('#pyconf-hyderabad-2017 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pyconf-hyderabad-2017').addClass('pastconf');
+            $('#pyconf-hyderabad-2017 .timer').replaceWith($('#pyconf-hyderabad-2017 .deadline'));
+            $('#pyconf-hyderabad-2017 .timer-small').replaceWith($('#pyconf-hyderabad-2017 .deadline'));
+            $('#pyconf-hyderabad-2017 .calendar').remove();
+          }
         
       
 

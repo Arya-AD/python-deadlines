@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyDay NEA Conference Summary in German" hreflang="de" href="/de/series/pyday-nea/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726863126" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727031787" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726863126" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726863126" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726863126" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727031787" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727031787" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727031787" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -305,10 +305,8 @@
           <span id="conf-subs" title="Conference subjects">
             
             
-            <span class="PY-tag badge badge-light conf-sub conf-PY">
+            <span class="DAY-tag badge badge-light conf-sub conf-DAY">
               
-                
-                  General Python
                 
               
                 
@@ -323,6 +321,8 @@
               
                 
               
+                
+                  Python Day
                 
               
             </span>
@@ -350,7 +350,7 @@
         
           
           <div id="pyday-nea-2019"
-            class="ConfItem  PY-conf ">
+            class="ConfItem  DAY-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
@@ -380,7 +380,7 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">29 – 30 de junio de 2019.</span>
+                  <span class="conf-date">29 de junio de 2019.</span>
                   <span class="conf-place">
                     
                       <a href="http://maps.google.com/?q=Resistencia, Argentina">Resistencia, Argentina</a>
@@ -394,7 +394,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">None</span>
                   </div>
                 </div>
 
@@ -404,8 +404,8 @@
               <div class="col-6">
                 
                 
-                  <span title="Click to only show PY conferences" data-sub="PY"
-                    class="badge badge-light conf-sub PY-tag"></span>
+                  <span title="Click to only show DAY conferences" data-sub="DAY"
+                    class="badge badge-light conf-sub DAY-tag"></span>
                 
               </div>
               <div class="col-6">
@@ -588,11 +588,11 @@ $('#subject-select').multiselect({
         
         
         
-          $('#pyday-nea-2019 .PY-tag').html("Python General".toLocaleLowerCase("es"));
+          $('#pyday-nea-2019 .DAY-tag').html("Día de Python".toLocaleLowerCase("es"));
         
         
-          $('#pyday-nea-2019 .timer').html("TBA");
-          $('#pyday-nea-2019 .deadline-time').html("TBA");
+          $('#pyday-nea-2019 .timer').html("None");
+          $('#pyday-nea-2019 .deadline-time').html("None");
           $('#pyday-nea-2019').attr("cfpDiff", Infinity);
         
       

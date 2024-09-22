@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyDay Quito Conference Summary in German" hreflang="de" href="/de/series/pyday-quito/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726863063" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727031719" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726863063" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726863063" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726863063" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727031719" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727031719" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727031719" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -305,10 +305,8 @@
           <span id="conf-subs" title="Conference subjects">
             
             
-            <span class="PY-tag badge badge-light conf-sub conf-PY">
+            <span class="DAY-tag badge badge-light conf-sub conf-DAY">
               
-                
-                  General Python
                 
               
                 
@@ -323,6 +321,8 @@
               
                 
               
+                
+                  Python Day
                 
               
             </span>
@@ -350,7 +350,7 @@
         
           
           <div id="pyday-quito-2016"
-            class="ConfItem  PY-conf ">
+            class="ConfItem  DAY-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
@@ -380,7 +380,7 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">March 8 – 10, 2016.</span>
+                  <span class="conf-date">March 8 – 9, 2016.</span>
                   <span class="conf-place">
                     
                       <a href="http://maps.google.com/?q=Quito, Ecuador">Quito, Ecuador</a>
@@ -394,7 +394,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Sunday, 28 February 2016</span>
                   </div>
                 </div>
 
@@ -404,8 +404,8 @@
               <div class="col-6">
                 
                 
-                  <span title="Click to only show PY conferences" data-sub="PY"
-                    class="badge badge-light conf-sub PY-tag"></span>
+                  <span title="Click to only show DAY conferences" data-sub="DAY"
+                    class="badge badge-light conf-sub DAY-tag"></span>
                 
               </div>
               <div class="col-6">
@@ -588,12 +588,72 @@ $('#subject-select').multiselect({
         
         
         
-          $('#pyday-quito-2016 .PY-tag').html("General Python".toLocaleLowerCase("en"));
+          $('#pyday-quito-2016 .DAY-tag').html("Python Day".toLocaleLowerCase("en"));
         
         
-          $('#pyday-quito-2016 .timer').html("TBA");
-          $('#pyday-quito-2016 .deadline-time').html("TBA");
-          $('#pyday-quito-2016').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2016-02-28 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2016-03-08", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2016-02-28 23:59:00");
+            var confDate = DateTime.fromSQL("2016-03-08");
+            console.log("Invalid timezone in pyday-quito-2016. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pyday-quito-2016 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pyday-quito-2016 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pyday-quito-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pyday-quito-2016',
+              title: 'PyDay Quito 2016 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Quito, Ecuador',
+              link: 'https://web.archive.org/web/20160302102219/http://pythonquito.tk/'
+            });
+            document.querySelector('#pyday-quito-2016 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pyday-quito-2016 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pyday-quito-2016').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pyday-quito-2016').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pyday-quito-2016').addClass('pastcfp');
+            $('#pyday-quito-2016 .timer').replaceWith($('#pyday-quito-2016 .deadline'));
+            $('#pyday-quito-2016 .timer-small').replaceWith($('#pyday-quito-2016 .deadline'));
+            $('#pyday-quito-2016 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pyday-quito-2016').addClass('pastconf');
+            $('#pyday-quito-2016 .timer').replaceWith($('#pyday-quito-2016 .deadline'));
+            $('#pyday-quito-2016 .timer-small').replaceWith($('#pyday-quito-2016 .deadline'));
+            $('#pyday-quito-2016 .calendar').remove();
+          }
         
       
 

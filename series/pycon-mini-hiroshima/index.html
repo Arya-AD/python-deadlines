@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyCon mini Hiroshima Conference Summary in German" hreflang="de" href="/de/series/pycon-mini-hiroshima/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726863063" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727031719" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726863063" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726863063" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726863063" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727031719" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727031719" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727031719" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -401,7 +401,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Sunday,  1 September 2019</span>
                   </div>
                 </div>
 
@@ -598,9 +598,69 @@ $('#subject-select').multiselect({
           $('#pycon-mini-hiroshima-2019 .PY-tag').html("General Python".toLocaleLowerCase("en"));
         
         
-          $('#pycon-mini-hiroshima-2019 .timer').html("TBA");
-          $('#pycon-mini-hiroshima-2019 .deadline-time').html("TBA");
-          $('#pycon-mini-hiroshima-2019').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2019-09-01 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2019-10-12", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2019-09-01 23:59:00");
+            var confDate = DateTime.fromSQL("2019-10-12");
+            console.log("Invalid timezone in pycon-mini-hiroshima-2019. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-mini-hiroshima-2019 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-mini-hiroshima-2019 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-mini-hiroshima-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-mini-hiroshima-2019',
+              title: 'PyCon mini Hiroshima 2019 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Hiroshima, Japan',
+              link: 'https://hiroshima.pycon.jp/2019/'
+            });
+            document.querySelector('#pycon-mini-hiroshima-2019 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-mini-hiroshima-2019 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-mini-hiroshima-2019').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-mini-hiroshima-2019').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-mini-hiroshima-2019').addClass('pastcfp');
+            $('#pycon-mini-hiroshima-2019 .timer').replaceWith($('#pycon-mini-hiroshima-2019 .deadline'));
+            $('#pycon-mini-hiroshima-2019 .timer-small').replaceWith($('#pycon-mini-hiroshima-2019 .deadline'));
+            $('#pycon-mini-hiroshima-2019 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-mini-hiroshima-2019').addClass('pastconf');
+            $('#pycon-mini-hiroshima-2019 .timer').replaceWith($('#pycon-mini-hiroshima-2019 .deadline'));
+            $('#pycon-mini-hiroshima-2019 .timer-small').replaceWith($('#pycon-mini-hiroshima-2019 .deadline'));
+            $('#pycon-mini-hiroshima-2019 .calendar').remove();
+          }
         
       
 

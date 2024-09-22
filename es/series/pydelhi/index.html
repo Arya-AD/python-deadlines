@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyDelhi Conference Summary in German" hreflang="de" href="/de/series/pydelhi/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726863126" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727031787" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726863126" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726863126" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726863126" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727031787" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727031787" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727031787" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -380,7 +380,7 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">5 – 6 de marzo de 2016.</span>
+                  <span class="conf-date">5 de marzo de 2016.</span>
                   <span class="conf-place">
                     
                       <a href="http://maps.google.com/?q=New Delhi, India">New Delhi, India</a>
@@ -394,7 +394,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Monday,  8 February 2016</span>
                   </div>
                 </div>
 
@@ -591,9 +591,69 @@ $('#subject-select').multiselect({
           $('#pydelhi-2016 .PY-tag').html("Python General".toLocaleLowerCase("es"));
         
         
-          $('#pydelhi-2016 .timer').html("TBA");
-          $('#pydelhi-2016 .deadline-time').html("TBA");
-          $('#pydelhi-2016').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2016-02-08 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2016-03-05", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2016-02-08 23:59:00");
+            var confDate = DateTime.fromSQL("2016-03-05");
+            console.log("Invalid timezone in pydelhi-2016. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pydelhi-2016 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pydelhi-2016 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pydelhi-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pydelhi-2016',
+              title: 'PyDelhi 2016 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'New Delhi, India',
+              link: 'https://web.archive.org/web/20160223145838/http://conference.pydelhi.org/'
+            });
+            document.querySelector('#pydelhi-2016 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pydelhi-2016 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pydelhi-2016').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pydelhi-2016').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pydelhi-2016').addClass('pastcfp');
+            $('#pydelhi-2016 .timer').replaceWith($('#pydelhi-2016 .deadline'));
+            $('#pydelhi-2016 .timer-small').replaceWith($('#pydelhi-2016 .deadline'));
+            $('#pydelhi-2016 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pydelhi-2016').addClass('pastconf');
+            $('#pydelhi-2016 .timer').replaceWith($('#pydelhi-2016 .deadline'));
+            $('#pydelhi-2016 .timer-small').replaceWith($('#pydelhi-2016 .deadline'));
+            $('#pydelhi-2016 .calendar').remove();
+          }
         
       
 

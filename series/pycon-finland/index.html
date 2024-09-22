@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyCon Finland Conference Summary in German" hreflang="de" href="/de/series/pycon-finland/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726863063" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727031719" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726863063" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726863063" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726863063" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727031719" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727031719" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727031719" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -380,10 +380,10 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">October 31 – 1, 2016.</span>
+                  <span class="conf-date">October 31, 2016.</span>
                   <span class="conf-place">
                     
-                      <a href="http://maps.google.com/?q=Tammasaarenkatu 7, Finland">Tammasaarenkatu 7, Finland</a>
+                      <a href="http://maps.google.com/?q=Helsinki, Finland">Helsinki, Finland</a>
                       
                     
                   </span>
@@ -394,7 +394,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Wednesday, 31 August 2016</span>
                   </div>
                 </div>
 
@@ -447,7 +447,7 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">October 19 – 20, 2015.</span>
+                  <span class="conf-date">October 19, 2015.</span>
                   <span class="conf-place">
                     
                       <a href="http://maps.google.com/?q=Helsinki, Finland">Helsinki, Finland</a>
@@ -461,7 +461,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Sunday, 16 August 2015</span>
                   </div>
                 </div>
 
@@ -514,7 +514,7 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">October 27 – 28, 2014.</span>
+                  <span class="conf-date">October 27, 2014.</span>
                   <span class="conf-place">
                     
                       <a href="http://maps.google.com/?q=Helsinki, Finland">Helsinki, Finland</a>
@@ -528,7 +528,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Thursday, 31 July 2014</span>
                   </div>
                 </div>
 
@@ -563,7 +563,7 @@
                     href="/conference/pycon-finland-2013/">PyCon Finland '13</a>
                 </span>
                 <span class="conf-title-icon">
-                  <a title="Conference Website" href="https://web.archive.org/web/20090724094325/http://fi.pycon.org/" target="_blank"><img src="/static/img/203-earth.svg"
+                  <a title="Conference Website" href="https://web.archive.org/web/20130724094325/http://fi.pycon.org/" target="_blank"><img src="/static/img/203-earth.svg"
                       class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
                   &ZeroWidthSpace;
                 </span>
@@ -581,7 +581,7 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">October 21 – 23, 2013.</span>
+                  <span class="conf-date">October 21 – 22, 2013.</span>
                   <span class="conf-place">
                     
                       <a href="http://maps.google.com/?q=Otaniemi, Finland">Otaniemi, Finland</a>
@@ -595,7 +595,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Thursday,  1 August 2013</span>
                   </div>
                 </div>
 
@@ -859,9 +859,69 @@ $('#subject-select').multiselect({
           $('#pycon-finland-2016 .PY-tag').html("General Python".toLocaleLowerCase("en"));
         
         
-          $('#pycon-finland-2016 .timer').html("TBA");
-          $('#pycon-finland-2016 .deadline-time').html("TBA");
-          $('#pycon-finland-2016').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2016-08-31 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2016-10-31", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2016-08-31 23:59:00");
+            var confDate = DateTime.fromSQL("2016-10-31");
+            console.log("Invalid timezone in pycon-finland-2016. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-finland-2016 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-finland-2016 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-finland-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-finland-2016',
+              title: 'PyCon Finland 2016 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Helsinki, Finland',
+              link: 'https://web.archive.org/web/20161027142114/http://fi.pycon.org/2016/'
+            });
+            document.querySelector('#pycon-finland-2016 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-finland-2016 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-finland-2016').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-finland-2016').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-finland-2016').addClass('pastcfp');
+            $('#pycon-finland-2016 .timer').replaceWith($('#pycon-finland-2016 .deadline'));
+            $('#pycon-finland-2016 .timer-small').replaceWith($('#pycon-finland-2016 .deadline'));
+            $('#pycon-finland-2016 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-finland-2016').addClass('pastconf');
+            $('#pycon-finland-2016 .timer').replaceWith($('#pycon-finland-2016 .deadline'));
+            $('#pycon-finland-2016 .timer-small').replaceWith($('#pycon-finland-2016 .deadline'));
+            $('#pycon-finland-2016 .calendar').remove();
+          }
         
       
         
@@ -870,9 +930,69 @@ $('#subject-select').multiselect({
           $('#pycon-finland-2015 .PY-tag').html("General Python".toLocaleLowerCase("en"));
         
         
-          $('#pycon-finland-2015 .timer').html("TBA");
-          $('#pycon-finland-2015 .deadline-time').html("TBA");
-          $('#pycon-finland-2015').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2015-08-16 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2015-10-19", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2015-08-16 23:59:00");
+            var confDate = DateTime.fromSQL("2015-10-19");
+            console.log("Invalid timezone in pycon-finland-2015. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-finland-2015 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-finland-2015 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-finland-2015 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-finland-2015',
+              title: 'PyCon Finland 2015 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Helsinki, Finland',
+              link: 'https://web.archive.org/web/20150924173543/http://fi.pycon.org/2015/'
+            });
+            document.querySelector('#pycon-finland-2015 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-finland-2015 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-finland-2015').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-finland-2015').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-finland-2015').addClass('pastcfp');
+            $('#pycon-finland-2015 .timer').replaceWith($('#pycon-finland-2015 .deadline'));
+            $('#pycon-finland-2015 .timer-small').replaceWith($('#pycon-finland-2015 .deadline'));
+            $('#pycon-finland-2015 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-finland-2015').addClass('pastconf');
+            $('#pycon-finland-2015 .timer').replaceWith($('#pycon-finland-2015 .deadline'));
+            $('#pycon-finland-2015 .timer-small').replaceWith($('#pycon-finland-2015 .deadline'));
+            $('#pycon-finland-2015 .calendar').remove();
+          }
         
       
         
@@ -881,9 +1001,69 @@ $('#subject-select').multiselect({
           $('#pycon-finland-2014 .PY-tag').html("General Python".toLocaleLowerCase("en"));
         
         
-          $('#pycon-finland-2014 .timer').html("TBA");
-          $('#pycon-finland-2014 .deadline-time').html("TBA");
-          $('#pycon-finland-2014').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2014-07-31 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2014-10-27", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2014-07-31 23:59:00");
+            var confDate = DateTime.fromSQL("2014-10-27");
+            console.log("Invalid timezone in pycon-finland-2014. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-finland-2014 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-finland-2014 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-finland-2014 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-finland-2014',
+              title: 'PyCon Finland 2014 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Helsinki, Finland',
+              link: 'https://web.archive.org/web/20141028233840/http://fi.pycon.org/2014/'
+            });
+            document.querySelector('#pycon-finland-2014 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-finland-2014 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-finland-2014').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-finland-2014').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-finland-2014').addClass('pastcfp');
+            $('#pycon-finland-2014 .timer').replaceWith($('#pycon-finland-2014 .deadline'));
+            $('#pycon-finland-2014 .timer-small').replaceWith($('#pycon-finland-2014 .deadline'));
+            $('#pycon-finland-2014 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-finland-2014').addClass('pastconf');
+            $('#pycon-finland-2014 .timer').replaceWith($('#pycon-finland-2014 .deadline'));
+            $('#pycon-finland-2014 .timer-small').replaceWith($('#pycon-finland-2014 .deadline'));
+            $('#pycon-finland-2014 .calendar').remove();
+          }
         
       
         
@@ -892,9 +1072,69 @@ $('#subject-select').multiselect({
           $('#pycon-finland-2013 .PY-tag').html("General Python".toLocaleLowerCase("en"));
         
         
-          $('#pycon-finland-2013 .timer').html("TBA");
-          $('#pycon-finland-2013 .deadline-time').html("TBA");
-          $('#pycon-finland-2013').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2013-08-01 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2013-10-21", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2013-08-01 23:59:00");
+            var confDate = DateTime.fromSQL("2013-10-21");
+            console.log("Invalid timezone in pycon-finland-2013. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-finland-2013 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-finland-2013 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-finland-2013 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-finland-2013',
+              title: 'PyCon Finland 2013 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Otaniemi, Finland',
+              link: 'https://web.archive.org/web/20130724094325/http://fi.pycon.org/'
+            });
+            document.querySelector('#pycon-finland-2013 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-finland-2013 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-finland-2013').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-finland-2013').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-finland-2013').addClass('pastcfp');
+            $('#pycon-finland-2013 .timer').replaceWith($('#pycon-finland-2013 .deadline'));
+            $('#pycon-finland-2013 .timer-small').replaceWith($('#pycon-finland-2013 .deadline'));
+            $('#pycon-finland-2013 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-finland-2013').addClass('pastconf');
+            $('#pycon-finland-2013 .timer').replaceWith($('#pycon-finland-2013 .deadline'));
+            $('#pycon-finland-2013 .timer-small').replaceWith($('#pycon-finland-2013 .deadline'));
+            $('#pycon-finland-2013 .calendar').remove();
+          }
         
       
         

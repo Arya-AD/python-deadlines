@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyCon Balkan Conference Summary in German" hreflang="de" href="/de/series/pycon-balkan/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726863063" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727031719" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726863063" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726863063" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726863063" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727031719" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727031719" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727031719" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -172,6 +172,16 @@
 <script type="text/javascript" src="/static/js/ouical.min.js"></script>
 <script type="text/javascript" src="/static/js/bootstrap-multiselect.min.js"></script>
 
+  
+  <style>
+    #twitter-widget {
+      width: 100%;
+    }
+
+    .twitter-timeline {
+      width: 100% !important;
+    }
+    </style>
   
 <script type='text/javascript'>
   /* global google */
@@ -502,17 +512,110 @@ if (typeof Object.assign !== 'function') {
           <div class="col-12 col-md-6">
             <div>
               <img src="/static/img/203-earth.svg" class="badge-link" alt="Earth Icon" width="16" height="16" />
-              <a id="conf-website" target="_blank" href="https://conference.pyconbalkan.com/">https://conference.pyconbalkan.com/</a>
+              <a id="conf-website" target="_blank" href="https://pyconbalkan.com/">https://pyconbalkan.com/</a>
             </div>
+            
+              <div>
+                <img src="/static/img/407-twitter.svg" class="badge-link" alt="Twitter icon" width="16" height="16" />
+                <a id="conf-twitter" target="_blank" href="https://twitter.com/pyconblkn">@pyconblkn</a>
+              </div>
             
             
             </div>
             <div class="col-12 col-md-6">
             
+              <!-- Twitter timeline -->
+              <div id="twitter-widget">
+                <a class="twitter-timeline" href="https://twitter.com/pyconblkn" data-tweet-limit=2>Tweets by
+                  pyconblkn</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </div>
+            
           </div>
         </div>
         <hr />
       <div id="all_confs">
+        
+          
+          <div id="pycon-balkan-2024"
+            class="ConfItem  PY-conf ">
+            <div class="row conf-row">
+              <div class="col-6">
+                <span class="conf-title">
+                  <a title="Deadline Details"
+                    href="/conference/pycon-balkan-2024/">PyCon Balkan 2024</a>
+                </span>
+                <span class="conf-title-small">
+                  <a title="Deadline Details"
+                    href="/conference/pycon-balkan-2024/">PyCon Balkan '24</a>
+                </span>
+                <span class="conf-title-icon">
+                  <a title="Conference Website" href="https://pyconbalkan.com/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+                  &ZeroWidthSpace;
+                </span>
+                
+                
+                
+                  <span class="conf-title-icon">
+                    <a title="Sponsorship Opportunity for PyCon Balkan" href="https://pyconbalkan.com/wp-content/uploads/2024/06/PyCon-Balkan-2024-Sponsorship-Proposal.pdf" target="_blank"><img
+                        src="/static/img/060-coin-dollar.svg" class="badge-link" alt="Link to Sponsorship page of PyCon Balkan"
+                        width="16" height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
+                
+                  <span class="conf-title-icon">
+                    <a title="Twitter for PyCon Balkan" href="https://twitter.com/pyconblkn" target="_blank"><img
+                        src="/static/img/407-twitter.svg" class="badge-link" alt="Link to Conference Twitter" width="16"
+                        height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
+              </div>
+              <div class="col-6">
+                <span class="timer"></span>
+                <span class="timer-small"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="meta">
+
+                  <span class="conf-date">October 30 – 1, 2024.</span>
+                  <span class="conf-place">
+                    
+                      <a href="http://maps.google.com/?q=Belgrade, Serbia">Belgrade, Serbia</a>
+                      
+                    
+                  </span>
+                </div>
+                
+
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="deadline">
+                  <div>Deadline:
+                    <span class="deadline-time">TBA</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
+              </div>
+              <div class="col-6">
+                <div class="calendar"></div>
+              </div>
+            </div>
+            <hr>
+          </div>
         
           
           <div id="pycon-balkan-2019"
@@ -614,6 +717,13 @@ if (typeof Object.assign !== 'function') {
                   &ZeroWidthSpace;
                 </span>
                 
+                  <span class="conf-title-icon">
+                    <a title="Call for Participation for PyCon Balkan" href="https://sessionize.com/pycon-balkan-2018" target="_blank"><img
+                        src="/static/img/035-file-text.svg" class="badge-link"
+                        alt="Link to Call for Participation for PyCon Balkan" width="16" height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
                 
                 
                 
@@ -627,7 +737,7 @@ if (typeof Object.assign !== 'function') {
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">November 16 – 19, 2018.</span>
+                  <span class="conf-date">November 16 – 18, 2018.</span>
                   <span class="conf-place">
                     
                       <a href="http://maps.google.com/?q=Belgrade, Serbia">Belgrade, Serbia</a>
@@ -641,7 +751,7 @@ if (typeof Object.assign !== 'function') {
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Sunday, 26 August 2018</span>
                   </div>
                 </div>
 
@@ -665,11 +775,11 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='53d15bf6-90b2-4575-b2f2-c84514e4ec9f' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='eb077265-1ec7-44ce-aa2f-1bd9a370dfe0' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '53d15bf6-90b2-4575-b2f2-c84514e4ec9f',
-    [{"latitude":44.8178131,"longitude":20.4568974,"title":"PyCon Balkan 2018","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":44.8178131,"longitude":20.4568974,"title":"PyCon Balkan 2019","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
+    'eb077265-1ec7-44ce-aa2f-1bd9a370dfe0',
+    [{"latitude":44.8178131,"longitude":20.4568974,"title":"PyCon Balkan 2019","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":44.8178131,"longitude":20.4568974,"title":"PyCon Balkan 2018","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":44.8178131,"longitude":20.4568974,"title":"PyCon Balkan 2024","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
 </script>
@@ -847,6 +957,17 @@ $('#subject-select').multiselect({
         
         
         
+          $('#pycon-balkan-2024 .PY-tag').html("General Python".toLocaleLowerCase("en"));
+        
+        
+          $('#pycon-balkan-2024 .timer').html("TBA");
+          $('#pycon-balkan-2024 .deadline-time').html("TBA");
+          $('#pycon-balkan-2024').attr("cfpDiff", Infinity);
+        
+      
+        
+        
+        
           $('#pycon-balkan-2019 .PY-tag').html("General Python".toLocaleLowerCase("en"));
         
         
@@ -921,9 +1042,69 @@ $('#subject-select').multiselect({
           $('#pycon-balkan-2018 .PY-tag').html("General Python".toLocaleLowerCase("en"));
         
         
-          $('#pycon-balkan-2018 .timer').html("TBA");
-          $('#pycon-balkan-2018 .deadline-time').html("TBA");
-          $('#pycon-balkan-2018').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2018-08-26 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2018-11-16", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2018-08-26 23:59:00");
+            var confDate = DateTime.fromSQL("2018-11-16");
+            console.log("Invalid timezone in pycon-balkan-2018. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-balkan-2018 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-balkan-2018 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-balkan-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-balkan-2018',
+              title: 'PyCon Balkan 2018 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Belgrade, Serbia',
+              link: 'https://web.archive.org/web/20181123180557/https://www.pyconbalkan.com/'
+            });
+            document.querySelector('#pycon-balkan-2018 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-balkan-2018 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-balkan-2018').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-balkan-2018').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-balkan-2018').addClass('pastcfp');
+            $('#pycon-balkan-2018 .timer').replaceWith($('#pycon-balkan-2018 .deadline'));
+            $('#pycon-balkan-2018 .timer-small').replaceWith($('#pycon-balkan-2018 .deadline'));
+            $('#pycon-balkan-2018 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-balkan-2018').addClass('pastconf');
+            $('#pycon-balkan-2018 .timer').replaceWith($('#pycon-balkan-2018 .deadline'));
+            $('#pycon-balkan-2018 .timer-small').replaceWith($('#pycon-balkan-2018 .deadline'));
+            $('#pycon-balkan-2018 .calendar').remove();
+          }
         
       
 

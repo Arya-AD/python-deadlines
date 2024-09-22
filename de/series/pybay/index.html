@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyBay Conference Summary in German" hreflang="de" href="/de/series/pybay/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1726863189" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727031853" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1726863189" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1726863189" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1726863189" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727031853" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727031853" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727031853" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -172,6 +172,38 @@
 <script type="text/javascript" src="/static/js/ouical.min.js"></script>
 <script type="text/javascript" src="/static/js/bootstrap-multiselect.min.js"></script>
 
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/mastodon.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("https://fosstodon.org/@pybay.rss")
+        .then(function (response) {
+          return response.text();
+        })
+        .then(function (xmlText) {
+          var parser = new DOMParser();
+          var xml = parser.parseFromString(xmlText, "text/xml");
+          var items = xml.querySelectorAll("item");
+          var feedContainer = document.getElementById("mastodon-feed");
+          var postLimit = 2; // Number of posts to display
+
+          for (var i = 0; i < postLimit && i < items.length; i++) {
+            var item = items[i];
+            var post = item.querySelector("description").textContent;
+            var link = item.querySelector("link").textContent;
+            var pubDate = item.querySelector("pubDate").textContent;
+
+            var feedItem = document.createElement("div");
+            feedItem.setAttribute("class", "timeline-item")
+            feedItem.innerHTML = '<div class="timeline-content">' + post + '</div><a href="' + link + '">' + pubDate + ' by PyBay</a>';
+            feedContainer.appendChild(feedItem);
+          }
+        })
+        .catch(function (error) {
+          console.log("Error fetching Mastodon RSS feed:", error);
+        });
+    });
+  </script>
   
 </head>
 
@@ -340,8 +372,18 @@
             </div>
             
             
+              <div>
+                <img src="/static/img/407-mastodon.svg" class="badge-link" alt="Mastodon icon" width="16" height="16" />
+                <a id="conf-mastodon" target="_blank" href="https://fosstodon.org/@pybay">Mastodon</a>
+              </div>
+            
             </div>
             <div class="col-12 col-md-6">
+            
+              <!-- Mastodon timeline -->
+              <div class="meta">Mastodon Posts by PyBay:</div>
+              <div id="mastodon-feed"></div>
+              <a href="https://fosstodon.org/@pybay">See all Mastodon posts for PyBay</a>
             
           </div>
         </div>
@@ -383,6 +425,13 @@
                     &ZeroWidthSpace;
                   </span>
                 
+                
+                  <span class="conf-title-icon">
+                    <a title="Mastodon for PyBay" href="https://fosstodon.org/@pybay" target="_blank"><img
+                        src="/static/img/407-mastodon.svg" class="badge-link" alt="Link to Conference Mastodon" width="16"
+                        height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
                 
               </div>
               <div class="col-6">
@@ -596,6 +645,13 @@
                   &ZeroWidthSpace;
                 </span>
                 
+                  <span class="conf-title-icon">
+                    <a title="Call for Participation for PyBay" href="https://web.archive.org/web/20180413152700/http://pybay.com/cfp" target="_blank"><img
+                        src="/static/img/035-file-text.svg" class="badge-link"
+                        alt="Link to Call for Participation for PyBay" width="16" height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
                 
                 
                 
@@ -609,7 +665,7 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">16. – 20. August 2018.</span>
+                  <span class="conf-date">16. – 19. August 2018.</span>
                   <span class="conf-place">
                     
                       <a href="http://maps.google.com/?q=San Francisco, USA">San Francisco, USA</a>
@@ -623,7 +679,74 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Saturday, 21 April 2018</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                
+                
+                  <span title="Click to only show PY conferences" data-sub="PY"
+                    class="badge badge-light conf-sub PY-tag"></span>
+                
+              </div>
+              <div class="col-6">
+                <div class="calendar"></div>
+              </div>
+            </div>
+            <hr>
+          </div>
+        
+          
+          <div id="pybay-2017"
+            class="ConfItem  PY-conf ">
+            <div class="row conf-row">
+              <div class="col-6">
+                <span class="conf-title">
+                  <a title="Deadline Details"
+                    href="/de/conference/pybay-2017/">PyBay 2017</a>
+                </span>
+                <span class="conf-title-small">
+                  <a title="Deadline Details"
+                    href="/de/conference/pybay-2017/">PyBay '17</a>
+                </span>
+                <span class="conf-title-icon">
+                  <a title="Conference Website" href="https://web.archive.org/web/20170811130121/http://pybay.com/" target="_blank"><img src="/static/img/203-earth.svg"
+                      class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+                  &ZeroWidthSpace;
+                </span>
+                
+                
+                
+                
+              </div>
+              <div class="col-6">
+                <span class="timer"></span>
+                <span class="timer-small"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="meta">
+
+                  <span class="conf-date">10. – 13. August 2017.</span>
+                  <span class="conf-place">
+                    
+                      <a href="http://maps.google.com/?q=San Francisco, USA">San Francisco, USA</a>
+                      
+                    
+                  </span>
+                </div>
+                
+
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="deadline">
+                  <div>Deadline:
+                    <span class="deadline-time">Friday, 16 June 2017</span>
                   </div>
                 </div>
 
@@ -676,7 +799,7 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">19. – 22. August 2016.</span>
+                  <span class="conf-date">19. – 21. August 2016.</span>
                   <span class="conf-place">
                     
                       <a href="http://maps.google.com/?q=San Francisco, USA">San Francisco, USA</a>
@@ -690,7 +813,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Friday, 24 June 2016</span>
                   </div>
                 </div>
 
@@ -1100,9 +1223,140 @@ $('#subject-select').multiselect({
           $('#pybay-2018 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
         
         
-          $('#pybay-2018 .timer').html("TBA");
-          $('#pybay-2018 .deadline-time').html("TBA");
-          $('#pybay-2018').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2018-04-21 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2018-08-16", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2018-04-21 23:59:00");
+            var confDate = DateTime.fromSQL("2018-08-16");
+            console.log("Invalid timezone in pybay-2018. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pybay-2018 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pybay-2018 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pybay-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pybay-2018',
+              title: 'PyBay 2018 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'San Francisco, USA',
+              link: 'https://web.archive.org/web/20180811130121/http://pybay.com/'
+            });
+            document.querySelector('#pybay-2018 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pybay-2018 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pybay-2018').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pybay-2018').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pybay-2018').addClass('pastcfp');
+            $('#pybay-2018 .timer').replaceWith($('#pybay-2018 .deadline'));
+            $('#pybay-2018 .timer-small').replaceWith($('#pybay-2018 .deadline'));
+            $('#pybay-2018 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pybay-2018').addClass('pastconf');
+            $('#pybay-2018 .timer').replaceWith($('#pybay-2018 .deadline'));
+            $('#pybay-2018 .timer-small').replaceWith($('#pybay-2018 .deadline'));
+            $('#pybay-2018 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pybay-2017 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2017-06-16 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2017-08-10", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2017-06-16 23:59:00");
+            var confDate = DateTime.fromSQL("2017-08-10");
+            console.log("Invalid timezone in pybay-2017. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pybay-2017 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pybay-2017 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pybay-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pybay-2017',
+              title: 'PyBay 2017 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'San Francisco, USA',
+              link: 'https://web.archive.org/web/20170811130121/http://pybay.com/'
+            });
+            document.querySelector('#pybay-2017 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pybay-2017 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pybay-2017').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pybay-2017').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pybay-2017').addClass('pastcfp');
+            $('#pybay-2017 .timer').replaceWith($('#pybay-2017 .deadline'));
+            $('#pybay-2017 .timer-small').replaceWith($('#pybay-2017 .deadline'));
+            $('#pybay-2017 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pybay-2017').addClass('pastconf');
+            $('#pybay-2017 .timer').replaceWith($('#pybay-2017 .deadline'));
+            $('#pybay-2017 .timer-small').replaceWith($('#pybay-2017 .deadline'));
+            $('#pybay-2017 .calendar').remove();
+          }
         
       
         
@@ -1111,9 +1365,69 @@ $('#subject-select').multiselect({
           $('#pybay-2016 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
         
         
-          $('#pybay-2016 .timer').html("TBA");
-          $('#pybay-2016 .deadline-time').html("TBA");
-          $('#pybay-2016').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2016-06-24 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2016-08-19", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2016-06-24 23:59:00");
+            var confDate = DateTime.fromSQL("2016-08-19");
+            console.log("Invalid timezone in pybay-2016. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pybay-2016 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pybay-2016 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pybay-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pybay-2016',
+              title: 'PyBay 2016 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'San Francisco, USA',
+              link: 'https://web.archive.org/web/20160819153259/http://www.pybay.com/'
+            });
+            document.querySelector('#pybay-2016 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pybay-2016 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pybay-2016').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pybay-2016').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pybay-2016').addClass('pastcfp');
+            $('#pybay-2016 .timer').replaceWith($('#pybay-2016 .deadline'));
+            $('#pybay-2016 .timer-small').replaceWith($('#pybay-2016 .deadline'));
+            $('#pybay-2016 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pybay-2016').addClass('pastconf');
+            $('#pybay-2016 .timer').replaceWith($('#pybay-2016 .deadline'));
+            $('#pybay-2016 .timer-small').replaceWith($('#pybay-2016 .deadline'));
+            $('#pybay-2016 .calendar').remove();
+          }
         
       
 
