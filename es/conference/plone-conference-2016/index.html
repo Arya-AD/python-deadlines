@@ -42,12 +42,12 @@
 <link rel="alternate"  title="Plone Conference 2016 Conference Deadlines in German" hreflang="de" href="/de/conference/plone-conference-2016/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727076937" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727121680" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727076937" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727076937" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727076937" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727121680" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727121680" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727121680" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -492,14 +492,14 @@ if (typeof Object.assign !== 'function') {
     </div>
     <div id="page-content">
       <div id="conf-deadline-timer" class="row">
-        <div id="cfp-timer" class="col-12 conf-timer">TBA
+        <div id="cfp-timer" class="col-12 conf-timer">
         </div>
       </div>
       <div id="conf-key-facts" class="row">
         <div class="col-12 col-md-6">
           <div>
             <img src="/static/img/084-calendar.svg" class="badge-link" alt="Calendar icon" width="16" height="16" />
-            <span id="conf-date">17 – 24 de octubre de 2016</span>
+            <span id="conf-date">17 – 23 de octubre de 2016</span>
           </div>
           <div>
             <img src="/static/img/072-location.svg" class="badge-link" alt="Location icon" width="16" height="16" />
@@ -508,7 +508,13 @@ if (typeof Object.assign !== 'function') {
           </div>
           <div>
             <img src="/static/img/203-earth.svg" class="badge-link" alt="Earth Icon" width="16" height="16" />
-            <a id="conf-website" target="_blank" href="https://web.archive.org/web/20130208160717/http://www.ploneconf.org/">https://web.archive.org/web/20130208160717/http://www.ploneconf.org/</a>
+            <a id="conf-website" target="_blank" href="https://web.archive.org/web/20170409210135/https://2016.ploneconf.org/">https://web.archive.org/web/20170409210135/https://2016.ploneconf.org/</a>
+          </div>
+          
+          <div>
+            <img src="/static/img/035-file-text.svg" class="badge-link" alt="Document Icon for CfP link" width="16"
+              height="16" />
+            <a id="conf-cfp_link" target="_blank" href="https://plone.org/news-and-events/events/plone-conferences/boston-2016/2016-call-for-proposals">Llamada por participación</a>
           </div>
           
           <div>
@@ -535,7 +541,7 @@ if (typeof Object.assign !== 'function') {
             Fecha límite en la zona horaria de la conferencia:
           </div>
           <div class="meta">
-            <span class="deadline-time">TBA</span>
+            <span class="deadline-time">Monday, 28 September 2015</span>
           </div>
           <div class="meta">
             Fecha límite en sua zona horaria <span class='local-timezone'></span>:
@@ -574,10 +580,10 @@ if (typeof Object.assign !== 'function') {
         </div>
       <div class="row">
         
-        <div id='ec631f75-20d1-437e-924c-8c128636ff9c' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='449417a8-ff68-496e-92f1-dfce0fcfc2b1' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'ec631f75-20d1-437e-924c-8c128636ff9c',
+    '449417a8-ff68-496e-92f1-dfce0fcfc2b1',
     [{"latitude":42.3655767,"longitude":-71.1040018,"title":"Plone Conference 2016","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -699,9 +705,54 @@ function createCalendarFromObject(data) {
 
       // other
       
-      $('#cfp-timer').html("TBA");
-      $('.deadline-time').html("TBA");
-      $('.deadline-local-time').html("TBA");
+
+      // Use specified timezone for deadlines if available else use AoE timezone
+      
+      var confDeadline = DateTime.fromSQL("2015-09-28 23:59:00", { zone: "UTC-12" });
+      
+
+      // check if timezone is valid otherwise replace by system timezone
+      if (confDeadline.invalid) {
+        var confDeadline = DateTime.fromSQL("2015-09-28 23:59:00");
+        console.log("Invalid timezone. Using system timezone instead.");
+      }
+
+      // add calendar
+
+      var conferenceDeadlineCalendar = createCalendarFromObject({
+        id: 'plone-conference-2016',
+        title: 'Plone Conference 2016 deadline',
+        start_date: confDeadline.toJSDate(),
+        duration: 60,
+        place: 'Cambridge, USA',
+        link: 'https://web.archive.org/web/20170409210135/https://2016.ploneconf.org/',
+      });
+      document.querySelector('#conference-deadline').appendChild(conferenceDeadlineCalendar);
+
+
+      var conferenceCalendar = createCalendarFromObject({
+        id: 'plone-conference-2016',
+        title: 'Plone Conference 2016',
+        start_date: DateTime.fromSQL("2016-10-17").toJSDate(),
+        end_date: DateTime.fromSQL("2016-10-23").toJSDate(),
+        place: 'Cambridge, USA',
+        link: 'https://web.archive.org/web/20170409210135/https://2016.ploneconf.org/',
+      });
+      document.querySelector('#conference-calendar').appendChild(conferenceCalendar);
+
+      // render countdown timer
+      $('#cfp-timer').countdown(confDeadline.toJSDate(), function (event) {
+        $(this).html(event.strftime('%D dias %Hh %Mm %Ss'));
+      });
+
+      // render deadline conference time
+      
+      $('.deadline-time').html(confDeadline.setZone("UTC-12").toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+      
+
+      // render deadline in local timezone
+      $('.deadline-local-time').html(confDeadline.setZone('system').toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+
       
 
     });

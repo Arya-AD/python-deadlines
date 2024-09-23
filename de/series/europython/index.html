@@ -44,12 +44,12 @@
 <link rel="alternate"  title="EuroPython Conference Summary in German" hreflang="de" href="/de/series/europython/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727077006" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727121754" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727077006" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727077006" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727077006" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727121754" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727121754" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727121754" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -672,7 +672,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">Sunday, 12 May 2019</span>
+                    <span class="deadline-time">Wednesday, 12 May 2021</span>
                   </div>
                 </div>
 
@@ -2364,13 +2364,13 @@ $('#subject-select').multiselect({
 
           // Use specified timezone for deadlines if available else use AoE timezone
           
-            var cfpDate = DateTime.fromSQL("2019-05-12 23:59:59", { zone: "Europe/Zurich" });
+            var cfpDate = DateTime.fromSQL("2021-05-12 23:59:59", { zone: "Europe/Zurich" });
             var confDate = DateTime.fromSQL("2021-07-26", { zone: "Europe/Zurich" });
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
-            var cfpDate = DateTime.fromSQL("2019-05-12 23:59:59");
+            var cfpDate = DateTime.fromSQL("2021-05-12 23:59:59");
             var confDate = DateTime.fromSQL("2021-07-26");
             console.log("Invalid timezone in europython-2021. Using system timezone instead.");
           }

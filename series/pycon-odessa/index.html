@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyCon Odessa Conference Summary in German" hreflang="de" href="/de/series/pycon-odessa/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727076868" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727121604" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727076868" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727076868" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727076868" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727121604" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727121604" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727121604" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -694,7 +694,7 @@ if (typeof Object.assign !== 'function') {
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Tuesday,  1 January 2019</span>
                   </div>
                 </div>
 
@@ -718,11 +718,11 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='0e29704c-f307-411d-bfb2-bf3caddab497' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='d028bf8c-a114-4386-b1ad-4cdd7dad59ff' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '0e29704c-f307-411d-bfb2-bf3caddab497',
-    [{"latitude":46.4843023,"longitude":30.7322878,"title":"PyCon Odessa 2019","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":46.4843023,"longitude":30.7322878,"title":"PyCon Odessa 2021","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":46.4843023,"longitude":30.7322878,"title":"PyCon Odessa 2020","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
+    'd028bf8c-a114-4386-b1ad-4cdd7dad59ff',
+    [{"latitude":46.4843023,"longitude":30.7322878,"title":"PyCon Odessa 2021","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":46.4843023,"longitude":30.7322878,"title":"PyCon Odessa 2020","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":46.4843023,"longitude":30.7322878,"title":"PyCon Odessa 2019","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
 </script>
@@ -1045,9 +1045,69 @@ $('#subject-select').multiselect({
           $('#pycon-odessa-2019 .PY-tag').html("General Python".toLocaleLowerCase("en"));
         
         
-          $('#pycon-odessa-2019 .timer').html("TBA");
-          $('#pycon-odessa-2019 .deadline-time').html("TBA");
-          $('#pycon-odessa-2019').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2019-01-01 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2019-03-16", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2019-01-01 23:59:00");
+            var confDate = DateTime.fromSQL("2019-03-16");
+            console.log("Invalid timezone in pycon-odessa-2019. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-odessa-2019 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-odessa-2019 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-odessa-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-odessa-2019',
+              title: 'PyCon Odessa 2019 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Odessa, Ukraine',
+              link: 'https://web.archive.org/web/20220815150941/https://pyconodessa.com/en/2019/'
+            });
+            document.querySelector('#pycon-odessa-2019 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-odessa-2019 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-odessa-2019').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-odessa-2019').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-odessa-2019').addClass('pastcfp');
+            $('#pycon-odessa-2019 .timer').replaceWith($('#pycon-odessa-2019 .deadline'));
+            $('#pycon-odessa-2019 .timer-small').replaceWith($('#pycon-odessa-2019 .deadline'));
+            $('#pycon-odessa-2019 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-odessa-2019').addClass('pastconf');
+            $('#pycon-odessa-2019 .timer').replaceWith($('#pycon-odessa-2019 .deadline'));
+            $('#pycon-odessa-2019 .timer-small').replaceWith($('#pycon-odessa-2019 .deadline'));
+            $('#pycon-odessa-2019 .calendar').remove();
+          }
         
       
 

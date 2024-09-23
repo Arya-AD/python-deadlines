@@ -42,12 +42,12 @@
 <link rel="alternate"  title="EuroPython 2021 Conference Deadlines in German" hreflang="de" href="/de/conference/europython-2021/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727077006" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727121754" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727077006" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727077006" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727077006" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727121754" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727121754" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727121754" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -375,7 +375,7 @@
             Deadline in der Zeitzone der Konferenz:
           </div>
           <div class="meta">
-            <span class="deadline-time">Sunday, 12 May 2019</span>
+            <span class="deadline-time">Wednesday, 12 May 2021</span>
           </div>
           <div class="meta">
             Deadline in lokaler <span class='local-timezone'></span> Zeitzone:
@@ -532,12 +532,12 @@ function createCalendarFromObject(data) {
 
       // Use specified timezone for deadlines if available else use AoE timezone
       
-      var confDeadline = DateTime.fromSQL("2019-05-12 23:59:59", { zone: "Europe/Zurich" });
+      var confDeadline = DateTime.fromSQL("2021-05-12 23:59:59", { zone: "Europe/Zurich" });
       
 
       // check if timezone is valid otherwise replace by system timezone
       if (confDeadline.invalid) {
-        var confDeadline = DateTime.fromSQL("2019-05-12 23:59:59");
+        var confDeadline = DateTime.fromSQL("2021-05-12 23:59:59");
         console.log("Invalid timezone. Using system timezone instead.");
       }
 
