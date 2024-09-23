@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyBITS Conference Summary in German" hreflang="de" href="/de/series/pybits/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727043214" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727076937" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727043214" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727043214" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727043214" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727076937" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727076937" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727076937" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -349,17 +349,17 @@
       <div id="all_confs">
         
           
-          <div id="pybits-2017"
+          <div id="pybits-2016"
             class="ConfItem  PY-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
                   <a title="Deadline Details"
-                    href="/es/conference/pybits-2017/">PyBITS 2017</a>
+                    href="/es/conference/pybits-2016/">PyBITS 2016</a>
                 </span>
                 <span class="conf-title-small">
                   <a title="Deadline Details"
-                    href="/es/conference/pybits-2017/">PyBITS '17</a>
+                    href="/es/conference/pybits-2016/">PyBITS '16</a>
                 </span>
                 <span class="conf-title-icon">
                   <a title="Conference Website" href="https://web.archive.org/web/20171012110314/http://bits-atmos.org/pybits/" target="_blank"><img src="/static/img/203-earth.svg"
@@ -380,7 +380,7 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">27 – 30 de octubre de 2017.</span>
+                  <span class="conf-date">14 – 16 de octubre de 2016.</span>
                   <span class="conf-place">
                     
                       <a href="http://maps.google.com/?q=Hyderabad, India">Hyderabad, India</a>
@@ -394,7 +394,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Sunday, 16 October 2016</span>
                   </div>
                 </div>
 
@@ -588,12 +588,72 @@ $('#subject-select').multiselect({
         
         
         
-          $('#pybits-2017 .PY-tag').html("Python General".toLocaleLowerCase("es"));
+          $('#pybits-2016 .PY-tag').html("Python General".toLocaleLowerCase("es"));
         
         
-          $('#pybits-2017 .timer').html("TBA");
-          $('#pybits-2017 .deadline-time').html("TBA");
-          $('#pybits-2017').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2016-10-16 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2016-10-14", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2016-10-16 23:59:00");
+            var confDate = DateTime.fromSQL("2016-10-14");
+            console.log("Invalid timezone in pybits-2016. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pybits-2016 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pybits-2016 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pybits-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pybits-2016',
+              title: 'PyBITS 2016 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Hyderabad, India',
+              link: 'https://web.archive.org/web/20171012110314/http://bits-atmos.org/pybits/'
+            });
+            document.querySelector('#pybits-2016 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pybits-2016 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pybits-2016').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pybits-2016').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pybits-2016').addClass('pastcfp');
+            $('#pybits-2016 .timer').replaceWith($('#pybits-2016 .deadline'));
+            $('#pybits-2016 .timer-small').replaceWith($('#pybits-2016 .deadline'));
+            $('#pybits-2016 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pybits-2016').addClass('pastconf');
+            $('#pybits-2016 .timer').replaceWith($('#pybits-2016 .deadline'));
+            $('#pybits-2016 .timer-small').replaceWith($('#pybits-2016 .deadline'));
+            $('#pybits-2016 .calendar').remove();
+          }
         
       
 

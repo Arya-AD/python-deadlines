@@ -44,12 +44,12 @@
 <link rel="alternate"  title="Flask Con Conference Summary in German" hreflang="de" href="/de/series/flask-con/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727043214" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727076937" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727043214" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727043214" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727043214" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727076937" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727076937" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727076937" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -433,7 +433,7 @@
                     href="/es/conference/flask-con-2023/">Flask Con '23</a>
                 </span>
                 <span class="conf-title-icon">
-                  <a title="Conference Website" href="https://flaskcon.com/2024/" target="_blank"><img src="/static/img/203-earth.svg"
+                  <a title="Conference Website" href="https://web.archive.org/web/20231016112650/https://flaskcon.com/2023/" target="_blank"><img src="/static/img/203-earth.svg"
                       class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
                   &ZeroWidthSpace;
                 </span>
@@ -651,7 +651,7 @@
                 </span>
                 
                   <span class="conf-title-icon">
-                    <a title="Call for Participation for Flask Conf Brasil" href="https://web.archive.org/web/20210515223939/https://speakerfight.com/events/flaskconf-2018/" target="_blank"><img
+                    <a title="Call for Participation for Flask Conf Brasil" href="https://speakerfight.com/events/flaskconf-2019/" target="_blank"><img
                         src="/static/img/035-file-text.svg" class="badge-link"
                         alt="Link to Call for Participation for Flask Conf Brasil" width="16" height="16" /></a>
                     &ZeroWidthSpace;
@@ -684,7 +684,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">Wednesday,  1 August 2018</span>
+                    <span class="deadline-time">Wednesday, 31 July 2019</span>
                   </div>
                 </div>
 
@@ -706,23 +706,30 @@
           </div>
         
           
-          <div id="flask-con-2018"
+          <div id="flask-conf-brasil-2018"
             class="ConfItem  WEB-conf ">
             <div class="row conf-row">
               <div class="col-6">
                 <span class="conf-title">
                   <a title="Deadline Details"
-                    href="/es/conference/flask-con-2018/">Flask Con 2018</a>
+                    href="/es/conference/flask-conf-brasil-2018/">Flask Conf Brasil 2018</a>
                 </span>
                 <span class="conf-title-small">
                   <a title="Deadline Details"
-                    href="/es/conference/flask-con-2018/">Flask Con '18</a>
+                    href="/es/conference/flask-conf-brasil-2018/">Flask Conf Brasil '18</a>
                 </span>
                 <span class="conf-title-icon">
-                  <a title="Conference Website" href="https://web.archive.org/web/20221130002312/https://flask.python.org.br/" target="_blank"><img src="/static/img/203-earth.svg"
+                  <a title="Conference Website" href="https://web.archive.org/web/20180927205052/https://2018.flask.python.org.br/" target="_blank"><img src="/static/img/203-earth.svg"
                       class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
                   &ZeroWidthSpace;
                 </span>
+                
+                  <span class="conf-title-icon">
+                    <a title="Call for Participation for Flask Conf Brasil" href="https://web.archive.org/web/20210515223939/https://speakerfight.com/events/flaskconf-2018/" target="_blank"><img
+                        src="/static/img/035-file-text.svg" class="badge-link"
+                        alt="Link to Call for Participation for Flask Conf Brasil" width="16" height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
                 
                 
                 
@@ -737,7 +744,7 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">24 – 26 de agosto de 2018.</span>
+                  <span class="conf-date">24 – 25 de agosto de 2018.</span>
                   <span class="conf-place">
                     
                       <a href="http://maps.google.com/?q=São Paulo, Brazil">São Paulo, Brazil</a>
@@ -751,7 +758,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Wednesday,  1 August 2018</span>
                   </div>
                 </div>
 
@@ -1054,7 +1061,7 @@ $('#subject-select').multiselect({
               start_date: cfpDate.toJSDate(),
               duration: 60,
               place: 'Online',
-              link: 'https://flaskcon.com/2024/'
+              link: 'https://web.archive.org/web/20231016112650/https://flaskcon.com/2023/'
             });
             document.querySelector('#flask-con-2023 .calendar').appendChild(myCalendar);
           } catch (err) {
@@ -1235,13 +1242,13 @@ $('#subject-select').multiselect({
 
           // Use specified timezone for deadlines if available else use AoE timezone
           
-            var cfpDate = DateTime.fromSQL("2018-08-01 23:55:00", { zone: "UTC-12" });
+            var cfpDate = DateTime.fromSQL("2019-07-31 23:55:00", { zone: "UTC-12" });
             var confDate = DateTime.fromSQL("2019-09-06", { zone: "UTC-12" });
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
-            var cfpDate = DateTime.fromSQL("2018-08-01 23:55:00");
+            var cfpDate = DateTime.fromSQL("2019-07-31 23:55:00");
             var confDate = DateTime.fromSQL("2019-09-06");
             console.log("Invalid timezone in flask-conf-brasil-2019. Using system timezone instead.");
           }
@@ -1300,12 +1307,72 @@ $('#subject-select').multiselect({
         
         
         
-          $('#flask-con-2018 .WEB-tag').html("Python para Web".toLocaleLowerCase("es"));
+          $('#flask-conf-brasil-2018 .WEB-tag').html("Python para Web".toLocaleLowerCase("es"));
         
         
-          $('#flask-con-2018 .timer').html("TBA");
-          $('#flask-con-2018 .deadline-time').html("TBA");
-          $('#flask-con-2018').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2018-08-01 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2018-08-24", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2018-08-01 23:59:00");
+            var confDate = DateTime.fromSQL("2018-08-24");
+            console.log("Invalid timezone in flask-conf-brasil-2018. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#flask-conf-brasil-2018 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#flask-conf-brasil-2018 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#flask-conf-brasil-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'flask-conf-brasil-2018',
+              title: 'Flask Conf Brasil 2018 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'São Paulo, Brazil',
+              link: 'https://web.archive.org/web/20180927205052/https://2018.flask.python.org.br/'
+            });
+            document.querySelector('#flask-conf-brasil-2018 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#flask-conf-brasil-2018 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#flask-conf-brasil-2018').attr("cfpDiff", cfpDiff.toMillis());
+          $('#flask-conf-brasil-2018').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#flask-conf-brasil-2018').addClass('pastcfp');
+            $('#flask-conf-brasil-2018 .timer').replaceWith($('#flask-conf-brasil-2018 .deadline'));
+            $('#flask-conf-brasil-2018 .timer-small').replaceWith($('#flask-conf-brasil-2018 .deadline'));
+            $('#flask-conf-brasil-2018 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#flask-conf-brasil-2018').addClass('pastconf');
+            $('#flask-conf-brasil-2018 .timer').replaceWith($('#flask-conf-brasil-2018 .deadline'));
+            $('#flask-conf-brasil-2018 .timer-small').replaceWith($('#flask-conf-brasil-2018 .deadline'));
+            $('#flask-conf-brasil-2018 .calendar').remove();
+          }
         
       
 

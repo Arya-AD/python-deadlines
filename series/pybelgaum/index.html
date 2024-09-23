@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyBelgaum Conference Summary in German" hreflang="de" href="/de/series/pybelgaum/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727043147" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727076868" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727043147" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727043147" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727043147" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727076868" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727076868" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727076868" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -380,7 +380,7 @@
               <div class="col-12 col-sm-6">
                 <div class="meta">
 
-                  <span class="conf-date">February 28 – 2, 2015.</span>
+                  <span class="conf-date">February 28 – 1, 2015.</span>
                   <span class="conf-place">
                     
                       <a href="http://maps.google.com/?q=Gogte Institute of Technology, India">Gogte Institute of Technology, India</a>
@@ -394,7 +394,7 @@
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Sunday, 15 February 2015</span>
                   </div>
                 </div>
 
@@ -591,9 +591,69 @@ $('#subject-select').multiselect({
           $('#pybelgaum-2015 .PY-tag').html("General Python".toLocaleLowerCase("en"));
         
         
-          $('#pybelgaum-2015 .timer').html("TBA");
-          $('#pybelgaum-2015 .deadline-time').html("TBA");
-          $('#pybelgaum-2015').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2015-02-15 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2015-02-28", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2015-02-15 23:59:00");
+            var confDate = DateTime.fromSQL("2015-02-28");
+            console.log("Invalid timezone in pybelgaum-2015. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pybelgaum-2015 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pybelgaum-2015 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pybelgaum-2015 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pybelgaum-2015',
+              title: 'PyBelgaum 2015 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Gogte Institute of Technology, India',
+              link: 'https://web.archive.org/web/20150301185819/http://pybelgaum.org/2015/'
+            });
+            document.querySelector('#pybelgaum-2015 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pybelgaum-2015 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pybelgaum-2015').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pybelgaum-2015').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pybelgaum-2015').addClass('pastcfp');
+            $('#pybelgaum-2015 .timer').replaceWith($('#pybelgaum-2015 .deadline'));
+            $('#pybelgaum-2015 .timer-small').replaceWith($('#pybelgaum-2015 .deadline'));
+            $('#pybelgaum-2015 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pybelgaum-2015').addClass('pastconf');
+            $('#pybelgaum-2015 .timer').replaceWith($('#pybelgaum-2015 .deadline'));
+            $('#pybelgaum-2015 .timer-small').replaceWith($('#pybelgaum-2015 .deadline'));
+            $('#pybelgaum-2015 .calendar').remove();
+          }
         
       
 
