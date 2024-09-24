@@ -42,12 +42,12 @@
 <link rel="alternate"  title="PyCon Belarus 2021 Conference Deadlines in German" hreflang="de" href="/de/conference/pycon-belarus-2021/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727121680" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727221393" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727121680" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727121680" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727121680" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727221393" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727221393" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727221393" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -326,14 +326,14 @@
     </div>
     <div id="page-content">
       <div id="conf-deadline-timer" class="row">
-        <div id="cfp-timer" class="col-12 conf-timer">TBA
+        <div id="cfp-timer" class="col-12 conf-timer">
         </div>
       </div>
       <div id="conf-key-facts" class="row">
         <div class="col-12 col-md-6">
           <div>
             <img src="/static/img/084-calendar.svg" class="badge-link" alt="Calendar icon" width="16" height="16" />
-            <span id="conf-date">13 – 14 de marzo de 2021</span>
+            <span id="conf-date">13 de marzo de 2021</span>
           </div>
           <div>
             <img src="/static/img/072-location.svg" class="badge-link" alt="Location icon" width="16" height="16" />
@@ -342,7 +342,7 @@
           </div>
           <div>
             <img src="/static/img/203-earth.svg" class="badge-link" alt="Earth Icon" width="16" height="16" />
-            <a id="conf-website" target="_blank" href="https://web.archive.org/web/20190223084649/https://by.pycon.org/">https://web.archive.org/web/20190223084649/https://by.pycon.org/</a>
+            <a id="conf-website" target="_blank" href="https://web.archive.org/web/20210223084649/https://by.pycon.org/">https://web.archive.org/web/20210223084649/https://by.pycon.org/</a>
           </div>
           
           <div>
@@ -369,7 +369,7 @@
             Fecha límite en la zona horaria de la conferencia:
           </div>
           <div class="meta">
-            <span class="deadline-time">TBA</span>
+            <span class="deadline-time">Friday, 12 February 2021</span>
           </div>
           <div class="meta">
             Fecha límite en sua zona horaria <span class='local-timezone'></span>:
@@ -523,9 +523,54 @@ function createCalendarFromObject(data) {
 
       // other
       
-      $('#cfp-timer').html("TBA");
-      $('.deadline-time').html("TBA");
-      $('.deadline-local-time').html("TBA");
+
+      // Use specified timezone for deadlines if available else use AoE timezone
+      
+      var confDeadline = DateTime.fromSQL("2021-02-12 23:59:00", { zone: "UTC-12" });
+      
+
+      // check if timezone is valid otherwise replace by system timezone
+      if (confDeadline.invalid) {
+        var confDeadline = DateTime.fromSQL("2021-02-12 23:59:00");
+        console.log("Invalid timezone. Using system timezone instead.");
+      }
+
+      // add calendar
+
+      var conferenceDeadlineCalendar = createCalendarFromObject({
+        id: 'pycon-belarus-2021',
+        title: 'PyCon Belarus 2021 deadline',
+        start_date: confDeadline.toJSDate(),
+        duration: 60,
+        place: 'Online',
+        link: 'https://web.archive.org/web/20210223084649/https://by.pycon.org/',
+      });
+      document.querySelector('#conference-deadline').appendChild(conferenceDeadlineCalendar);
+
+
+      var conferenceCalendar = createCalendarFromObject({
+        id: 'pycon-belarus-2021',
+        title: 'PyCon Belarus 2021',
+        start_date: DateTime.fromSQL("2021-03-13").toJSDate(),
+        end_date: DateTime.fromSQL("2021-03-13").toJSDate(),
+        place: 'Online',
+        link: 'https://web.archive.org/web/20210223084649/https://by.pycon.org/',
+      });
+      document.querySelector('#conference-calendar').appendChild(conferenceCalendar);
+
+      // render countdown timer
+      $('#cfp-timer').countdown(confDeadline.toJSDate(), function (event) {
+        $(this).html(event.strftime('%D dias %Hh %Mm %Ss'));
+      });
+
+      // render deadline conference time
+      
+      $('.deadline-time').html(confDeadline.setZone("UTC-12").toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+      
+
+      // render deadline in local timezone
+      $('.deadline-local-time').html(confDeadline.setZone('system').toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+
       
 
     });
