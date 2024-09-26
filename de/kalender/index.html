@@ -42,12 +42,12 @@
 <link rel="alternate"  title="Kalender für Python-Konferenzen in German" hreflang="de" href="/de/kalender/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727368991" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727387737" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727368991" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727368991" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727368991" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727387737" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727387737" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727387737" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -467,7 +467,7 @@
 <div class="row">
   <div class="col-12 col-sm-12">
     
-<p><a href="">pythondeadlin.es</a> wird seit 2022 von <a href="https://dramsch.net/">Jesper Dramsch</a> gepflegt und archiviert 945 Konferenzen. <br />Es wurde inspiriert (und ursprünglich geschrieben) von der fantastischen <a href="https://aideadlin.es">aideadlin.es</a>. Keine Gewähr für die Richtigkeit, Fehler bitte korrigieren durch <a href="https://github.com/JesperDramsch/python-deadlines/pulls/">Senden eines Pull-Requests</a>.</p>
+<p><a href="">pythondeadlin.es</a> wird seit 2022 von <a href="https://dramsch.net/">Jesper Dramsch</a> gepflegt und archiviert 946 Konferenzen. <br />Es wurde inspiriert (und ursprünglich geschrieben) von der fantastischen <a href="https://aideadlin.es">aideadlin.es</a>. Keine Gewähr für die Richtigkeit, Fehler bitte korrigieren durch <a href="https://github.com/JesperDramsch/python-deadlines/pulls/">Senden eines Pull-Requests</a>.</p>
 
   </div>
 </div>
@@ -1159,7 +1159,7 @@ function load_conference_list() {
       name: "PyCon Chile 2024 CfP (extended)",
       color: "red",
       location: "Santiago, Chile",
-      date: "25. – 27. Oktober 2024",
+      date: "30. – 1. November 2024",
       subject: "PY",
       startDate: Date.parse("2024-09-06 23:59:00"),
       endDate: Date.parse("2024-09-06 23:59:00"),
@@ -1196,10 +1196,10 @@ function load_conference_list() {
         name: "PyCon Chile 2024",
         color: color,
         location: "Santiago, Chile",
-        date: "25. – 27. Oktober 2024",
+        date: "30. – 1. November 2024",
         subject: "PY",
-        startDate: Date.parse("2024-10-25"),
-        endDate: Date.parse("2024-10-27"),
+        startDate: Date.parse("2024-11-30"),
+        endDate: Date.parse("2024-12-01"),
       });
     
   
@@ -3999,6 +3999,59 @@ function load_conference_list() {
         subject: "PY",
         startDate: Date.parse("2025-02-24"),
         endDate: Date.parse("2025-02-27"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
+      id: "pycon-tanzania-2024-deadline",
+      abbreviation: "pycon-tanzania-2024",
+      name: "PyCon Tanzania 2024 CfP (extended)",
+      color: "red",
+      location: "Dare E Salaam, Tanzania",
+      date: "1. – 6. Dezember 2024",
+      subject: "PY",
+      startDate: Date.parse("TBA"),
+      endDate: Date.parse("TBA"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+                    color = "#4B8BBE";
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+      conf_list_all.push({
+        id: "pycon-tanzania-2024-conference",
+        abbreviation: "pycon-tanzania-2024",
+        name: "PyCon Tanzania 2024",
+        color: color,
+        location: "Dare E Salaam, Tanzania",
+        date: "1. – 6. Dezember 2024",
+        subject: "PY",
+        startDate: Date.parse("2024-12-01"),
+        endDate: Date.parse("2024-12-06"),
       });
     
   

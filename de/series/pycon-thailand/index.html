@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyCon Thailand Conference Summary in German" hreflang="de" href="/de/series/pycon-thailand/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727368991" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727387737" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727368991" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727368991" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727368991" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727387737" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727387737" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727387737" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -571,7 +571,7 @@
 <div class="row">
   <div class="col-12 col-sm-12">
     
-<p><a href="">pythondeadlin.es</a> wird seit 2022 von <a href="https://dramsch.net/">Jesper Dramsch</a> gepflegt und archiviert 945 Konferenzen. <br />Es wurde inspiriert (und ursprünglich geschrieben) von der fantastischen <a href="https://aideadlin.es">aideadlin.es</a>. Keine Gewähr für die Richtigkeit, Fehler bitte korrigieren durch <a href="https://github.com/JesperDramsch/python-deadlines/pulls/">Senden eines Pull-Requests</a>.</p>
+<p><a href="">pythondeadlin.es</a> wird seit 2022 von <a href="https://dramsch.net/">Jesper Dramsch</a> gepflegt und archiviert 946 Konferenzen. <br />Es wurde inspiriert (und ursprünglich geschrieben) von der fantastischen <a href="https://aideadlin.es">aideadlin.es</a>. Keine Gewähr für die Richtigkeit, Fehler bitte korrigieren durch <a href="https://github.com/JesperDramsch/python-deadlines/pulls/">Senden eines Pull-Requests</a>.</p>
 
   </div>
 </div>
@@ -59072,13 +59072,13 @@ $('#subject-select').multiselect({
           // Use specified timezone for deadlines if available else use AoE timezone
           
             var cfpDate = DateTime.fromSQL("2024-09-06 23:59:00", { zone: "America/Santiago" });
-            var confDate = DateTime.fromSQL("2024-10-25", { zone: "America/Santiago" });
+            var confDate = DateTime.fromSQL("2024-11-30", { zone: "America/Santiago" });
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
             var cfpDate = DateTime.fromSQL("2024-09-06 23:59:00");
-            var confDate = DateTime.fromSQL("2024-10-25");
+            var confDate = DateTime.fromSQL("2024-11-30");
             console.log("Invalid timezone in pycon-chile-2024. Using system timezone instead.");
           }
 
@@ -62394,6 +62394,17 @@ $('#subject-select').multiselect({
           $('#pycon-namibia-2025 .timer').html("TBA");
           $('#pycon-namibia-2025 .deadline-time').html("TBA");
           $('#pycon-namibia-2025').attr("cfpDiff", Infinity);
+        
+      
+        
+        
+        
+          $('#pycon-tanzania-2024 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
+        
+          $('#pycon-tanzania-2024 .timer').html("TBA");
+          $('#pycon-tanzania-2024 .deadline-time').html("TBA");
+          $('#pycon-tanzania-2024').attr("cfpDiff", Infinity);
         
       
         

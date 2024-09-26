@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyDay Cali Conference Summary in German" hreflang="de" href="/de/series/pyday-cali/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727368991" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727387737" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727368991" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727368991" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727368991" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727387737" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727387737" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727387737" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -725,10 +725,10 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='54837d88-0669-49de-88d7-0b4f511c3abf' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='fc73dc86-dddb-4738-9af0-4806433e2114' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '54837d88-0669-49de-88d7-0b4f511c3abf',
+    'fc73dc86-dddb-4738-9af0-4806433e2114',
     [{"latitude":3.4520339,"longitude":-76.5329352,"title":"PyDay Cali 2023","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":3.4520339,"longitude":-76.5329352,"title":"PyDay Cali 2018","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":3.4520339,"longitude":-76.5329352,"title":"PyDay Cali 2024","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -742,7 +742,7 @@ if (typeof Object.assign !== 'function') {
 <div class="row">
   <div class="col-12 col-sm-12">
     
-<p><a href="">pythondeadlin.es</a> wird seit 2022 von <a href="https://dramsch.net/">Jesper Dramsch</a> gepflegt und archiviert 945 Konferenzen. <br />Es wurde inspiriert (und ursprünglich geschrieben) von der fantastischen <a href="https://aideadlin.es">aideadlin.es</a>. Keine Gewähr für die Richtigkeit, Fehler bitte korrigieren durch <a href="https://github.com/JesperDramsch/python-deadlines/pulls/">Senden eines Pull-Requests</a>.</p>
+<p><a href="">pythondeadlin.es</a> wird seit 2022 von <a href="https://dramsch.net/">Jesper Dramsch</a> gepflegt und archiviert 946 Konferenzen. <br />Es wurde inspiriert (und ursprünglich geschrieben) von der fantastischen <a href="https://aideadlin.es">aideadlin.es</a>. Keine Gewähr für die Richtigkeit, Fehler bitte korrigieren durch <a href="https://github.com/JesperDramsch/python-deadlines/pulls/">Senden eines Pull-Requests</a>.</p>
 
   </div>
 </div>
@@ -59243,13 +59243,13 @@ $('#subject-select').multiselect({
           // Use specified timezone for deadlines if available else use AoE timezone
           
             var cfpDate = DateTime.fromSQL("2024-09-06 23:59:00", { zone: "America/Santiago" });
-            var confDate = DateTime.fromSQL("2024-10-25", { zone: "America/Santiago" });
+            var confDate = DateTime.fromSQL("2024-11-30", { zone: "America/Santiago" });
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
             var cfpDate = DateTime.fromSQL("2024-09-06 23:59:00");
-            var confDate = DateTime.fromSQL("2024-10-25");
+            var confDate = DateTime.fromSQL("2024-11-30");
             console.log("Invalid timezone in pycon-chile-2024. Using system timezone instead.");
           }
 
@@ -62565,6 +62565,17 @@ $('#subject-select').multiselect({
           $('#pycon-namibia-2025 .timer').html("TBA");
           $('#pycon-namibia-2025 .deadline-time').html("TBA");
           $('#pycon-namibia-2025').attr("cfpDiff", Infinity);
+        
+      
+        
+        
+        
+          $('#pycon-tanzania-2024 .PY-tag').html("Python allgemein".toLocaleLowerCase("de"));
+        
+        
+          $('#pycon-tanzania-2024 .timer').html("TBA");
+          $('#pycon-tanzania-2024 .deadline-time').html("TBA");
+          $('#pycon-tanzania-2024').attr("cfpDiff", Infinity);
         
       
         

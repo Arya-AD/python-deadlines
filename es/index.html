@@ -42,12 +42,12 @@
 <link rel="alternate"  title="Python Conference Deadlines in German" hreflang="de" href="/de/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727368921" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727387665" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727368921" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727368921" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727368921" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727387665" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727387665" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727387665" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -485,6 +485,71 @@
 			<span class="conf-place">
 				
 				<a href="http://maps.google.com/?q=Belgrade, Serbia">Belgrade, Serbia</a>
+				 
+			</span>
+		</div>
+		
+	</div>
+	<div class="col-12 col-sm-6">
+		<div class="deadline">
+			<div>
+				Deadline:
+				<span class="deadline-time">TBA</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+            <div class="row">
+	<div class="col-6">
+		
+		<span
+			title="Click to only show PY conferences"
+			data-sub="PY"
+			class="badge badge-light conf-sub PY-tag"
+		></span>
+		
+	</div>
+	<div class="col-6">
+		<div class="calendar"></div>
+	</div>
+</div>
+
+            <hr />
+          </div>
+          
+          
+          <div id="pycon-tanzania-2024" class="ConfItem  PY-conf ">
+            <div class="row conf-row">
+    <div class="col-6">
+        <span class="conf-title">
+            <a title="Deadline Details" href="/es/conference/pycon-tanzania-2024/">PyCon Tanzania 2024</a>
+        </span>
+        <span class="conf-title-small">
+            <a title="Deadline Details" href="/es/conference/pycon-tanzania-2024/">PyCon Tanzania '24</a>
+        </span>
+        <span class="conf-title-icon">
+        <a title="Conference Website" href="https://pycon.or.tz/" target="_blank"><img src="/static/img/203-earth.svg" class="badge-link" alt="Link to Conference Website" width="16" height="16" /></a>
+        &ZeroWidthSpace;
+        </span>
+        
+        
+        
+        
+    </div>
+    <div class="col-6">
+        <span class="timer"></span>
+        <span class="timer-small"></span>
+    </div>
+</div>
+
+            <div class="row">
+	<div class="col-12 col-sm-6">
+		<div class="meta">
+			<span class="conf-date">1 – 6 de diciembre de 2024.</span>
+			<span class="conf-place">
+				
+				<a href="http://maps.google.com/?q=Dare E Salaam, Tanzania">Dare E Salaam, Tanzania</a>
 				 
 			</span>
 		</div>
@@ -1701,13 +1766,15 @@
             <div class="row">
 	<div class="col-12 col-sm-6">
 		<div class="meta">
-			<span class="conf-date">25 – 27 de octubre de 2024.</span>
+			<span class="conf-date">30 – 1 de noviembre de 2024.</span>
 			<span class="conf-place">
 				
 				<a href="http://maps.google.com/?q=Santiago, Chile">Santiago, Chile</a>
 				 
 			</span>
 		</div>
+		
+		<div class="note"><b>Note: </b>Postponed from 2024-10-25</div>
 		
 	</div>
 	<div class="col-12 col-sm-6">
@@ -5125,7 +5192,7 @@
             <hr>
 <div class="row">
   <div class="col-12 col-sm-12">
-    <p><a href="">pythondeadlin.es</a> es mantenido por <a href="https://dramsch.net/">Jesper Dramsch</a> desde 2022, archivando 64 conferencias. <br />Se inspiró (y originalmente codificó) en el fantástico <a href="https://aiheadlin.es">aiheadlin.es</a>. No hay garantía de que sea correcto; corrija los errores <a href="https://github.com/JesperDramsch/python-deadlines/pulls/">enviar un pull request</a> por favor.</p>
+    <p><a href="">pythondeadlin.es</a> es mantenido por <a href="https://dramsch.net/">Jesper Dramsch</a> desde 2022, archivando 65 conferencias. <br />Se inspiró (y originalmente codificó) en el fantástico <a href="https://aiheadlin.es">aiheadlin.es</a>. No hay garantía de que sea correcto; corrija los errores <a href="https://github.com/JesperDramsch/python-deadlines/pulls/">enviar un pull request</a> por favor.</p>
 
   </div>
 </div>
@@ -5809,13 +5876,13 @@ $('#subject-select').multiselect({
           // Use specified timezone for deadlines if available else use AoE timezone
           
             var cfpDate = DateTime.fromSQL("2024-09-06 23:59:00", {zone: "America/Santiago"});
-            var confDate = DateTime.fromSQL("2024-10-25", {zone: "America/Santiago"});
+            var confDate = DateTime.fromSQL("2024-11-30", {zone: "America/Santiago"});
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
             var cfpDate = DateTime.fromSQL("2024-09-06 23:59:00");
-            var confDate = DateTime.fromSQL("2024-10-25");
+            var confDate = DateTime.fromSQL("2024-11-30");
             console.log("Invalid timezone in pycon-chile-2024. Using system timezone instead.");
           }
 
@@ -9223,6 +9290,17 @@ $('#subject-select').multiselect({
           $('#pycon-namibia-2025 .timer').html("TBA");
           $('#pycon-namibia-2025 .deadline-time').html("TBA");
           $('#pycon-namibia-2025').attr("cfpDiff", Infinity);
+        
+      
+      	
+        
+        
+          $('#pycon-tanzania-2024 .PY-tag').html("Python General".toLocaleLowerCase("es"));
+        
+        
+          $('#pycon-tanzania-2024 .timer').html("TBA");
+          $('#pycon-tanzania-2024 .deadline-time').html("TBA");
+          $('#pycon-tanzania-2024').attr("cfpDiff", Infinity);
         
       
       	

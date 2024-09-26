@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyData Paris Conference Summary in German" hreflang="de" href="/de/series/pydata-paris/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727368457" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727387186" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727368457" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727368457" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727368457" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727387186" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727387186" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727387186" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -694,10 +694,10 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='71ac5f03-f30a-416f-9ec9-58c216b6f634' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='80e03f2e-1cbd-47c8-afe5-bca38008578d' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '71ac5f03-f30a-416f-9ec9-58c216b6f634',
+    '80e03f2e-1cbd-47c8-afe5-bca38008578d',
     [{"latitude":48.8588897,"longitude":2.3200410217200766,"title":"PyData Paris 2015","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":48.8588897,"longitude":2.3200410217200766,"title":"PyData Paris 2024","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -711,7 +711,7 @@ if (typeof Object.assign !== 'function') {
 <div class="row">
   <div class="col-12 col-sm-12">
     
-<p><a href="">pythondeadlin.es</a> is maintained by <a href="https://dramsch.net/">Jesper Dramsch</a> since 2022 archiving 945 conferences. <br />It was inspired (and originally coded) by the fantastic <a href="https://aideadlin.es">aideadlin.es</a>. No guarantee for correctness, please correct mistakes by <a href="https://github.com/JesperDramsch/python-deadlines/">submitting a pull request</a>.</p>
+<p><a href="">pythondeadlin.es</a> is maintained by <a href="https://dramsch.net/">Jesper Dramsch</a> since 2022 archiving 946 conferences. <br />It was inspired (and originally coded) by the fantastic <a href="https://aideadlin.es">aideadlin.es</a>. No guarantee for correctness, please correct mistakes by <a href="https://github.com/JesperDramsch/python-deadlines/">submitting a pull request</a>.</p>
 
   </div>
 </div>
@@ -59212,13 +59212,13 @@ $('#subject-select').multiselect({
           // Use specified timezone for deadlines if available else use AoE timezone
           
             var cfpDate = DateTime.fromSQL("2024-09-06 23:59:00", { zone: "America/Santiago" });
-            var confDate = DateTime.fromSQL("2024-10-25", { zone: "America/Santiago" });
+            var confDate = DateTime.fromSQL("2024-11-30", { zone: "America/Santiago" });
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
             var cfpDate = DateTime.fromSQL("2024-09-06 23:59:00");
-            var confDate = DateTime.fromSQL("2024-10-25");
+            var confDate = DateTime.fromSQL("2024-11-30");
             console.log("Invalid timezone in pycon-chile-2024. Using system timezone instead.");
           }
 
@@ -62534,6 +62534,17 @@ $('#subject-select').multiselect({
           $('#pycon-namibia-2025 .timer').html("TBA");
           $('#pycon-namibia-2025 .deadline-time').html("TBA");
           $('#pycon-namibia-2025').attr("cfpDiff", Infinity);
+        
+      
+        
+        
+        
+          $('#pycon-tanzania-2024 .PY-tag').html("General Python".toLocaleLowerCase("en"));
+        
+        
+          $('#pycon-tanzania-2024 .timer').html("TBA");
+          $('#pycon-tanzania-2024 .deadline-time').html("TBA");
+          $('#pycon-tanzania-2024').attr("cfpDiff", Infinity);
         
       
         
