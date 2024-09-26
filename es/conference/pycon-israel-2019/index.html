@@ -42,12 +42,12 @@
 <link rel="alternate"  title="PyCon Israel 2019 Conference Deadlines in German" hreflang="de" href="/de/conference/pycon-israel-2019/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727343032" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727368921" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727343032" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727343032" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727343032" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727368921" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727368921" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727368921" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -492,7 +492,7 @@ if (typeof Object.assign !== 'function') {
     </div>
     <div id="page-content">
       <div id="conf-deadline-timer" class="row">
-        <div id="cfp-timer" class="col-12 conf-timer">TBA
+        <div id="cfp-timer" class="col-12 conf-timer">
         </div>
       </div>
       <div id="conf-key-facts" class="row">
@@ -535,7 +535,7 @@ if (typeof Object.assign !== 'function') {
             Fecha límite en la zona horaria de la conferencia:
           </div>
           <div class="meta">
-            <span class="deadline-time">TBA</span>
+            <span class="deadline-time">Monday,  1 April 2019</span>
           </div>
           <div class="meta">
             Fecha límite en sua zona horaria <span class='local-timezone'></span>:
@@ -574,10 +574,10 @@ if (typeof Object.assign !== 'function') {
         </div>
       <div class="row">
         
-        <div id='b255f0b6-3e38-4acf-869e-79e8fb04faf6' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='bb1c1eaa-4363-48df-ad51-ba81ffd47025' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'b255f0b6-3e38-4acf-869e-79e8fb04faf6',
+    'bb1c1eaa-4363-48df-ad51-ba81ffd47025',
     [{"latitude":32.0686867,"longitude":34.8246812,"title":"PyCon Israel 2019","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -699,9 +699,54 @@ function createCalendarFromObject(data) {
 
       // other
       
-      $('#cfp-timer').html("TBA");
-      $('.deadline-time').html("TBA");
-      $('.deadline-local-time').html("TBA");
+
+      // Use specified timezone for deadlines if available else use AoE timezone
+      
+      var confDeadline = DateTime.fromSQL("2019-04-01 23:59:00", { zone: "UTC-12" });
+      
+
+      // check if timezone is valid otherwise replace by system timezone
+      if (confDeadline.invalid) {
+        var confDeadline = DateTime.fromSQL("2019-04-01 23:59:00");
+        console.log("Invalid timezone. Using system timezone instead.");
+      }
+
+      // add calendar
+
+      var conferenceDeadlineCalendar = createCalendarFromObject({
+        id: 'pycon-israel-2019',
+        title: 'PyCon Israel 2019 deadline',
+        start_date: confDeadline.toJSDate(),
+        duration: 60,
+        place: 'Ramat Gan, Israel',
+        link: 'https://web.archive.org/web/20190120010757/https://il.pycon.org/2019/',
+      });
+      document.querySelector('#conference-deadline').appendChild(conferenceDeadlineCalendar);
+
+
+      var conferenceCalendar = createCalendarFromObject({
+        id: 'pycon-israel-2019',
+        title: 'PyCon Israel 2019',
+        start_date: DateTime.fromSQL("2019-06-02").toJSDate(),
+        end_date: DateTime.fromSQL("2019-06-05").toJSDate(),
+        place: 'Ramat Gan, Israel',
+        link: 'https://web.archive.org/web/20190120010757/https://il.pycon.org/2019/',
+      });
+      document.querySelector('#conference-calendar').appendChild(conferenceCalendar);
+
+      // render countdown timer
+      $('#cfp-timer').countdown(confDeadline.toJSDate(), function (event) {
+        $(this).html(event.strftime('%D dias %Hh %Mm %Ss'));
+      });
+
+      // render deadline conference time
+      
+      $('.deadline-time').html(confDeadline.setZone("UTC-12").toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+      
+
+      // render deadline in local timezone
+      $('.deadline-local-time').html(confDeadline.setZone('system').toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+
       
 
     });
