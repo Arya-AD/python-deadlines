@@ -21,14 +21,14 @@
 <meta property="og:site_name" content="Python Conference Deadlines" />
 <meta property="og:image" content="https://pythondeadlin.es/static/img/python-deadlines-social-preview.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-09-28T15:41:08+00:00" />
+<meta property="article:published_time" content="2024-09-28T15:48:46+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="https://pythondeadlin.es/static/img/python-deadlines-social-preview.png" />
 <meta property="twitter:title" content="2009" />
 <meta name="twitter:site" content="@jesperdramsch" />
 <meta name="twitter:creator" content="@Jesper Dramsch" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jesper Dramsch"},"dateModified":"2024-09-28T15:41:08+00:00","datePublished":"2024-09-28T15:41:08+00:00","description":"Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!","headline":"2009","image":"https://pythondeadlin.es/static/img/python-deadlines-social-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://pythondeadlin.es/archive/2009/"},"url":"https://pythondeadlin.es/archive/2009/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jesper Dramsch"},"dateModified":"2024-09-28T15:48:46+00:00","datePublished":"2024-09-28T15:48:46+00:00","description":"Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!","headline":"2009","image":"https://pythondeadlin.es/static/img/python-deadlines-social-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://pythondeadlin.es/archive/2009/"},"url":"https://pythondeadlin.es/archive/2009/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -43,12 +43,12 @@
 <link rel="alternate"  title="2009 in German" hreflang="de" href="/de/archive/2009/index.html">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727538068" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727538526" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727538068" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727538068" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727538068" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727538526" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727538526" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727538526" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -1301,7 +1301,7 @@
 <div class="row">
   <div class="col-12 col-sm-12">
     
-<p><a href="">pythondeadlin.es</a> is maintained by <a href="https://dramsch.net/">Jesper Dramsch</a> since 2022 archiving 947 conferences. <br />It was inspired (and originally coded) by the fantastic <a href="https://aideadlin.es">aideadlin.es</a>. No guarantee for correctness, please correct mistakes by <a href="https://github.com/JesperDramsch/python-deadlines/">submitting a pull request</a>.</p>
+<p><a href="">pythondeadlin.es</a> is maintained by <a href="https://dramsch.net/">Jesper Dramsch</a> since 2022 archiving 948 conferences. <br />It was inspired (and originally coded) by the fantastic <a href="https://aideadlin.es">aideadlin.es</a>. No guarantee for correctness, please correct mistakes by <a href="https://github.com/JesperDramsch/python-deadlines/">submitting a pull request</a>.</p>
 
   </div>
 </div>
@@ -5122,6 +5122,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#pycascades-2023 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pycon-tanzania-2022 .PY-tag').html("General Python".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2022-11-15 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2022-12-04", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2022-11-15 23:59:00");
+			        var confDate = DateTime.fromSQL("2022-12-04");
+			        console.log("Invalid timezone in pycon-tanzania-2022. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pycon-tanzania-2022 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    

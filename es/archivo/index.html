@@ -42,12 +42,12 @@
 <link rel="alternate"  title="Conferencias anteriores de Python in German" hreflang="de" href="/de/archiv/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727538546" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727539006" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727538546" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727538546" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727538546" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727539006" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727539006" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727539006" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -4239,6 +4239,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#pycascades-2023 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pycon-tanzania-2022 .PY-tag').html("Python General".toLocaleLowerCase("es"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2022-11-15 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2022-12-04", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2022-11-15 23:59:00");
+			        var confDate = DateTime.fromSQL("2022-12-04");
+			        console.log("Invalid timezone in pycon-tanzania-2022. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pycon-tanzania-2022 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    

@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyLondinium Conference Summary in German" hreflang="de" href="/de/series/pylondinium/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727538068" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727538526" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727538068" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727538068" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727538068" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727538526" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727538526" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727538526" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -729,10 +729,10 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='e919d347-6fa9-4630-9d79-c5d045bb71be' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='9bb4b806-5a73-45ec-86aa-dd293500a55f' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'e919d347-6fa9-4630-9d79-c5d045bb71be',
+    '9bb4b806-5a73-45ec-86aa-dd293500a55f',
     [{"latitude":51.5074456,"longitude":-0.1277653,"title":"PyLondinium 2020","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":51.5074456,"longitude":-0.1277653,"title":"PyLondinium 2019","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":51.5074456,"longitude":-0.1277653,"title":"PyLondinium 2018","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -746,7 +746,7 @@ if (typeof Object.assign !== 'function') {
 <div class="row">
   <div class="col-12 col-sm-12">
     
-<p><a href="">pythondeadlin.es</a> is maintained by <a href="https://dramsch.net/">Jesper Dramsch</a> since 2022 archiving 947 conferences. <br />It was inspired (and originally coded) by the fantastic <a href="https://aideadlin.es">aideadlin.es</a>. No guarantee for correctness, please correct mistakes by <a href="https://github.com/JesperDramsch/python-deadlines/">submitting a pull request</a>.</p>
+<p><a href="">pythondeadlin.es</a> is maintained by <a href="https://dramsch.net/">Jesper Dramsch</a> since 2022 archiving 948 conferences. <br />It was inspired (and originally coded) by the fantastic <a href="https://aideadlin.es">aideadlin.es</a>. No guarantee for correctness, please correct mistakes by <a href="https://github.com/JesperDramsch/python-deadlines/">submitting a pull request</a>.</p>
 
   </div>
 </div>
@@ -10019,6 +10019,77 @@ $('#subject-select').multiselect({
             $('#pycascades-2023 .timer').replaceWith($('#pycascades-2023 .deadline'));
             $('#pycascades-2023 .timer-small').replaceWith($('#pycascades-2023 .deadline'));
             $('#pycascades-2023 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pycon-tanzania-2022 .PY-tag').html("General Python".toLocaleLowerCase("en"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2022-11-15 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2022-12-04", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2022-11-15 23:59:00");
+            var confDate = DateTime.fromSQL("2022-12-04");
+            console.log("Invalid timezone in pycon-tanzania-2022. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-tanzania-2022 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-tanzania-2022 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-tanzania-2022 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-tanzania-2022',
+              title: 'PyCon Tanzania 2022 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Zanzibar, Tanzania',
+              link: 'https://web.archive.org/web/20221202222503/https://pycon.or.tz/2022/'
+            });
+            document.querySelector('#pycon-tanzania-2022 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-tanzania-2022 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-tanzania-2022').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-tanzania-2022').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-tanzania-2022').addClass('pastcfp');
+            $('#pycon-tanzania-2022 .timer').replaceWith($('#pycon-tanzania-2022 .deadline'));
+            $('#pycon-tanzania-2022 .timer-small').replaceWith($('#pycon-tanzania-2022 .deadline'));
+            $('#pycon-tanzania-2022 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-tanzania-2022').addClass('pastconf');
+            $('#pycon-tanzania-2022 .timer').replaceWith($('#pycon-tanzania-2022 .deadline'));
+            $('#pycon-tanzania-2022 .timer-small').replaceWith($('#pycon-tanzania-2022 .deadline'));
+            $('#pycon-tanzania-2022 .calendar').remove();
           }
         
       
@@ -62681,8 +62752,8 @@ $('#subject-select').multiselect({
           $('#pycon-panama-2024 .PY-tag').html("General Python".toLocaleLowerCase("en"));
         
         
-          $('#pycon-panama-2024 .timer').html("TBA");
-          $('#pycon-panama-2024 .deadline-time').html("TBA");
+          $('#pycon-panama-2024 .timer').html("None");
+          $('#pycon-panama-2024 .deadline-time').html("None");
           $('#pycon-panama-2024').attr("cfpDiff", Infinity);
         
       
