@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyCon Canada Conference Summary in German" hreflang="de" href="/de/series/pycon-canada/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727387186" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727538068" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727387186" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727387186" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727387186" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727538068" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727538068" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727538068" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -1014,10 +1014,10 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='86ad4510-38a5-4c5e-be7d-3ca3bb6cc676' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='86b1e45e-c509-4abd-bfa3-3c98890be5a5' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '86ad4510-38a5-4c5e-be7d-3ca3bb6cc676',
+    '86b1e45e-c509-4abd-bfa3-3c98890be5a5',
     [{"latitude":43.6534817,"longitude":-79.3839347,"title":"PyCon Canada 2019","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":43.6534817,"longitude":-79.3839347,"title":"PyCon Canada 2018","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":43.6534817,"longitude":-79.3839347,"title":"PyCon Canada 2016","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":43.6534817,"longitude":-79.3839347,"title":"PyCon Canada 2015","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":43.6534817,"longitude":-79.3839347,"title":"PyCon Canada 2013","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":43.6534817,"longitude":-79.3839347,"title":"PyCon Canada 2012","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -1031,7 +1031,7 @@ if (typeof Object.assign !== 'function') {
 <div class="row">
   <div class="col-12 col-sm-12">
     
-<p><a href="">pythondeadlin.es</a> is maintained by <a href="https://dramsch.net/">Jesper Dramsch</a> since 2022 archiving 946 conferences. <br />It was inspired (and originally coded) by the fantastic <a href="https://aideadlin.es">aideadlin.es</a>. No guarantee for correctness, please correct mistakes by <a href="https://github.com/JesperDramsch/python-deadlines/">submitting a pull request</a>.</p>
+<p><a href="">pythondeadlin.es</a> is maintained by <a href="https://dramsch.net/">Jesper Dramsch</a> since 2022 archiving 947 conferences. <br />It was inspired (and originally coded) by the fantastic <a href="https://aideadlin.es">aideadlin.es</a>. No guarantee for correctness, please correct mistakes by <a href="https://github.com/JesperDramsch/python-deadlines/">submitting a pull request</a>.</p>
 
   </div>
 </div>
@@ -62643,6 +62643,77 @@ $('#subject-select').multiselect({
             $('#python-barcamp-karlsruhe-2024 .timer').replaceWith($('#python-barcamp-karlsruhe-2024 .deadline'));
             $('#python-barcamp-karlsruhe-2024 .timer-small').replaceWith($('#python-barcamp-karlsruhe-2024 .deadline'));
             $('#python-barcamp-karlsruhe-2024 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pycon-china-2024 .PY-tag').html("General Python".toLocaleLowerCase("en"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2023-11-30 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2024-11-23", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2023-11-30 23:59:00");
+            var confDate = DateTime.fromSQL("2024-11-23");
+            console.log("Invalid timezone in pycon-china-2024. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-china-2024 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-china-2024 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-china-2024 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-china-2024',
+              title: 'PyCon China 2024 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Shanghai, China',
+              link: 'http://cn.pycon.org/2024/'
+            });
+            document.querySelector('#pycon-china-2024 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-china-2024 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-china-2024').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-china-2024').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-china-2024').addClass('pastcfp');
+            $('#pycon-china-2024 .timer').replaceWith($('#pycon-china-2024 .deadline'));
+            $('#pycon-china-2024 .timer-small').replaceWith($('#pycon-china-2024 .deadline'));
+            $('#pycon-china-2024 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-china-2024').addClass('pastconf');
+            $('#pycon-china-2024 .timer').replaceWith($('#pycon-china-2024 .deadline'));
+            $('#pycon-china-2024 .timer-small').replaceWith($('#pycon-china-2024 .deadline'));
+            $('#pycon-china-2024 .calendar').remove();
           }
         
       

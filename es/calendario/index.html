@@ -42,12 +42,12 @@
 <link rel="alternate"  title="Calendario de conferencias de Python in German" hreflang="de" href="/de/kalender/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727387665" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727538546" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727387665" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727387665" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727387665" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727538546" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727538546" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727538546" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -3574,6 +3574,59 @@ function load_conference_list() {
         subject: "CAMP",
         startDate: Date.parse("2025-02-15"),
         endDate: Date.parse("2025-02-16"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
+      id: "pycon-china-2024-deadline",
+      abbreviation: "pycon-china-2024",
+      name: "PyCon China 2024 CfP (extended)",
+      color: "red",
+      location: "Shanghai, China",
+      date: "23 de noviembre de 2024",
+      subject: "PY",
+      startDate: Date.parse("2023-11-30 23:59:00"),
+      endDate: Date.parse("2023-11-30 23:59:00"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+                    color = "#4B8BBE";
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+      conf_list_all.push({
+        id: "pycon-china-2024-conference",
+        abbreviation: "pycon-china-2024",
+        name: "PyCon China 2024",
+        color: color,
+        location: "Shanghai, China",
+        date: "23 de noviembre de 2024",
+        subject: "PY",
+        startDate: Date.parse("2024-11-23"),
+        endDate: Date.parse("2024-11-23"),
       });
     
   
