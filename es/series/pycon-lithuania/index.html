@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyCon Lithuania Conference Summary in German" hreflang="de" href="/de/series/pycon-lithuania/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727539006" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727539379" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727539006" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727539006" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727539006" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727539379" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727539379" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727539379" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -172,6 +172,16 @@
 <script type="text/javascript" src="/static/js/ouical.min.js"></script>
 <script type="text/javascript" src="/static/js/bootstrap-multiselect.min.js"></script>
 
+  
+  <style>
+    #twitter-widget {
+      width: 100%;
+    }
+
+    .twitter-timeline {
+      width: 100% !important;
+    }
+    </style>
   
 <script type='text/javascript'>
   /* global google */
@@ -505,9 +515,21 @@ if (typeof Object.assign !== 'function') {
               <a id="conf-website" target="_blank" href="https://pycon.lt/2025">https://pycon.lt/2025</a>
             </div>
             
+              <div>
+                <img src="/static/img/407-twitter.svg" class="badge-link" alt="Twitter icon" width="16" height="16" />
+                <a id="conf-twitter" target="_blank" href="https://twitter.com/pyconlt">@pyconlt</a>
+              </div>
+            
             
             </div>
             <div class="col-12 col-md-6">
+            
+              <!-- Twitter timeline -->
+              <div id="twitter-widget">
+                <a class="twitter-timeline" href="https://twitter.com/pyconlt" data-tweet-limit=2>Tweets by
+                  pyconlt</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </div>
             
           </div>
         </div>
@@ -549,6 +571,13 @@ if (typeof Object.assign !== 'function') {
                     &ZeroWidthSpace;
                   </span>
                 
+                
+                  <span class="conf-title-icon">
+                    <a title="Twitter for PyCon Lithuania" href="https://twitter.com/pyconlt" target="_blank"><img
+                        src="/static/img/407-twitter.svg" class="badge-link" alt="Link to Conference Twitter" width="16"
+                        height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
                 
               </div>
               <div class="col-6">
@@ -901,10 +930,10 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='da8cf6b1-20a3-48d1-805b-b5881624c23f' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='96c6dab2-69e2-4cf7-b34f-5b8f69992074' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'da8cf6b1-20a3-48d1-805b-b5881624c23f',
+    '96c6dab2-69e2-4cf7-b34f-5b8f69992074',
     [{"latitude":54.6870458,"longitude":25.2829111,"title":"PyCon Lithuania 2015","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":54.6870458,"longitude":25.2829111,"title":"PyCon Lithuania 2024","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":54.6870458,"longitude":25.2829111,"title":"PyCon Lithuania 2023","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":54.6870458,"longitude":25.2829111,"title":"PyCon Lithuania 2022","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":54.6870458,"longitude":25.2829111,"title":"PyCon Lithuania 2025","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
