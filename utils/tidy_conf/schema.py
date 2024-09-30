@@ -27,6 +27,30 @@ class Location(BaseModel):
     latitude: LatitudeFloat
     longitude: LongitudeFloat
 
+    @field_validator("title")
+    @classmethod
+    def validate_title(cls, v):
+        if not v:
+            raise ValueError("Location title is required")
+        return v
+
+    @model_validator(mode="after")
+    def validate_latitude_longitude(self):
+        msg = ""
+        lat_round = round(self.latitude * 100000) / 100000
+        lon_round = round(self.longitude * 100000) / 100000
+
+        if lat_round == 0 and lon_round == 0:
+            msg = f"Invalid latitude ({self.latitude}) or longitude ({self.longitude}), because it's the default 0, 0"
+        elif lat_round == 44.93796 and lon_round == 7.54012:
+            msg = f"Invalid latitude ({self.latitude}) or longitude ({self.longitude}) because it's 'None'"
+        elif lat_round == 43.59047 and lon_round == 3.85951:
+            msg = f"Invalid latitude ({self.latitude}) or longitude ({self.longitude}) because it's 'Online'"
+
+        if msg:
+            raise ValueError(msg)
+        return self
+
 
 class Conference(BaseModel):
     conference: str
