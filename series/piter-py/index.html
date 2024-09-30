@@ -44,12 +44,12 @@
 <link rel="alternate"  title="Piter Py Conference Summary in German" hreflang="de" href="/de/series/piter-py/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727703275" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727735237" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727703275" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727703275" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727703275" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727735237" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727735237" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727735237" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -1193,10 +1193,10 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='29283713-6f88-4b38-9bdd-66f18c5f846f' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='a787dd31-1c0f-4c18-bda5-02cef3d4c9f4' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '29283713-6f88-4b38-9bdd-66f18c5f846f',
+    'a787dd31-1c0f-4c18-bda5-02cef3d4c9f4',
     [{"latitude":59.9606739,"longitude":30.1586551,"title":"Piter Py 2023","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":59.9606739,"longitude":30.1586551,"title":"Piter Py 2022","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":59.9606739,"longitude":30.1586551,"title":"Piter Py 2019","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":59.9606739,"longitude":30.1586551,"title":"Piter Py 2018","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":59.9606739,"longitude":30.1586551,"title":"Piter Py 2024","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -59349,6 +59349,148 @@ $('#subject-select').multiselect({
         
         
         
+          $('#pycon-italia-2025 .PY-tag').html("General Python".toLocaleLowerCase("en"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2025-01-06 23:59:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2025-05-28", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2025-01-06 23:59:00");
+            var confDate = DateTime.fromSQL("2025-05-28");
+            console.log("Invalid timezone in pycon-italia-2025. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-italia-2025 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-italia-2025 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-italia-2025 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-italia-2025',
+              title: 'PyCon Italia 2025 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Bologna, Italy',
+              link: 'https://2025.pycon.it/en'
+            });
+            document.querySelector('#pycon-italia-2025 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-italia-2025 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-italia-2025').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-italia-2025').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-italia-2025').addClass('pastcfp');
+            $('#pycon-italia-2025 .timer').replaceWith($('#pycon-italia-2025 .deadline'));
+            $('#pycon-italia-2025 .timer-small').replaceWith($('#pycon-italia-2025 .deadline'));
+            $('#pycon-italia-2025 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-italia-2025').addClass('pastconf');
+            $('#pycon-italia-2025 .timer').replaceWith($('#pycon-italia-2025 .deadline'));
+            $('#pycon-italia-2025 .timer-small').replaceWith($('#pycon-italia-2025 .deadline'));
+            $('#pycon-italia-2025 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pycon-namibia-2025 .PY-tag').html("General Python".toLocaleLowerCase("en"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2024-11-17 23:59:00", { zone: "Africa/Windhoek" });
+            var confDate = DateTime.fromSQL("2025-02-24", { zone: "Africa/Windhoek" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2024-11-17 23:59:00");
+            var confDate = DateTime.fromSQL("2025-02-24");
+            console.log("Invalid timezone in pycon-namibia-2025. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-namibia-2025 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-namibia-2025 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-namibia-2025 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-namibia-2025',
+              title: 'PyCon Namibia 2025 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Windhoek, Namibia',
+              link: 'https://na.pycon.org/'
+            });
+            document.querySelector('#pycon-namibia-2025 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-namibia-2025 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-namibia-2025').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-namibia-2025').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-namibia-2025').addClass('pastcfp');
+            $('#pycon-namibia-2025 .timer').replaceWith($('#pycon-namibia-2025 .deadline'));
+            $('#pycon-namibia-2025 .timer-small').replaceWith($('#pycon-namibia-2025 .deadline'));
+            $('#pycon-namibia-2025 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-namibia-2025').addClass('pastconf');
+            $('#pycon-namibia-2025 .timer').replaceWith($('#pycon-namibia-2025 .deadline'));
+            $('#pycon-namibia-2025 .timer-small').replaceWith($('#pycon-namibia-2025 .deadline'));
+            $('#pycon-namibia-2025 .calendar').remove();
+          }
+        
+      
+        
+        
+        
           $('#geopython-2025 .GEO-tag').html("Python for Earth".toLocaleLowerCase("en"));
         
         
@@ -63136,17 +63278,6 @@ $('#subject-select').multiselect({
         
         
         
-          $('#pycon-italia-2025 .PY-tag').html("General Python".toLocaleLowerCase("en"));
-        
-        
-          $('#pycon-italia-2025 .timer').html("TBA");
-          $('#pycon-italia-2025 .deadline-time').html("TBA");
-          $('#pycon-italia-2025').attr("cfpDiff", Infinity);
-        
-      
-        
-        
-        
           $('#pycon-us-2025 .PY-tag').html("General Python".toLocaleLowerCase("en"));
         
         
@@ -63164,17 +63295,6 @@ $('#subject-select').multiselect({
           $('#pycon-lithuania-2025 .timer').html("TBA");
           $('#pycon-lithuania-2025 .deadline-time').html("TBA");
           $('#pycon-lithuania-2025').attr("cfpDiff", Infinity);
-        
-      
-        
-        
-        
-          $('#pycon-namibia-2025 .PY-tag').html("General Python".toLocaleLowerCase("en"));
-        
-        
-          $('#pycon-namibia-2025 .timer').html("TBA");
-          $('#pycon-namibia-2025 .deadline-time').html("TBA");
-          $('#pycon-namibia-2025').attr("cfpDiff", Infinity);
         
       
         

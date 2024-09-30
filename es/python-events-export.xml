@@ -9,7 +9,7 @@
 		<title>Newsfeed for Python Events Calendar from Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Mon, 30 Sep 2024 13:42:36 +0000</lastBuildDate>
+		<lastBuildDate>Mon, 30 Sep 2024 22:35:19 +0000</lastBuildDate>
 		
 			<item>
 				<title>PyTexas 2025 Conference Deadline</title>
@@ -17,6 +17,24 @@
 				<pubDate>Fri, 11 Apr 2025 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pytexas-2025/</link>
 				<guid isPermaLink="false">pytexas-2025</guid>
+				<category>PY</category>
+			</item>
+		
+			<item>
+				<title>PyCon Italia 2025 Conference Deadline</title>
+				<description><![CDATA[* name of the event: PyCon Italia 2025<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Bologna, Italy<br/>* dates/times/recurrence (incl. time zone):28 – 31 de mayo de 2025<br/>* HTML link : <a href="https://2025.pycon.it/en">PyCon Italia 2025</a>]]></description>
+				<pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-italia-2025/</link>
+				<guid isPermaLink="false">pycon-italia-2025</guid>
+				<category>PY</category>
+			</item>
+		
+			<item>
+				<title>PyCon Namibia 2025 Conference Deadline</title>
+				<description><![CDATA[* name of the event: PyCon Namibia 2025<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Windhoek, Namibia<br/>* dates/times/recurrence (incl. time zone):24 – 27 de febrero de 2025<br/>* HTML link : <a href="https://na.pycon.org/">PyCon Namibia 2025</a>]]></description>
+				<pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-namibia-2025/</link>
+				<guid isPermaLink="false">pycon-namibia-2025</guid>
 				<category>PY</category>
 			</item>
 		
@@ -197,24 +215,6 @@
 				<pubDate>Sat, 28 Sep 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-niger-2024/</link>
 				<guid isPermaLink="false">pycon-niger-2024</guid>
-				<category>PY</category>
-			</item>
-		
-			<item>
-				<title>PyCon Zimbabwe 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyCon Zimbabwe 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Harare, Zimbabwe<br/>* dates/times/recurrence (incl. time zone):31 – 2 de octubre de 2024<br/>* HTML link : <a href="https://zw.pycon.org/">PyCon Zimbabwe 2024</a>]]></description>
-				<pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-zimbabwe-2024/</link>
-				<guid isPermaLink="false">pycon-zimbabwe-2024</guid>
-				<category>PY</category>
-			</item>
-		
-			<item>
-				<title>PyCon Somalia 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyCon Somalia 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Mogadishu, Somalia<br/>* dates/times/recurrence (incl. time zone):28 – 29 de agosto de 2024<br/>* HTML link : <a href="https://pycon.org.so/">PyCon Somalia 2024</a>]]></description>
-				<pubDate>Wed, 28 Aug 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-somalia-2024/</link>
-				<guid isPermaLink="false">pycon-somalia-2024</guid>
 				<category>PY</category>
 			</item>
 		

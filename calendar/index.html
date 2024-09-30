@@ -42,12 +42,12 @@
 <link rel="alternate"  title="Calendar Overview of Python Conference Deadlines and Dates in German" hreflang="de" href="/de/kalender/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727703275" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727735237" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727703275" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727703275" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727703275" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727735237" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727735237" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727735237" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -829,6 +829,112 @@ function load_conference_list() {
         subject: "PY",
         startDate: Date.parse("2025-04-11"),
         endDate: Date.parse("2025-04-13"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
+      id: "pycon-italia-2025-deadline",
+      abbreviation: "pycon-italia-2025",
+      name: "PyCon Italia 2025 CfP ",
+      color: "red",
+      location: "Bologna, Italy",
+      date: "May 28 – 31, 2025",
+      subject: "PY",
+      startDate: Date.parse("2025-01-06 23:59:00"),
+      endDate: Date.parse("2025-01-06 23:59:00"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+                    color = "#4B8BBE";
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+      conf_list_all.push({
+        id: "pycon-italia-2025-conference",
+        abbreviation: "pycon-italia-2025",
+        name: "PyCon Italia 2025",
+        color: color,
+        location: "Bologna, Italy",
+        date: "May 28 – 31, 2025",
+        subject: "PY",
+        startDate: Date.parse("2025-05-28"),
+        endDate: Date.parse("2025-05-31"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
+      id: "pycon-namibia-2025-deadline",
+      abbreviation: "pycon-namibia-2025",
+      name: "PyCon Namibia 2025 CfP ",
+      color: "red",
+      location: "Windhoek, Namibia",
+      date: "February 24 – 27, 2025",
+      subject: "PY",
+      startDate: Date.parse("2024-11-17 23:59:00"),
+      endDate: Date.parse("2024-11-17 23:59:00"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+                    color = "#4B8BBE";
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+      conf_list_all.push({
+        id: "pycon-namibia-2025-conference",
+        abbreviation: "pycon-namibia-2025",
+        name: "PyCon Namibia 2025",
+        color: color,
+        location: "Windhoek, Namibia",
+        date: "February 24 – 27, 2025",
+        subject: "PY",
+        startDate: Date.parse("2025-02-24"),
+        endDate: Date.parse("2025-02-27"),
       });
     
   
@@ -3847,59 +3953,6 @@ function load_conference_list() {
     
     // add deadlines in red
     conf_list_all.push({
-      id: "pycon-italia-2025-deadline",
-      abbreviation: "pycon-italia-2025",
-      name: "PyCon Italia 2025 CfP (extended)",
-      color: "red",
-      location: "Bologna, Italy",
-      date: "May 28 – 31, 2025",
-      subject: "PY",
-      startDate: Date.parse("TBA"),
-      endDate: Date.parse("TBA"),
-    });
-    
-    
-
-    // add Conferences in chosen color
-    
-      var color = "black";
-       // use first sub to choose color
-      
-            
-                    color = "#4B8BBE";
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-      conf_list_all.push({
-        id: "pycon-italia-2025-conference",
-        abbreviation: "pycon-italia-2025",
-        name: "PyCon Italia 2025",
-        color: color,
-        location: "Bologna, Italy",
-        date: "May 28 – 31, 2025",
-        subject: "PY",
-        startDate: Date.parse("2025-05-28"),
-        endDate: Date.parse("2025-05-31"),
-      });
-    
-  
-    
-    
-    // add deadlines in red
-    conf_list_all.push({
       id: "pycon-us-2025-deadline",
       abbreviation: "pycon-us-2025",
       name: "PyCon US 2025 CfP (extended)",
@@ -4006,65 +4059,12 @@ function load_conference_list() {
     
     // add deadlines in red
     conf_list_all.push({
-      id: "pycon-namibia-2025-deadline",
-      abbreviation: "pycon-namibia-2025",
-      name: "PyCon Namibia 2025 CfP (extended)",
-      color: "red",
-      location: "Windhoek, Namibia",
-      date: "February 24 – 27, 2025",
-      subject: "PY",
-      startDate: Date.parse("TBA"),
-      endDate: Date.parse("TBA"),
-    });
-    
-    
-
-    // add Conferences in chosen color
-    
-      var color = "black";
-       // use first sub to choose color
-      
-            
-                    color = "#4B8BBE";
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-      conf_list_all.push({
-        id: "pycon-namibia-2025-conference",
-        abbreviation: "pycon-namibia-2025",
-        name: "PyCon Namibia 2025",
-        color: color,
-        location: "Windhoek, Namibia",
-        date: "February 24 – 27, 2025",
-        subject: "PY",
-        startDate: Date.parse("2025-02-24"),
-        endDate: Date.parse("2025-02-27"),
-      });
-    
-  
-    
-    
-    // add deadlines in red
-    conf_list_all.push({
       id: "pycon-tanzania-2024-deadline",
       abbreviation: "pycon-tanzania-2024",
       name: "PyCon Tanzania 2024 CfP (extended)",
       color: "red",
       location: "Dar Es Salaam, Tanzania",
-      date: "December 1 – 6, 2024",
+      date: "December 4 – 5, 2024",
       subject: "PY",
       startDate: Date.parse("TBA"),
       endDate: Date.parse("TBA"),
@@ -4101,10 +4101,10 @@ function load_conference_list() {
         name: "PyCon Tanzania 2024",
         color: color,
         location: "Dar Es Salaam, Tanzania",
-        date: "December 1 – 6, 2024",
+        date: "December 4 – 5, 2024",
         subject: "PY",
-        startDate: Date.parse("2024-12-01"),
-        endDate: Date.parse("2024-12-06"),
+        startDate: Date.parse("2024-12-04"),
+        endDate: Date.parse("2024-12-05"),
       });
     
   
