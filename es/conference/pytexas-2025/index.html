@@ -42,12 +42,12 @@
 <link rel="alternate"  title="PyTexas 2025 Conference Deadlines in German" hreflang="de" href="/de/conference/pytexas-2025/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727735719" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727821669" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727735719" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727735719" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727735719" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727821669" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727821669" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727821669" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -553,7 +553,7 @@ if (typeof Object.assign !== 'function') {
             Fecha límite en la zona horaria de la conferencia:
           </div>
           <div class="meta">
-            <span class="deadline-time">Tuesday, 14 January 2025</span>
+            <span class="deadline-time">Sunday,  1 December 2024</span>
           </div>
           <div class="meta">
             Fecha límite en sua zona horaria <span class='local-timezone'></span>:
@@ -592,10 +592,10 @@ if (typeof Object.assign !== 'function') {
         </div>
       <div class="row">
         
-        <div id='df9dd426-e0be-4dd6-ad77-66159b5d0d9e' style='width:100%;height:400px;' class=' jekyll-map'></div>
+        <div id='6a839039-9c0d-4375-af6a-1f0088864989' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'df9dd426-e0be-4dd6-ad77-66159b5d0d9e',
+    '6a839039-9c0d-4375-af6a-1f0088864989',
     [{"latitude":30.2711286,"longitude":-97.7436995,"title":"PyTexas 2025","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -720,12 +720,12 @@ function createCalendarFromObject(data) {
 
       // Use specified timezone for deadlines if available else use AoE timezone
       
-      var confDeadline = DateTime.fromSQL("2025-01-14 23:59:00", { zone: "America/Chicago" });
+      var confDeadline = DateTime.fromSQL("2024-12-01 23:59:00", { zone: "America/Chicago" });
       
 
       // check if timezone is valid otherwise replace by system timezone
       if (confDeadline.invalid) {
-        var confDeadline = DateTime.fromSQL("2025-01-14 23:59:00");
+        var confDeadline = DateTime.fromSQL("2024-12-01 23:59:00");
         console.log("Invalid timezone. Using system timezone instead.");
       }
 

@@ -44,12 +44,12 @@
 <link rel="alternate"  title="DragonPy Conference Summary in German" hreflang="de" href="/de/series/dragonpy/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727735237" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727821188" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727735237" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727735237" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727735237" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727821188" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727821188" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727821188" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -58520,49 +58520,49 @@ $('#subject-select').multiselect({
         
         
         
-          $('#pytexas-2025 .PY-tag').html("General Python".toLocaleLowerCase("en"));
+          $('#pycon-estonia-2025 .PY-tag').html("General Python".toLocaleLowerCase("en"));
         
         
 
           // Use specified timezone for deadlines if available else use AoE timezone
           
-            var cfpDate = DateTime.fromSQL("2025-01-14 23:59:00", { zone: "America/Chicago" });
-            var confDate = DateTime.fromSQL("2025-04-11", { zone: "America/Chicago" });
+            var cfpDate = DateTime.fromSQL("2025-01-15 23:59:00", { zone: "Europe/Tallinn" });
+            var confDate = DateTime.fromSQL("2025-10-02", { zone: "Europe/Tallinn" });
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
-            var cfpDate = DateTime.fromSQL("2025-01-14 23:59:00");
-            var confDate = DateTime.fromSQL("2025-04-11");
-            console.log("Invalid timezone in pytexas-2025. Using system timezone instead.");
+            var cfpDate = DateTime.fromSQL("2025-01-15 23:59:00");
+            var confDate = DateTime.fromSQL("2025-10-02");
+            console.log("Invalid timezone in pycon-estonia-2025. Using system timezone instead.");
           }
 
           // render countdown timer
-          $('#pytexas-2025 .timer').countdown(cfpDate.toJSDate(), function (event) {
+          $('#pycon-estonia-2025 .timer').countdown(cfpDate.toJSDate(), function (event) {
             $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
           });
 
           // render countdown timer small
-          $('#pytexas-2025 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+          $('#pycon-estonia-2025 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
             $(this).html(event.strftime('%Dd %H:%M:%S'));
           });
 
           // deadline in local timezone
-          $('#pytexas-2025 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+          $('#pycon-estonia-2025 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 
           // add calendar button
           try {
             var myCalendar = createCalendarFromObject({
-              id: 'pytexas-2025',
-              title: 'PyTexas 2025 deadline',
+              id: 'pycon-estonia-2025',
+              title: 'PyCon Estonia 2025 deadline',
               start_date: cfpDate.toJSDate(),
               duration: 60,
-              place: 'Austin, USA',
-              link: 'https://www.pytexas.org/2025/'
+              place: 'Tallinn, Estonia',
+              link: 'https://pycon.ee/'
             });
-            document.querySelector('#pytexas-2025 .calendar').appendChild(myCalendar);
+            document.querySelector('#pycon-estonia-2025 .calendar').appendChild(myCalendar);
           } catch (err) {
-            document.querySelector('#pytexas-2025 .calendar').appendChild("<p>Calendar not available.</p>");
+            document.querySelector('#pycon-estonia-2025 .calendar').appendChild("<p>Calendar not available.</p>");
             console.log("Error in cfp date.");
           }
 
@@ -58570,21 +58570,21 @@ $('#subject-select').multiselect({
           cfpDiff = cfpDate.diffNow("seconds");
           confDiff = confDate.diffNow("seconds");
 
-          $('#pytexas-2025').attr("cfpDiff", cfpDiff.toMillis());
-          $('#pytexas-2025').attr("confDiff", confDiff.toMillis());
+          $('#pycon-estonia-2025').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-estonia-2025').attr("confDiff", confDiff.toMillis());
 
           if (cfpDiff < 0) {
-            $('#pytexas-2025').addClass('pastcfp');
-            $('#pytexas-2025 .timer').replaceWith($('#pytexas-2025 .deadline'));
-            $('#pytexas-2025 .timer-small').replaceWith($('#pytexas-2025 .deadline'));
-            $('#pytexas-2025 .calendar').remove();
+            $('#pycon-estonia-2025').addClass('pastcfp');
+            $('#pycon-estonia-2025 .timer').replaceWith($('#pycon-estonia-2025 .deadline'));
+            $('#pycon-estonia-2025 .timer-small').replaceWith($('#pycon-estonia-2025 .deadline'));
+            $('#pycon-estonia-2025 .calendar').remove();
           }
 
           if (confDiff < 0) {
-            $('#pytexas-2025').addClass('pastconf');
-            $('#pytexas-2025 .timer').replaceWith($('#pytexas-2025 .deadline'));
-            $('#pytexas-2025 .timer-small').replaceWith($('#pytexas-2025 .deadline'));
-            $('#pytexas-2025 .calendar').remove();
+            $('#pycon-estonia-2025').addClass('pastconf');
+            $('#pycon-estonia-2025 .timer').replaceWith($('#pycon-estonia-2025 .deadline'));
+            $('#pycon-estonia-2025 .timer-small').replaceWith($('#pycon-estonia-2025 .deadline'));
+            $('#pycon-estonia-2025 .calendar').remove();
           }
         
       
@@ -58656,6 +58656,77 @@ $('#subject-select').multiselect({
             $('#pycon-italia-2025 .timer').replaceWith($('#pycon-italia-2025 .deadline'));
             $('#pycon-italia-2025 .timer-small').replaceWith($('#pycon-italia-2025 .deadline'));
             $('#pycon-italia-2025 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pytexas-2025 .PY-tag').html("General Python".toLocaleLowerCase("en"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2024-12-01 23:59:00", { zone: "America/Chicago" });
+            var confDate = DateTime.fromSQL("2025-04-11", { zone: "America/Chicago" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2024-12-01 23:59:00");
+            var confDate = DateTime.fromSQL("2025-04-11");
+            console.log("Invalid timezone in pytexas-2025. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pytexas-2025 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pytexas-2025 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pytexas-2025 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pytexas-2025',
+              title: 'PyTexas 2025 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Austin, USA',
+              link: 'https://www.pytexas.org/2025/'
+            });
+            document.querySelector('#pytexas-2025 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pytexas-2025 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pytexas-2025').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pytexas-2025').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pytexas-2025').addClass('pastcfp');
+            $('#pytexas-2025 .timer').replaceWith($('#pytexas-2025 .deadline'));
+            $('#pytexas-2025 .timer-small').replaceWith($('#pytexas-2025 .deadline'));
+            $('#pytexas-2025 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pytexas-2025').addClass('pastconf');
+            $('#pytexas-2025 .timer').replaceWith($('#pytexas-2025 .deadline'));
+            $('#pytexas-2025 .timer-small').replaceWith($('#pytexas-2025 .deadline'));
+            $('#pytexas-2025 .calendar').remove();
           }
         
       
@@ -62504,17 +62575,6 @@ $('#subject-select').multiselect({
           $('#pytorch-conference-2025 .timer').html("TBA");
           $('#pytorch-conference-2025 .deadline-time').html("TBA");
           $('#pytorch-conference-2025').attr("cfpDiff", Infinity);
-        
-      
-        
-        
-        
-          $('#pycon-estonia-2025 .PY-tag').html("General Python".toLocaleLowerCase("en"));
-        
-        
-          $('#pycon-estonia-2025 .timer').html("TBA");
-          $('#pycon-estonia-2025 .deadline-time').html("TBA");
-          $('#pycon-estonia-2025').attr("cfpDiff", Infinity);
         
       
         

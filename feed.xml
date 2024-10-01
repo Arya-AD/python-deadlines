@@ -9,16 +9,16 @@
 		<title>Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Mon, 30 Sep 2024 22:27:17 +0000</lastBuildDate>
+		<lastBuildDate>Tue, 01 Oct 2024 22:19:48 +0000</lastBuildDate>
 		
 		
 		
 			<item>
-				<title>PyTexas 2025 Conference Deadline</title>
-				<description>Conference in Austin, USA onApril 11 – 13, 2025. CfP: 2025-01-14 23:59:00 AoE. </description>
-				<pubDate>Tue, 14 Jan 2025 23:59:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pytexas-2025/</link>
-				<guid isPermaLink="false">pytexas-2025</guid>
+				<title>PyCon Estonia 2025 Conference Deadline</title>
+				<description>Conference in Tallinn, Estonia onOctober 2 – 3, 2025. CfP: 2025-01-15 23:59:00 AoE.&lt;br /&gt;Find them here: @PyConEstonia </description>
+				<pubDate>Wed, 15 Jan 2025 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-estonia-2025/</link>
+				<guid isPermaLink="false">pycon-estonia-2025</guid>
 				<category>PY</category>
 			</item>
 		
@@ -31,6 +31,18 @@
 				<pubDate>Mon, 06 Jan 2025 23:59:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-italia-2025/</link>
 				<guid isPermaLink="false">pycon-italia-2025</guid>
+				<category>PY</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyTexas 2025 Conference Deadline</title>
+				<description>Conference in Austin, USA onApril 11 – 13, 2025. CfP: 2024-12-01 23:59:00 AoE. </description>
+				<pubDate>Sun, 01 Dec 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pytexas-2025/</link>
+				<guid isPermaLink="false">pytexas-2025</guid>
 				<category>PY</category>
 			</item>
 		
@@ -271,18 +283,6 @@
 				<pubDate>Wed, 31 Jul 2024 23:59:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-netherlands-2024/</link>
 				<guid isPermaLink="false">pycon-netherlands-2024</guid>
-				<category>PY</category>
-			</item>
-		
-		
-		
-		
-			<item>
-				<title>PyCon Niger 2024 Conference Deadline</title>
-				<description>Conference in Niamey, Niger onSeptember 28 – 29, 2024. CfP: 2024-07-30 23:59:00 AoE.&lt;br /&gt;Find them here: @pythonniger </description>
-				<pubDate>Tue, 30 Jul 2024 23:59:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-niger-2024/</link>
-				<guid isPermaLink="false">pycon-niger-2024</guid>
 				<category>PY</category>
 			</item>
 		

@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyCon Estonia Conference Summary in German" hreflang="de" href="/de/series/pycon-estonia/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727735719" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727821669" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727735719" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727735719" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727735719" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727821669" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727821669" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727821669" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -555,6 +555,13 @@ if (typeof Object.assign !== 'function') {
                   &ZeroWidthSpace;
                 </span>
                 
+                  <span class="conf-title-icon">
+                    <a title="Call for Participation for PyCon Estonia" href="https://docs.google.com/forms/d/e/1FAIpQLScn-H2turgLHVbbm6g3t6MeOBmStlgQwEay8J1qfypfERKw0A/viewform" target="_blank"><img
+                        src="/static/img/035-file-text.svg" class="badge-link"
+                        alt="Link to Call for Participation for PyCon Estonia" width="16" height="16" /></a>
+                    &ZeroWidthSpace;
+                  </span>
+                
                 
                 
                 
@@ -589,7 +596,7 @@ if (typeof Object.assign !== 'function') {
               <div class="col-12 col-sm-6">
                 <div class="deadline">
                   <div>Deadline:
-                    <span class="deadline-time">TBA</span>
+                    <span class="deadline-time">Wednesday, 15 January 2025</span>
                   </div>
                 </div>
 
@@ -1042,11 +1049,11 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='c6745f59-8ddd-4586-9363-68aa4005fb46' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='6f6a7ed1-393f-4339-94aa-ca8ae3a4dbf7' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'c6745f59-8ddd-4586-9363-68aa4005fb46',
-    [{"latitude":59.4372155,"longitude":24.7453688,"title":"PyCon Estonia 2018","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":59.4372155,"longitude":24.7453688,"title":"PyCon Estonia 2023","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":59.4372155,"longitude":24.7453688,"title":"PyCon Estonia 2022","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":59.4372155,"longitude":24.7453688,"title":"PyCon Estonia 2019","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":59.4372155,"longitude":24.7453688,"title":"PyCon Estonia 2024","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":59.4372155,"longitude":24.7453688,"title":"PyCon Estonia 2025","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
+    '6f6a7ed1-393f-4339-94aa-ca8ae3a4dbf7',
+    [{"latitude":59.4372155,"longitude":24.7453688,"title":"PyCon Estonia 2018","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":59.4372155,"longitude":24.7453688,"title":"PyCon Estonia 2023","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":59.4372155,"longitude":24.7453688,"title":"PyCon Estonia 2022","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":59.4372155,"longitude":24.7453688,"title":"PyCon Estonia 2019","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":59.4372155,"longitude":24.7453688,"title":"PyCon Estonia 2025","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":59.4372155,"longitude":24.7453688,"title":"PyCon Estonia 2024","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
 </script>
@@ -1227,9 +1234,69 @@ $('#subject-select').multiselect({
           $('#pycon-estonia-2025 .PY-tag').html("Python General".toLocaleLowerCase("es"));
         
         
-          $('#pycon-estonia-2025 .timer').html("TBA");
-          $('#pycon-estonia-2025 .deadline-time').html("TBA");
-          $('#pycon-estonia-2025').attr("cfpDiff", Infinity);
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2025-01-15 23:59:00", { zone: "Europe/Tallinn" });
+            var confDate = DateTime.fromSQL("2025-10-02", { zone: "Europe/Tallinn" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2025-01-15 23:59:00");
+            var confDate = DateTime.fromSQL("2025-10-02");
+            console.log("Invalid timezone in pycon-estonia-2025. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-estonia-2025 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-estonia-2025 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-estonia-2025 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-estonia-2025',
+              title: 'PyCon Estonia 2025 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Tallinn, Estonia',
+              link: 'https://pycon.ee/'
+            });
+            document.querySelector('#pycon-estonia-2025 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-estonia-2025 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-estonia-2025').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-estonia-2025').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-estonia-2025').addClass('pastcfp');
+            $('#pycon-estonia-2025 .timer').replaceWith($('#pycon-estonia-2025 .deadline'));
+            $('#pycon-estonia-2025 .timer-small').replaceWith($('#pycon-estonia-2025 .deadline'));
+            $('#pycon-estonia-2025 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-estonia-2025').addClass('pastconf');
+            $('#pycon-estonia-2025 .timer').replaceWith($('#pycon-estonia-2025 .deadline'));
+            $('#pycon-estonia-2025 .timer-small').replaceWith($('#pycon-estonia-2025 .deadline'));
+            $('#pycon-estonia-2025 .calendar').remove();
+          }
         
       
         

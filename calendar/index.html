@@ -42,12 +42,12 @@
 <link rel="alternate"  title="Calendar Overview of Python Conference Deadlines and Dates in German" hreflang="de" href="/de/kalender/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727735237" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727821188" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727735237" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727735237" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727735237" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727821188" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727821188" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727821188" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -771,29 +771,17 @@ function load_conference_list() {
     
     // add deadlines in red
     conf_list_all.push({
-      id: "pytexas-2025-deadline",
-      abbreviation: "pytexas-2025",
-      name: "PyTexas 2025 CfP ",
+      id: "pycon-estonia-2025-deadline",
+      abbreviation: "pycon-estonia-2025",
+      name: "PyCon Estonia 2025 CfP ",
       color: "red",
-      location: "Austin, USA",
-      date: "April 11 – 13, 2025",
+      location: "Tallinn, Estonia",
+      date: "October 2 – 3, 2025",
       subject: "PY",
-      startDate: Date.parse("2025-01-14 23:59:00"),
-      endDate: Date.parse("2025-01-14 23:59:00"),
+      startDate: Date.parse("2025-01-15 23:59:00"),
+      endDate: Date.parse("2025-01-15 23:59:00"),
     });
     
-    
-    conf_list_all.push({
-      id: "pytexas-2025-deadline",
-      abbreviation: "pytexas-2025",
-      name: "PyTexas 2025 Tutorial Deadline",
-      color: "red",
-      location: "Austin, USA",
-      date: "April 11 – 13, 2025",
-      subject: "PY",
-      startDate: Date.parse("2025-01-14 23:59:00"),
-      endDate: Date.parse("2025-01-14 23:59:00"),
-    });
     
 
     // add Conferences in chosen color
@@ -820,15 +808,15 @@ function load_conference_list() {
             
       
       conf_list_all.push({
-        id: "pytexas-2025-conference",
-        abbreviation: "pytexas-2025",
-        name: "PyTexas 2025",
+        id: "pycon-estonia-2025-conference",
+        abbreviation: "pycon-estonia-2025",
+        name: "PyCon Estonia 2025",
         color: color,
-        location: "Austin, USA",
-        date: "April 11 – 13, 2025",
+        location: "Tallinn, Estonia",
+        date: "October 2 – 3, 2025",
         subject: "PY",
-        startDate: Date.parse("2025-04-11"),
-        endDate: Date.parse("2025-04-13"),
+        startDate: Date.parse("2025-10-02"),
+        endDate: Date.parse("2025-10-03"),
       });
     
   
@@ -882,6 +870,59 @@ function load_conference_list() {
         subject: "PY",
         startDate: Date.parse("2025-05-28"),
         endDate: Date.parse("2025-05-31"),
+      });
+    
+  
+    
+    
+    // add deadlines in red
+    conf_list_all.push({
+      id: "pytexas-2025-deadline",
+      abbreviation: "pytexas-2025",
+      name: "PyTexas 2025 CfP ",
+      color: "red",
+      location: "Austin, USA",
+      date: "April 11 – 13, 2025",
+      subject: "PY",
+      startDate: Date.parse("2024-12-01 23:59:00"),
+      endDate: Date.parse("2024-12-01 23:59:00"),
+    });
+    
+    
+
+    // add Conferences in chosen color
+    
+      var color = "black";
+       // use first sub to choose color
+      
+            
+                    color = "#4B8BBE";
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+      conf_list_all.push({
+        id: "pytexas-2025-conference",
+        abbreviation: "pytexas-2025",
+        name: "PyTexas 2025",
+        color: color,
+        location: "Austin, USA",
+        date: "April 11 – 13, 2025",
+        subject: "PY",
+        startDate: Date.parse("2025-04-11"),
+        endDate: Date.parse("2025-04-13"),
       });
     
   
@@ -3893,59 +3934,6 @@ function load_conference_list() {
         subject: "DATA",
         startDate: Date.parse("2025-10-22"),
         endDate: Date.parse("2025-10-23"),
-      });
-    
-  
-    
-    
-    // add deadlines in red
-    conf_list_all.push({
-      id: "pycon-estonia-2025-deadline",
-      abbreviation: "pycon-estonia-2025",
-      name: "PyCon Estonia 2025 CfP (extended)",
-      color: "red",
-      location: "Tallinn, Estonia",
-      date: "October 2 – 3, 2025",
-      subject: "PY",
-      startDate: Date.parse("TBA"),
-      endDate: Date.parse("TBA"),
-    });
-    
-    
-
-    // add Conferences in chosen color
-    
-      var color = "black";
-       // use first sub to choose color
-      
-            
-                    color = "#4B8BBE";
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-      conf_list_all.push({
-        id: "pycon-estonia-2025-conference",
-        abbreviation: "pycon-estonia-2025",
-        name: "PyCon Estonia 2025",
-        color: color,
-        location: "Tallinn, Estonia",
-        date: "October 2 – 3, 2025",
-        subject: "PY",
-        startDate: Date.parse("2025-10-02"),
-        endDate: Date.parse("2025-10-03"),
       });
     
   
