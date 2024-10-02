@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyData Paris Conference Summary in German" hreflang="de" href="/de/series/pydata-paris/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727821188" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727857379" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727821188" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727821188" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727821188" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727857379" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727857379" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727857379" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -694,10 +694,10 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='8b92fa58-4206-44d4-981d-2cc217ece8e7' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='37312435-929d-4424-b431-1f17a392a7ee' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '8b92fa58-4206-44d4-981d-2cc217ece8e7',
+    '37312435-929d-4424-b431-1f17a392a7ee',
     [{"latitude":48.8588897,"longitude":2.3200410217200766,"title":"PyData Paris 2015","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":48.8588897,"longitude":2.3200410217200766,"title":"PyData Paris 2024","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -711,7 +711,7 @@ if (typeof Object.assign !== 'function') {
 <div class="row">
   <div class="col-12 col-sm-12">
     
-<p><a href="">pythondeadlin.es</a> is maintained by <a href="https://dramsch.net/">Jesper Dramsch</a> since 2022 archiving 948 conferences. <br />It was inspired (and originally coded) by the fantastic <a href="https://aideadlin.es">aideadlin.es</a>. No guarantee for correctness, please correct mistakes by <a href="https://github.com/JesperDramsch/python-deadlines/">submitting a pull request</a>.</p>
+<p><a href="">pythondeadlin.es</a> is maintained by <a href="https://dramsch.net/">Jesper Dramsch</a> since 2022 archiving 951 conferences. <br />It was inspired (and originally coded) by the fantastic <a href="https://aideadlin.es">aideadlin.es</a>. No guarantee for correctness, please correct mistakes by <a href="https://github.com/JesperDramsch/python-deadlines/">submitting a pull request</a>.</p>
 
   </div>
 </div>
@@ -1081,17 +1081,6 @@ $('#subject-select').multiselect({
           $('#pycon-nigeria-2017 .timer').html("None");
           $('#pycon-nigeria-2017 .deadline-time').html("None");
           $('#pycon-nigeria-2017').attr("cfpDiff", Infinity);
-        
-      
-        
-        
-        
-          $('#pycon-amazonia-2017 .PY-tag').html("General Python".toLocaleLowerCase("en"));
-        
-        
-          $('#pycon-amazonia-2017 .timer').html("None");
-          $('#pycon-amazonia-2017 .deadline-time').html("None");
-          $('#pycon-amazonia-2017').attr("cfpDiff", Infinity);
         
       
         
@@ -2032,6 +2021,77 @@ $('#subject-select').multiselect({
         
         
         
+          $('#pycon-malaysia-2024 .PY-tag').html("General Python".toLocaleLowerCase("en"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2024-06-30 23:59:00", { zone: "Asia/Kuala_Lumpur" });
+            var confDate = DateTime.fromSQL("2024-08-24", { zone: "Asia/Kuala_Lumpur" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2024-06-30 23:59:00");
+            var confDate = DateTime.fromSQL("2024-08-24");
+            console.log("Invalid timezone in pycon-malaysia-2024. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-malaysia-2024 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-malaysia-2024 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-malaysia-2024 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-malaysia-2024',
+              title: 'PyCon Malaysia 2024 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Petaling Jaya, Malaysia',
+              link: 'https://web.archive.org/web/20240815232138/https://www.pycon.my/'
+            });
+            document.querySelector('#pycon-malaysia-2024 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-malaysia-2024 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-malaysia-2024').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-malaysia-2024').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-malaysia-2024').addClass('pastcfp');
+            $('#pycon-malaysia-2024 .timer').replaceWith($('#pycon-malaysia-2024 .deadline'));
+            $('#pycon-malaysia-2024 .timer-small').replaceWith($('#pycon-malaysia-2024 .deadline'));
+            $('#pycon-malaysia-2024 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-malaysia-2024').addClass('pastconf');
+            $('#pycon-malaysia-2024 .timer').replaceWith($('#pycon-malaysia-2024 .deadline'));
+            $('#pycon-malaysia-2024 .timer-small').replaceWith($('#pycon-malaysia-2024 .deadline'));
+            $('#pycon-malaysia-2024 .calendar').remove();
+          }
+        
+      
+        
+        
+        
           $('#pyhep-2024 .PY-tag').html("General Python".toLocaleLowerCase("en"));
         
         
@@ -2239,6 +2299,77 @@ $('#subject-select').multiselect({
             $('#pyday-copiapo-2024 .timer').replaceWith($('#pyday-copiapo-2024 .deadline'));
             $('#pyday-copiapo-2024 .timer-small').replaceWith($('#pyday-copiapo-2024 .deadline'));
             $('#pyday-copiapo-2024 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#kiwi-pycon-2024 .PY-tag').html("General Python".toLocaleLowerCase("en"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2024-05-23 23:59:00", { zone: "Pacific/Auckland" });
+            var confDate = DateTime.fromSQL("2024-08-23", { zone: "Pacific/Auckland" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2024-05-23 23:59:00");
+            var confDate = DateTime.fromSQL("2024-08-23");
+            console.log("Invalid timezone in kiwi-pycon-2024. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#kiwi-pycon-2024 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#kiwi-pycon-2024 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#kiwi-pycon-2024 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'kiwi-pycon-2024',
+              title: 'Kiwi PyCon 2024 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Te Whanganui-a-Tara Wellington, New Zealand',
+              link: 'https://kiwipycon.nz/'
+            });
+            document.querySelector('#kiwi-pycon-2024 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#kiwi-pycon-2024 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#kiwi-pycon-2024').attr("cfpDiff", cfpDiff.toMillis());
+          $('#kiwi-pycon-2024').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#kiwi-pycon-2024').addClass('pastcfp');
+            $('#kiwi-pycon-2024 .timer').replaceWith($('#kiwi-pycon-2024 .deadline'));
+            $('#kiwi-pycon-2024 .timer-small').replaceWith($('#kiwi-pycon-2024 .deadline'));
+            $('#kiwi-pycon-2024 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#kiwi-pycon-2024').addClass('pastconf');
+            $('#kiwi-pycon-2024 .timer').replaceWith($('#kiwi-pycon-2024 .deadline'));
+            $('#kiwi-pycon-2024 .timer-small').replaceWith($('#kiwi-pycon-2024 .deadline'));
+            $('#kiwi-pycon-2024 .calendar').remove();
           }
         
       
@@ -20360,6 +20491,77 @@ $('#subject-select').multiselect({
         
         
         
+          $('#pybeach-2020 .PY-tag').html("General Python".toLocaleLowerCase("en"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2019-12-15 00:00:00", { zone: "America/Los_Angeles" });
+            var confDate = DateTime.fromSQL("2020-02-29", { zone: "America/Los_Angeles" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2019-12-15 00:00:00");
+            var confDate = DateTime.fromSQL("2020-02-29");
+            console.log("Invalid timezone in pybeach-2020. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pybeach-2020 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pybeach-2020 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pybeach-2020 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pybeach-2020',
+              title: 'PyBeach 2020 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Los Angeles, USA',
+              link: 'https://web.archive.org/web/20020802042807/http://www.europython.org/'
+            });
+            document.querySelector('#pybeach-2020 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pybeach-2020 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pybeach-2020').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pybeach-2020').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pybeach-2020').addClass('pastcfp');
+            $('#pybeach-2020 .timer').replaceWith($('#pybeach-2020 .deadline'));
+            $('#pybeach-2020 .timer-small').replaceWith($('#pybeach-2020 .deadline'));
+            $('#pybeach-2020 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pybeach-2020').addClass('pastconf');
+            $('#pybeach-2020 .timer').replaceWith($('#pybeach-2020 .deadline'));
+            $('#pybeach-2020 .timer-small').replaceWith($('#pybeach-2020 .deadline'));
+            $('#pybeach-2020 .calendar').remove();
+          }
+        
+      
+        
+        
+        
           $('#python-fwdays-2019 .PY-tag').html("General Python".toLocaleLowerCase("en"));
         
         
@@ -22129,6 +22331,77 @@ $('#subject-select').multiselect({
             $('#flask-conf-brasil-2019 .timer').replaceWith($('#flask-conf-brasil-2019 .deadline'));
             $('#flask-conf-brasil-2019 .timer-small').replaceWith($('#flask-conf-brasil-2019 .deadline'));
             $('#flask-conf-brasil-2019 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pycon-amazonia-2019 .PY-tag').html("General Python".toLocaleLowerCase("en"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2019-07-31 23:55:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2019-08-03", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2019-07-31 23:55:00");
+            var confDate = DateTime.fromSQL("2019-08-03");
+            console.log("Invalid timezone in pycon-amazonia-2019. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-amazonia-2019 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-amazonia-2019 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-amazonia-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-amazonia-2019',
+              title: 'PyCon Amazônia 2019 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Porto Velho, Brazil',
+              link: 'https://web.archive.org/web/20200116144142/https://amazonia.python.org.br/'
+            });
+            document.querySelector('#pycon-amazonia-2019 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-amazonia-2019 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-amazonia-2019').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-amazonia-2019').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-amazonia-2019').addClass('pastcfp');
+            $('#pycon-amazonia-2019 .timer').replaceWith($('#pycon-amazonia-2019 .deadline'));
+            $('#pycon-amazonia-2019 .timer-small').replaceWith($('#pycon-amazonia-2019 .deadline'));
+            $('#pycon-amazonia-2019 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-amazonia-2019').addClass('pastconf');
+            $('#pycon-amazonia-2019 .timer').replaceWith($('#pycon-amazonia-2019 .deadline'));
+            $('#pycon-amazonia-2019 .timer-small').replaceWith($('#pycon-amazonia-2019 .deadline'));
+            $('#pycon-amazonia-2019 .calendar').remove();
           }
         
       
@@ -28807,6 +29080,77 @@ $('#subject-select').multiselect({
             $('#pycon-france-2018 .timer').replaceWith($('#pycon-france-2018 .deadline'));
             $('#pycon-france-2018 .timer-small').replaceWith($('#pycon-france-2018 .deadline'));
             $('#pycon-france-2018 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pycon-amazonia-2018 .PY-tag').html("General Python".toLocaleLowerCase("en"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2018-07-14 23:55:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2018-08-18", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2018-07-14 23:55:00");
+            var confDate = DateTime.fromSQL("2018-08-18");
+            console.log("Invalid timezone in pycon-amazonia-2018. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-amazonia-2018 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-amazonia-2018 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-amazonia-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-amazonia-2018',
+              title: 'PyCon Amazônia 2018 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Manaus, Brazil',
+              link: 'https://web.archive.org/web/20190131222152/https://amazonia.python.org.br/'
+            });
+            document.querySelector('#pycon-amazonia-2018 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-amazonia-2018 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-amazonia-2018').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-amazonia-2018').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-amazonia-2018').addClass('pastcfp');
+            $('#pycon-amazonia-2018 .timer').replaceWith($('#pycon-amazonia-2018 .deadline'));
+            $('#pycon-amazonia-2018 .timer-small').replaceWith($('#pycon-amazonia-2018 .deadline'));
+            $('#pycon-amazonia-2018 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-amazonia-2018').addClass('pastconf');
+            $('#pycon-amazonia-2018 .timer').replaceWith($('#pycon-amazonia-2018 .deadline'));
+            $('#pycon-amazonia-2018 .timer-small').replaceWith($('#pycon-amazonia-2018 .deadline'));
+            $('#pycon-amazonia-2018 .calendar').remove();
           }
         
       
@@ -36550,6 +36894,77 @@ $('#subject-select').multiselect({
             $('#pycon-philippines-2017 .timer').replaceWith($('#pycon-philippines-2017 .deadline'));
             $('#pycon-philippines-2017 .timer-small').replaceWith($('#pycon-philippines-2017 .deadline'));
             $('#pycon-philippines-2017 .calendar').remove();
+          }
+        
+      
+        
+        
+        
+          $('#pycon-amazonia-2017 .PY-tag').html("General Python".toLocaleLowerCase("en"));
+        
+        
+
+          // Use specified timezone for deadlines if available else use AoE timezone
+          
+            var cfpDate = DateTime.fromSQL("2016-11-30 12:49:00", { zone: "UTC-12" });
+            var confDate = DateTime.fromSQL("2017-08-12", { zone: "UTC-12" });
+          
+
+          // check if timezone is valid otherwise replace by system timezone
+          if (cfpDate.invalid || confDate.invalid) {
+            var cfpDate = DateTime.fromSQL("2016-11-30 12:49:00");
+            var confDate = DateTime.fromSQL("2017-08-12");
+            console.log("Invalid timezone in pycon-amazonia-2017. Using system timezone instead.");
+          }
+
+          // render countdown timer
+          $('#pycon-amazonia-2017 .timer').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
+          });
+
+          // render countdown timer small
+          $('#pycon-amazonia-2017 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
+            $(this).html(event.strftime('%Dd %H:%M:%S'));
+          });
+
+          // deadline in local timezone
+          $('#pycon-amazonia-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+
+          // add calendar button
+          try {
+            var myCalendar = createCalendarFromObject({
+              id: 'pycon-amazonia-2017',
+              title: 'PyCon Amazônia 2017 deadline',
+              start_date: cfpDate.toJSDate(),
+              duration: 60,
+              place: 'Manaus, Brazil',
+              link: 'https://web.archive.org/web/20170816034502/http://amazonia.python.org.br/'
+            });
+            document.querySelector('#pycon-amazonia-2017 .calendar').appendChild(myCalendar);
+          } catch (err) {
+            document.querySelector('#pycon-amazonia-2017 .calendar').appendChild("<p>Calendar not available.</p>");
+            console.log("Error in cfp date.");
+          }
+
+          // check if date has passed, add 'past' class to it
+          cfpDiff = cfpDate.diffNow("seconds");
+          confDiff = confDate.diffNow("seconds");
+
+          $('#pycon-amazonia-2017').attr("cfpDiff", cfpDiff.toMillis());
+          $('#pycon-amazonia-2017').attr("confDiff", confDiff.toMillis());
+
+          if (cfpDiff < 0) {
+            $('#pycon-amazonia-2017').addClass('pastcfp');
+            $('#pycon-amazonia-2017 .timer').replaceWith($('#pycon-amazonia-2017 .deadline'));
+            $('#pycon-amazonia-2017 .timer-small').replaceWith($('#pycon-amazonia-2017 .deadline'));
+            $('#pycon-amazonia-2017 .calendar').remove();
+          }
+
+          if (confDiff < 0) {
+            $('#pycon-amazonia-2017').addClass('pastconf');
+            $('#pycon-amazonia-2017 .timer').replaceWith($('#pycon-amazonia-2017 .deadline'));
+            $('#pycon-amazonia-2017 .timer-small').replaceWith($('#pycon-amazonia-2017 .deadline'));
+            $('#pycon-amazonia-2017 .calendar').remove();
           }
         
       
@@ -60980,77 +61395,6 @@ $('#subject-select').multiselect({
         
         
         
-          $('#pycon-malaysia-2024 .PY-tag').html("General Python".toLocaleLowerCase("en"));
-        
-        
-
-          // Use specified timezone for deadlines if available else use AoE timezone
-          
-            var cfpDate = DateTime.fromSQL("2024-06-30 23:59:00", { zone: "Asia/Kuala_Lumpur" });
-            var confDate = DateTime.fromSQL("2024-08-24", { zone: "Asia/Kuala_Lumpur" });
-          
-
-          // check if timezone is valid otherwise replace by system timezone
-          if (cfpDate.invalid || confDate.invalid) {
-            var cfpDate = DateTime.fromSQL("2024-06-30 23:59:00");
-            var confDate = DateTime.fromSQL("2024-08-24");
-            console.log("Invalid timezone in pycon-malaysia-2024. Using system timezone instead.");
-          }
-
-          // render countdown timer
-          $('#pycon-malaysia-2024 .timer').countdown(cfpDate.toJSDate(), function (event) {
-            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
-          });
-
-          // render countdown timer small
-          $('#pycon-malaysia-2024 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
-            $(this).html(event.strftime('%Dd %H:%M:%S'));
-          });
-
-          // deadline in local timezone
-          $('#pycon-malaysia-2024 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
-
-          // add calendar button
-          try {
-            var myCalendar = createCalendarFromObject({
-              id: 'pycon-malaysia-2024',
-              title: 'PyCon Malaysia 2024 deadline',
-              start_date: cfpDate.toJSDate(),
-              duration: 60,
-              place: 'Petaling Jaya, Malaysia',
-              link: 'https://web.archive.org/web/20240815232138/https://www.pycon.my/'
-            });
-            document.querySelector('#pycon-malaysia-2024 .calendar').appendChild(myCalendar);
-          } catch (err) {
-            document.querySelector('#pycon-malaysia-2024 .calendar').appendChild("<p>Calendar not available.</p>");
-            console.log("Error in cfp date.");
-          }
-
-          // check if date has passed, add 'past' class to it
-          cfpDiff = cfpDate.diffNow("seconds");
-          confDiff = confDate.diffNow("seconds");
-
-          $('#pycon-malaysia-2024').attr("cfpDiff", cfpDiff.toMillis());
-          $('#pycon-malaysia-2024').attr("confDiff", confDiff.toMillis());
-
-          if (cfpDiff < 0) {
-            $('#pycon-malaysia-2024').addClass('pastcfp');
-            $('#pycon-malaysia-2024 .timer').replaceWith($('#pycon-malaysia-2024 .deadline'));
-            $('#pycon-malaysia-2024 .timer-small').replaceWith($('#pycon-malaysia-2024 .deadline'));
-            $('#pycon-malaysia-2024 .calendar').remove();
-          }
-
-          if (confDiff < 0) {
-            $('#pycon-malaysia-2024').addClass('pastconf');
-            $('#pycon-malaysia-2024 .timer').replaceWith($('#pycon-malaysia-2024 .deadline'));
-            $('#pycon-malaysia-2024 .timer-small').replaceWith($('#pycon-malaysia-2024 .deadline'));
-            $('#pycon-malaysia-2024 .calendar').remove();
-          }
-        
-      
-        
-        
-        
           $('#pyhep-dev-2024 .SCIPY-tag').html("Scientific Python".toLocaleLowerCase("en"));
         
         
@@ -61826,77 +62170,6 @@ $('#subject-select').multiselect({
             $('#euroscipy-2024 .timer').replaceWith($('#euroscipy-2024 .deadline'));
             $('#euroscipy-2024 .timer-small').replaceWith($('#euroscipy-2024 .deadline'));
             $('#euroscipy-2024 .calendar').remove();
-          }
-        
-      
-        
-        
-        
-          $('#kiwi-pycon-2024 .PY-tag').html("General Python".toLocaleLowerCase("en"));
-        
-        
-
-          // Use specified timezone for deadlines if available else use AoE timezone
-          
-            var cfpDate = DateTime.fromSQL("2024-05-23 23:59:00", { zone: "Pacific/Auckland" });
-            var confDate = DateTime.fromSQL("2024-08-23", { zone: "Pacific/Auckland" });
-          
-
-          // check if timezone is valid otherwise replace by system timezone
-          if (cfpDate.invalid || confDate.invalid) {
-            var cfpDate = DateTime.fromSQL("2024-05-23 23:59:00");
-            var confDate = DateTime.fromSQL("2024-08-23");
-            console.log("Invalid timezone in kiwi-pycon-2024. Using system timezone instead.");
-          }
-
-          // render countdown timer
-          $('#kiwi-pycon-2024 .timer').countdown(cfpDate.toJSDate(), function (event) {
-            $(this).html(event.strftime('%D days %Hh %Mm %Ss'));
-          });
-
-          // render countdown timer small
-          $('#kiwi-pycon-2024 .timer-small').countdown(cfpDate.toJSDate(), function (event) {
-            $(this).html(event.strftime('%Dd %H:%M:%S'));
-          });
-
-          // deadline in local timezone
-          $('#kiwi-pycon-2024 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
-
-          // add calendar button
-          try {
-            var myCalendar = createCalendarFromObject({
-              id: 'kiwi-pycon-2024',
-              title: 'Kiwi PyCon 2024 deadline',
-              start_date: cfpDate.toJSDate(),
-              duration: 60,
-              place: 'Te Whanganui-a-Tara Wellington, New Zealand',
-              link: 'https://kiwipycon.nz/'
-            });
-            document.querySelector('#kiwi-pycon-2024 .calendar').appendChild(myCalendar);
-          } catch (err) {
-            document.querySelector('#kiwi-pycon-2024 .calendar').appendChild("<p>Calendar not available.</p>");
-            console.log("Error in cfp date.");
-          }
-
-          // check if date has passed, add 'past' class to it
-          cfpDiff = cfpDate.diffNow("seconds");
-          confDiff = confDate.diffNow("seconds");
-
-          $('#kiwi-pycon-2024').attr("cfpDiff", cfpDiff.toMillis());
-          $('#kiwi-pycon-2024').attr("confDiff", confDiff.toMillis());
-
-          if (cfpDiff < 0) {
-            $('#kiwi-pycon-2024').addClass('pastcfp');
-            $('#kiwi-pycon-2024 .timer').replaceWith($('#kiwi-pycon-2024 .deadline'));
-            $('#kiwi-pycon-2024 .timer-small').replaceWith($('#kiwi-pycon-2024 .deadline'));
-            $('#kiwi-pycon-2024 .calendar').remove();
-          }
-
-          if (confDiff < 0) {
-            $('#kiwi-pycon-2024').addClass('pastconf');
-            $('#kiwi-pycon-2024 .timer').replaceWith($('#kiwi-pycon-2024 .deadline'));
-            $('#kiwi-pycon-2024 .timer-small').replaceWith($('#kiwi-pycon-2024 .deadline'));
-            $('#kiwi-pycon-2024 .calendar').remove();
           }
         
       
