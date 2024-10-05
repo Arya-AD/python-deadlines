@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyData Global Conference Series Overview in German" hreflang="de" href="/de/series/pydata-global/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1728132764" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1728148071" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1728132764" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1728132764" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1728132764" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1728148071" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1728148071" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1728148071" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -903,10 +903,10 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='065efa68-9d9a-47dd-a744-e58bdeca17e7' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='b483b110-9caa-48f3-b6e8-977e7969d18f' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '065efa68-9d9a-47dd-a744-e58bdeca17e7',
+    'b483b110-9caa-48f3-b6e8-977e7969d18f',
     [],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -1091,13 +1091,13 @@ $('#subject-select').multiselect({
 
           // Use specified timezone for deadlines if available else use AoE timezone
           
-            var cfpDate = DateTime.fromSQL("2024-10-07 23:59:00", { zone: "UTC-12" });
+            var cfpDate = DateTime.fromSQL("2024-10-14 23:59:00", { zone: "UTC-12" });
             var confDate = DateTime.fromSQL("2024-12-03", { zone: "UTC-12" });
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
-            var cfpDate = DateTime.fromSQL("2024-10-07 23:59:00");
+            var cfpDate = DateTime.fromSQL("2024-10-14 23:59:00");
             var confDate = DateTime.fromSQL("2024-12-03");
             console.log("Invalid timezone in pydata-global-2024. Using system timezone instead.");
           }

@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyCon Germany & PyData Berlin Conference Series Overview in German" hreflang="de" href="/de/series/pycon-germany-pydata-berlin/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1728132840" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1728148142" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1728132840" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1728132840" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1728132840" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1728148142" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1728148142" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1728148142" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -1801,10 +1801,10 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='e9309d1c-e7ab-457c-936f-6368ddc5b19d' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='4dbc2b93-6507-466f-ad45-4a5825246e64' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'e9309d1c-e7ab-457c-936f-6368ddc5b19d',
+    '4dbc2b93-6507-466f-ad45-4a5825246e64',
     [{"latitude":52.5170365,"longitude":13.3888599,"title":"PyCon Germany & PyData Berlin 2024","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":52.5170365,"longitude":13.3888599,"title":"PyCon Germany & PyData Berlin 2023","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":52.5170365,"longitude":13.3888599,"title":"PyCon Germany & PyData Berlin 2022","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":52.5170365,"longitude":13.3888599,"title":"PyCon Germany & PyData Berlin 2021","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":52.5170365,"longitude":13.3888599,"title":"PyCon Germany & PyData Berlin 2020","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":52.5170365,"longitude":13.3888599,"title":"PyCon Germany & PyData Berlin 2019","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -40441,13 +40441,13 @@ $('#subject-select').multiselect({
 
           // Use specified timezone for deadlines if available else use AoE timezone
           
-            var cfpDate = DateTime.fromSQL("2024-10-14 23:59:00", { zone: "Europe/Warsaw" });
+            var cfpDate = DateTime.fromSQL("2024-09-15 23:59:00", { zone: "Europe/Warsaw" });
             var confDate = DateTime.fromSQL("2024-11-30", { zone: "Europe/Warsaw" });
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
-            var cfpDate = DateTime.fromSQL("2024-10-14 23:59:00");
+            var cfpDate = DateTime.fromSQL("2024-09-15 23:59:00");
             var confDate = DateTime.fromSQL("2024-11-30");
             console.log("Invalid timezone in pycon-wroclaw-2024. Using system timezone instead.");
           }
@@ -40512,13 +40512,13 @@ $('#subject-select').multiselect({
 
           // Use specified timezone for deadlines if available else use AoE timezone
           
-            var cfpDate = DateTime.fromSQL("2024-10-07 23:59:00", { zone: "UTC-12" });
+            var cfpDate = DateTime.fromSQL("2024-10-14 23:59:00", { zone: "UTC-12" });
             var confDate = DateTime.fromSQL("2024-12-03", { zone: "UTC-12" });
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
-            var cfpDate = DateTime.fromSQL("2024-10-07 23:59:00");
+            var cfpDate = DateTime.fromSQL("2024-10-14 23:59:00");
             var confDate = DateTime.fromSQL("2024-12-03");
             console.log("Invalid timezone in pydata-global-2024. Using system timezone instead.");
           }

@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyCon Lithuania Conference Series Overview in German" hreflang="de" href="/de/series/pycon-lithuania/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1728132840" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1728148142" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1728132840" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1728132840" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1728132840" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1728148142" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1728148142" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1728148142" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -930,10 +930,10 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='4d8bcd19-dd4b-4567-9c22-f1fc6ee12a90' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='68221362-948f-4da8-b0f4-ade27a3ed432' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    '4d8bcd19-dd4b-4567-9c22-f1fc6ee12a90',
+    '68221362-948f-4da8-b0f4-ade27a3ed432',
     [{"latitude":54.6870458,"longitude":25.2829111,"title":"PyCon Lithuania 2015","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":54.6870458,"longitude":25.2829111,"title":"PyCon Lithuania 2024","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":54.6870458,"longitude":25.2829111,"title":"PyCon Lithuania 2023","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":54.6870458,"longitude":25.2829111,"title":"PyCon Lithuania 2022","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":54.6870458,"longitude":25.2829111,"title":"PyCon Lithuania 2025","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -39570,13 +39570,13 @@ $('#subject-select').multiselect({
 
           // Use specified timezone for deadlines if available else use AoE timezone
           
-            var cfpDate = DateTime.fromSQL("2024-10-14 23:59:00", { zone: "Europe/Warsaw" });
+            var cfpDate = DateTime.fromSQL("2024-09-15 23:59:00", { zone: "Europe/Warsaw" });
             var confDate = DateTime.fromSQL("2024-11-30", { zone: "Europe/Warsaw" });
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
-            var cfpDate = DateTime.fromSQL("2024-10-14 23:59:00");
+            var cfpDate = DateTime.fromSQL("2024-09-15 23:59:00");
             var confDate = DateTime.fromSQL("2024-11-30");
             console.log("Invalid timezone in pycon-wroclaw-2024. Using system timezone instead.");
           }
@@ -39641,13 +39641,13 @@ $('#subject-select').multiselect({
 
           // Use specified timezone for deadlines if available else use AoE timezone
           
-            var cfpDate = DateTime.fromSQL("2024-10-07 23:59:00", { zone: "UTC-12" });
+            var cfpDate = DateTime.fromSQL("2024-10-14 23:59:00", { zone: "UTC-12" });
             var confDate = DateTime.fromSQL("2024-12-03", { zone: "UTC-12" });
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
-            var cfpDate = DateTime.fromSQL("2024-10-07 23:59:00");
+            var cfpDate = DateTime.fromSQL("2024-10-14 23:59:00");
             var confDate = DateTime.fromSQL("2024-12-03");
             console.log("Invalid timezone in pydata-global-2024. Using system timezone instead.");
           }

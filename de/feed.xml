@@ -9,7 +9,7 @@
 		<title>Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Sat, 05 Oct 2024 12:54:00 +0000</lastBuildDate>
+		<lastBuildDate>Sat, 05 Oct 2024 17:09:02 +0000</lastBuildDate>
 		
 		
 		
@@ -87,8 +87,8 @@
 		
 			<item>
 				<title>PyCon Wroclaw 2024 Conference Deadline</title>
-				<description>Conference in Wrocław, Poland on30. November 2024. CfP: 2024-10-14 23:59:00 AoE. </description>
-				<pubDate>Mon, 14 Oct 2024 23:59:00 +0000</pubDate>
+				<description>Conference in Wrocław, Poland on30. November 2024. CfP: 2024-09-15 23:59:00 AoE. </description>
+				<pubDate>Sun, 15 Sep 2024 23:59:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pycon-wroclaw-2024/</link>
 				<guid isPermaLink="false">pycon-wroclaw-2024</guid>
 				<category>PY</category>
@@ -99,8 +99,8 @@
 		
 			<item>
 				<title>PyData Global 2024 Conference Deadline</title>
-				<description>Conference in Online on3. – 5. Dezember 2024. CfP: 2024-10-07 23:59:00 AoE. </description>
-				<pubDate>Mon, 07 Oct 2024 23:59:00 +0000</pubDate>
+				<description>Conference in Online on3. – 5. Dezember 2024. CfP: 2024-10-14 23:59:00 AoE. </description>
+				<pubDate>Mon, 14 Oct 2024 23:59:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pydata-global-2024/</link>
 				<guid isPermaLink="false">pydata-global-2024</guid>
 				<category>DATA</category>

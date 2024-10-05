@@ -44,12 +44,12 @@
 <link rel="alternate"  title="PyCon Poland Conference Series Overview in German" hreflang="de" href="/de/series/pycon-poland/">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1728132240" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1728147560" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1728132240" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1728132240" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1728132240" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1728147560" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1728147560" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1728147560" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -1423,10 +1423,10 @@ if (typeof Object.assign !== 'function') {
     </div>
     
     <div class="row">
-      <div id='aeefc8e0-965b-441f-adc2-1cd3e32c34c1' style='width:100%;height:400px;' class=' jekyll-map'></div>
+      <div id='7465b2ba-a419-4a22-8e20-0ec5a5ce97ad' style='width:100%;height:400px;' class=' jekyll-map'></div>
 <script type='text/javascript'>
   jekyllMaps.register(
-    'aeefc8e0-965b-441f-adc2-1cd3e32c34c1',
+    '7465b2ba-a419-4a22-8e20-0ec5a5ce97ad',
     [{"latitude":50.294113,"longitude":18.6657306,"title":"PyCon Poland 2023","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":50.294113,"longitude":18.6657306,"title":"PyCon Poland 2022","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""},{"latitude":50.294113,"longitude":18.6657306,"title":"PyCon Poland 2024","icon":null,"url":"","url_text":null,"image":"/static/img/python-deadlines-social-preview.png","popup_html":""}],
     {"baseUrl":"","useCluster":true,"showMarker":true,"showMarkerPopup":true,"markerIcon":null,"styles":"[]","customZoom":6}
   );
@@ -40063,13 +40063,13 @@ $('#subject-select').multiselect({
 
           // Use specified timezone for deadlines if available else use AoE timezone
           
-            var cfpDate = DateTime.fromSQL("2024-10-14 23:59:00", { zone: "Europe/Warsaw" });
+            var cfpDate = DateTime.fromSQL("2024-09-15 23:59:00", { zone: "Europe/Warsaw" });
             var confDate = DateTime.fromSQL("2024-11-30", { zone: "Europe/Warsaw" });
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
-            var cfpDate = DateTime.fromSQL("2024-10-14 23:59:00");
+            var cfpDate = DateTime.fromSQL("2024-09-15 23:59:00");
             var confDate = DateTime.fromSQL("2024-11-30");
             console.log("Invalid timezone in pycon-wroclaw-2024. Using system timezone instead.");
           }
@@ -40134,13 +40134,13 @@ $('#subject-select').multiselect({
 
           // Use specified timezone for deadlines if available else use AoE timezone
           
-            var cfpDate = DateTime.fromSQL("2024-10-07 23:59:00", { zone: "UTC-12" });
+            var cfpDate = DateTime.fromSQL("2024-10-14 23:59:00", { zone: "UTC-12" });
             var confDate = DateTime.fromSQL("2024-12-03", { zone: "UTC-12" });
           
 
           // check if timezone is valid otherwise replace by system timezone
           if (cfpDate.invalid || confDate.invalid) {
-            var cfpDate = DateTime.fromSQL("2024-10-07 23:59:00");
+            var cfpDate = DateTime.fromSQL("2024-10-14 23:59:00");
             var confDate = DateTime.fromSQL("2024-12-03");
             console.log("Invalid timezone in pydata-global-2024. Using system timezone instead.");
           }
