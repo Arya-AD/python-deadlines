@@ -9,7 +9,7 @@
 		<title>Newsfeed for Python Events Calendar from Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Sat, 05 Oct 2024 04:39:40 +0000</lastBuildDate>
+		<lastBuildDate>Sat, 05 Oct 2024 11:14:06 +0000</lastBuildDate>
 		
 			<item>
 				<title>PyCon Estonia 2025 Conference Deadline</title>
@@ -54,6 +54,15 @@
 				<link>https://pythondeadlin.es/conference/geopython-2025/</link>
 				<guid isPermaLink="false">geopython-2025</guid>
 				<category>GEO</category>
+			</item>
+		
+			<item>
+				<title>PyCon Tanzania 2024 Conference Deadline</title>
+				<description><![CDATA[* name of the event: PyCon Tanzania 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Dar Es Salaam, Tanzania<br/>* dates/times/recurrence (incl. time zone):December 4 – 5, 2024<br/>* HTML link : <a href="https://pycon.or.tz/">PyCon Tanzania 2024</a>]]></description>
+				<pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-tanzania-2024/</link>
+				<guid isPermaLink="false">pycon-tanzania-2024</guid>
+				<category>PY</category>
 			</item>
 		
 			<item>
@@ -206,15 +215,6 @@
 				<pubDate>Sat, 21 Sep 2024 00:00:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pybay-2024/</link>
 				<guid isPermaLink="false">pybay-2024</guid>
-				<category>PY</category>
-			</item>
-		
-			<item>
-				<title>PyCon Netherlands 2024 Conference Deadline</title>
-				<description><![CDATA[* name of the event: PyCon Netherlands 2024<br/>* type of event: Conference <br/>* focus on Python: Yes<br/>* approximate number of attendees: Unknown<br/>* location (incl. country): Utrecht, Netherlands<br/>* dates/times/recurrence (incl. time zone):October 10, 2024<br/>* HTML link : <a href="https://nl.pycon.org/">PyCon Netherlands 2024</a>]]></description>
-				<pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-netherlands-2024/</link>
-				<guid isPermaLink="false">pycon-netherlands-2024</guid>
 				<category>PY</category>
 			</item>
 		

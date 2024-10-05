@@ -9,7 +9,7 @@
 		<title>Python Conference Deadlines</title>
 		<description>Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!</description>
 		<link>https://pythondeadlin.es/feed.xml</link>
-		<lastBuildDate>Sat, 05 Oct 2024 04:39:40 +0000</lastBuildDate>
+		<lastBuildDate>Sat, 05 Oct 2024 11:14:06 +0000</lastBuildDate>
 		
 		
 		
@@ -68,6 +68,18 @@
 				<link>https://pythondeadlin.es/conference/geopython-2025/</link>
 				<guid isPermaLink="false">geopython-2025</guid>
 				<category>GEO</category>
+			</item>
+		
+		
+		
+		
+			<item>
+				<title>PyCon Tanzania 2024 Conference Deadline</title>
+				<description>Conference in Dar Es Salaam, Tanzania onDecember 4 – 5, 2024. CfP: 2024-11-12 23:59:00 AoE. </description>
+				<pubDate>Tue, 12 Nov 2024 23:59:00 +0000</pubDate>
+				<link>https://pythondeadlin.es/conference/pycon-tanzania-2024/</link>
+				<guid isPermaLink="false">pycon-tanzania-2024</guid>
+				<category>PY</category>
 			</item>
 		
 		
@@ -271,18 +283,6 @@
 				<pubDate>Wed, 31 Jul 2024 23:59:00 +0000</pubDate>
 				<link>https://pythondeadlin.es/conference/pybay-2024/</link>
 				<guid isPermaLink="false">pybay-2024</guid>
-				<category>PY</category>
-			</item>
-		
-		
-		
-		
-			<item>
-				<title>PyCon Netherlands 2024 Conference Deadline</title>
-				<description>Conference in Utrecht, Netherlands onOctober 10, 2024. CfP: 2024-07-31 23:59:00 AoE. </description>
-				<pubDate>Wed, 31 Jul 2024 23:59:00 +0000</pubDate>
-				<link>https://pythondeadlin.es/conference/pycon-netherlands-2024/</link>
-				<guid isPermaLink="false">pycon-netherlands-2024</guid>
 				<category>PY</category>
 			</item>
 		
