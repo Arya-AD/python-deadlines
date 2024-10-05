@@ -8,6 +8,7 @@ import time
 from datetime import timezone
 from pathlib import Path
 from urllib.parse import urlparse
+
 import pydantic
 import pytz
 import yaml
@@ -21,7 +22,6 @@ from tidy_conf.schema import Conference
 from tidy_conf.schema import get_schema
 from tidy_conf.titles import tidy_titles
 from tidy_conf.utils import Loader
-from tidy_conf.utils import query_yes_no
 from tqdm import tqdm
 
 dateformat = "%Y-%m-%d %H:%M:%S"
@@ -118,12 +118,11 @@ def split_data(data):
             q.cfp += " 23:59:00"
         if "cfp_ext" in q and " " not in q.cfp_ext:
             q.cfp_ext += " 23:59:00"
-        if q.end < datetime.datetime.now(
-            tz=timezone.utc,
-        ).replace(
-            microsecond=0,
-        ).date() - datetime.timedelta(days=37):
-            if q.cfp.lower() == "tba":
+        date_today = datetime.datetime.now(tz=timezone.utc).replace(microsecond=0).date()
+        # if the conference is older than 37 days, it moves off the main page
+        if q.end < date_today - datetime.timedelta(days=37):
+            legacy_year = (date_today - datetime.timedelta(days=7 * 365)).replace(month=1, day=1)
+            if q.end < legacy_year:
                 legacy.append(q)
             else:
                 expired.append(q)
@@ -193,7 +192,7 @@ def sort_data(base="", prefix="", skip_links=False):
     data = merge_duplicates(data)
 
     # Check Links
-    if not skip_links and query_yes_no("Check Links?"):
+    if not skip_links:
         data = check_links(data)
 
     for i, q in enumerate(data.copy()):
@@ -205,8 +204,8 @@ def sort_data(base="", prefix="", skip_links=False):
             new_data.append(Conference(**q))
         except pydantic.ValidationError as e:  # noqa: PERF203
             print(f"Error: {e}")
-            print(f"Data: {q}")
-            print("\n")
+            print(f"Data: \n{yaml.dump(q, default_flow_style=False)}")
+            print("\n\n")
             continue
     data = new_data
 
@@ -223,7 +222,6 @@ def sort_data(base="", prefix="", skip_links=False):
     write_conference_yaml(conf + tba, out_current)
 
     expired.sort(key=sort_by_date, reverse=True)
-    expired.sort(key=sort_by_cfp, reverse=True)
 
     # pretty_print("New archive:", data)
     write_conference_yaml(expired, out_archive)
