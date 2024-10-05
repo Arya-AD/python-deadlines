@@ -21,14 +21,14 @@
 <meta property="og:site_name" content="Python Conference Deadlines" />
 <meta property="og:image" content="https://pythondeadlin.es/static/img/python-deadlines-social-preview.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-10-02T08:22:59+00:00" />
+<meta property="article:published_time" content="2024-10-05T04:39:40+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="https://pythondeadlin.es/static/img/python-deadlines-social-preview.png" />
 <meta property="twitter:title" content="2011" />
 <meta name="twitter:site" content="@jesperdramsch" />
 <meta name="twitter:creator" content="@Jesper Dramsch" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jesper Dramsch"},"dateModified":"2024-10-02T08:22:59+00:00","datePublished":"2024-10-02T08:22:59+00:00","description":"Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!","headline":"2011","image":"https://pythondeadlin.es/static/img/python-deadlines-social-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://pythondeadlin.es/archive/2011/"},"url":"https://pythondeadlin.es/archive/2011/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jesper Dramsch"},"dateModified":"2024-10-05T04:39:40+00:00","datePublished":"2024-10-05T04:39:40+00:00","description":"Countdowns to your favourite Python conferences with calls for participation and resources to submit awesome talks!","headline":"2011","image":"https://pythondeadlin.es/static/img/python-deadlines-social-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://pythondeadlin.es/archive/2011/"},"url":"https://pythondeadlin.es/archive/2011/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -43,12 +43,12 @@
 <link rel="alternate"  title="2011 in German" hreflang="de" href="/de/archive/2011/index.html">
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1727857379" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/js-year-calendar.min.css?t=1728103180" media="screen,projection">
 
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1727857379" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1727857379" media="screen,projection">
-<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1727857379" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/deadlines.css?t=1728103180" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/calendar.css?t=1728103180" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="/static/css/search.css?t=1728103180" media="screen,projection">
 
 <link rel="shortcut icon" href="/static/img/favicon.png">
 
@@ -1896,7 +1896,7 @@
 <div class="row">
   <div class="col-12 col-sm-12">
     
-<p><a href="">pythondeadlin.es</a> is maintained by <a href="https://dramsch.net/">Jesper Dramsch</a> since 2022 archiving 951 conferences. <br />It was inspired (and originally coded) by the fantastic <a href="https://aideadlin.es">aideadlin.es</a>. No guarantee for correctness, please correct mistakes by <a href="https://github.com/JesperDramsch/python-deadlines/">submitting a pull request</a>.</p>
+<p><a href="">pythondeadlin.es</a> is maintained by <a href="https://dramsch.net/">Jesper Dramsch</a> since 2022 archiving 991 conferences. <br />It was inspired (and originally coded) by the fantastic <a href="https://aideadlin.es">aideadlin.es</a>. No guarantee for correctness, please correct mistakes by <a href="https://github.com/JesperDramsch/python-deadlines/">submitting a pull request</a>.</p>
 
   </div>
 </div>
@@ -2584,6 +2584,17 @@ $('#subject-select').multiselect({
 			      $('#pycon-russia-2013 .timer').html("None");
 			      $('#pycon-russia-2013 .deadline-time').html("None");
 			      $('#pycon-russia-2013').attr("cfpDiff", Infinity);
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-nyc-2012 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+			      $('#pydata-nyc-2012 .timer').html("None");
+			      $('#pydata-nyc-2012 .deadline-time').html("None");
+			      $('#pydata-nyc-2012').attr("cfpDiff", Infinity);
 			    
 			  
 			    
@@ -7395,6 +7406,30 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
+			      $('#pydata-eindhoven-2021 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2021-09-26 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2021-11-12", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2021-09-26 23:59:00");
+			        var confDate = DateTime.fromSQL("2021-11-12");
+			        console.log("Invalid timezone in pydata-eindhoven-2021. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-eindhoven-2021 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
 			      $('#pyjamas-conf-2021 .PY-tag').html("General Python".toLocaleLowerCase("en"));
 			    
 			    
@@ -8523,6 +8558,30 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
+			      $('#pydata-global-2020 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2020-08-02 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2020-11-11", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2020-08-02 23:59:00");
+			        var confDate = DateTime.fromSQL("2020-11-11");
+			        console.log("Invalid timezone in pydata-global-2020. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-global-2020 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
 			      $('#pycon-south-korea-2020 .PY-tag').html("General Python".toLocaleLowerCase("en"));
 			    
 			    
@@ -8638,6 +8697,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#pygotham-tv-2020 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-taipei-2020 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2020-06-30 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2020-11-27", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2020-06-30 23:59:00");
+			        var confDate = DateTime.fromSQL("2020-11-27");
+			        console.log("Invalid timezone in pydata-taipei-2020. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-taipei-2020 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -9171,6 +9254,30 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
+			      $('#python-in-astronomy-2020 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2020-01-31 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2020-04-20", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2020-01-31 23:59:00");
+			        var confDate = DateTime.fromSQL("2020-04-20");
+			        console.log("Invalid timezone in python-in-astronomy-2020. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#python-in-astronomy-2020 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
 			      $('#scipy-us-2020 .SCIPY-tag').html("Scientific Python".toLocaleLowerCase("en"));
 			    
 			    
@@ -9435,6 +9542,30 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
+			      $('#pydata-austin-2019 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2019-10-20 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2019-12-07", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2019-10-20 23:59:00");
+			        var confDate = DateTime.fromSQL("2019-12-07");
+			        console.log("Invalid timezone in pydata-austin-2019. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-austin-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
 			      $('#afropython-conf-2019 .PY-tag').html("General Python".toLocaleLowerCase("en"));
 			    
 			    
@@ -9574,6 +9705,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#djangocong-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-cambridge-2019 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2019-09-29 23:59:59", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2019-11-15", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2019-09-29 23:59:59");
+			        var confDate = DateTime.fromSQL("2019-11-15");
+			        console.log("Invalid timezone in pydata-cambridge-2019. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-cambridge-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -9766,6 +9921,54 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#north-bay-python-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-los-angeles-2019 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2019-08-15 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2019-12-03", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2019-08-15 23:59:00");
+			        var confDate = DateTime.fromSQL("2019-12-03");
+			        console.log("Invalid timezone in pydata-los-angeles-2019. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-los-angeles-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-nyc-2019 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2019-08-15 23:59:00", {zone: "America/New_York"});
+			        var confDate = DateTime.fromSQL("2019-11-04", {zone: "America/New_York"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2019-08-15 23:59:00");
+			        var confDate = DateTime.fromSQL("2019-11-04");
+			        console.log("Invalid timezone in pydata-nyc-2019. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-nyc-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -9987,6 +10190,30 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
+			      $('#pydata-cordoba-2019 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2019-06-30 23:59:59", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2019-09-27", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2019-06-30 23:59:59");
+			        var confDate = DateTime.fromSQL("2019-09-27");
+			        console.log("Invalid timezone in pydata-cordoba-2019. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-cordoba-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
 			      $('#piter-py-2019 .PY-tag').html("General Python".toLocaleLowerCase("en"));
 			    
 			    
@@ -10006,6 +10233,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#piter-py-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-delhi-2019 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2019-06-30 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2019-08-03", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2019-06-30 23:59:00");
+			        var confDate = DateTime.fromSQL("2019-08-03");
+			        console.log("Invalid timezone in pydata-delhi-2019. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-delhi-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -10248,6 +10499,54 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#pycolorado-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-eindhoven-2020 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2019-05-13 23:59:00", {zone: "Europe/Amsterdam"});
+			        var confDate = DateTime.fromSQL("2020-10-07", {zone: "Europe/Amsterdam"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2019-05-13 23:59:00");
+			        var confDate = DateTime.fromSQL("2020-10-07");
+			        console.log("Invalid timezone in pydata-eindhoven-2020. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-eindhoven-2020 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-eindhoven-2019 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2019-05-13 23:59:00", {zone: "Europe/Amsterdam"});
+			        var confDate = DateTime.fromSQL("2019-11-29", {zone: "Europe/Amsterdam"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2019-05-13 23:59:00");
+			        var confDate = DateTime.fromSQL("2019-11-29");
+			        console.log("Invalid timezone in pydata-eindhoven-2019. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-eindhoven-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -11018,6 +11317,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#pygrunn-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#python-in-astronomy-2019 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2019-01-31 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2019-07-29", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2019-01-31 23:59:00");
+			        var confDate = DateTime.fromSQL("2019-07-29");
+			        console.log("Invalid timezone in python-in-astronomy-2019. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#python-in-astronomy-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -11911,6 +12234,78 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
+			      $('#pydata-los-angeles-2018 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2018-08-19 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2018-10-21", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2018-08-19 23:59:00");
+			        var confDate = DateTime.fromSQL("2018-10-21");
+			        console.log("Invalid timezone in pydata-los-angeles-2018. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-los-angeles-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-nyc-2018 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2018-08-15 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2018-10-17", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2018-08-15 23:59:00");
+			        var confDate = DateTime.fromSQL("2018-10-17");
+			        console.log("Invalid timezone in pydata-nyc-2018. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-nyc-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-washington-dc-2018 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2018-08-11 23:59:00", {zone: "America/New_York"});
+			        var confDate = DateTime.fromSQL("2018-11-16", {zone: "America/New_York"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2018-08-11 23:59:00");
+			        var confDate = DateTime.fromSQL("2018-11-16");
+			        console.log("Invalid timezone in pydata-washington-dc-2018. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-washington-dc-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
 			      $('#north-bay-python-2018 .PY-tag').html("General Python".toLocaleLowerCase("en"));
 			    
 			    
@@ -11978,6 +12373,78 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#flask-conf-brasil-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-miami-2019 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2018-07-31 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2019-01-09", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2018-07-31 23:59:00");
+			        var confDate = DateTime.fromSQL("2019-01-09");
+			        console.log("Invalid timezone in pydata-miami-2019. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-miami-2019 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-warsaw-2018 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2018-07-31 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2018-11-18", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2018-07-31 23:59:00");
+			        var confDate = DateTime.fromSQL("2018-11-18");
+			        console.log("Invalid timezone in pydata-warsaw-2018. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-warsaw-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-cordoba-2018 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2018-07-30 23:59:59", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2018-09-29", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2018-07-30 23:59:59");
+			        var confDate = DateTime.fromSQL("2018-09-29");
+			        console.log("Invalid timezone in pydata-cordoba-2018. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-cordoba-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -12801,6 +13268,30 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
+			      $('#jupytercon-2018 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2018-03-06 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2018-08-21", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2018-03-06 23:59:00");
+			        var confDate = DateTime.fromSQL("2018-08-21");
+			        console.log("Invalid timezone in jupytercon-2018. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#jupytercon-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
 			      $('#pydata-amsterdam-2018 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
 			    
 			    
@@ -12820,6 +13311,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#pydata-amsterdam-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-london-2018 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2018-03-02 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2018-04-26", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2018-03-02 23:59:00");
+			        var confDate = DateTime.fromSQL("2018-04-26");
+			        console.log("Invalid timezone in pydata-london-2018. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-london-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -12868,6 +13383,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#scipy-us-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#fenics-2018 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2018-02-21 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2018-03-21", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2018-02-21 23:59:00");
+			        var confDate = DateTime.fromSQL("2018-03-21");
+			        console.log("Invalid timezone in fenics-2018. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#fenics-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -13281,6 +13820,30 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
+			      $('#python-in-astronomy-2018 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2017-10-16 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2018-04-30", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2017-10-16 23:59:00");
+			        var confDate = DateTime.fromSQL("2018-04-30");
+			        console.log("Invalid timezone in python-in-astronomy-2018. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#python-in-astronomy-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
 			      $('#pytexas-2017 .PY-tag').html("General Python".toLocaleLowerCase("en"));
 			    
 			    
@@ -13372,6 +13935,54 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#plone-conference-2018 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-nyc-2017 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2017-09-22 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2017-11-27", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2017-09-22 23:59:00");
+			        var confDate = DateTime.fromSQL("2017-11-27");
+			        console.log("Invalid timezone in pydata-nyc-2017. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-nyc-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-sam-luis-2017 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2017-09-22 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2017-11-16", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2017-09-22 23:59:00");
+			        var confDate = DateTime.fromSQL("2017-11-16");
+			        console.log("Invalid timezone in pydata-sam-luis-2017. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-sam-luis-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -14169,6 +14780,30 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
+			      $('#fenics-2017 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2017-04-26 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2017-06-12", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2017-04-26 23:59:00");
+			        var confDate = DateTime.fromSQL("2017-06-12");
+			        console.log("Invalid timezone in fenics-2017. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#fenics-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
 			      $('#pydata-berlin-2017 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
 			    
 			    
@@ -14236,6 +14871,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#pycon-czechia-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-paris-2017 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2017-04-17 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2016-06-12", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2017-04-17 23:59:00");
+			        var confDate = DateTime.fromSQL("2016-06-12");
+			        console.log("Invalid timezone in pydata-paris-2017. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-paris-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -14313,7 +14972,7 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
-			      $('#pydata-bcn-2017 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			      $('#pydata-barcelona-2017 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
 			    
 			    
 
@@ -14327,11 +14986,11 @@ $('#subject-select').multiselect({
 			      if (cfpDate.invalid || confDate.invalid) {
 			        var cfpDate = DateTime.fromSQL("2017-04-09 23:59:00");
 			        var confDate = DateTime.fromSQL("2017-05-19");
-			        console.log("Invalid timezone in pydata-bcn-2017. Using system timezone instead.");
+			        console.log("Invalid timezone in pydata-barcelona-2017. Using system timezone instead.");
 			      }
 
 			      // deadline in local timezone
-			      $('#pydata-bcn-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			      $('#pydata-barcelona-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -14507,6 +15166,30 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
+			      $('#jupytercon-2017 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2017-03-06 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2017-08-22", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2017-03-06 23:59:00");
+			        var confDate = DateTime.fromSQL("2017-08-22");
+			        console.log("Invalid timezone in jupytercon-2017. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#jupytercon-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
 			      $('#pydata-amsterdam-2017 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
 			    
 			    
@@ -14598,6 +15281,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#pycon-slovakia-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-florence-2017 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2017-02-12 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2017-04-07", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2017-02-12 23:59:00");
+			        var confDate = DateTime.fromSQL("2017-04-07");
+			        console.log("Invalid timezone in pydata-florence-2017. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-florence-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -14766,6 +15473,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#pycon-colombia-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#python-in-astronomy-2017 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2016-12-09 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2017-05-08", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2016-12-09 23:59:00");
+			        var confDate = DateTime.fromSQL("2017-05-08");
+			        console.log("Invalid timezone in python-in-astronomy-2017. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#python-in-astronomy-2017 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -15299,7 +16030,7 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
-			      $('#pydata-dc-2016 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			      $('#pydata-washington-dc-2016 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
 			    
 			    
 
@@ -15313,11 +16044,35 @@ $('#subject-select').multiselect({
 			      if (cfpDate.invalid || confDate.invalid) {
 			        var cfpDate = DateTime.fromSQL("2016-08-01 23:59:00");
 			        var confDate = DateTime.fromSQL("2016-10-07");
-			        console.log("Invalid timezone in pydata-dc-2016. Using system timezone instead.");
+			        console.log("Invalid timezone in pydata-washington-dc-2016. Using system timezone instead.");
 			      }
 
 			      // deadline in local timezone
-			      $('#pydata-dc-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			      $('#pydata-washington-dc-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-san-francisco-2016 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2016-07-18 23:59:59", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2016-08-12", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2016-07-18 23:59:59");
+			        var confDate = DateTime.fromSQL("2016-08-12");
+			        console.log("Invalid timezone in pydata-san-francisco-2016. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-san-francisco-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -15438,6 +16193,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#euroscipy-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-chicago-2016 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2016-06-13 23:59:59", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2016-08-26", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2016-06-13 23:59:59");
+			        var confDate = DateTime.fromSQL("2016-08-26");
+			        console.log("Invalid timezone in pydata-chicago-2016. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-chicago-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -15630,6 +16409,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#pygotham-tv-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-paris-2016 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2016-05-20", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2016-06-14", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2016-05-20");
+			        var confDate = DateTime.fromSQL("2016-06-14");
+			        console.log("Invalid timezone in pydata-paris-2016. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-paris-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -16211,6 +17014,30 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
+			      $('#python-in-astronomy-2016 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2015-12-06 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2016-03-21", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2015-12-06 23:59:00");
+			        var confDate = DateTime.fromSQL("2016-03-21");
+			        console.log("Invalid timezone in python-in-astronomy-2016. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#python-in-astronomy-2016 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
 			      $('#pycon-philippines-2016 .PY-tag').html("General Python".toLocaleLowerCase("en"));
 			    
 			    
@@ -16398,6 +17225,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#python-san-sebastian-2015 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-nyc-2015 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2015-09-15 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2015-11-09", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2015-09-15 23:59:00");
+			        var confDate = DateTime.fromSQL("2015-11-09");
+			        console.log("Invalid timezone in pydata-nyc-2015. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-nyc-2015 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -16979,6 +17830,30 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
+			      $('#pydata-seattle-2015 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2015-05-11 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2015-07-24", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2015-05-11 23:59:00");
+			        var confDate = DateTime.fromSQL("2015-07-24");
+			        console.log("Invalid timezone in pydata-seattle-2015. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-seattle-2015 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
 			      $('#pycon-australia-2015 .PY-tag').html("General Python".toLocaleLowerCase("en"));
 			    
 			    
@@ -17267,6 +18142,30 @@ $('#subject-select').multiselect({
 			    
 			    
 			    
+			      $('#pydata-dallas-2015 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2015-03-08 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2015-04-24", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2015-03-08 23:59:00");
+			        var confDate = DateTime.fromSQL("2015-04-24");
+			        console.log("Invalid timezone in pydata-dallas-2015. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-dallas-2015 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
 			      $('#pydata-paris-2015 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
 			    
 			    
@@ -17454,6 +18353,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#python-namibia-2015 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#python-in-astronomy-2015 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2014-12-10 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2015-04-20", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2014-12-10 23:59:00");
+			        var confDate = DateTime.fromSQL("2015-04-20");
+			        console.log("Invalid timezone in python-in-astronomy-2015. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#python-in-astronomy-2015 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
@@ -18198,6 +19121,30 @@ $('#subject-select').multiselect({
 
 			      // deadline in local timezone
 			      $('#pygrunn-2014 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
+			    
+			  
+			    
+			    
+			    
+			      $('#pydata-silicon-valley-2014 .DATA-tag').html("Python for Data".toLocaleLowerCase("en"));
+			    
+			    
+
+			      // Use specified timezone for deadlines if available else use AoE timezone
+			      
+			        var cfpDate = DateTime.fromSQL("2014-04-06 23:59:00", {zone: "UTC-12"});
+			        var confDate = DateTime.fromSQL("2014-05-02", {zone: "UTC-12"});
+			      
+
+			      // check if timezone is valid otherwise replace by system timezone
+			      if (cfpDate.invalid || confDate.invalid) {
+			        var cfpDate = DateTime.fromSQL("2014-04-06 23:59:00");
+			        var confDate = DateTime.fromSQL("2014-05-02");
+			        console.log("Invalid timezone in pydata-silicon-valley-2014. Using system timezone instead.");
+			      }
+
+			      // deadline in local timezone
+			      $('#pydata-silicon-valley-2014 .deadline-time').html(cfpDate.setZone('system').toLocaleString(DateTime.DATE_HUGE));
 			    
 			  
 			    
