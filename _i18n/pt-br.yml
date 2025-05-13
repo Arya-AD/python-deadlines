@@ -21,6 +21,7 @@ titles:
   search: 'Pesquisar'
   about: 'Sobre os prazos de conferências Python'
   languages: 'Idiomas disponíveis'
+  formatter: 'Formatador de prazos de conferências'
 description:
   summary: 'Resumo da conferência e suas instâncias ao longo dos anos.'
 header:
@@ -29,6 +30,8 @@ header:
   maps: 'Mapa'
   series: 'Séries'
   resources: 'Recursos'
+  formatter: 'Formatação App'
+  articles: 'Começando'
 conference:
   title: 'Prazos de conferências'
   finaid: 'Auxílio financeiro'
@@ -186,3 +189,50 @@ languages:
   switch_to: 'Mudar'
   translated_by: 'Traduzido por:'
   legend: 'Legenda'
+formatter:
+  description: 'Enviar prazos de conferências Python em vários formatos'
+  basic:
+    title: 'Informações básicas'
+    name: 'Nome da conferência'
+    year: 'Ano'
+    type: 'Tipo de conferência'
+    attendees: 'Participantes esperados'
+    url: 'URL do site'
+  location_date:
+    title: 'Local e data'
+    city: 'Cidade'
+    city_help: 'Digite apenas o nome da cidade'
+    country: 'País'
+    country_help: 'Comece a digitar para ver países correspondentes com bandeiras'
+    venue: 'Local'
+    extra_places: "Locais extras"
+    extra_help: "Para eventos híbridos ou online, adicione locais extras separados por vírgula aqui."
+    start_date: 'Data de início'
+    end_date: 'Data de término'
+    timezone: 'Fuso horário'
+    timezone_help: 'Comece a digitar para selecionar o fuso horário da conferência'
+  cfp:
+    title: 'Chamada de trabalhos'
+    status: 'Status da CfP'
+    tba: 'A ser anunciado'
+    none: 'Sem CfP'
+    date: 'Usar data'
+    deadline: 'Prazo de submissão'
+    deadline_help: 'O prazo para enviar propostas de palestras'
+    link: 'Link da CfP'
+  additional_info:
+    title: 'Informações adicionais'
+    sponsor: 'URL de patrocínio'
+    finaid: 'URL de auxílio financeiro'
+    mastodon: 'URL do Mastodon'
+    bsky: 'URL do Bluesky'
+    notes: 'Notas adicionais'
+    notes_place: 'Notas adicionais sobre a conferência'
+  submission_guidelines: 'Diretrizes de submissão'
+  generate_output: 'Gerar formato'
+  generated_outputs: 'Formatos gerados'
+  csv_format: 'Formato CSV'
+  yaml_format: 'Formato YAML'
+  calendar_format: 'Formato de calendário'
+  copy: 'Copiar para a área de transferência'
+  required: 'Por favor, preencha todos os campos obrigatórios marcados com *.'
