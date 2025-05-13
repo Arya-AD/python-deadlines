@@ -21,6 +21,7 @@ titles:
   search: 'Rechercher'
   about: 'À propos des échéances des conférences Python'
   languages: 'Langues disponibles'
+  formatter: 'Formatteur de conférence'
 description:
   summary: 'Résumé de la conférence et de ses éditions au fil des ans.'
 header:
@@ -29,6 +30,8 @@ header:
   maps: 'Carte'
   series: 'Séries'
   resources: 'Ressources'
+  formatter: 'Formatteur'
+  articles: 'Commencer'
 conference:
   title: 'Échéances des conférences'
   finaid: 'Aide financière'
@@ -186,3 +189,50 @@ languages:
   switch_to: 'Passer'
   translated_by: 'Traduit par:'
   legend: 'Légende'
+formatter:
+  description: 'Soumettre les délais des conférences Python dans différents formats'
+  basic:
+    title: 'Informations de base'
+    name: 'Nom de la conférence'
+    year: 'Année'
+    type: 'Type de conférence'
+    attendees: 'Participants attendus'
+    url: 'URL du site web'
+  location_date:
+    title: 'Lieu et date'
+    city: 'Ville'
+    city_help: 'Entrez uniquement le nom de la ville'
+    country: 'Pays'
+    country_help: 'Commencez à taper pour voir les pays correspondants avec drapeaux'
+    venue: 'Lieu'
+    extra_places: "Lieux supplémentaires"
+    extra_help: "Pour les événements hybrides ou en ligne, ajoutez des lieux supplémentaires séparés par des virgules ici."
+    start_date: 'Date de début'
+    end_date: 'Date de fin'
+    timezone: 'Fuseau horaire'
+    timezone_help: 'Commencez à taper pour sélectionner le fuseau horaire de la conférence'
+  cfp:
+    title: 'Appel à propositions'
+    status: 'Statut du CfP'
+    tba: 'À annoncer'
+    none: 'Pas de CfP'
+    date: 'Utiliser la date'
+    deadline: 'Date limite de soumission'
+    deadline_help: 'La date limite pour soumettre des propositions de présentations'
+    link: 'Lien du CfP'
+  additional_info:
+    title: 'Informations supplémentaires'
+    sponsor: 'URL de parrainage'
+    finaid: 'URL d''aide financière'
+    mastodon: 'URL Mastodon'
+    bsky: 'URL Bluesky'
+    notes: 'Notes supplémentaires'
+    notes_place: 'Notes supplémentaires sur la conférence'
+  submission_guidelines: 'Directives de soumission'
+  generate_output: 'Générer les formats'
+  generated_outputs: 'Formats générées'
+  csv_format: 'Format CSV'
+  yaml_format: 'Format YAML'
+  calendar_format: 'Format calendrier'
+  copy: 'Copier dans le presse-papiers'
+  required: 'Veuillez remplir tous les champs obligatoires marqués du *.'
