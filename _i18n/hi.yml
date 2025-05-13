@@ -21,6 +21,7 @@ titles:
   search: 'खोजें'
   about: 'पायथन सम्मेलन समय सीमाओं के बारे में'
   languages: 'उपलब्ध भाषाएँ'
+  formatter: 'सम्मेलन समय सीमा फॉर्मेटर'
 description:
   summary: 'सम्मेलन और वर्षों में इसके आयोजनों का सारांश।'
 header:
@@ -29,6 +30,8 @@ header:
   maps: 'नक्शा'
   series: 'श्रृंखला'
   resources: 'संसाधन'
+  formatter: 'फॉर्मेटर ऐप'
+  articles: 'शुरू करने के लिए लेख'
 conference:
   title: 'सम्मेलन समय सीमाएँ'
   finaid: 'वित्तीय सहायता'
@@ -186,3 +189,50 @@ languages:
   switch_to: 'पर स्विच करें'
   translated_by: 'अनुवादक:'
   legend: 'दिग्दर्शक'
+formatter:
+  description: 'विभिन्न प्रारूपों में पायथन सम्मेलन की समय सीमा जमा करें'
+  basic:
+    title: 'मूल जानकारी'
+    name: 'सम्मेलन का नाम'
+    year: 'वर्ष'
+    type: 'सम्मेलन प्रकार'
+    attendees: 'अपेक्षित प्रतिभागी'
+    url: 'वेबसाइट URL'
+  location_date:
+    title: 'स्थान और दिनांक'
+    city: 'शहर'
+    city_help: 'केवल शहर का नाम दर्ज करें'
+    country: 'देश'
+    country_help: 'ध्वज के साथ मिलान वाले देशों को देखने के लिए टाइप करना शुरू करें'
+    venue: 'स्थल'
+    extra_places: "अतिरिक्त स्थान"
+    extra_help: "हाइब्रिड या ऑनलाइन इवेंट के लिए, यहां अतिरिक्त अल्पविराम से अलग किए गए स्थान जोड़ें।"
+    start_date: 'आरंभ तिथि'
+    end_date: 'समाप्ति तिथि'
+    timezone: 'समय क्षेत्र'
+    timezone_help: 'सम्मेलन का समय क्षेत्र चुनने के लिए टाइप करना शुरू करें'
+  cfp:
+    title: 'प्रस्ताव के लिए आह्वान'
+    status: 'CfP स्थिति'
+    tba: 'घोषित किया जाएगा'
+    none: 'कोई CfP नहीं'
+    date: 'तिथि का उपयोग करें'
+    deadline: 'जमा करने की अंतिम तिथि'
+    deadline_help: 'वार्ता प्रस्ताव जमा करने की अंतिम तिथि'
+    link: 'CfP लिंक'
+  additional_info:
+    title: 'अतिरिक्त जानकारी'
+    sponsor: 'प्रायोजन URL'
+    finaid: 'वित्तीय सहायता URL'
+    mastodon: 'मास्टोडन URL'
+    bsky: 'ब्लूस्काई URL'
+    notes: 'अतिरिक्त नोट्स'
+    notes_place: 'सम्मेलन के बारे में अतिरिक्त नोट्स'
+  submission_guidelines: 'सबमिशन दिशानिर्देश'
+  generate_output: 'उत्पन्न करें'
+  generated_outputs: 'उत्पन्न आउटपुट'
+  csv_format: 'CSV प्रारूप'
+  yaml_format: 'YAML प्रारूप'
+  calendar_format: 'कैलेंडर प्रारूप'
+  copy: 'क्लिपबोर्ड पर कॉपी करें'
+  required: 'कृपया सभी आवश्यक फ़ील्ड भरें जो * से चिह्नित हैं।'
