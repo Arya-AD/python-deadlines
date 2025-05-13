@@ -21,6 +21,7 @@ titles:
   search: '搜索'
   about: '关于Python会议截止日期'
   languages: '可用语言'
+  formatter: '格式化器'
 description:
   summary: '会议及其历年实例的摘要。'
 header:
@@ -29,6 +30,8 @@ header:
   maps: '地图'
   series: '系列'
   resources: '资源'
+  formatter: '格式化器应用'
+  articles: '入门文章'
 conference:
   title: '会议截止日期'
   finaid: '财务资助'
@@ -186,3 +189,50 @@ languages:
   switch_to: '切换到'
   translated_by: '翻译者:'
   legend: 'Legend'
+formatter:
+  description: '以各种格式提交Python会议截止日期'
+  basic:
+    title: '基本信息'
+    name: '会议名称'
+    year: '年份'
+    type: '会议类型'
+    attendees: '预计参会人数'
+    url: '网站URL'
+  location_date:
+    title: '地点和日期'
+    city: '城市'
+    city_help: '仅输入城市名称'
+    country: '国家'
+    country_help: '开始输入以查看带有国旗的匹配国家'
+    venue: '场地'
+    extra_places: "额外地点"
+    extra_help: "对于混合或在线活动，在此处添加以逗号分隔的额外地点。"
+    start_date: '开始日期'
+    end_date: '结束日期'
+    timezone: '时区'
+    timezone_help: '开始输入以选择会议的时区'
+  cfp:
+    title: '征集提案'
+    status: 'CfP状态'
+    tba: '待公布'
+    none: '无CfP'
+    date: '使用日期'
+    deadline: '提交截止日期'
+    deadline_help: '提交演讲提案的截止日期'
+    link: 'CfP链接'
+  additional_info:
+    title: '附加信息'
+    sponsor: '赞助URL'
+    finaid: '经济资助URL'
+    mastodon: 'Mastodon URL'
+    bsky: 'Bluesky URL'
+    notes: '附加备注'
+    notes_place: '关于会议的附加备注'
+  submission_guidelines: '提交指南'
+  generate_output: 'Generate Output'
+  generated_outputs: '生成的输出'
+  csv_format: 'CSV格式'
+  yaml_format: 'YAML格式'
+  calendar_format: '日历格式'
+  copy: '复制到剪贴板'
+  required: '请填写所有必填字段，标记为*。'
