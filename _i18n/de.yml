@@ -21,6 +21,7 @@ titles:
   search: 'Suche'
   about: 'Über Python-Konferenz-Deadlines'
   languages: 'Verfügbare Sprachen'
+  formatter: 'Formatierungs-App'
 description:
   summary: 'Python Konferenz und ihre Instanzen im Laufe der Jahre.'
 header:
@@ -29,6 +30,8 @@ header:
   maps: 'Karte'
   series: 'Eventserien'
   resources: 'Ressourcen'
+  formatter: 'Formatierungs-App'
+  articles: 'Erste Schritte'
 conference:
   title: 'Konferenz Deadlines'
   finaid: 'Finanzielle Unterstützung'
@@ -186,3 +189,50 @@ languages:
   switch_to: 'Wechseln'
   translated_by: 'Übersetzt von:'
   legend: 'Legende'
+formatter:
+  description: 'Python-Konferenzfristen in verschiedenen Formaten einreichen'
+  basic:
+    title: 'Grundlegende Informationen'
+    name: 'Konferenzname'
+    year: 'Jahr'
+    type: 'Konferenztyp'
+    attendees: 'Erwartete Teilnehmer'
+    url: 'Website-URL'
+  location_date:
+    title: 'Ort & Datum'
+    city: 'Stadt'
+    city_help: 'Geben Sie nur den Stadtnamen ein'
+    country: 'Land'
+    country_help: 'Beginnen Sie mit der Eingabe, um passende Länder mit Flaggen zu sehen'
+    venue: 'Veranstaltungsort'
+    extra_places: "Zusätzliche Orte"
+    extra_help: "Für Hybrid- oder Online-Veranstaltungen fügen Sie hier zusätzliche, durch Kommas getrennte Orte hinzu."
+    start_date: 'Startdatum'
+    end_date: 'Enddatum'
+    timezone: 'Zeitzone'
+    timezone_help: 'Beginnen Sie mit der Eingabe, um die Zeitzone der Konferenz auszuwählen'
+  cfp:
+    title: 'Call for Proposals'
+    status: 'CfP-Status'
+    tba: 'Wird noch bekannt gegeben'
+    none: 'Kein CfP'
+    date: 'Datum verwenden'
+    deadline: 'Einreichungsfrist'
+    deadline_help: 'Die Frist für die Einreichung von Vortragsvorschlägen'
+    link: 'CfP-Link'
+  additional_info:
+    title: 'Zusätzliche Informationen'
+    sponsor: 'Sponsoring-URL'
+    finaid: 'URL für finanzielle Unterstützung'
+    mastodon: 'Mastodon-URL'
+    bsky: 'Bluesky-URL'
+    notes: 'Zusätzliche Notizen'
+    notes_place: 'Zusätzliche Hinweise zur Konferenz'
+  submission_guidelines: 'Einreichungsrichtlinien'
+  generate_output: 'Output generieren'
+  generated_outputs: 'Generierte Outputs'
+  csv_format: 'CSV-Format'
+  yaml_format: 'YAML-Format'
+  calendar_format: 'Kalenderformat'
+  copy: 'In die Zwischenablage kopieren'
+  required: 'Bitte füllen Sie alle erforderlichen Felder aus, die mit * gekennzeichnet sind.'
