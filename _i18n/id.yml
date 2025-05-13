@@ -21,6 +21,7 @@ titles:
   search: 'Cari'
   about: 'Tentang Tenggat Waktu Konferensi Python'
   languages: 'Bahasa yang Tersedia'
+  formatter: 'Formatter Konferensi Python'
 description:
   summary: 'Ringkasan konferensi dan sejarahnya selama bertahun-tahun.'
 header:
@@ -29,6 +30,8 @@ header:
   maps: 'Peta'
   series: 'Seri'
   resources: 'Sumber Daya'
+  formatter: 'Format App'
+  articles: 'Artikel untuk Memulai'
 conference:
   title: 'Tenggat Waktu Konferensi'
   finaid: 'Bantuan Keuangan'
@@ -186,3 +189,50 @@ languages:
   switch_to: 'Beralih'
   translated_by: 'Diterjemahkan oleh:'
   legend: 'Legenda'
+formatter:
+  description: 'Kirim Tenggat Waktu Konferensi Python dalam Berbagai Format'
+  basic:
+    title: 'Informasi Dasar'
+    name: 'Nama Konferensi'
+    year: 'Tahun'
+    type: 'Jenis Konferensi'
+    attendees: 'Peserta yang Diharapkan'
+    url: 'URL Situs Web'
+  location_date:
+    title: 'Lokasi & Tanggal'
+    city: 'Kota'
+    city_help: 'Masukkan hanya nama kota'
+    country: 'Negara'
+    country_help: 'Mulai mengetik untuk melihat negara yang cocok dengan bendera'
+    venue: 'Tempat'
+    extra_places: "Tempat Tambahan"
+    extra_help: "Untuk acara hybrid atau online, tambahkan lokasi tambahan yang dipisahkan koma di sini."
+    start_date: 'Tanggal Mulai'
+    end_date: 'Tanggal Selesai'
+    timezone: 'Zona Waktu'
+    timezone_help: 'Mulai mengetik untuk memilih zona waktu konferensi'
+  cfp:
+    title: 'Panggilan untuk Proposal'
+    status: 'Status CfP'
+    tba: 'Akan Diumumkan'
+    none: 'Tidak Ada CfP'
+    date: 'Gunakan Tanggal'
+    deadline: 'Batas Waktu Pengiriman'
+    deadline_help: 'Batas waktu untuk mengirimkan proposal presentasi'
+    link: 'Tautan CfP'
+  additional_info:
+    title: 'Informasi Tambahan'
+    sponsor: 'URL Sponsor'
+    finaid: 'URL Bantuan Keuangan'
+    mastodon: 'URL Mastodon'
+    bsky: 'URL Bluesky'
+    notes: 'Catatan Tambahan'
+    notes_place: 'Catatan tambahan tentang konferensi'
+  submission_guidelines: 'Pedoman Pengiriman'
+  generate_output: 'Hasilkan Format'
+  generated_outputs: 'Format yang Dihasilkan'
+  csv_format: 'Format CSV'
+  yaml_format: 'Format YAML'
+  calendar_format: 'Format Kalender'
+  copy: 'Copy to Clipboard'
+  required: 'Silakan isi semua kolom yang diperlukan yang ditandai dengan *.'
