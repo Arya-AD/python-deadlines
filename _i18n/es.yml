@@ -21,6 +21,7 @@ titles:
   search: 'Buscar'
   about: 'Sobre las fechas de conferencias de Python'
   languages: 'Idiomas Disponibles'
+  formatter: 'Herramienta de Formato'
 description:
   summary: 'Resumen de la conferencia y sus instancias a lo largo de los años.'
 header:
@@ -29,6 +30,8 @@ header:
   maps: 'Mapa'
   series: 'Serie'
   resources: 'Recursos'
+  formatter: 'Formateador'
+  articles: 'Comenzando'
 conference:
   title: 'Fechas de Conferencias'
   finaid: 'Ayuda financiera'
@@ -186,3 +189,50 @@ languages:
   switch_to: 'Cambiar'
   translated_by: 'Traducido por:'
   legend: 'Leyenda'
+formatter:
+  description: 'Enviar plazos de conferencias Python en varios formatos'
+  basic:
+    title: 'Información básica'
+    name: 'Nombre de la conferencia'
+    year: 'Año'
+    type: 'Tipo de conferencia'
+    attendees: 'Asistentes esperados'
+    url: 'URL del sitio web'
+  location_date:
+    title: 'Ubicación y fecha'
+    city: 'Ciudad'
+    city_help: 'Ingrese solo el nombre de la ciudad'
+    country: 'País'
+    country_help: 'Comience a escribir para ver países coincidentes con banderas'
+    venue: 'Lugar'
+    extra_places: "Lugares adicionales"
+    extra_help: "Para eventos híbridos o en línea, agregue ubicaciones adicionales separadas por comas aquí."
+    start_date: 'Fecha de inicio'
+    end_date: 'Fecha de finalización'
+    timezone: 'Zona horaria'
+    timezone_help: 'Comience a escribir para seleccionar la zona horaria de la conferencia'
+  cfp:
+    title: 'Convocatoria de propuestas'
+    status: 'Estado de la CfP'
+    tba: 'Por anunciar'
+    none: 'Sin CfP'
+    date: 'Usar fecha'
+    deadline: 'Fecha límite de envío'
+    deadline_help: 'La fecha límite para enviar propuestas de charlas'
+    link: 'Enlace de CfP'
+  additional_info:
+    title: 'Información adicional'
+    sponsor: 'URL de patrocinio'
+    finaid: 'URL de ayuda financiera'
+    mastodon: 'URL de Mastodon'
+    bsky: 'URL de Bluesky'
+    notes: 'Notas adicionales'
+    notes_place: 'Notas adicionales sobre la conferencia'
+  submission_guidelines: 'Pautas de envío'
+  generate_output: 'Generar formato'
+  generated_outputs: 'Formatos generados'
+  csv_format: 'Formato CSV'
+  yaml_format: 'Formato YAML'
+  calendar_format: 'Formato de calendario'
+  copy: 'Copiar al portapapeles'
+  required: 'Por favor, complete todos los campos obligatorios marcados con *.'
