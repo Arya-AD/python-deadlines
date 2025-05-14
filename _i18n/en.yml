@@ -21,6 +21,7 @@ titles:
   search: 'Search'
   about: 'About Python Conference Deadlines'
   languages: 'Available Languages'
+  formatter: 'Python Conference Formatter'
 description:
   summary: 'Summary of the conference and its instances throughout the years.'
 header:
@@ -29,6 +30,8 @@ header:
   maps: 'Map'
   series: 'Series'
   resources: 'Resources'
+  formatter: 'Formatter App'
+  articles: 'Getting Started'
 conference:
   title: 'Conference Deadlines'
   finaid: 'Financial Aid'
@@ -186,3 +189,50 @@ languages:
   switch_to: 'Switch'
   translated_by: 'Translated by:'
   legend: 'Legend'
+formatter:
+  description: 'Submit Python Conference Deadlines in Various Formats'
+  basic:
+    title: 'Basic Information'
+    name: 'Conference Name'
+    year: 'Year'
+    type: 'Conference Type'
+    attendees: 'Expected Attendees'
+    url: 'Website URL'
+  location_date:
+    title: 'Location & Date'
+    city: 'City'
+    city_help: 'Enter only the city name'
+    country: 'Country'
+    country_help: 'Start typing to see matching countries with flags'
+    venue: 'Venue'
+    extra_places: "Extra Places"
+    extra_help: "For hybrid or online events, add extra comma-separated locations here."
+    start_date: 'Start Date'
+    end_date: 'End Date'
+    timezone: 'Timezone'
+    timezone_help: 'Start typing to select the timezone of the conference'
+  cfp:
+    title: 'Call for Proposals'
+    status: 'CfP Status'
+    tba: 'To Be Announced'
+    none: 'No CfP'
+    date: 'Use Date'
+    deadline: 'Submission Deadline'
+    deadline_help: 'The deadline for submitting talk proposals'
+    link: 'CfP Link'
+  additional_info:
+    title: 'Additional Information'
+    sponsor: 'Sponsorship URL'
+    finaid: 'Financial Aid URL'
+    mastodon: 'Mastodon URL'
+    bsky: 'Bluesky URL'
+    notes: 'Additional Notes'
+    notes_place: 'Additional notes about the conference'
+  submission_guidelines: 'Submission Guidelines'
+  generate_output: 'Generate Output'
+  generated_outputs: 'Generated Outputs'
+  csv_format: 'CSV Format'
+  yaml_format: 'YAML Format'
+  calendar_format: 'Calendar Format'
+  copy: 'Copy to Clipboard'
+  required: 'Please fill in all required fields marked with *.'
