@@ -1,3 +1,3 @@
-Overview of deadlines and conference dates on a map.
+Manchmal ist es schöner alle Konferenzen auf einer Karte zu begutachten!
 
-Below are all the future Python conferences listed on PythonDeadlin.es in a nice spatial format.
+Hier sind alle zukünftigen Konferenzen eingezeichnet.
