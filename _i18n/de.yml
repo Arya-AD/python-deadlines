@@ -78,8 +78,8 @@ times:
   short:
     days: 'T'
     hours: 'S'
-    minutes: 'm'
-    seconds: 's'
+    minutes: 'M'
+    seconds: 'S'
   months:
     January: 'Januar'
     February: 'Februar'
@@ -228,7 +228,7 @@ formatter:
     bsky: 'Bluesky-URL'
     notes: 'Zusätzliche Notizen'
     notes_place: 'Zusätzliche Hinweise zur Konferenz'
-  submission_guidelines: 'Einreichungsrichtlinien'
+  submission_guidelines: 'Richtlinien zur Einreichung'
   generate_output: 'Output generieren'
   generated_outputs: 'Generierte Outputs'
   csv_format: 'CSV-Format'
