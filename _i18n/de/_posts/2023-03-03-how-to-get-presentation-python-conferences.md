@@ -28,7 +28,7 @@ Hier sind einige Tipps für die Einreichung eines erfolgreichen Vorschlags:
 - Skizzieren Sie Ihren Vortrag detailliert, einschließlich dessen, was Sie behandeln und wie Sie es präsentieren werden.
 - Fügen Sie unterstützende Materialien wie Codebeispiele oder Folien bei, um den Organisatoren einen besseren Eindruck von Ihrem Präsentationsstil und -inhalt zu vermitteln.
 
-## Build Your Speaking Skills
+## Rednerkompetenz entwickeln
 
 Wenn Sie neu im öffentlichen Sprechen sind, ist es eine gute Idee, klein anzufangen, indem Sie bei lokalen Meetups oder Veranstaltungen sprechen.
 
@@ -44,7 +44,7 @@ Besuchen Sie so viele Konferenzen und Meetups wie möglich und versuchen Sie, si
 
 Indem Sie Beziehungen zu anderen Mitgliedern der Python-Community aufbauen, erhöhen Sie Ihre Sichtbarkeit und Glaubwürdigkeit, was in Zukunft zu mehr Sprechmöglichkeiten führen kann.
 
-## Conclusion
+## Fazit
 
 Zusammenfassend erfordert das Sprechen auf Python-Konferenzen eine Kombination aus Fachwissen, Vorbereitung und Networking.
 
