@@ -9,7 +9,7 @@ tags:
 
 Python-Konferenzen sind eine ausgezeichnete Plattform zum Teilen von Wissen, zum Networking mit Kollegen und um über die neuesten Entwicklungen in der Python-Community auf dem Laufenden zu bleiben. Wenn Sie leidenschaftlich an Python interessiert sind und Ihre Erkenntnisse mit einem breiteren Publikum teilen möchten, kann ein Vortrag auf einer Python-Konferenz eine großartige Gelegenheit sein. In diesem Blogbeitrag werden wir untersuchen, wie Sie auf Python-Konferenzen sprechen können.
 
-## Be Invited
+## Eingeladen werden
 
 Eine Möglichkeit, zu Python-Konferenzen eingeladen zu werden, besteht darin, einen etablierten Ruf in der Community zu haben. Angenommen, Sie haben zu Open-Source-Projekten beigetragen, Artikel oder Blogbeiträge über Python geschrieben oder bei kleineren Meetups oder Veranstaltungen gesprochen. In diesem Fall könnten Sie die Aufmerksamkeit von Konferenzorganisatoren auf sich ziehen.
 
